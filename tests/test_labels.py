@@ -1,8 +1,8 @@
 """M5: the three label tables of PLAN.md §5 on synthetic verifier and tool answers."""
 import pytest
 
-from loopauditor.labels import aggregate, fixability_of, severity_of
-from loopauditor.schemas import ChecklistItem, ItemParams, RawVerdict
+from auditloop.labels import aggregate, fixability_of, severity_of
+from auditloop.schemas import ChecklistItem, ItemParams, RawVerdict
 
 
 def item(check="A2", priority="critical", **params):

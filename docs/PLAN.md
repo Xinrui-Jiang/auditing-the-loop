@@ -1,4 +1,4 @@
-# LoopAuditor 实施计划
+# Auditing the Loop 实施计划
 
 日期：2026-11-07。方法、数据和结果的完整说明见 `DESIGN.md`。
 本文件只管两件事：把对齐后的设计写清楚，并给出逐模块的实施步骤。写代码前先看本文件，写完一个模块再回来对照。
@@ -18,7 +18,7 @@
 
 ## 1. 项目定义与术语
 
-**定义。** LoopAuditor 接在视频生成模型后面。它检查每一轮生成的视频，给每个问题打三个标签，改写 prompt，再生成，直到系统认为视频与 prompt 的预期一致。整个过程不需要人参与。
+**定义。** Auditing the Loop 接在视频生成模型后面。它检查每一轮生成的视频，给每个问题打三个标签，改写 prompt，再生成，直到系统认为视频与 prompt 的预期一致。整个过程不需要人参与。
 
 **为什么选短剧。** 视频生成目前跑得通的变现路径是短剧。短剧镜头有台词、动作、情绪三类明确要求，适合做检查。
 
@@ -26,7 +26,7 @@
 
 | 口语名 | 正式名（英文，即代码名） | 说明 |
 |---|---|---|
-| 整个系统 | **LoopAuditor**（Video-Generation Agentic Loop） | loop 是修饰词，核心是 verification harness；agentic 和 video generation 在副标题里 |
+| 整个系统 | **Auditing the Loop**（Video-Generation Agentic Loop） | loop 是修饰词，核心是 verification harness；agentic 和 video generation 在副标题里 |
 | analyser | **Analyser** | 一个 LLM，两种模式：开头编 checklist；每轮读轨迹、决定下一步 |
 | checklist | **Checklist** | 本次实例要检查的全部条目。开头定下，循环中不改 |
 | group of evaluation expert | **Verifier panel**；成员叫 **specialist verifier** | 三个专家按 §2 的三大类分工 |
@@ -195,7 +195,7 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 
 ## 7. 模块化实施步骤
 
-代码放在 `pj/loopauditor/loopauditor/`。总行数上限 3,000 行（包内，不含 scripts 和 tests）。每个模块给了预算。旧原型 `pj/avharness/avharness/` 约 1,500 行，可复用的部分写在"复用"一栏。
+代码放在 `pj/auditing-the-loop/auditloop/`。总行数上限 3,000 行（包内，不含 scripts 和 tests）。每个模块给了预算。旧原型 `pj/avharness/avharness/` 约 1,500 行，可复用的部分写在"复用"一栏。
 
 每个模块的交付物有三样：代码和测试；一次真实数据上的运行；一个页面（`docs/pages/<模块>.html`），左边输入、右边输出，给用户检查。
 
@@ -264,7 +264,7 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 - **禁止**：Analyser 改台词或动作；Analyser 直接判输出；没有轮数上限的循环。
 
 ### M8 循环运行器、stop rule、hand-off 与 CLI（预算 250 行） `[自检通过 2026-11-07]`
-- **目标**：把 M1–M7 串成 §4 的伪代码。`loopauditor run --shot DB-16 --max-rounds 8`。
+- **目标**：把 M1–M7 串成 §4 的伪代码。`auditloop run --shot DB-16 --max-rounds 8`。
 - **输出**：`Output` 或 `HandOffReport`，以及每镜头的 markdown 报告。
 - **复用**：旧 `pipeline.py`、`cli.py`、`report.py`。
 - **验收**：3 个镜头端到端跑通；人为造一个修不好的问题在 K 轮后触发 hand-off。
@@ -284,7 +284,7 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 
 1. 把 §7 里该模块的"目标"读一遍。代码做的事和目标一致吗？多做了什么？少做了什么？
 2. 在真实数据上跑一次，看输出文件，做成页面。
-3. 跑 `grep -n "except\|fallback\|default\|or {}\|or \[\]\|pass$" loopauditor/<module>.py`。每一处都要能说出理由。说不出的删掉。
+3. 跑 `grep -n "except\|fallback\|default\|or {}\|or \[\]\|pass$" auditloop/<module>.py`。每一处都要能说出理由。说不出的删掉。
 4. 没有超过 60 行的函数。没有超过 400 行的文件。
 5. 没有只用一次的抽象（基类、注册表、工厂）。
 6. 坏输入会报明确的错误，不会变成 pass、None 或空列表。写一个这样的测试。

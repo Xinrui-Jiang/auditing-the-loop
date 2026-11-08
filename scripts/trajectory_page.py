@@ -10,7 +10,7 @@ import re
 import sys
 from pathlib import Path
 
-from loopauditor.schemas import Checklist, FeedbackSheet, Trajectory
+from auditloop.schemas import Checklist, FeedbackSheet, Trajectory
 
 ROOT = Path(__file__).resolve().parents[1]
 LOOP = ROOT / "runs/loop"
@@ -107,12 +107,12 @@ def main() -> None:
         video_url = json.loads(Path(sys.argv[2]).read_text())
     shots = sorted(p for p in LOOP.iterdir() if (p / "trajectory.json").exists())
     body = "".join(render_shot(p, video_url) for p in shots)
-    page = f"<main><h1>LoopAuditor trajectories</h1><p class='sub'>{INTRO}</p>{body}</main>"
+    page = f"<main><h1>Auditing the Loop trajectories</h1><p class='sub'>{INTRO}</p>{body}</main>"
     OUT.write_text(f"<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
-                   f"<title>LoopAuditor Trajectories</title>{FONTS}<style>{CSS}</style></head><body>{page}</body></html>")
+                   f"<title>Auditing the Loop Trajectories</title>{FONTS}<style>{CSS}</style></head><body>{page}</body></html>")
     # the artifact version: no document skeleton (the publisher adds it), asset URLs for the videos
     (OUT.parent / "trajectories_artifact.html").write_text(
-        f"<title>LoopAuditor Trajectories</title>{FONTS}<style>{CSS}</style>{page}")
+        f"<title>Auditing the Loop Trajectories</title>{FONTS}<style>{CSS}</style>{page}")
     print(f"wrote {OUT} (+ artifact version) for {len(shots)} shot(s)")
 
 

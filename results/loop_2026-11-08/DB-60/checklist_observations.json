@@ -5,6 +5,6 @@
   "request_id": "gen-1794110445-7cCjXfXnmyJNux8ub9fV",
   "cost_usd": 0.0,
   "text": "{\"actions\":[{\"span\":\"RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor.\",\"check\":\"RUAN NINGXIA must be visibly dressed in luxurious fur and a dress, clutching a designer bag too tightly while running anxiously through the corridor.\"},{\"span\":\"She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits.\",\"check\":\"FU LINCHENG'S ASSISTANT and JIANG YAO must both be visible in power suits as RUAN NINGXIA sees them.\"}],\"elements\":[{\"span\":\"INT. HOSPITAL CORRIDOR - DAY\",\"kind\":\"setting\",\"check\":\"The scene must visibly take place in a hospital corridor during the day.\"},{\"span\":\"designer bag\",\"kind\":\"prop\",\"check\":\"A designer bag must be visible in RUAN NINGXIA's grasp.\"}],\"other_people\":[\"FU LINCHENG'S ASSISTANT\",\"JIANG YAO\"],\"premise\":[{\"fact\":\"RUAN NINGXIA is pretending to cry rather than genuinely crying.\",\"span\":\"(pretending to cry)\"}],\"transition_scripted\":false,\"physics_involved\":true}",
-  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/e6b91ecc7ac2f0384bfd288f18f34d2d4a0eb7c156d355e1dc221c5c48788241.json"
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/auditloop/runs/_cache/e6b91ecc7ac2f0384bfd288f18f34d2d4a0eb7c156d355e1dc221c5c48788241.json"
  }
 ]

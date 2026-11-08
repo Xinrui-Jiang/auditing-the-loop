@@ -12,11 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from module_page import Panel, Section, render  # noqa: E402
 
-from loopauditor.analyser import ChecklistError, script_text, write_checklist  # noqa: E402
-from loopauditor.cache import Cache  # noqa: E402
-from loopauditor.config import ANALYSER_MODEL, CACHE_DIR, PROMPT_SET_30  # noqa: E402
-from loopauditor.openrouter import ChatJSONError  # noqa: E402
-from loopauditor.schemas import Checklist  # noqa: E402
+from auditloop.analyser import ChecklistError, script_text, write_checklist  # noqa: E402
+from auditloop.cache import Cache  # noqa: E402
+from auditloop.config import ANALYSER_MODEL, CACHE_DIR, PROMPT_SET_30  # noqa: E402
+from auditloop.openrouter import ChatJSONError  # noqa: E402
+from auditloop.schemas import Checklist  # noqa: E402
 
 OUT = ROOT / "runs/checklists"
 HANDWRITTEN = ROOT / "data/examples/checklists"
@@ -76,7 +76,7 @@ def main() -> None:
             head.append(Section(f"{sid}: hand-written (M0) vs Analyser (M1)", "Same shot, two checklists. Left: written by hand on 2026-11-07. Right: written by the Analyser.",
                                 inputs=[Panel("hand-written", items_table(hand))], outputs=[Panel("Analyser", items_table(auto))]))
     page = ROOT / "docs/pages/M1.html"
-    page.write_text(render("LoopAuditor M1 — Analyser writes the checklist", "30 shots of prompt_set_v2_30; one checklist each.", head + sections))
+    page.write_text(render("Auditing the Loop M1 — Analyser writes the checklist", "30 shots of prompt_set_v2_30; one checklist each.", head + sections))
     print(f"wrote {page}; {len(summary)} ok, {len(failures)} failed, ${total_cost:.4f}")
     for f in failures:
         print("FAIL", f)

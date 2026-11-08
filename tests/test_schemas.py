@@ -2,7 +2,7 @@
 import pytest
 from pydantic import ValidationError
 
-from loopauditor.schemas import (
+from auditloop.schemas import (
     Checklist, ChecklistItem, FeedbackSheet, HandOffReport, ItemParams, Observation, RawVerdict,
     RevisionPlan, Round, Signals, Take, Trajectory, Verdict,
 )

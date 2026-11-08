@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from module_page import Panel, Section, render  # noqa: E402
 
-from loopauditor.schemas import Checklist  # noqa: E402
-from loopauditor.tools import tool_verdicts  # noqa: E402
+from auditloop.schemas import Checklist  # noqa: E402
+from auditloop.tools import tool_verdicts  # noqa: E402
 
 PILOT = ROOT / "data/pilot_takes"
 OUT = ROOT / "runs/m3_tools"
@@ -35,7 +35,7 @@ def main() -> None:
                                 outputs=[Panel("RawVerdicts", json.dumps([v.model_dump() for v in verdicts], indent=1))]))
         print(sid, [(v.item_id, v.status, v.evidence[:70]) for v in verdicts], f"{elapsed:.1f}s")
     page = ROOT / "docs/pages/M3.html"
-    page.write_text(render("LoopAuditor M3 — evidence tools", "Five pilot takes; deterministic tools only.", sections))
+    page.write_text(render("Auditing the Loop M3 — evidence tools", "Five pilot takes; deterministic tools only.", sections))
     print("wrote", page)
 
 

@@ -1,5 +1,5 @@
 """M3 offline parts: WER normalisation and the dialogue status thresholds."""
-from loopauditor.tools import dialogue_status, normalise_speech, word_error_rate
+from auditloop.tools import dialogue_status, normalise_speech, word_error_rate
 
 
 def test_wer_ignores_case_and_punctuation():
@@ -20,5 +20,5 @@ def test_normalise_speech():
 
 
 def test_estimated_cost_from_price_table():
-    from loopauditor.generate import estimated_cost
+    from auditloop.generate import estimated_cost
     assert estimated_cost("seedance-2.0", 8, "480p") == 0.538

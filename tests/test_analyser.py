@@ -4,8 +4,8 @@ import json
 import pytest
 from pydantic import ValidationError
 
-from loopauditor.analyser import Extraction, assemble, bad_spans
-from loopauditor.config import PROMPT_SET_30
+from auditloop.analyser import Extraction, assemble, bad_spans
+from auditloop.config import PROMPT_SET_30
 
 ROWS = {json.loads(l)["shot_id"]: json.loads(l) for l in PROMPT_SET_30.open()}
 

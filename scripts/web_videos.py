@@ -6,7 +6,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from loopauditor.schemas import Trajectory
+from auditloop.schemas import Trajectory
 
 ROOT = Path(__file__).resolve().parents[1]
 LOOP = ROOT / "runs/loop"

@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>LoopAuditor M1 — Analyser writes the checklist</title><style>
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Auditing the Loop M1 — Analyser writes the checklist</title><style>
 :root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
 @media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
 body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
@@ -12,7 +12,7 @@ h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top
 .panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
 .in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
 pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
-</style></head><body><main><h1>LoopAuditor M1 — Analyser writes the checklist</h1><p class='sub'>30 shots of prompt_set_v2_30; one checklist each.</p><h2>Run summary</h2><p class='note'>30 of 30 shots produced a checklist; 0 failed; total LLM cost $0.1116. Rules write A1, the setting and sound items, A4, A6, all B items and C1/C2/C4; the LLM supplies actions, props, other people, premise facts and implied must-nots, each tied to a span copied from the script.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">settings</div><pre>model: google/gemini-4-argon
+</style></head><body><main><h1>Auditing the Loop M1 — Analyser writes the checklist</h1><p class='sub'>30 shots of prompt_set_v2_30; one checklist each.</p><h2>Run summary</h2><p class='note'>30 of 30 shots produced a checklist; 0 failed; total LLM cost $0.1116. Rules write A1, the setting and sound items, A4, A6, all B items and C1/C2/C4; the LLM supplies actions, props, other people, premise facts and implied must-nots, each tied to a span copied from the script.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">settings</div><pre>model: google/gemini-4-argon
 prompt set: data/prompts/prompt_set_v2_30.jsonl
 item range: 8-24
 span check: every LLM span must be a substring of prompt_raw; one retry, then error</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">per shot: items by family, retry, conflicts, cost</div><pre>DB-16  A13 B 7 C 3  total 23  retry no   conflicts 0  $0.0042

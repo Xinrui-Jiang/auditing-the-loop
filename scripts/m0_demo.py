@@ -11,10 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from module_page import Panel, Section, render  # noqa: E402
 
-from loopauditor import schemas as S  # noqa: E402
-from loopauditor.cache import cache_key, sha256_file  # noqa: E402
-from loopauditor.config import VERIFIER_MODEL, PROMPT_SET_30, openrouter_key  # noqa: E402
-from loopauditor.cost import fetch_generation_cost  # noqa: E402
+from auditloop import schemas as S  # noqa: E402
+from auditloop.cache import cache_key, sha256_file  # noqa: E402
+from auditloop.config import VERIFIER_MODEL, PROMPT_SET_30, openrouter_key  # noqa: E402
+from auditloop.cost import fetch_generation_cost  # noqa: E402
 
 PILOT_RUNS = ROOT.parent / "avharness/runs/pilot5_2026-11-07"
 EXAMPLES = ROOT / "data/examples"
@@ -123,7 +123,7 @@ def schema_overview() -> str:
     lines = []
     for model in (S.ChecklistItem, S.Checklist, S.Take, S.Observation, S.RawVerdict, S.Signals, S.Verdict,
                   S.FeedbackSheet, S.Round, S.RevisionPlan, S.Trajectory, S.HandOffReport):
-        fields = ", ".join(f"{n}: {str(f.annotation).replace('typing.', '').replace('loopauditor.schemas.', '')}"
+        fields = ", ".join(f"{n}: {str(f.annotation).replace('typing.', '').replace('auditloop.schemas.', '')}"
                            for n, f in model.model_fields.items())
         lines.append(f"{model.__name__}\n    {fields}")
     return "\n\n".join(lines)
@@ -177,7 +177,7 @@ def main() -> None:
         outputs=[Panel("cache_key", key), Panel("GenerationCost (live)", cost.model_dump_json(indent=2))]))
 
     out = ROOT / "docs/pages/M0.html"
-    out.write_text(render("LoopAuditor M0 — data objects", "Real data: two hand-written checklists, five pilot feedback sheets, the stop rule, a cache key, a live cost record.", sections))
+    out.write_text(render("Auditing the Loop M0 — data objects", "Real data: two hand-written checklists, five pilot feedback sheets, the stop rule, a cache key, a live cost record.", sections))
     print(f"wrote {out} and {len(list(EXAMPLES.rglob('*.json')))} example files")
 
 

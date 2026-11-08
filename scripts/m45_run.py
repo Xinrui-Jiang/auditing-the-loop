@@ -10,10 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from module_page import Panel, Section, render  # noqa: E402
 
-from loopauditor.cache import Cache  # noqa: E402
-from loopauditor.config import CACHE_DIR  # noqa: E402
-from loopauditor.loop import verify_take  # noqa: E402
-from loopauditor.schemas import Checklist, Take  # noqa: E402
+from auditloop.cache import Cache  # noqa: E402
+from auditloop.config import CACHE_DIR  # noqa: E402
+from auditloop.loop import verify_take  # noqa: E402
+from auditloop.schemas import Checklist, Take  # noqa: E402
 
 SHOTS = sys.argv[1:] or ["DB-38", "DB-16"]
 
@@ -60,7 +60,7 @@ def main() -> None:
                      *[Panel(f"blind description: {o.source}", o.text[:6000]) for o in descriptions],
                      Panel("all raw verdicts", json.dumps(raws, indent=1, ensure_ascii=False)[:40000])]))
     page = ROOT / "docs/pages/M4_M5.html"
-    page.write_text(render("LoopAuditor M4 + M5 — verifier panel and labels", "Pilot takes, M1 checklists; panel never sees any history.", sections))
+    page.write_text(render("Auditing the Loop M4 + M5 — verifier panel and labels", "Pilot takes, M1 checklists; panel never sees any history.", sections))
     print("wrote", page)
 
 

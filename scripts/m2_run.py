@@ -9,9 +9,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from module_page import Panel, Section, render  # noqa: E402
 
-from loopauditor.config import ASPECT_RATIO, DEFAULT_BACKEND, DURATION_S, GENERATION_BACKENDS, PROMPT_SET_30, RESOLUTION  # noqa: E402
-from loopauditor.generate import generate  # noqa: E402
-from loopauditor.tools import ffprobe  # noqa: E402
+from auditloop.config import ASPECT_RATIO, DEFAULT_BACKEND, DURATION_S, GENERATION_BACKENDS, PROMPT_SET_30, RESOLUTION  # noqa: E402
+from auditloop.generate import generate  # noqa: E402
+from auditloop.tools import ffprobe  # noqa: E402
 
 SHOT = sys.argv[1] if len(sys.argv) > 1 else "DB-38"
 
@@ -26,7 +26,7 @@ def main() -> None:
     request = {"model": GENERATION_BACKENDS[DEFAULT_BACKEND].model, "duration": DURATION_S, "resolution": RESOLUTION,
                "aspect_ratio": ASPECT_RATIO, "generate_audio": True, "prompt": row["prompt"]}
     page = ROOT / "docs/pages/M2.html"
-    page.write_text(render("LoopAuditor M2 — generation backend", f"One take for {SHOT} with {DEFAULT_BACKEND}.",
+    page.write_text(render("Auditing the Loop M2 — generation backend", f"One take for {SHOT} with {DEFAULT_BACKEND}.",
                            [Section(f"{SHOT}, round 0", f"Latency {take.latency_s} s, cost ${take.cost_usd:.4f}. File: {Path(take.path).relative_to(ROOT)}",
                                     inputs=[Panel("request", json.dumps(request, indent=2, ensure_ascii=False))],
                                     outputs=[Panel("Take", take.model_dump_json(indent=2)), Panel("ffprobe", info.model_dump_json(indent=2))])]))

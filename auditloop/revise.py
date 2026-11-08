@@ -12,7 +12,7 @@ from .trajectory import TrajectoryStore
 
 MAX_ATTEMPTS = 2
 
-SYSTEM_REVISE = """You are the Analyser of LoopAuditor, a loop that generates a short-drama shot, verifies the take
+SYSTEM_REVISE = """You are the Analyser of Auditing the Loop, a loop that generates a short-drama shot, verifies the take
 against a checklist, and generates again. You receive the checklist, the script spans, and the full trajectory so
 far: for every round its prompt, which earlier round it branched from, your reasoning at the time, and the feedback
 sheet (per item: status, severity, uncertainty state, fixability, evidence). Decide where to continue from and how to
@@ -26,7 +26,7 @@ Rules:
 3. Prefer changes aimed at the blocking items. Note what passed so far and protect it.
 Return JSON only: {"branch_from": <round index>, "revised_prompt": "<full prompt>", "rationale": "<why this round, why these changes>", "targets": ["<item ids you aim to fix>"]}"""
 
-SYSTEM_BEST = """You are the Analyser of LoopAuditor. The loop has reached its round cap without passing. Read the
+SYSTEM_BEST = """You are the Analyser of Auditing the Loop. The loop has reached its round cap without passing. Read the
 trajectory and name the round whose take is the best one to hand to a human, with a short reason.
 Return JSON only: {"best_round": <round index>, "reason": "<one or two sentences>"}"""
 

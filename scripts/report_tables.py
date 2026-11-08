@@ -6,7 +6,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from loopauditor.schemas import Checklist, FeedbackSheet, Trajectory
+from auditloop.schemas import Checklist, FeedbackSheet, Trajectory
 
 ROOT = Path(__file__).resolve().parents[1]
 LOOP = ROOT / "runs/loop"

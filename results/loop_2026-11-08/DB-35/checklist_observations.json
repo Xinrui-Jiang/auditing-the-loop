@@ -5,6 +5,6 @@
   "request_id": "gen-1794110330-B8aOg5tngVinyxQb8QQa",
   "cost_usd": 0.0,
   "text": "{\"actions\":[{\"span\":\"HE XI runs beside her HUSBAND as he pushes a hospital bed.\",\"check\":\"HE XI must be seen running beside HUSBAND while HUSBAND pushes the hospital bed.\"},{\"span\":\"ZHAO WANRU, 25, writhes in advanced labor.\",\"check\":\"ZHAO WANRU must be seen writhing on the bed as a 25-year-old in advanced labor.\"}],\"elements\":[{\"span\":\"INT. VILLAGE HOSPITAL - NIGHT\",\"kind\":\"setting\",\"check\":\"The scene must visibly be set inside a village hospital at night.\"},{\"span\":\"hospital bed\",\"kind\":\"prop\",\"check\":\"A hospital bed must be visible and be pushed by HUSBAND.\"},{\"span\":\"Rain lashes a dark window.\",\"kind\":\"sound\",\"check\":\"Rain must be heard while a dark window is visible.\"}],\"other_people\":[\"HUSBAND\",\"ZHAO WANRU\"],\"premise\":[{\"fact\":\"The shot takes place in a village hospital at night.\",\"span\":\"INT. VILLAGE HOSPITAL - NIGHT\"}],\"transition_scripted\":false,\"physics_involved\":true}",
-  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/d55ee2b7a59a1fd84697dccfc1deee47cd6c357fa6b96168b5fd77dec03a4380.json"
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/auditloop/runs/_cache/d55ee2b7a59a1fd84697dccfc1deee47cd6c357fa6b96168b5fd77dec03a4380.json"
  }
 ]

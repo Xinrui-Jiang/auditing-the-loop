@@ -9,7 +9,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-from loopauditor.schemas import FeedbackSheet, Trajectory  # noqa: E402
+from auditloop.schemas import FeedbackSheet, Trajectory  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs/figures"
@@ -160,9 +160,9 @@ def main() -> None:
     fig_loop()
     names = sorted(p.name for p in OUT.glob("*.png"))
     cards = "".join(f"<figure><img src='{n}' alt='{n}'><figcaption>{n}</figcaption></figure>" for n in names)
-    (OUT / "index.html").write_text("<!doctype html><meta charset='utf-8'><title>LoopAuditor figures</title>"
+    (OUT / "index.html").write_text("<!doctype html><meta charset='utf-8'><title>Auditing the Loop figures</title>"
                                     "<style>body{font-family:system-ui;margin:24px;background:#fff;color:#111}figure{margin:0 0 28px}img{max-width:100%;border:1px solid #ddd}figcaption{color:#555;font-size:13px}</style>"
-                                    f"<h1>LoopAuditor figures</h1>{cards}")
+                                    f"<h1>Auditing the Loop figures</h1>{cards}")
     print("wrote", names)
 
 

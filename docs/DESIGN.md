@@ -1,6 +1,6 @@
-# LoopAuditor — design document
+# Auditing the Loop — design document
 
-**LoopAuditor: an agentic verification harness for video generation.**
+**Auditing the Loop: an agentic verification harness for video generation.**
 Date: 2026-11-07. Implementation plan: `PLAN.md`. Audience: the author, and a writing agent that turns this document plus experiment outputs into the midway report (3–4 pages, ICLR style; sections Research Questions, Environment & Data, Methods, Summary of Progress, References).
 
 Related files: the earlier design `../../avharness/docs/DESIGN_v2.md` (Chinese, 2026-10-21), the methods survey `../../avharness/docs/research/methods_to_build_on_2026-11-07.md`, the midway draft `../../midway/midway_report.tex` + `midway_references.bib` (25 verified entries), and the dimensions report `../../../reports/AI 视频评估维度全景.md` (111 evaluation dimensions, 52 benchmarks).
@@ -9,7 +9,7 @@ Related files: the earlier design `../../avharness/docs/DESIGN_v2.md` (Chinese, 
 
 ## 1. Summary
 
-LoopAuditor runs between a video-generation model and delivery. The input is one prompt for one short-drama shot: one speaking character, one spoken line, one or two actions, sometimes a sound effect, an acting cue, and whatever other characters the script places in the scene. The system generates a take, checks it against a checklist written from the prompt, labels every problem with three labels (severity, uncertainty state, fixability), revises the prompt, and generates again. It keeps the full trajectory of rounds, so the revision step can go back to an earlier round and branch from there. It stops when the stop rule says that no blocking problem remains, or when the round cap is reached; then it hands the best take and the trajectory to a human. No human is needed inside the loop.
+Auditing the Loop runs between a video-generation model and delivery. The input is one prompt for one short-drama shot: one speaking character, one spoken line, one or two actions, sometimes a sound effect, an acting cue, and whatever other characters the script places in the scene. The system generates a take, checks it against a checklist written from the prompt, labels every problem with three labels (severity, uncertainty state, fixability), revises the prompt, and generates again. It keeps the full trajectory of rounds, so the revision step can go back to an earlier round and branch from there. It stops when the stop rule says that no blocking problem remains, or when the round cap is reached; then it hands the best take and the trajectory to a human. No human is needed inside the loop.
 
 We chose short drama because it is the video-generation use case with a working business model, and because its shots have explicit requirements (line, action, emotion) that can be checked.
 
@@ -24,10 +24,10 @@ We chose short drama because it is the video-generation use case with a working 
 
 | Work | What it does | Difference |
 |---|---|---|
-| VISTA (Long et al. 2025, arXiv 2510.15831) | test-time self-improving video generation agent; no public code | LoopAuditor keeps a persistent trajectory with branching, three labels per problem, and a rule-based stop rule |
-| DramaAgent (Huang et al. 2026, arXiv 2610.00097) | agentic storytelling video generation; candidates = 3, repair rounds = 2, frames-only judge | LoopAuditor hears the audio track, checks dialogue with ASR, and separates verification from planning |
-| VideoArgus (Zeng et al. 2026, arXiv 2608.05485) | agentic rubric-grounded evaluation of generated video | LoopAuditor closes the loop and labels fixability |
-| AVGen-Bench (Zhou et al., ICML 2026) | task-driven audio-video benchmark with Whisper / SyncNet tools | tools reused as evidence; LoopAuditor is per-shot acceptance, not a benchmark |
+| VISTA (Long et al. 2025, arXiv 2510.15831) | test-time self-improving video generation agent; no public code | Auditing the Loop keeps a persistent trajectory with branching, three labels per problem, and a rule-based stop rule |
+| DramaAgent (Huang et al. 2026, arXiv 2610.00097) | agentic storytelling video generation; candidates = 3, repair rounds = 2, frames-only judge | Auditing the Loop hears the audio track, checks dialogue with ASR, and separates verification from planning |
+| VideoArgus (Zeng et al. 2026, arXiv 2608.05485) | agentic rubric-grounded evaluation of generated video | Auditing the Loop closes the loop and labels fixability |
+| AVGen-Bench (Zhou et al., ICML 2026) | task-driven audio-video benchmark with Whisper / SyncNet tools | tools reused as evidence; Auditing the Loop is per-shot acceptance, not a benchmark |
 | DSG / TIFA / ETVA (Cho 2024; Hu 2023; Guan 2025) | decompose a prompt into atomic questions | the checklist is the same idea, with MUST / MUST NOT / PREMISE parts and fixed per instance |
 | Trust-or-Escalate, SCOPE, Judge-Retrieve-or-Abstain (Jung 2024; Badshah 2026) | selective LLM judging with abstention | the uncertainty state is operational (confident / uncertain / not observable), computed from order swap, a second model family and tool agreement |
 | Replacing Judges with Juries (Verga et al. 2024) | panel of diverse models | the second model family is one of the agreement signals |
@@ -122,7 +122,7 @@ Base: the author's sketch of 2026-11-07. It has, left to right, input prompt →
 
 **Notation.** Two tones only: one for agents and models (Analyser, generator, panel), one for data objects (prompt, checklist, take, sheet, memory). Double border means "fixed during the loop" (checklist). Dashed means "exit at the cap" or "no data flow". Mark the round index k on the prompt, the take and the sheet, so the reader sees that one pass through the figure is one round. Keep box text to six words or fewer, except the Analyser.
 
-**Caption (suggested).** "LoopAuditor. The Analyser writes a checklist once, then the loop runs: generate take k, verify it against the checklist with three specialist verifiers and tools, record a feedback sheet with three labels per item, stop if no blocking item remains, otherwise the Analyser reads the whole trajectory, chooses the round to continue from, revises the prompt and generates again. At the round cap the best take and the trajectory are handed to a human."
+**Caption (suggested).** "Auditing the Loop. The Analyser writes a checklist once, then the loop runs: generate take k, verify it against the checklist with three specialist verifiers and tools, record a feedback sheet with three labels per item, stop if no blocking item remains, otherwise the Analyser reads the whole trajectory, chooses the round to continue from, revises the prompt and generates again. At the round cap the best take and the trajectory are handed to a human."
 
 Mermaid source as a starting point:
 
@@ -323,7 +323,7 @@ Costs: generation $0.19 per clip, verification $0.0071–0.0093 per clip.
 
 ## 10. Implementation (as built, 2026-11-07)
 
-Package `pj/loopauditor/loopauditor/`, about 1,400 lines, 38 offline tests. One module per component:
+Package `pj/auditing-the-loop/auditloop/`, about 1,400 lines, 38 offline tests. One module per component:
 
 | module | component | what it does |
 |---|---|---|
@@ -335,7 +335,7 @@ Package `pj/loopauditor/loopauditor/`, about 1,400 lines, 38 offline tests. One 
 | `labels.py` + `fixability_prior.yaml` | three labels | the tables of §5; the tool decides A1 and B6; C2 is decided by the mean of the reported face and voice intensity; fixability prior per check, revised by the trajectory |
 | `trajectory.py` | trajectory | one folder per shot: `checklist.json`, `trajectory.json`, `rounds/<k>/{take.mp4, generation.json, raw_verdicts.json, observations.json, sheet.json, next_plan.json}`; renders the whole history as text for the Analyser |
 | `revise.py` | Analyser, round k | reads checklist + rendered trajectory; returns branch_from, revised_prompt, rationale, targets; rules check only that the script spans survive and the branch point exists; `pick_best` for hand-off |
-| `loop.py`, `cli.py`, `report.py` | loop, stop rule, hand-off, report | `loopauditor run --shot DB-16`; resumes from disk; writes `report.md` per shot |
+| `loop.py`, `cli.py`, `report.py` | loop, stop rule, hand-off, report | `auditloop run --shot DB-16`; resumes from disk; writes `report.md` per shot |
 
 Measured on 2026-11-07: a take costs $0.57–0.59 and takes 130–310 s; verifying one take costs $0.02–0.03 with 19–25 model calls and takes 60–90 s with the calls in parallel; writing a checklist costs about $0.001. Inspection pages for each module are in `docs/pages/` (M0, M1, M2, M3, M4_M5, trajectories).
 
@@ -367,14 +367,14 @@ Metric definitions: `../../avharness/docs/DESIGN_v2.md` §7, to be restated in t
 
 | path | content |
 |---|---|
-| `pj/loopauditor/docs/PLAN.md` | implementation plan (Chinese) |
-| `pj/loopauditor/docs/DESIGN.md` | this document |
-| `pj/loopauditor/docs/pages/` | one inspection page per module (inputs and outputs on real data) |
-| `pj/loopauditor/data/prompts/prompt_set_v2.jsonl` (+ `_manifest.md`) | all framed candidates the 30 were selected from |
-| `pj/loopauditor/data/prompts/prompt_set_v2_30.jsonl` (+ `_30_manifest.md`, `_scores.csv`) | the 30-shot prompt set |
-| `pj/loopauditor/data/sources/{dramabench,seambench,filmbench}` | source data as downloaded, plus derived candidate files |
-| `pj/loopauditor/data/pilot_takes/<shot>/attempt1_seedance480.{mp4,json}` | 5 pilot clips with generation metadata |
-| `pj/loopauditor/scripts/` | `extract_dramabench_shots.py`, `build_prompt_set_v2.py`, `select_prompt_subset.py`, `gen_pilot5.py` |
+| `pj/auditing-the-loop/docs/PLAN.md` | implementation plan (Chinese) |
+| `pj/auditing-the-loop/docs/DESIGN.md` | this document |
+| `pj/auditing-the-loop/docs/pages/` | one inspection page per module (inputs and outputs on real data) |
+| `pj/auditing-the-loop/data/prompts/prompt_set_v2.jsonl` (+ `_manifest.md`) | all framed candidates the 30 were selected from |
+| `pj/auditing-the-loop/data/prompts/prompt_set_v2_30.jsonl` (+ `_30_manifest.md`, `_scores.csv`) | the 30-shot prompt set |
+| `pj/auditing-the-loop/data/sources/{dramabench,seambench,filmbench}` | source data as downloaded, plus derived candidate files |
+| `pj/auditing-the-loop/data/pilot_takes/<shot>/attempt1_seedance480.{mp4,json}` | 5 pilot clips with generation metadata |
+| `pj/auditing-the-loop/scripts/` | `extract_dramabench_shots.py`, `build_prompt_set_v2.py`, `select_prompt_subset.py`, `gen_pilot5.py` |
 | `pj/avharness/` | prototype package, tests, runs (pilot reports), gallery and prompt browser pages, DESIGN_v1/v2, research notes |
 | `pj/midway/midway_report.tex`, `midway_references.bib` | midway report draft and bibliography |
 | `reports/`, `research_notes/` (project root) | research reports (Physion Labs, evaluation dimensions, platform scripts) |

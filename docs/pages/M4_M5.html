@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>LoopAuditor M4 + M5 — verifier panel and labels</title><style>
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Auditing the Loop M4 + M5 — verifier panel and labels</title><style>
 :root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
 @media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
 body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
@@ -12,7 +12,7 @@ h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top
 .panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
 .in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
 pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
-</style></head><body><main><h1>LoopAuditor M4 + M5 — verifier panel and labels</h1><p class='sub'>Pilot takes, M1 checklists; panel never sees any history.</p><h2>DB-38: panel + labels in 221 s, 19 model/tool calls, $0.0232</h2><p class='note'>Left: the take and the checklist the panel received (never the trajectory). Right: the feedback sheet after aggregation and re-inspects, then the blind descriptions and the raw verdicts per source.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/data/pilot_takes/DB-38/attempt1_seedance480.mp4
+</style></head><body><main><h1>Auditing the Loop M4 + M5 — verifier panel and labels</h1><p class='sub'>Pilot takes, M1 checklists; panel never sees any history.</p><h2>DB-38: panel + labels in 221 s, 19 model/tool calls, $0.0232</h2><p class='note'>Left: the take and the checklist the panel received (never the trajectory). Right: the feedback sheet after aggregation and re-inspects, then the blind descriptions and the raw verdicts per source.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/auditloop/data/pilot_takes/DB-38/attempt1_seedance480.mp4
 sha256 c5efb85c45d57b6b2929344353f93a3abee4fdfdf61bc40d9cbb49ca74b033ac</pre></div><div class="panel"><div class="label">checklist items</div><pre>A1.1 [must, critical] The line &quot;Grandma, they found me.&quot; is spoken in English, complete and verbatim.
 A2.1 [must, critical] The phone call visibly ends before the remaining actions occur.
 A2.2 [must, critical] Haitong&#x27;s portfolio is seen slipping from her grasp.
@@ -1359,7 +1359,7 @@ verification cost $0.0232</pre></div><div class="panel"><div class="label">raw v
   &quot;face_intensity&quot;: null,
   &quot;voice_intensity&quot;: null
  }
-]</pre></div></div></div><h2>DB-16: panel + labels in 188 s, 19 model/tool calls, $0.0215</h2><p class='note'>Left: the take and the checklist the panel received (never the trajectory). Right: the feedback sheet after aggregation and re-inspects, then the blind descriptions and the raw verdicts per source.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/data/pilot_takes/DB-16/attempt1_seedance480.mp4
+]</pre></div></div></div><h2>DB-16: panel + labels in 188 s, 19 model/tool calls, $0.0215</h2><p class='note'>Left: the take and the checklist the panel received (never the trajectory). Right: the feedback sheet after aggregation and re-inspects, then the blind descriptions and the raw verdicts per source.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/auditloop/data/pilot_takes/DB-16/attempt1_seedance480.mp4
 sha256 9bd545020961cdf25ec0801720eef4c2ccd31227fde76efcabc117d14e4022c8</pre></div><div class="panel"><div class="label">checklist items</div><pre>A1.1 [must, critical] The line &quot;He won&#x27;t help us. Not after what I did.&quot; is spoken in English, complete and verbatim.
 A2.1 [must, critical] XU ZHIYI must be visibly staring at the door.
 A2.2 [must, critical] A brief memory of falling snow, a different door, and a different betrayal must be conveyed across XU ZHIYI&#x27;s face.

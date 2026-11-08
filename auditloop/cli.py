@@ -10,7 +10,7 @@ from .analyser import write_checklist
 from .config import MAX_ROUNDS, PROMPT_SET_30, RUNS
 from .loop import run_shot
 
-app = typer.Typer(add_completion=False, help="LoopAuditor: an agentic verification harness for video generation.")
+app = typer.Typer(add_completion=False, help="Auditing the Loop: an agentic verification harness for video generation.")
 
 
 def _rows(prompt_set: Path) -> dict[str, dict]:
@@ -18,10 +18,12 @@ def _rows(prompt_set: Path) -> dict[str, dict]:
 
 
 @app.command()
-def run(shot: list[str] = typer.Option(..., help="shot ids, e.g. DB-16"), max_rounds: int = MAX_ROUNDS,
-        out: Path = RUNS / "loop", prompt_set: Path = PROMPT_SET_30) -> None:
+def run(shot: list[str] = typer.Option([], help="shot ids, e.g. DB-16; omit with --all"), all: bool = typer.Option(False, "--all", help="run every shot of the prompt set"),
+        max_rounds: int = MAX_ROUNDS, out: Path = RUNS / "loop", prompt_set: Path = PROMPT_SET_30) -> None:
     rows = _rows(prompt_set)
-    for sid in shot:
+    if not shot and not all:
+        raise typer.BadParameter("give --shot <id> one or more times, or --all")
+    for sid in (list(rows) if all else shot):
         trajectory = run_shot(rows[sid], out, max_rounds=max_rounds)
         typer.echo(f"{sid}: {trajectory.status} at round {trajectory.output_round}; rounds {len(trajectory.rounds)}; "
                    f"cost ${sum(r.cost_usd for r in trajectory.rounds):.2f}")

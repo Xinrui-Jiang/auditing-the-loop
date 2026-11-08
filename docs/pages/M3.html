@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>LoopAuditor M3 — evidence tools</title><style>
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Auditing the Loop M3 — evidence tools</title><style>
 :root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
 @media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
 body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
@@ -12,7 +12,7 @@ h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top
 .panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
 .in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
 pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
-</style></head><body><main><h1>LoopAuditor M3 — evidence tools</h1><p class='sub'>Five pilot takes; deterministic tools only.</p><h2>DB-38 — 3 tool verdicts in 19.4 s</h2><p class='note'>Tools answer only the items they cover: B6 from ffprobe, B4 from ffmpeg scene and freeze detection, A1 from whisper (language + WER).</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>data/pilot_takes/DB-38/attempt1_seedance480.mp4</pre></div><div class="panel"><div class="label">checklist items the tools cover</div><pre>B6.1 [info] 8 s, 9:16, 480p, audio track present.
+</style></head><body><main><h1>Auditing the Loop M3 — evidence tools</h1><p class='sub'>Five pilot takes; deterministic tools only.</p><h2>DB-38 — 3 tool verdicts in 19.4 s</h2><p class='note'>Tools answer only the items they cover: B6 from ffprobe, B4 from ffmpeg scene and freeze detection, A1 from whisper (language + WER).</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>data/pilot_takes/DB-38/attempt1_seedance480.mp4</pre></div><div class="panel"><div class="label">checklist items the tools cover</div><pre>B6.1 [info] 8 s, 9:16, 480p, audio track present.
 B4.1 [major] No unintended cut, freeze, jump or loop.
 A1.1 [critical] The line &quot;Grandma, they found me.&quot; is spoken in English, complete and verbatim.
       expected line: &#x27;Grandma, they found me.&#x27;, language en</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">RawVerdicts</div><pre>[
