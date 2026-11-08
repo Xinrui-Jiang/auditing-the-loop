@@ -33,7 +33,7 @@ ARIAL = "/System/Library/Fonts/Supplemental/Arial.ttf"
 
 # ---- content -------------------------------------------------------------
 ROWS = [
-    {"round": 0, "label": "Round 0", "times": [0.0, 1.0, 1.5, 2.5, 4.5, 7.0]},
+    {"round": 0, "label": "Round 0", "times": [0.0, 1.0, 2.0, 3.5, 5.5, 7.0]},
     {"round": 2, "label": "Round 2, final", "times": [0.0, 1.0, 2.5, 4.5, 5.5, 7.5]},
 ]
 STEP = 0.5          # extraction step in seconds
@@ -41,15 +41,16 @@ CLIP_LEN = 8.0
 
 # ---- geometry, inches ----------------------------------------------------
 W = 7.0
-GAP = 0.03          # white gap between frames
+MARGIN = 0.12       # side margin so the outer frames do not touch the page edge
+GAP = 0.04          # white gap between frames
 N = 6
-FRAME_W = (W - (N - 1) * GAP) / N
+FRAME_W = (W - 2 * MARGIN - (N - 1) * GAP) / N
 FRAME_H = FRAME_W * 864 / 496
-LABEL_H = 0.19      # row label band
-STAMP_H = 0.13      # time stamps under the frames
+LABEL_H = 0.24      # row label band
+STAMP_H = 0.15      # time stamps under the frames
 TEXT_PAD = 0.03     # gap between stamps and prompt text
 ROW_GAP = 0.17      # gap between the two rows
-INSET = 0.012       # left/right inset of the prompt text
+INSET = MARGIN      # the prompt text aligns with the frames
 TOP = 0.01
 BOTTOM = 0.03
 
@@ -59,9 +60,9 @@ MID = "#666666"
 LIGHT = "#7a7a7a"
 GREEN = "#1b7f3b"
 RED = "#b3261e"
-PT_LABEL = 8.5
-PT_TEXT = 7.0
-PT_STAMP = 6.5
+PT_LABEL = 10.0
+PT_TEXT = 7.5
+PT_STAMP = 7.0
 LEADING = 1.2       # line height as a multiple of the font size
 PARA_GAP = 0.45     # blank-line gap as a multiple of the line height
 
@@ -288,8 +289,7 @@ def main() -> None:
         fig.text(INSET / W, 1 - (y + LABEL_H * 0.72) / H, row["label"],
                  fontsize=PT_LABEL, color=DARK, ha="left", va="baseline")
         if rk == 2:
-            legend = [("prompt text:", "gray"), ("unchanged", "same"),
-                      ("added in round 2", "added"), ("removed from round 0", "removed")]
+            legend = [("added", "added"), ("removed", "removed")]
             sep = text_width_in("   ", PT_TEXT)
             widths = [text_width_in(t, PT_TEXT) for t, _ in legend]
             x = W - INSET - sum(widths) - sep * (len(legend) - 1)
@@ -305,7 +305,7 @@ def main() -> None:
         y += LABEL_H
         # frames and time stamps
         for i, t in enumerate(row["times"]):
-            x = i * (FRAME_W + GAP)
+            x = MARGIN + i * (FRAME_W + GAP)
             add_image(fig, H, x, y, FRAME_W, FRAME_H, frame_path(rk, t))
             fig.text((x + FRAME_W / 2) / W, 1 - (y + FRAME_H + STAMP_H * 0.78) / H,
                      f"{t:.1f} s", fontsize=PT_STAMP, color=LIGHT,
