@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from . import panel, tools
@@ -20,25 +19,14 @@ SHORT_SIDE = {"480p": 480, "720p": 720}
 
 
 def verify_take(take: Take, checklist: Checklist, previous: dict[str, list[Status]], round_dir: Path, cache: Cache) -> tuple[FeedbackSheet, list[Observation]]:
-    """Panel + tools -> labels; then one re-inspect for every uncertain item that matters, and labels again."""
+    """Panel + tools -> labels."""
     video = Path(take.path)
     raws, observations = panel.verify(video, checklist, cache)
     tool_raws, tool_obs = tools.tool_verdicts(video, checklist, take.duration_s, SHORT_SIDE[take.resolution])
     raws += tool_raws
     observations += tool_obs
-    sheet = feedback_sheet(checklist, raws, previous, take.round, take.sha256, 0.0)
-    unsure = [v for v in sheet.verdicts if v.uncertainty_state == "uncertain" and v.severity != "info"]
-
-    def look_again(v):
-        spans = [r.span for r in raws if r.item_id == v.item_id and r.span]
-        return panel.reinspect(video, checklist.item(v.item_id), spans[0] if spans else None, round_dir, cache)
-
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        for rv, obs in pool.map(look_again, unsure):
-            raws.append(rv)
-            observations += obs
-    cost = sum(o.cost_usd for o in observations)
-    sheet = feedback_sheet(checklist, raws, previous, take.round, take.sha256, round(cost, 6))
+    cost = round(sum(o.cost_usd for o in observations), 6)
+    sheet = feedback_sheet(checklist, raws, previous, take.round, take.sha256, cost)
     (round_dir / "raw_verdicts.json").write_text(json.dumps([r.model_dump() for r in raws], indent=1))
     (round_dir / "observations.json").write_text(json.dumps([o.model_dump() for o in observations], indent=1))
     (round_dir / "sheet.json").write_text(sheet.model_dump_json(indent=2))

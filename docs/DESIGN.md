@@ -45,11 +45,11 @@ Full survey with 25 candidates: `../../avharness/docs/research/methods_to_build_
 
 | Component | Role | Model / tool |
 |---|---|---|
-| **Analyser** | round 0: writes the checklist from the prompt; round k ≥ 1: reads the whole trajectory, decides which round to branch from and how to revise the prompt | text LLM: openai/gpt-5.6-luna (swappable; chosen on 2026-11-07 because it copies script spans exactly and lists actions fully) |
+| **Analyser** | round 0: writes the checklist from the prompt; round k ≥ 1: reads the whole trajectory, decides which round to branch from and how to revise the prompt | google/gemini-4-argon, text only |
 | **Checklist** | the items to check for this instance: MUST (explicit requirements), MUST NOT (negatives: the cast the script defines, no unscripted events, no subtitles), PREMISE (facts implied by the script); each item maps to one check id (§4) with a priority and an evidence type; fixed for the whole loop | — |
 | **Video generation model** | produces take k from prompt k | bytedance/seedance-2.0 (OpenRouter), 480p, 9:16, 8 s, audio on |
-| **Verifier panel** | three specialist verifiers (A script fidelity, B rendering integrity, C dramatic performance); each sees the take, its part of the checklist, and a shared blind description; runs twice with item order swapped on the primary model and once on a second model family; re-inspects uncertain items once | google/gemini-3.5-flash-lite (primary, hears audio), qwen/qwen3.8-omni-flash (second family) |
-| **Evidence tools** | independent evidence next to the models: ASR (transcript, language, WER), ffprobe (duration, resolution, audio track), frame-difference cut/freeze detector, optional face-embedding drift | mlx-whisper on the Mac; ffmpeg/ffprobe; numpy frame differencing |
+| **Verifier panel** | three specialist verifiers, one per family (A script fidelity, B rendering integrity, C dramatic performance); each is one call with the take and that family's checklist items; the three calls run in parallel | google/gemini-4-argon, which hears the audio track; OpenRouter samples the video at 1 frame per second |
+| **Evidence tools** | independent evidence next to the model: ASR (transcript, language, WER), ffprobe (duration, resolution, audio track), ffmpeg scene and freeze detection | mlx-whisper on the Mac; ffmpeg/ffprobe |
 | **Feedback sheet** | per round: one row per checklist item with status, three labels, evidence time span, cost; plus the round index | rules only |
 | **Trajectory** | per shot: every round's prompt, feedback sheet, which round it branched from, the Analyser's rationale; stored as JSON | — |
 | **Stop rule** | release if no item is blocking (§3.3); otherwise continue; at the round cap, hand off | rules only |
@@ -188,16 +188,17 @@ Mapping to the earlier dimension list: A1–A6, B2–B5, C1–C3 are the 14 core
 
 ## 5. The three labels
 
-**Uncertainty state** (never a model-reported probability). Signals: order_swap_agree, second_family_agree, tool_agree, visibility.
+**Uncertainty state** (never a model-reported probability). Signals: the verifier's observability judgement for the item (seen clearly, partly seen, not observable) and, where a tool covers the item, whether the tool agrees.
 
 | condition | state |
 |---|---|
-| most runs say not observable | not_observable |
-| tool evidence exists and agrees with the model majority | confident |
-| no tool evidence, but order swap agrees and the second family agrees | confident |
-| otherwise | uncertain |
+| the verifier says the clip cannot show the item | not_observable |
+| a tool covers the item and agrees with the verifier | confident |
+| a tool covers the item and disagrees | uncertain |
+| no tool; the verifier saw the moment clearly and gave a definite answer | confident |
+| no tool; partly seen, or the verifier itself says uncertain | uncertain |
 
-An uncertain item gets one re-inspect (frames at 4 fps and the audio of the cited interval, one question). If the re-inspect agrees with the majority, the item becomes confident; otherwise it stays uncertain.
+Running each family twice with the item order swapped, or adding a second model family, would add agreement signals to this table; both were dropped on 2026-11-08 to keep the panel to three calls per take.
 
 **Severity**
 
@@ -216,13 +217,12 @@ An uncertain item gets one re-inspect (frames at 4 fps and the audio of the cite
 
 ## 6. Verifier panel details
 
-1. **Blind description** (shared, cached): each model family describes everything it sees and hears, with timestamps, without seeing the checklist. This addresses the priming failure found on 2026-11-07: three judge runs with the checklist in the same prompt all passed "she closes the door" although the door stayed open.
-2. **Specialists**: A, B and C each receive the take, their part of the checklist and the blind description. For each item they return status (pass / fail / uncertain / not_applicable), visibility (seen_clearly / partially_seen / not_observable) and an evidence time span. C also returns face and voice intensity on a 0–4 scale.
-3. **Runs**: primary model twice with the item order reversed; second family once. A-family facts are also checked by a text model against the blind description.
-4. **Re-inspect**: one targeted call per uncertain item on the cited interval.
-5. **Cost target**: ≤ $0.05 per take (2 blind + 9 specialist + ≤ 3 re-inspect calls at Flash-lite prices; the prototype measured $0.007–0.009 per clip for 3 calls).
+1. **Three specialist calls** per take, one per family, to google/gemini-4-argon with the take (video and audio) and that family's items. Each call is told to watch and listen to the whole clip first, then answer every item with status (pass / fail / uncertain / not_applicable), visibility (seen_clearly / partially_seen / not_observable), one sentence of evidence with a time stamp, a time span, and for C items face and voice intensity on a 0–4 scale. The A brief states that an absent event is a fail, not uncertain, and that a named object must be that object (a clipboard is not a portfolio).
+2. **Tools** answer A1 (whisper: language and word error rate), B4 (ffmpeg scene and freeze detection) and B6 (ffprobe). For A1 and B6 the tool's answer is the status; the verifier's answer only sets the uncertainty state.
+3. **Parsing is strict**: a missing or malformed item triggers one retry with the error quoted, then the round fails loudly.
+4. **Cost**: about $0.01 per take for the three calls (an 8 s clip is about 900 prompt tokens).
 
-Tools are added only when (a) most checklists contain the check, (b) the model was wrong on it in the pilot, and (c) it runs on the Mac's CPU in under 60 s. SyncNet is deferred.
+Earlier versions used two blind descriptions, a second model family, order-swapped runs, text entailment and re-inspects (19 calls per take). They were removed on 2026-11-08 because the design had not been agreed and the extra calls were hard to reason about; the agreement-based uncertainty signals they provided are listed in §5 as an option.
 
 ---
 
@@ -232,9 +232,9 @@ Tools are added only when (a) most checklists contain the check, (b) the model w
 
 | Source | What it is | Licence | Peer review | Used |
 |---|---|---|---|---|
-| DramaBench (HF FutureMa/DramaBench; Ma, Huang, Lin, arXiv 2512.19012) | 1,103 English Fountain-format short-drama scripts (1,041 parsed locally) with dialogue, parentheticals, action lines | MIT on HF; the paper says the scripts come from an unpublished "english_short_drama_scripts_dataset" whose licence is not named | arXiv only; a companion ICLR 2026 ICBINB workshop poster | 69 of 90 shots |
-| SEAM-Bench (HF Jackyqq/SEAM-Bench; Liu et al., arXiv 2608.22725) | one vertical drama "His Toyboy: The Billionaire's Trap", 23 English episode scripts + human-director storyboards (景别 / 拍摄角度 / 运镜) | CC BY-NC 4.0 | preprint | 7 of 90 shots; episodes 1, 2, 7, 8, 9 excluded (coercive sexual scenes) |
-| FilmBench (HF skylenage/FilmBench; Wang et al., arXiv 2607.24241) | film-grade T2V prompts reverse-engineered from film clips; 1,869 one-quote segments extracted locally | Apache-2.0 | arXiv only | 14 of 90 shots |
+| DramaBench (HF FutureMa/DramaBench; Ma, Huang, Lin, arXiv 2512.19012) | 1,103 English Fountain-format short-drama scripts (1,041 parsed locally) with dialogue, parentheticals, action lines | MIT on HF; the paper says the scripts come from an unpublished "english_short_drama_scripts_dataset" whose licence is not named | arXiv only; a companion ICLR 2026 ICBINB workshop poster | 22 of 30 shots |
+| SEAM-Bench (HF Jackyqq/SEAM-Bench; Liu et al., arXiv 2608.22725) | one vertical drama "His Toyboy: The Billionaire's Trap", 23 English episode scripts + human-director storyboards (景别 / 拍摄角度 / 运镜) | CC BY-NC 4.0 | preprint | 3 of 30 shots; episodes 1, 2, 7, 8, 9 excluded (coercive sexual scenes) |
+| FilmBench (HF skylenage/FilmBench; Wang et al., arXiv 2607.24241) | film-grade T2V prompts reverse-engineered from film clips; 1,869 one-quote segments extracted locally | Apache-2.0 | arXiv only | 5 of 30 shots |
 
 Caveats for the report: none of the three sources is peer-reviewed as of 2026-11-07; DramaBench scripts carry pinyin names and episode numbers and are likely English renderings of Chinese short dramas; upstream rights are unverifiable; FilmBench lines may be translated film dialogue. Licences and copyright are not treated as a blocker for research use (author decision, 2026-11-03).
 
@@ -260,38 +260,27 @@ Body (DramaBench / SEAM): `{setting}. {first-appearance description}. {preceding
 FOOTER: `Live-action short-drama look. Audio on; the line is spoken on camera.`
 Glue is a closed whitelist (`says`, `: "`, `Sound: `, punctuation). Lines are not paraphrased; character names are kept verbatim; there is no intensity rewriting. A validator checks that every source span is a substring of its source file and that the prompt with spans removed tokenises into whitelist strings only. `prompt_raw` holds the source spans alone (no header, footer or glue) for an ablation of the technical frame.
 
-Per-row fields: shot_id, prompt, prompt_raw, line, speaker_cue, parenthetical, emotion_class, emotion_cue, native_intensity_bin, intensity_cue, target_intensity_interval (0–4 scale: calm [0,1], strong [2,3], exaggerated [3,4]), sfx_cue, shot_scale, camera, trope_category, speaker_gender, setting families, source_dataset / source_id / source_file / source_license / source_url / source_excerpt, negative_prompt (`background music, subtitles, on-screen text`), aspect_ratio 9:16, duration_s 8, prompt_sha256. Build seed 20261103; validation "90 shots, 0 violations".
+Per-row fields: shot_id, prompt, prompt_raw, line, speaker_cue, parenthetical, emotion_class, emotion_cue, native_intensity_bin, intensity_cue, target_intensity_interval (0–4 scale: calm [0,1], strong [2,3], exaggerated [3,4]), sfx_cue, shot_scale, camera, trope_category, speaker_gender, setting families, source_dataset / source_id / source_file / source_license / source_url / source_excerpt, negative_prompt (`background music, subtitles, on-screen text`), aspect_ratio 9:16, duration_s 8, prompt_sha256. Build seed 20261103; validation: every source span is a substring of its source file, 0 violations.
 
-### 7.5 Composition of prompt_set_v2 (90 shots)
+### 7.5 The prompt set: 30 shots
+
+`scripts/build_prompt_set_v2.py` turns the eligible candidates into framed prompts; `scripts/select_prompt_subset.py` then picks the 30 shots used in all experiments, deterministically: score per shot = 0.30 checkability + 0.25 feasibility + 0.20 ASR-friendliness + 0.15 cue clarity + 0.10 length, with quotas on source, intensity bin, sound cues, speaker gender and emotion class, and at most one shot per source script.
 
 | source | calm | strong | exaggerated | total |
 |---|---|---|---|---|
-| DramaBench | 32 | 27 | 10 | 69 |
-| SEAM-Bench | 4 | 2 | 1 | 7 |
-| FilmBench | 8 | 6 | 0 | 14 |
-| total | 44 | 35 | 11 | 90 |
+| DramaBench | 10 | 8 | 4 | 22 |
+| SEAM-Bench | 1 | 2 | 0 | 3 |
+| FilmBench | 3 | 2 | 0 | 5 |
+| total | 14 | 12 | 4 | 30 |
 
-| bin \ emotion | anger | sadness | fear | surprise | happiness | contempt | total |
-|---|---|---|---|---|---|---|---|
-| calm | 5 | 8 | 7 | 6 | 8 | 10 | 44 |
-| strong | 7 | 5 | 8 | 6 | 6 | 3 | 35 |
-| exaggerated | 0 | 2 | 0 | 1 | 5 | 3 | 11 |
-| total | 12 | 15 | 15 | 13 | 19 | 16 | 90 |
+Emotion classes: fear 6, happiness 6, sadness 6, surprise 5, anger 4, contempt 3. Sound cue: 14 of 30. Speaker gender: 18 female, 12 male. Scores and the per-shot components are in `data/prompts/prompt_set_v2_scores.csv`; the selection report is `data/prompts/prompt_set_v2_30_manifest.md`.
 
-Sound-effect cue: 32 yes / 58 no. Speaker gender: 42 female / 47 male / 1 unknown. Line length: 39 shots of 3–5 words, 25 of 6–8, 26 of 9–12. Prompt length 49–120 words, median 71. Intensity cue source: parenthetical 68, action line 22. Trope categories (DramaBench): Social Realism 16, Underdog Comeback 13, Suspense & Thriller 10, Time Travel & Rebirth 9, Ancient Court Intrigue 7, Corporate & Business War 6, Sweet Romance 6; FilmBench genres 14; SEAM "vertical drama" 7. Shot scale: medium close-up 77 of 90; camera: static, eye level 73 of 90.
-
-### 7.6 The 30-shot working subset (prompt_set_v2_30)
-
-Selected by `scripts/select_prompt_subset.py`, deterministic. Score per shot = 0.30 checkability + 0.25 feasibility + 0.20 ASR-friendliness + 0.15 cue clarity + 0.10 length. Quotas: DramaBench 20–22, SEAM-Bench 3–4, FilmBench 5–6; calm 12–13, strong 12–13, exaggerated 4–5; SFX 13–16; female 12–18; at least 3 per emotion; at most 2 per fine setting family and 3 per coarse family; one shot per source script / episode / uid. Greedy by score, then minimum-fill repair.
-
-Result: DramaBench 22 / SEAM-Bench 3 / FilmBench 5; calm 14 / strong 12 / exaggerated 4; emotions fear 6, happiness 6, sadness 6, surprise 5, anger 4, contempt 3; SFX 14; female 18 / male 12. Scores for all 90 are in `data/prompts/prompt_set_v2_scores.csv`.
-
-Figures (`docs/figures/`, made by `scripts/figures.py`, PNG and PDF): `fig_source_by_bin` (source × intensity bin, 90 and 30), `fig_emotion_by_bin` (emotion × bin heatmap), `fig_filter_funnel` (counts per filtering step and source), `fig_lengths` (line and prompt length), `fig_loop_results` (blocking items per round and what blocked at round 0).
+Figures (`docs/figures/`, made by `scripts/figures.py`, PNG and PDF): `fig_source_by_bin`, `fig_emotion_by_bin`, `fig_filter_funnel` (candidates kept at each filtering step and source), `fig_lengths`, `fig_loop_results`.
 
 ### 7.7 Known data issues
 
 - Keyword emotion labels are native but noisy (first keyword hit wins); rows with mixed keywords carry a review note. They stay as they are until experiments show it matters.
-- Exaggerated supply is small (11; none for anger).
+- Exaggerated supply is small (4 shots, none for anger).
 - Pinyin character names (e.g. XU ZHIYI, HE XI) made Seedance speak Chinese in two pilot shots. This counts as evidence for the harness (A1 language check → prompt_fixable), not as a data bug; names stay verbatim.
 
 ---
@@ -304,9 +293,9 @@ Figures (`docs/figures/`, made by `scripts/figures.py`, PNG and PDF): `fig_sourc
 | duration / aspect / resolution | 8 s, 9:16, 480p |
 | price (2026-11-07) | 480p with audio $0.0673/s → $0.54 per 8 s; 720p $0.151/s → $1.21 per 8 s |
 | loop budget | 30 shots × ≤ 8 rounds = 240 takes max ≈ $130 at 480p; about 3 rounds expected → ≈ $49 |
-| Analyser model | openai/gpt-5.6-luna (text only; about $0.001 per checklist) |
-| verifier models | google/gemini-3.5-flash-lite (primary), qwen/qwen3.8-omni-flash (second family) |
-| held-out judge for evaluation | google/gemini-4-argon (verified 2026-11-02 to hear the audio track; ≈ $0.003 per clip) |
+| Analyser model | google/gemini-4-argon, text only |
+| verifier model | google/gemini-4-argon, one call per family; video sampled at 1 frame per second by OpenRouter |
+| held-out judge for evaluation | to be chosen from a different model family than the verifier |
 | tools | mlx-whisper (ASR), ffprobe, numpy frame differencing |
 | credit | $200 on OpenRouter; about $4 spent as of 2026-11-07 |
 
@@ -334,23 +323,23 @@ Costs: generation $0.19 per clip, verification $0.0071–0.0093 per clip.
 
 ## 10. Implementation (as built, 2026-11-07)
 
-Package `pj/loopauditor/loopauditor/`, about 1,500 lines, 37 offline tests. One module per component:
+Package `pj/loopauditor/loopauditor/`, about 1,400 lines, 38 offline tests. One module per component:
 
 | module | component | what it does |
 |---|---|---|
 | `schemas.py` | data objects | Checklist, ChecklistItem, Take, Observation, RawVerdict, Verdict, FeedbackSheet, Round, Trajectory, RevisionPlan, HandOffReport; `Verdict.blocks()` is the stop-rule condition |
-| `analyser.py` | Analyser, round 0 | rules write A1, the setting and sound items, A4 (cast from the script), A6, all B items, C1/C2/C4; the LLM (openai/gpt-5.6-luna) lists actions, props, other people present and premise facts, each tied to a span copied from the script; spans are checked against the script, three attempts, then an error; 8–24 items |
+| `analyser.py` | Analyser, round 0 | rules write A1, the setting and sound items, A4 (cast from the script), A6, all B items, C1/C2/C4; the model (gemini-4-argon) lists actions, props, other people present and premise facts, each tied to a span copied from the script; spans are checked against the script, three attempts, then an error; 8–24 items |
 | `generate.py` | video generation model | OpenRouter `/videos`, bytedance/seedance-2.0, 480p, 9:16, 8 s, audio; cost read back from `/generation` |
 | `tools.py` | evidence tools | ffprobe (B6), ffmpeg scene and freeze detection (B4), whisper-small ASR with language and WER (A1) |
-| `panel.py` | verifier panel | two blind descriptions (gemini-3.5-flash-lite, qwen3.8-omni-flash); specialists A, B, C each run twice on the primary model with the item order swapped and once on the second family; text entailment of the A items against the descriptions; re-inspect of uncertain items on a cut of the cited interval; all calls in parallel; strict JSON parsing with one retry |
-| `labels.py` + `fixability_prior.yaml` | three labels | the tables of §5; the tool decides A1 and B6; C2 is decided by the mean reported intensity; fixability prior per check, revised by the trajectory |
+| `panel.py` | verifier panel | three specialist calls to gemini-4-argon, one per family, in parallel; strict JSON parsing with one retry |
+| `labels.py` + `fixability_prior.yaml` | three labels | the tables of §5; the tool decides A1 and B6; C2 is decided by the mean of the reported face and voice intensity; fixability prior per check, revised by the trajectory |
 | `trajectory.py` | trajectory | one folder per shot: `checklist.json`, `trajectory.json`, `rounds/<k>/{take.mp4, generation.json, raw_verdicts.json, observations.json, sheet.json, next_plan.json}`; renders the whole history as text for the Analyser |
 | `revise.py` | Analyser, round k | reads checklist + rendered trajectory; returns branch_from, revised_prompt, rationale, targets; rules check only that the script spans survive and the branch point exists; `pick_best` for hand-off |
 | `loop.py`, `cli.py`, `report.py` | loop, stop rule, hand-off, report | `loopauditor run --shot DB-16`; resumes from disk; writes `report.md` per shot |
 
 Measured on 2026-11-07: a take costs $0.57–0.59 and takes 130–310 s; verifying one take costs $0.02–0.03 with 19–25 model calls and takes 60–90 s with the calls in parallel; writing a checklist costs about $0.001. Inspection pages for each module are in `docs/pages/` (M0, M1, M2, M3, M4_M5, trajectories).
 
-**End-to-end runs (5 shots, K = 8, 2026-11-07/08).** Under the stop rule of 2026-11-08: DB-38 released after 2 takes; DB-35, DB-60 and SB-01 handed off at round 2 and DB-16 at round 4, each because the remaining errors had become backend-limited (Chinese speech for the two pinyin-named casts, over-acted intensity for SB-01, the memory flicker and the "surprise" label for DB-16). Mean 3.2 takes and $1.88 per shot, $9.40 in all. The Analyser branched from an earlier round in 3 of 16 revisions (DB-16 twice, SB-01 once). Blocking items at round 0 were mostly A2 actions (8 of 16), then dialogue A1, emotion C1/C2 and elements A3. Two shots (DB-35, DB-60) ended with the dialogue still in Chinese: after two prompt revisions the A1 error became backend_limited and the stop rule released the take with the error reported. Seedance also refused one output after generation on audio-copyright grounds; the loop retries once. Metrics: `runs/loop/metrics.md`; page: `docs/pages/trajectories.html`.
+**End-to-end runs (5 shots, K = 8, 2026-11-07/08; panel configuration of 2026-11-07 with gemini-3.5-flash-lite and qwen3.8-omni-flash, Analyser gpt-5.6-luna).** Under the stop rule of 2026-11-08: DB-38 released after 2 takes; DB-35, DB-60 and SB-01 handed off at round 2 and DB-16 at round 4, each because the remaining errors had become backend-limited: the spoken line for DB-35 and DB-60 (English by the final take, but "breech" came out as "brieche" and the name "Chen" was dropped; the first takes of DB-60 were not English at all), over-acted intensity for SB-01, the memory flicker and the "surprise" label for DB-16. Mean 3.2 takes and $1.88 per shot, $9.40 in all. The Analyser branched from an earlier round in 3 of 16 revisions (DB-16 twice, SB-01 once). Blocking items at round 0 were mostly A2 actions (8 of 16), then dialogue A1, emotion C1/C2 and elements A3. Two shots (DB-35, DB-60) ended with the dialogue still in Chinese: after two prompt revisions the A1 error became backend_limited and the stop rule released the take with the error reported. Seedance also refused one output after generation on audio-copyright grounds; the loop retries once. Metrics: `runs/loop/metrics.md`; page: `docs/pages/trajectories.html`.
 
 **First end-to-end run (DB-16, K = 8).** Output at round 4 after 5 takes, $2.93. The Analyser branched three times from round 0 (rounds 1, 2 and 3 all started from the original prompt because later prompts broke the door stare) and then from round 3. Two errors remained in the final take and were reported without blocking, because the fixability rule had moved them to backend_limited after two failed revisions: "a memory crosses her face" (A2.2) and the data label "surprise" for an actress written as quiet (C1.1).
 
@@ -381,8 +370,8 @@ Metric definitions: `../../avharness/docs/DESIGN_v2.md` §7, to be restated in t
 | `pj/loopauditor/docs/PLAN.md` | implementation plan (Chinese) |
 | `pj/loopauditor/docs/DESIGN.md` | this document |
 | `pj/loopauditor/docs/pages/` | one inspection page per module (inputs and outputs on real data) |
-| `pj/loopauditor/data/prompts/prompt_set_v2.jsonl` (+ `_manifest.md`) | 90 shots |
-| `pj/loopauditor/data/prompts/prompt_set_v2_30.jsonl` (+ `_30_manifest.md`, `_scores.csv`) | 30-shot subset |
+| `pj/loopauditor/data/prompts/prompt_set_v2.jsonl` (+ `_manifest.md`) | all framed candidates the 30 were selected from |
+| `pj/loopauditor/data/prompts/prompt_set_v2_30.jsonl` (+ `_30_manifest.md`, `_scores.csv`) | the 30-shot prompt set |
 | `pj/loopauditor/data/sources/{dramabench,seambench,filmbench}` | source data as downloaded, plus derived candidate files |
 | `pj/loopauditor/data/pilot_takes/<shot>/attempt1_seedance480.{mp4,json}` | 5 pilot clips with generation metadata |
 | `pj/loopauditor/scripts/` | `extract_dramabench_shots.py`, `build_prompt_set_v2.py`, `select_prompt_subset.py`, `gen_pilot5.py` |
@@ -403,6 +392,6 @@ Metric definitions: `../../avharness/docs/DESIGN_v2.md` §7, to be restated in t
 2. Explicit search: node score Σ w(severity)·c(state) (w: error 3 / warning 1 / info 0; c: confident 1 / uncertain 0.5), default parent = lowest score with < 2 children, formal regression definition (parent pass, child fail) and regression rate, keep clauses, flip-twice → retry.
 3. SWITCH backend action for backend-limited errors.
 4. Fuller hand-off design: stagnation detection, report format.
-5. Finer evaluation: user study, more generation models, 30 → 90 shots.
+5. Finer evaluation: user study, more generation models, more shots.
 6. Ablation: two-stage coarse-recall-then-verify vs. re-inspect only.
 7. Other backends on OpenRouter (2026-11-07, 480p with audio per second): seedance-2.0-mini $0.034 (4–15 s), seedance-2.0-fast $0.040, seedance-2.5 $0.103 (up to 30 s), veo-3.1-lite 720p only $0.05 (4/6/8 s), gemini-omni-1.2-flash 360p $0.023 (3–15 s, untested). The pilot backend seedance-1-5-pro is no longer offered.

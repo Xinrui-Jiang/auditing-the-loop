@@ -188,7 +188,7 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 - 时长 8 秒，竖屏 9:16，480p，开音频。
 - 生成模型：bytedance/seedance-2.0（OpenRouter）。480p 带音频 $0.0673/秒，8 秒 $0.54。
 - 预算：30 镜头 × 最多 8 轮 = 240 take 上限，约 $130；按平均 3 轮算约 $49。
-- 检查模型：主 google/gemini-3.5-flash-lite；第二家族 qwen/qwen3.8-omni-flash。Analyser 用文本 LLM openai/gpt-5.6-luna（可换）。
+- 检查模型和 Analyser 都用 google/gemini-4-argon。OpenRouter 对 Gemini 的视频按每秒 1 帧采样，不转发帧率参数（2026-11-08 核实）。
 - 工具：mlx-whisper（ASR）、ffprobe、帧差检测。
 
 ---
@@ -214,7 +214,7 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 - **复用**：旧 `contract.py`（165 行）。
 - **验收**：30 个镜头全部编出来；用户抽看 10 份，记录漏项率和幻觉项率。两项都要 < 10%，否则改模板再跑。
 - **禁止**：LLM 解析失败时静默丢条目；把所有优先级设成 major 了事；用 LLM 决定优先级。
-- **实现说明（2026-11-07）**：Analyser 模型用 openai/gpt-5.6-luna（文本模型，30 条全部一次通过，每条约 $0.001；gemini-3.5-flash-lite 会改写原文片段，需要重试，且把被称呼的人当成在场的人）。LLM 只抽取动作、要素、在场的其他人、前提事实，每项带原文片段；片段不在原文里就带着原文各行重试，最多 3 次，仍失败就报错。动作句里出现另一性别的代词（如女说话人、动作句写 "He smashes the jade"）时，规则把"the man"记为在场的人。人物表 = 说话人 + 剧本放进场景的其他人（用户 11/07：短剧不必然只有一个人，人物由 Analyser 定）。A4.1 = 画面里的人都在人物表里；A4.2 = 只有说话人出声；A4.3 = 无未写明的事件。台词和括号提示不算动作。
+- **实现说明（2026-11-07，模型 11/08 换成 google/gemini-4-argon，30 条一次通过，共 $0.11）**：Analyser 先后试过 gemini-3.5-flash-lite（会改写原文片段，把被称呼的人当成在场的人）和 gpt-5.6-luna。LLM 只抽取动作、要素、在场的其他人、前提事实，每项带原文片段；片段不在原文里就带着原文各行重试，最多 3 次，仍失败就报错。动作句里出现另一性别的代词（如女说话人、动作句写 "He smashes the jade"）时，规则把"the man"记为在场的人。人物表 = 说话人 + 剧本放进场景的其他人（用户 11/07：短剧不必然只有一个人，人物由 Analyser 定）。A4.1 = 画面里的人都在人物表里；A4.2 = 只有说话人出声；A4.3 = 无未写明的事件。台词和括号提示不算动作。
 
 ### M2 生成后端（预算 150 行） `[自检通过 2026-11-07]`
 - **目标**：调用 OpenRouter 视频接口，支持 seed 和时长，记录真实成本。
@@ -322,7 +322,7 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 2. **把搜索做得更明确**：节点得分 `score = Σ_{open issues} w(severity)·c(state)`（w: error 3 / warning 1 / info 0；c: confident 1 / uncertain 0.5）；默认父节点 = 得分最低且子节点 < 2；regression 的正式定义（父轮 pass、子轮 fail）、keep 句、翻转两次改 RETRY；regression rate 作为指标。
 3. **换后端动作**（SWITCH）：backend_limited 的 error 触发换生成模型。
 4. **更完整的交人设计**：停滞检测、交人报告格式、交人率作为指标。
-5. **更细的评估**：user study、多个生成模型、prompt 规模从 30 扩到 90。
+5. **更细的评估**：user study、多个生成模型、更多镜头。
 6. **两阶段检查**（先粗召回区间、再细查）是否比 re-inspect 更好：做消融。
 7. **备选模型记录**（OpenRouter，2026-11-07 价格，480p 带音频每秒）：seedance-2.0-mini $0.034（4–15 秒）、seedance-2.0-fast $0.040、seedance-2.5 $0.103（到 30 秒）、veo-3.1-lite 只有 720p $0.05 且最长 8 秒、gemini-omni-1.2-flash 360p $0.023（3–15 秒，未试）。pilot 用的 seedance-1-5-pro 已不可用。
 
@@ -334,8 +334,9 @@ uncertain 时允许一次 re-inspect（截取该时间段的帧和音频，只�
 |---|---|---|---|
 | 2026-11-07 | — | 建立本文件 | 设计对齐 |
 | 2026-11-07 | — | K = 6 → 8；不做 Veo 跨后端小样 | 用户决定 |
+| 2026-11-08 | M4/M5 | 专家组简化为每类一次 gemini-4-argon 调用（共 3 次/take），去掉盲描述、第二家族、顺序交换、文本蕴含和 re-inspect；不确定状态改由工具一致性和模型的可见性判断得出；Analyser 也换成 gemini-4-argon | 用户 11/08：原方案过于复杂且未经对齐 |
 | 2026-11-08 | M8 | stop rule 修订：全部拦截项都是 backend_limited 时交人，不放行（用户 11/08）。按新规则重算五条已跑完的轨迹：DB-38 输出；DB-16、DB-35、DB-60、SB-01 交人 | 用户决定 |
-| 2026-11-08 | M8/M9 | 5 条镜头全部输出：平均 3.2 轮、$1.88/条，共 $9.40。DB-35、DB-60 的台词仍是中文，A1 两轮改写后转 backend_limited，按 stop rule 放行并报告。`scripts/loop_metrics.py` 出度量表 | 真实数据 |
+| 2026-11-08 | M8/M9 | 5 条镜头全部输出：平均 3.2 轮、$1.88/条，共 $9.40。DB-35、DB-60 的台词到最后一轮已是英语但仍不逐字（"breech" 念成 "brieche"、漏掉 "Chen"），A1 两轮改写后转 backend_limited，按 stop rule 放行并报告。`scripts/loop_metrics.py` 出度量表 | 真实数据 |
 | 2026-11-07 | M2 | /generation 的账单记录可能滞后超过 18 秒（DB-38 第二次运行因此中断）。改为最多等 90 秒；仍没有就用价目表估算并写 cost_estimated.json。续跑时若 take.mp4 已下载则直接复用，不再生成 | 真实数据 |
 | 2026-11-07 | M2/M8 | 服务商事后拒绝输出（DB-38 第 0 轮："output audio may be related to copyright restrictions"）。generate() 仍然只抛异常；循环层对同一 prompt 重试一次，再拒就 hand-off，拒绝原因写进 handoff.json | 真实数据：生成是随机的，拒绝也是 |
 | 2026-11-07 | M6–M8 | 端到端自检：DB-16 跑 5 轮后输出，$2.93；Analyser 三次从第 0 轮分叉，第 4 轮从第 3 轮分叉。两个 error（脸上的回忆、surprise 情绪）在两轮改写后转为 backend_limited，按 stop rule 不再拦输出，写进报告 | 真实数据 |

@@ -1,5 +1,4 @@
-"""Figures for the report: data distribution of the prompt set and the loop results. PNG + PDF in docs/figures/.
-Colours follow the validated reference palette (categorical slots blue/orange/aqua; sequential blue ramp)."""
+"""Figures for the report: the 30-shot prompt set and the loop results. PNG and PDF in docs/figures/."""
 from __future__ import annotations
 
 import json
@@ -21,8 +20,8 @@ SOURCES = ["DramaBench", "SEAM-Bench", "FilmBench"]
 BINS = ["calm", "strong", "exaggerated"]
 EMOTIONS = ["anger", "sadness", "fear", "surprise", "happiness", "contempt"]
 plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Helvetica Neue", "Arial", "DejaVu Sans"], "font.size": 9,
-                     "axes.edgecolor": "#c3c2b7", "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2,
-                     "axes.spines.top": False, "axes.spines.right": False, "figure.dpi": 150})
+                     "axes.edgecolor": "#444444", "axes.labelcolor": INK, "xtick.color": INK, "ytick.color": INK,
+                     "axes.titlesize": 10, "axes.titleweight": "normal", "axes.spines.top": False, "axes.spines.right": False, "figure.dpi": 150})
 
 
 def rows(path: Path) -> list[dict]:
@@ -36,82 +35,78 @@ def save(fig, name: str) -> None:
     plt.close(fig)
 
 
-def fig_source_by_bin(r90, r30):
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.6), sharey=False)
-    for ax, data, title in ((axes[0], r90, "All 90 shots"), (axes[1], r30, "30-shot working set")):
-        counts = {s: Counter(x["native_intensity_bin"] for x in data if x["source_dataset"] == s) for s in SOURCES}
-        left = [0] * len(SOURCES)
-        for b, colour in zip(BINS, SEQ):
-            vals = [counts[s][b] for s in SOURCES]
-            ax.barh(SOURCES, vals, left=left, color=colour, edgecolor="white", linewidth=2, height=0.55, label=b)
-            for i, (v, l) in enumerate(zip(vals, left)):
-                if v >= 3:
-                    ax.text(l + v / 2, i, str(v), ha="center", va="center", color="white" if b != "calm" else INK, fontsize=8)
-            left = [l + v for l, v in zip(left, vals)]
-        for i, s in enumerate(SOURCES):
-            ax.text(left[i] + 0.8, i, str(left[i]), va="center", color=INK2, fontsize=8)
-        ax.set_title(title, loc="left", color=INK, fontsize=10)
-        ax.invert_yaxis()
-        ax.xaxis.grid(True, color=GRID, linewidth=0.6)
-        ax.set_axisbelow(True)
-        ax.set_xlabel("shots")
-    axes[0].legend(title="native intensity bin", frameon=False, loc="lower right", fontsize=8, title_fontsize=8)
+def fig_source_by_bin(r30):
+    fig, ax = plt.subplots(figsize=(4.2, 2.2))
+    counts = {s: Counter(x["native_intensity_bin"] for x in r30 if x["source_dataset"] == s) for s in SOURCES}
+    left = [0] * len(SOURCES)
+    for b, colour in zip(BINS, SEQ):
+        vals = [counts[s][b] for s in SOURCES]
+        ax.barh(SOURCES, vals, left=left, color=colour, edgecolor="white", linewidth=1.5, height=0.55, label=b)
+        for i, (v, l) in enumerate(zip(vals, left)):
+            if v >= 2:
+                ax.text(l + v / 2, i, str(v), ha="center", va="center", color="white" if b != "calm" else INK, fontsize=8)
+        left = [l + v for l, v in zip(left, vals)]
+    ax.invert_yaxis()
+    ax.set_xlabel("Shots")
+    ax.set_title("Shots by source and intensity bin", loc="left")
+    ax.xaxis.grid(True, color=GRID, linewidth=0.6)
+    ax.set_axisbelow(True)
+    ax.legend(frameon=False, fontsize=8, loc="lower right")
     save(fig, "fig_source_by_bin")
 
 
-def fig_emotion_heatmap(r90):
-    grid = [[sum(1 for x in r90 if x["native_intensity_bin"] == b and x["emotion_class"] == e) for e in EMOTIONS] for b in BINS]
-    fig, ax = plt.subplots(figsize=(6.4, 2.3))
-    im = ax.imshow(grid, cmap=matplotlib.colors.LinearSegmentedColormap.from_list("blue", ["#fcfcfb", "#cde2fb", "#2a78d6", "#0d366b"]), aspect="auto")
+def fig_emotion_heatmap(r30):
+    grid = [[sum(1 for x in r30 if x["native_intensity_bin"] == b and x["emotion_class"] == e) for e in EMOTIONS] for b in BINS]
+    fig, ax = plt.subplots(figsize=(5.6, 2.0))
+    cmap = matplotlib.colors.LinearSegmentedColormap.from_list("blue", ["#ffffff", "#cde2fb", "#2a78d6", "#0d366b"])
+    ax.imshow(grid, cmap=cmap, aspect="auto", vmin=0)
     for i, row in enumerate(grid):
         for j, v in enumerate(row):
-            ax.text(j, i, str(v), ha="center", va="center", color="white" if v >= 7 else INK, fontsize=9)
+            ax.text(j, i, str(v), ha="center", va="center", color="white" if v >= 3 else INK, fontsize=9)
     ax.set_xticks(range(len(EMOTIONS)), EMOTIONS)
     ax.set_yticks(range(len(BINS)), BINS)
-    ax.set_title("Emotion class × native intensity bin (90 shots)", loc="left", color=INK, fontsize=10)
+    ax.set_title("Emotion class by intensity bin", loc="left")
     for s in ax.spines.values():
         s.set_visible(False)
-    fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02).set_label("shots", color=INK2)
+    ax.tick_params(length=0)
     save(fig, "fig_emotion_by_bin")
 
 
 def fig_funnel():
-    # counts from data/prompts/prompt_set_v2_manifest.md §2 and the 30-shot manifest
+    # counts from data/prompts/prompt_set_v2_manifest.md and the working-set manifest
     funnels = {
-        "DramaBench": [("dialogue candidates", 5948), ("native intensity bin", 2774), ("+ emotion class", 1773), ("eligible after drops", 1025), ("in prompt set", 69), ("in working set", 22)],
-        "SEAM-Bench": [("dialogue cues", 132), ("after episode exclusion", 97), ("eligible after drops", 19), ("bin + emotion class", 7), ("in prompt set", 7), ("in working set", 3)],
-        "FilmBench": [("one-quote segments", 1869), ("strictly single speaker", 628), ("live action", 261), ("3–12-word quote", 170), ("intensity cue", 134), ("eligible after drops", 17), ("in prompt set", 14), ("in working set", 5)],
+        "DramaBench": [("dialogue candidates", 5948), ("with an intensity cue", 2774), ("with an emotion cue", 1773), ("after exclusion rules", 1025), ("in the prompt set", 22)],
+        "SEAM-Bench": [("dialogue cues", 132), ("episodes kept", 97), ("after exclusion rules", 19), ("with both cues", 7), ("in the prompt set", 3)],
+        "FilmBench": [("one-quote segments", 1869), ("single speaker", 628), ("live action", 261), ("short quote", 170), ("with an intensity cue", 134), ("after exclusion rules", 17), ("in the prompt set", 5)],
     }
-    fig, axes = plt.subplots(1, 3, figsize=(9.6, 2.8))
-    for ax, (src, steps), colour in zip(axes, funnels.items(), CAT):
+    fig, axes = plt.subplots(1, 3, figsize=(9.6, 2.6))
+    for ax, (src, steps) in zip(axes, funnels.items()):
         labels = [s for s, _ in steps]
         vals = [v for _, v in steps]
-        ax.barh(labels, vals, color=colour, height=0.6, edgecolor="white", linewidth=1)
+        ax.barh(labels, vals, color=CAT[0], height=0.6)
         ax.set_xscale("log")
         ax.invert_yaxis()
         for i, v in enumerate(vals):
-            ax.text(v * 1.15, i, f"{v:,}", va="center", color=INK2, fontsize=8)
-        ax.set_xlim(1, max(vals) * 6)
-        ax.set_title(src, loc="left", color=INK, fontsize=10)
+            ax.text(v * 1.2, i, f"{v:,}", va="center", color=INK, fontsize=8)
+        ax.set_xlim(1, max(vals) * 8)
+        ax.set_title(src, loc="left")
         ax.xaxis.grid(True, color=GRID, linewidth=0.6, which="major")
         ax.set_axisbelow(True)
         ax.tick_params(axis="y", labelsize=8)
-    axes[0].set_xlabel("count (log scale)")
+    axes[1].set_xlabel("Candidates kept, log scale")
     save(fig, "fig_filter_funnel")
 
 
-def fig_lengths(r90):
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.3))
-    line_words = [len(x["line"].split()) for x in r90]
-    prompt_words = [len(x["prompt"].split()) for x in r90]
-    axes[0].hist(line_words, bins=range(3, 14), color=CAT[0], edgecolor="white", linewidth=1.5, rwidth=1.0)
-    axes[0].set_title("Spoken line length (words)", loc="left", color=INK, fontsize=10)
-    axes[1].hist(prompt_words, bins=range(40, 130, 10), color=CAT[0], edgecolor="white", linewidth=1.5)
-    axes[1].set_title("Prompt length (words)", loc="left", color=INK, fontsize=10)
+def fig_lengths(r30):
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 2.1))
+    axes[0].hist([len(x["line"].split()) for x in r30], bins=range(3, 14), color=CAT[0], edgecolor="white", linewidth=1.2)
+    axes[0].set_xlabel("Words in the spoken line")
+    axes[1].hist([len(x["prompt"].split()) for x in r30], bins=range(40, 130, 10), color=CAT[0], edgecolor="white", linewidth=1.2)
+    axes[1].set_xlabel("Words in the prompt")
     for ax in axes:
         ax.yaxis.grid(True, color=GRID, linewidth=0.6)
         ax.set_axisbelow(True)
-        ax.set_ylabel("shots")
+        ax.set_ylabel("Shots")
     save(fig, "fig_lengths")
 
 
@@ -131,25 +126,25 @@ def fig_loop():
         jitter = (i - 2) * 0.05  # identical paths (DB-60 and SB-01) would otherwise hide each other
         ax.plot(range(len(ys)), [y + jitter for y in ys], color=colour, linewidth=2, marker="o", markersize=5, label=tr.shot_id)
         end = "output" if tr.status == "output" else "hand-off"
-        ends.setdefault((len(ys) - 1, ys[-1]), []).append(f"{tr.shot_id} · {end}")
+        ends.setdefault((len(ys) - 1, ys[-1]), []).append(f"{tr.shot_id}, {end}")
     for (x, y), labels in ends.items():
         for j, label in enumerate(labels):  # stack labels that share an endpoint
             ax.annotate(label, (x, y), textcoords="offset points", xytext=(8, 9 * (len(labels) - 1) / 2 - 9 * j), fontsize=7.5, color=INK2, va="center")
-    ax.set_xlabel("round")
-    ax.set_ylabel("blocking items")
+    ax.set_xlabel("Round")
+    ax.set_ylabel("Blocking items")
     ax.set_xlim(-0.2, 6.5)
     ax.set_xticks(range(0, 5))
     ax.yaxis.grid(True, color=GRID, linewidth=0.6)
     ax.set_axisbelow(True)
-    ax.set_title("Blocking items per round, 5 shots", loc="left", color=INK, fontsize=10)
+    ax.set_title("Blocking items per round", loc="left")
     ax = axes[1]
     checks = [c for c, _ in round0.most_common()]
     ax.barh(checks, [round0[c] for c in checks], color=CAT[0], height=0.6, edgecolor="white")
     for i, c in enumerate(checks):
         ax.text(round0[c] + 0.15, i, str(round0[c]), va="center", color=INK2, fontsize=8)
     ax.invert_yaxis()
-    ax.set_title("What blocked at round 0", loc="left", color=INK, fontsize=10)
-    ax.set_xlabel("items")
+    ax.set_title("Checks blocking at round 0", loc="left")
+    ax.set_xlabel("Items")
     ax.xaxis.grid(True, color=GRID, linewidth=0.6)
     ax.set_axisbelow(True)
     save(fig, "fig_loop_results")
@@ -157,17 +152,16 @@ def fig_loop():
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    r90 = rows(ROOT / "data/prompts/prompt_set_v2.jsonl")
     r30 = rows(ROOT / "data/prompts/prompt_set_v2_30.jsonl")
-    fig_source_by_bin(r90, r30)
-    fig_emotion_heatmap(r90)
+    fig_source_by_bin(r30)
+    fig_emotion_heatmap(r30)
     fig_funnel()
-    fig_lengths(r90)
+    fig_lengths(r30)
     fig_loop()
     names = sorted(p.name for p in OUT.glob("*.png"))
     cards = "".join(f"<figure><img src='{n}' alt='{n}'><figcaption>{n}</figcaption></figure>" for n in names)
     (OUT / "index.html").write_text("<!doctype html><meta charset='utf-8'><title>LoopAuditor figures</title>"
-                                    "<style>body{font-family:system-ui;margin:24px;background:#fcfcfb;color:#0b0b0b}figure{margin:0 0 28px}img{max-width:100%;border:1px solid #e1e0d9}figcaption{color:#52514e;font-size:13px}</style>"
+                                    "<style>body{font-family:system-ui;margin:24px;background:#fff;color:#111}figure{margin:0 0 28px}img{max-width:100%;border:1px solid #ddd}figcaption{color:#555;font-size:13px}</style>"
                                     f"<h1>LoopAuditor figures</h1>{cards}")
     print("wrote", names)
 

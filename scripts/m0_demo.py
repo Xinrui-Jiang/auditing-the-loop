@@ -13,7 +13,7 @@ from module_page import Panel, Section, render  # noqa: E402
 
 from loopauditor import schemas as S  # noqa: E402
 from loopauditor.cache import cache_key, sha256_file  # noqa: E402
-from loopauditor.config import PRIMARY_VERIFIER, PROMPT_SET_30, openrouter_key  # noqa: E402
+from loopauditor.config import VERIFIER_MODEL, PROMPT_SET_30, openrouter_key  # noqa: E402
 from loopauditor.cost import fetch_generation_cost  # noqa: E402
 
 PILOT_RUNS = ROOT.parent / "avharness/runs/pilot5_2026-11-07"
@@ -111,7 +111,7 @@ def import_pilot_sheet(shot_id: str) -> tuple[S.FeedbackSheet, str, str]:
             uncertainty_state=v["uncertainty_state"], fixability=v["fixability"],
             signals=S.Signals(order_swap_agree=sig["order_swap_agree"], second_family_agree=sig["second_family_agree"],
                               tool_agree=sig["tool_agree"], visibility=sig["visibility"]),
-            evidence=v["evidence"], deviation=v["deviation"], reinspected=v["escalated"]))
+            evidence=v["evidence"], deviation=v["deviation"]))
     meta = json.loads((ROOT / f"data/pilot_takes/{shot_id}/attempt1_seedance480.json").read_text())
     sheet = S.FeedbackSheet(shot_id=shot_id, round=0, take_sha256=meta["sha256"], verdicts=verdicts, cost_usd=report["cost_usd"])
     table = "\n".join(f"{v['requirement_id']:>3} {req['type']:<14} {v['status']:<9} {v['severity']:<8} {v['uncertainty_state']:<14} {v['fixability']}"
@@ -168,12 +168,12 @@ def main() -> None:
     take = ROOT / "data/pilot_takes/DB-38/attempt1_seedance480.mp4"
     meta = json.loads((ROOT / "data/pilot_takes/DB-38/attempt1_seedance480.json").read_text())
     media_sha = sha256_file(take)
-    key = cache_key(PRIMARY_VERIFIER, ROWS["DB-38"]["prompt"], media_sha)
+    key = cache_key(VERIFIER_MODEL, ROWS["DB-38"]["prompt"], media_sha)
     cost = fetch_generation_cost(meta["job_id"], openrouter_key())
     sections.append(Section(
         "Cache key and cost record",
         "The cache key fixes one (model, prompt, media) triple; the cost record is read back live from OpenRouter for the DB-38 pilot take.",
-        inputs=[Panel("inputs", f"model: {PRIMARY_VERIFIER}\nprompt sha256: {ROWS['DB-38']['prompt_sha256']}\nmp4 sha256: {media_sha}\nrequest id: {meta['job_id']}")],
+        inputs=[Panel("inputs", f"model: {VERIFIER_MODEL}\nprompt sha256: {ROWS['DB-38']['prompt_sha256']}\nmp4 sha256: {media_sha}\nrequest id: {meta['job_id']}")],
         outputs=[Panel("cache_key", key), Panel("GenerationCost (live)", cost.model_dump_json(indent=2))]))
 
     out = ROOT / "docs/pages/M0.html"

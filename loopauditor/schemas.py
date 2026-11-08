@@ -195,7 +195,6 @@ class Verdict(BaseModel):
     signals: Signals
     evidence: list[str]
     deviation: float | None = None  # A1: WER; C2: signed distance to the target interval
-    reinspected: bool = False
 
     def blocks(self) -> bool:
         """An error we believe (PLAN.md §4). It blocks the output; whether the loop keeps trying or hands off

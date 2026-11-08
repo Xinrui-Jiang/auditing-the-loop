@@ -36,10 +36,10 @@ RESOLUTION = "480p"
 ASPECT_RATIO = "9:16"
 MAX_ROUNDS = 8
 
-ANALYSER_MODEL = "openai/gpt-5.6-luna"  # text only; copies script spans reliably and lists actions fully (probe of 2026-11-07)
-PRIMARY_VERIFIER = "google/gemini-3.5-flash-lite"
-SECOND_FAMILY_VERIFIER = "qwen/qwen3.8-omni-flash"
-HELD_OUT_JUDGE = "google/gemini-4-argon"
+# One model family for every reasoning role. OpenRouter samples video at 1 frame per second for Gemini and does
+# not forward a frame-rate setting (checked 2026-11-08: 898 prompt tokens for an 8 s clip with or without fps).
+ANALYSER_MODEL = "google/gemini-4-argon"
+VERIFIER_MODEL = "google/gemini-4-argon"
 
 
 def openrouter_key() -> str:

@@ -8,3 +8,4 @@ runs/
 !docs/pages/web_videos/*.mp4
 *.wav
 .DS_Store
+docs/figures/frames/

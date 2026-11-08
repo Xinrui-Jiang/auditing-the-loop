@@ -9,7 +9,7 @@ Course project for CS329Z (Stanford, Fall 2026). Design: `docs/DESIGN.md`. Imple
 | path | content |
 |---|---|
 | `loopauditor/` | the package (about 1,500 lines): `analyser.py` (checklist writer and revision), `generate.py` (video backend), `tools.py` (ASR, ffprobe, cut/freeze detection), `panel.py` (verifier panel), `labels.py` (three labels), `trajectory.py`, `revise.py`, `loop.py`, `report.py`, `cli.py` |
-| `data/prompts/` | the 90-shot prompt set and the 30-shot working set, with manifests and selection scores |
+| `data/prompts/` | the 30-shot prompt set, the candidate pool it was selected from, manifests and selection scores |
 | `data/sources/` | the three source datasets as downloaded (DramaBench, SEAM-Bench, FilmBench) and derived candidate files |
 | `data/pilot_takes/` | metadata of the five pilot clips of 2026-11-07 (videos not included) |
 | `scripts/` | data pipeline (`extract_dramabench_shots.py`, `build_prompt_set_v2.py`, `select_prompt_subset.py`), per-module inspection runs (`m0_demo.py` … `m45_run.py`), `trajectory_page.py`, `loop_metrics.py`, `figures.py`, `export_results.py` |
@@ -41,7 +41,7 @@ The first ASR call downloads `mlx-community/whisper-small-mlx` (about 500 MB) in
 cp .env.example .env
 ```
 
-Put your key in `.env` as `OPENROUTER_API_KEY=...`. The file is ignored by git. Every OpenRouter call reads the key from this file; nothing else is needed. Models used (all through OpenRouter): `openai/gpt-5.6-luna` for the Analyser, `google/gemini-3.5-flash-lite` as the primary verifier, `qwen/qwen3.8-omni-flash` as the second verifier family, `bytedance/seedance-2.0` for generation. They are set in `loopauditor/config.py`.
+Put your key in `.env` as `OPENROUTER_API_KEY=...`. The file is ignored by git. Every OpenRouter call reads the key from this file; nothing else is needed. Models used (all through OpenRouter): `google/gemini-4-argon` for the Analyser and the three verifiers, `bytedance/seedance-2.0` for generation. They are set in `loopauditor/config.py`.
 
 ## Run the agent
 
@@ -59,7 +59,7 @@ uv run loopauditor run --shot DB-38 --shot DB-16 --out runs/loop
 
 Everything is written under `runs/loop/<shot>/`: `checklist.json`, `trajectory.json`, `rounds/<k>/{take.mp4, sheet.json, raw_verdicts.json, observations.json, next_plan.json}`, `report.md`, and `handoff.json` when the shot is handed off. A stopped run resumes from disk with the same command. Model responses are cached under `runs/_cache/`, so re-running a finished round costs nothing.
 
-Shot ids come from `data/prompts/prompt_set_v2_30.jsonl` (`DB-…` DramaBench, `SB-…` SEAM-Bench, `FB-…` FilmBench). Pass `--prompt-set data/prompts/prompt_set_v2.jsonl` to use all 90.
+Shot ids come from `data/prompts/prompt_set_v2_30.jsonl` (`DB-…` DramaBench, `SB-…` SEAM-Bench, `FB-…` FilmBench).
 
 ## Reproduce the evaluation
 
@@ -83,16 +83,16 @@ Generation is stochastic, so a rerun gives different takes and possibly differen
 To rebuild the prompt set from the sources:
 
 ```bash
-uv run python scripts/build_prompt_set_v2.py      # data/prompts/prompt_set_v2.jsonl + manifest
-uv run python scripts/select_prompt_subset.py     # the 30-shot working set
+uv run python scripts/build_prompt_set_v2.py      # framed candidates + manifest
+uv run python scripts/select_prompt_subset.py     # the 30-shot prompt set
 ```
 
 ## How a round works
 
 1. **Analyser, round 0** writes the checklist: rules turn the structured fields of the shot into items (the spoken line, setting, sound cue, framing, all rendering checks, emotion class and intensity); a text model lists actions, props, the people the script places in the scene and premise facts, each tied to a span copied from the script. Items map to 19 checks in three families: A script fidelity, B rendering integrity, C dramatic performance (`docs/DESIGN.md` §4).
 2. **Generation** produces take k.
-3. **Verifier panel**: two blind descriptions of the take; three specialist verifiers (A, B, C), each run twice on the primary model with the item order swapped and once on the second model family; a text entailment pass for the A items; deterministic tools for dialogue (whisper: language and word error rate), technical delivery (ffprobe) and cuts/freezes (ffmpeg); a re-inspect of uncertain items on a cut of the cited interval.
-4. **Labels**: per item a status and three labels. Uncertainty comes from agreement (order swap, second family, tools), never from a model-reported probability. Severity follows priority × uncertainty. Fixability starts from a prior per check and is revised by the trajectory.
+3. **Verifier panel**: three specialist verifiers, one per family, each one call to Gemini 4 with the take and that family's items; deterministic tools for dialogue (whisper: language and word error rate), technical delivery (ffprobe) and cuts/freezes (ffmpeg).
+4. **Labels**: per item a status and three labels. Uncertainty comes from tool agreement and the verifier's observability judgement, never from a model-reported probability. Severity follows priority and uncertainty. Fixability starts from a prior per check and is revised by the trajectory.
 5. **Stop rule**: no blocking error → release; a blocking error that a prompt change or a retry may fix → next round; only backend-limited errors left → hand off to a human.
 6. **Analyser, round k** reads the whole trajectory and decides which round to branch from and how to revise the prompt. It may not change the script spans.
 
@@ -102,6 +102,6 @@ Prompts are verbatim lines and action text from three public datasets, inside a 
 
 ## Known limitations
 
-- Seedance 2.0 sometimes speaks Chinese for pinyin-named characters even when the prompt asks for English; the loop then hands the shot off.
+- Seedance 2.0 sometimes speaks another language or garbles a word for pinyin-named characters even when the prompt asks for English; when two revisions do not fix the line the loop hands the shot off.
 - The provider can refuse an output after generation (audio copyright filter); the loop retries once.
 - Human-label evaluation of the verifiers (precision and recall per check) and the baselines are not yet run.
