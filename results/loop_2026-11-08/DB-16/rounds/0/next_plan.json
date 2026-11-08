@@ -1,0 +1,11 @@
+{
+  "branch_from": 0,
+  "revised_prompt": "Vertical 9:16 framing, medium close-up, static camera, eye level, 480p, 8 seconds, XU ZHIYI centred. Keep the shot continuous at the exterior house entrance in daylight, with the door clearly visible beside her. Only XU ZHIYI is on screen and only she speaks; nobody enters, and do not cut to another place. Preserve the same face, voice, clothing, anatomy, and identity throughout. No subtitles, captions, watermarks, or text.\n\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY\nXU ZHIYI (28, exhausted but determined)\nShe stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away.\nXU ZHIYI\nquietly\nHe won't help us. Not after what I did.\n\nStage the memory as only a very brief, subtle visual impression conveyed through XU ZHIYI's face while the camera remains at the present-day house entrance: her eyes and expression momentarily register falling snow, a different door, and a different betrayal, without showing a separate location or adding anyone else. Then she visibly blinks once, clearly ending the memory, and returns to calmly staring at the present door. Make the emotion a restrained flicker of surprise, with a visible blink but low facial and vocal intensity, remaining calm rather than anxious or dramatic. Speak the complete line exactly in English, softly and quietly, with accurate on-camera lip sync. Keep all movement natural and physically plausible, with no unintended cuts, freezes, jumps, loops, morphing, or extra voices. Audio must be present.",
+  "rationale": "Branch from round 0 because it already passed the framing, present-day entrance, visible door, solo cast, continuity, exact line, lip sync, and quiet delivery. The failed memory items need explicit staging as a brief face-only impression followed by a visible blink, while the emotion must shift from anxiety to a subtle, calm surprise. The prompt preserves the continuous present-day shot and adds safeguards against introducing a second location, person, voice, or dramatic intensity.",
+  "targets": [
+    "A2.2",
+    "A2.3",
+    "C1.1",
+    "C2.1"
+  ]
+}

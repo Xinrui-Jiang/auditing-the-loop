@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Create an 8-second live-action short-drama take in vertical 9:16 at 480p with an audio track. Use one continuous shot with no cuts, freezes, jumps, loops, subtitles, captions, or watermarks. Keep the camera static in a slight high angle, medium close-up, with JULIAN centred. Make the penthouse background sufficiently visible to show the living room as a luxury space that appears unchanged from four years ago: a frozen museum, time capsule, shrine.\n\nSCRIPT SPANS:\nINT. LUXURY PENTHOUSE - CONTINUOUS\nCold filtered sunlight bathes the space. Julian enters, eyes widening in shock. He walks through living room \u2014 everything unchanged from four years ago. A frozen museum, time capsule, shrine.\nJULIAN\nwhispering\nWhat\u2026 what is this?\n\nAt the very beginning, JULIAN visibly enters the penthouse space from off-screen and then walks through the living room for the duration of the continuous take. Show clear forward walking and contact with the floor while keeping him centred in the static medium close-up. As he enters, his eyes visibly widen in surprise, but keep the facial expression and whispering voice restrained and calm, with surprise intensity within 0 to 1 on the 0-4 scale. JULIAN is the only person visible and the only voice heard. He speaks the line exactly and completely in English, verbatim as written: \"What\u2026 what is this?\" Do not paraphrase, add, omit, or change any words. Ensure his lip movements match the line and his voice clearly belongs to him. Preserve the same face, voice, clothing, and anatomy throughout; keep all object and liquid motion physically plausible.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794114018-DNru622W6oSbJVeIpJ0B",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114018-DNru622W6oSbJVeIpJ0B",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794114018-DNru622W6oSbJVeIpJ0B",
+  "generation_id": "gen-vid-1794114018-DNru622W6oSbJVeIpJ0B",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114018-DNru622W6oSbJVeIpJ0B",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794114018-DNru622W6oSbJVeIpJ0B/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794114018-DNru622W6oSbJVeIpJ0B/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T050224Z&X-Goog-Expires=86397&X-Goog-SignedHeaders=host&X-Goog-Signature=377c27e85d8436f1c999c2480c0a4f5c42f9cd30ad394e9531f5feb34fbf337ddaa24dfe5c33bf17bc5836d349f50f903ebc36ae0f8f9fb720dd8c01494eace4dc9f684ab45e21c967a36f7db951ebe29cde2ed7cd1d77dae2136d376292ba88b696128089c715fdb337c3b3f252b7197e3f0af64394033e6c7784db3eecba3bb0c57c14dcc4e1560a392a16cabb8186503fdad2ce8f7996552ad8de38f8179f83fdb30630a9b13e33ce099f9b19a8fee20f123a0534b273f9dd9ba6553db6cd573dac38453d28eea4764e026c269b025d0398d65938e6de645f736497bafdda3db1588d90ab84f76f879ae2982fae6b7c4fbb947601b239fc75d4d6bccfa65f"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794200541
+ }
+}

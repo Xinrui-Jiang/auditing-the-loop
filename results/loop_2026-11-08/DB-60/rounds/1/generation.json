@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use a medium close-up, static camera at eye level, with RUAN NINGXIA centred while keeping the two people she sees visibly present in the corridor background/over her shoulder. Keep one continuous shot with no cuts, freezes, jumps, loops, or location changes. INT. HOSPITAL CORRIDOR - DAY\nRUAN NINGXIA (30s)\nRUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits.\nRUAN NINGXIA\npretending to cry\nAssistant Chen! My husband?\n\nRUAN NINGXIA is the only person who speaks. She must say exactly and completely, in clearly audible English: \"Assistant Chen! My husband?\" Her lip movements must match the English words and her voice must come from her on-screen. Perform sadness with exaggerated intensity around 3-4, using visible fake tears and crying cues while making it clear she is pretending to cry rather than genuinely crying. FU LINCHENG'S ASSISTANT and JIANG YAO remain visibly in frame as she sees them; nobody else appears. Keep RUAN NINGXIA's fur, dress, designer bag, face, voice, and styling consistent throughout. The designer bag stays clearly visible in her tightly clutching hand. No subtitles, captions, watermarks, or any on-screen text. Keep all movement anatomically normal and physically plausible, and preserve the hospital-corridor daytime setting.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794115084-pps5DPyW3qele6uWVuGu",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794115084-pps5DPyW3qele6uWVuGu",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794115084-pps5DPyW3qele6uWVuGu",
+  "generation_id": "gen-vid-1794115084-pps5DPyW3qele6uWVuGu",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794115084-pps5DPyW3qele6uWVuGu",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794115084-pps5DPyW3qele6uWVuGu/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794115084-pps5DPyW3qele6uWVuGu/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T052103Z&X-Goog-Expires=86398&X-Goog-SignedHeaders=host&X-Goog-Signature=0453f591ce12dbd4823df99ff178e1f4446d20217261fa936d06137b737a88fe581d3c7f4681619c4b4b54324ea52929778562e3aaacac2b7cb7c13ca2a3686f7ee5ec3f8912296d0a14a17f00e7b49890a6813511f82e53019a41e21b97ad12dc9b6259abd87fe7120c35d7b1896e6e75873bb16428da141b703b2b48e30a2ce8e610599ebb0c1367be61b5fc95b6a32d86abac704cea8047f3a57956e4ee111a02596256e5b6e67f3b73b5835388cfbf2cc99a33e161cc71615b22cf8d535c58b646f0fd0df981442a96068317ccb5cf13cd7a61f74595441adef07b95a84baba3cb95068ba5a3b0a1dfc2d12945ae3ad5c29cd7b7791ed5155d3a9265ac2f"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794201661
+ }
+}

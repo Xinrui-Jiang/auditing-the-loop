@@ -1,0 +1,9 @@
+{
+  "shot_id": "SB-01",
+  "best_round": 2,
+  "reason": "at round 2 every remaining error is backend-limited (C2.1); neither a prompt change nor a retry is expected to fix it.",
+  "open_item_ids": [
+    "C2.1"
+  ],
+  "trajectory_path": "runs/loop/SB-01/trajectory.json"
+}

@@ -1,0 +1,310 @@
+{
+  "shot_id": "FB-04",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. close shot, static camera, eye level.\nIn the same bedroom, the camera moves on a semi-orbiting track toward a side close shot of the long-haired young woman. She raises her head slightly, her brow faintly furrowed, her eyes filled with probing concern, and asks cautiously: \"How much would that cost?\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "script_spans": [
+    "In the same bedroom, the camera moves on a semi-orbiting track toward a side close shot of the long-haired young woman. She raises her head slightly, her brow faintly furrowed, her eyes filled with probing concern, and asks cautiously:",
+    "young woman",
+    "How much would that cost?"
+  ],
+  "items": [
+    {
+      "id": "A1.1",
+      "check_id": "A1",
+      "kind": "must",
+      "text": "The line \"How much would that cost?\" is spoken in English, complete and verbatim.",
+      "priority": "critical",
+      "evidence": "tool",
+      "params": {
+        "line": "How much would that cost?",
+        "language": "en",
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.1",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The camera visibly follows a semi-orbiting track toward a side close-up of the young woman.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "the camera moves on a semi-orbiting track toward a side close shot of the long-haired young woman",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.2",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The young woman visibly raises her head slightly.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "She raises her head slightly",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.3",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "Her brow is visibly faintly furrowed.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "her brow faintly furrowed",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.4",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "Her eyes visibly convey probing concern.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "her eyes filled with probing concern",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.1",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The shot takes place in the same bedroom.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "same bedroom",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.1",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Everyone on screen is in the script's cast: young woman. Nobody else appears.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.2",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Only young woman speaks; no other voice says a line.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.3",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "No unscripted event changes the scene: nobody enters, no cut to another place.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A5.1",
+      "check_id": "A5",
+      "kind": "premise",
+      "text": "The shot remains in the same bedroom.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A6.1",
+      "check_id": "A6",
+      "kind": "must",
+      "text": "close shot, static camera, eye level, vertical 9:16, young woman centred.",
+      "priority": "minor",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B1.1",
+      "check_id": "B1",
+      "kind": "must_not",
+      "text": "Objects and liquids move plausibly: gravity, contact and momentum look normal.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B2.1",
+      "check_id": "B2",
+      "kind": "must_not",
+      "text": "Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B3.1",
+      "check_id": "B3",
+      "kind": "must_not",
+      "text": "The same face, voice and clothing persist through the whole take.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B4.1",
+      "check_id": "B4",
+      "kind": "must_not",
+      "text": "No unintended cut, freeze, jump or loop.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B5.1",
+      "check_id": "B5",
+      "kind": "must",
+      "text": "Lip movement matches the spoken line and the voice belongs to the person on screen.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B6.1",
+      "check_id": "B6",
+      "kind": "must",
+      "text": "8 s, 9:16, 480p, audio track present.",
+      "priority": "info",
+      "evidence": "tool",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B7.1",
+      "check_id": "B7",
+      "kind": "must_not",
+      "text": "No subtitles, captions or watermarks.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C1.1",
+      "check_id": "C1",
+      "kind": "must",
+      "text": "The emotion is fear (cues: cautiously).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C2.1",
+      "check_id": "C2",
+      "kind": "must",
+      "text": "Face and voice intensity within [0, 1] on the 0-4 scale (calm).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "C3.1",
+      "check_id": "C3",
+      "kind": "must",
+      "text": "The scripted emotional turn happens, at the moment the script places it.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    }
+  ],
+  "conflicts": [],
+  "author": "openai/gpt-5.6-luna"
+}

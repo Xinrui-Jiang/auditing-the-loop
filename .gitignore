@@ -1,0 +1,10 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+runs/
+*.mp4
+!docs/pages/web_videos/*.mp4
+*.wav
+.DS_Store

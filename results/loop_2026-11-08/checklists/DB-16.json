@@ -1,0 +1,313 @@
+{
+  "shot_id": "DB-16",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY. XU ZHIYI (28, exhausted but determined). She stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away. XU ZHIYI says quietly: \"He won't help us. Not after what I did.\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "script_spans": [
+    "EXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY",
+    "XU ZHIYI (28, exhausted but determined)",
+    "She stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away.",
+    "XU ZHIYI",
+    "quietly",
+    "He won't help us. Not after what I did."
+  ],
+  "items": [
+    {
+      "id": "A1.1",
+      "check_id": "A1",
+      "kind": "must",
+      "text": "The line \"He won't help us. Not after what I did.\" is spoken in English, complete and verbatim.",
+      "priority": "critical",
+      "evidence": "tool",
+      "params": {
+        "line": "He won't help us. Not after what I did.",
+        "language": "en",
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.1",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "XU ZHIYI must be visibly staring at the door.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "She stares at the door.",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.2",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "A brief memory of falling snow, a different door, and a different betrayal must be conveyed across XU ZHIYI's face.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "A flicker of memory crosses her face—falling snow, a different door, a different betrayal.",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.3",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "XU ZHIYI must visibly blink and end the memory.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "She blinks it away.",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.1",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The setting matches the heading: EXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "EXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.2",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "A door at the house entrance must be visible for XU ZHIYI to stare at.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "the door",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.1",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Everyone on screen is in the script's cast: XU ZHIYI. Nobody else appears.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.2",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Only XU ZHIYI speaks; no other voice says a line.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.3",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "No unscripted event changes the scene: nobody enters, no cut to another place.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A5.1",
+      "check_id": "A5",
+      "kind": "premise",
+      "text": "The memory must remain a brief visual impression on XU ZHIYI's face, while the shot stays at the house entrance in the present.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A6.1",
+      "check_id": "A6",
+      "kind": "must",
+      "text": "medium close-up, static camera, eye level, vertical 9:16, XU ZHIYI centred.",
+      "priority": "minor",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B1.1",
+      "check_id": "B1",
+      "kind": "must_not",
+      "text": "Objects and liquids move plausibly: gravity, contact and momentum look normal.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B2.1",
+      "check_id": "B2",
+      "kind": "must_not",
+      "text": "Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B3.1",
+      "check_id": "B3",
+      "kind": "must_not",
+      "text": "The same face, voice and clothing persist through the whole take.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B4.1",
+      "check_id": "B4",
+      "kind": "must_not",
+      "text": "No unintended cut, freeze, jump or loop.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B5.1",
+      "check_id": "B5",
+      "kind": "must",
+      "text": "Lip movement matches the spoken line and the voice belongs to the person on screen.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B6.1",
+      "check_id": "B6",
+      "kind": "must",
+      "text": "8 s, 9:16, 480p, audio track present.",
+      "priority": "info",
+      "evidence": "tool",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B7.1",
+      "check_id": "B7",
+      "kind": "must_not",
+      "text": "No subtitles, captions or watermarks.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C1.1",
+      "check_id": "C1",
+      "kind": "must",
+      "text": "The emotion is surprise (cues: blinks).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C2.1",
+      "check_id": "C2",
+      "kind": "must",
+      "text": "Face and voice intensity within [0, 1] on the 0-4 scale (calm).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "C4.1",
+      "check_id": "C4",
+      "kind": "must",
+      "text": "Delivery matches the cue 'quietly'.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    }
+  ],
+  "conflicts": [],
+  "author": "openai/gpt-5.6-luna"
+}

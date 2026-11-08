@@ -1,0 +1,9 @@
+{
+  "shot_id": "DB-60",
+  "best_round": 2,
+  "reason": "at round 2 every remaining error is backend-limited (A1.1); neither a prompt change nor a retry is expected to fix it.",
+  "open_item_ids": [
+    "A1.1"
+  ],
+  "trajectory_path": "runs/loop/DB-60/trajectory.json"
+}

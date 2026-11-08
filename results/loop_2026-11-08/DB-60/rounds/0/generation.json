@@ -1,0 +1,28 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nINT. HOSPITAL CORRIDOR - DAY. RUAN NINGXIA (30s). RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits. RUAN NINGXIA, pretending to cry, says: \"Assistant Chen! My husband?\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794114667-VCUNaFOUH8LsB83jHKy8",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114667-VCUNaFOUH8LsB83jHKy8",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794114667-VCUNaFOUH8LsB83jHKy8",
+  "generation_id": "gen-vid-1794114667-VCUNaFOUH8LsB83jHKy8",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114667-VCUNaFOUH8LsB83jHKy8",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794114667-VCUNaFOUH8LsB83jHKy8/content?index=0"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  }
+ }
+}

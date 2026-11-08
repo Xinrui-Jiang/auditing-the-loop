@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nINT. VILLAGE HOSPITAL - NIGHT. Rain lashes a dark window. HE XI runs beside her HUSBAND as he pushes a hospital bed. On it, ZHAO WANRU, 25, writhes in advanced labor. HE XI, shouting, says: \"Doctor! My mistress\u2014she's breech!\" Sound: Rain lashes a dark window.\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr",
+  "generation_id": "gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794114579-oIxyTHZWxIKOyyeeJsrr/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T051216Z&X-Goog-Expires=86395&X-Goog-SignedHeaders=host&X-Goog-Signature=658d3902d6ddc65dee2f67ef0cd4a1eb66b3ec997e61afe5b1c978fc58142eab685d3820a4133af9541f4608f33918ffd659c3ad3fd333b24701fddcdb62309944cecda593f99a00710d560c8f96a55b9e4055381d97d1c8d67b372021fb356037e0cc1b8a801ba2abcd218cbeaf3628cd599905986bb8a4637575e14a12d22f19205eb746ed04cd233a37d1de6548611cd62333a79e5c3d72e2f95feb749ea2cef20259b8d3c44376bb8e09744e0a323a324695b8c05b35cf53810bfb2573361fa6ca51efb4f7829e8861b836486dd827f5c18c96f8af74b14b07d6cae5142b008a5ca0f3ea5f299decf2ce120bbd6068bf4e3c30178da1923a27b8eae09ac7"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794201131
+ }
+}

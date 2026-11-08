@@ -1,0 +1,10 @@
+[
+ {
+  "source": "analyser/checklist/attempt1",
+  "model_id": "openai/gpt-5.6-luna",
+  "request_id": "gen-1794110292-hso8gGTvw1boe2kZnQ6x",
+  "cost_usd": 0.0,
+  "text": "{\"actions\":[{\"span\":\"The call ends.\",\"check\":\"The phone call visibly ends before the remaining actions occur.\"},{\"span\":\"Haitong's portfolio slips.\",\"check\":\"Haitong's portfolio is seen slipping from her grasp.\"},{\"span\":\"Pages scatter\u2014her resume, shredded by rain.\",\"check\":\"Pages scatter on screen, including Haitong's rain-shredded resume.\"},{\"span\":\"(crying)\",\"check\":\"Haitong is visibly crying while delivering her line.\"}],\"elements\":[{\"span\":\"INT. OLD BUILDING STAIRWELL - DAY\",\"kind\":\"setting\",\"check\":\"The shot takes place in an old building stairwell during the day.\"},{\"span\":\"Haitong's portfolio\",\"kind\":\"prop\",\"check\":\"Haitong's portfolio is visible in the scene.\"},{\"span\":\"her resume\",\"kind\":\"prop\",\"check\":\"Her resume is visible among the scattered pages and is shredded by rain.\"}],\"other_people\":[],\"premise\":[{\"fact\":\"Grandma is only addressed and is not physically present in the scene.\",\"span\":\"Grandma\"}],\"transition_scripted\":false,\"physics_involved\":true}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/d4304734a4c687c7e36a5624ef3e01b44d51289811d50e89c6a0c2c703d191b9.json"
+ }
+]

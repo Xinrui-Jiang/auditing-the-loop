@@ -1,0 +1,361 @@
+{
+  "title": "You Are My Cure My Undoi",
+  "title_cn": "《You Are My Cure My Undoi》",
+  "logline": "狼王凯厄斯为了活命必须找到命定的纯血Omega，却在遇到外卖女孩艾里斯后，从冷血猎手变成了深情守护者。",
+  "total_lines": 911,
+  "num_episodes": 25,
+  "episodes": {
+    "1": {
+      "title": "EPISODE 1",
+      "title_full": "第一集 (EPISODE 1)",
+      "scenes": [
+        "索恩狼族庄园 密室 深夜 室内",
+        "小镇 街道 黄昏 室外"
+      ],
+      "characters": [
+        "Aldric Silas",
+        "Best Friend",
+        "Caius",
+        "Dante",
+        "Iris"
+      ],
+      "num_lines": 45
+    },
+    "2": {
+      "title": "EPISODE 2",
+      "title_full": "第二集 (EPISODE 2)",
+      "scenes": [
+        "镇外松树林 别墅门廊 深夜 室外",
+        "黑色越野车 同时 室内",
+        "松树林空地 深夜 室外"
+      ],
+      "characters": [
+        "Adrian",
+        "Caius",
+        "Dante",
+        "Iris"
+      ],
+      "num_lines": 42
+    },
+    "3": {
+      "title": "EPISODE 3",
+      "title_full": "第三集 (EPISODE 3)",
+      "scenes": [
+        "松树林空地 深夜 连续 室外"
+      ],
+      "characters": [
+        "Adrian",
+        "Caius",
+        "Iris"
+      ],
+      "num_lines": 28
+    },
+    "4": {
+      "title": "EPISODE 4",
+      "title_full": "第四集 (EPISODE 4)",
+      "scenes": [
+        "索恩庄园 艾里斯的卧室 深夜 室内"
+      ],
+      "characters": [
+        "Best Friend",
+        "Iris"
+      ],
+      "num_lines": 29
+    },
+    "5": {
+      "title": "EPISODE 5",
+      "title_full": "第五集 (EPISODE 5)",
+      "scenes": [
+        "索恩庄园 艾里斯的卧室 深夜 连续 室内",
+        "索恩庄园 书房 深夜 室内",
+        "索恩庄园 花园 次日早晨 室外",
+        "索恩庄园 二楼走廊 同时 室内"
+      ],
+      "characters": [
+        "Aldric Silas",
+        "Caius",
+        "Clara",
+        "Iris"
+      ],
+      "num_lines": 55
+    },
+    "6": {
+      "title": "EPISODE 6",
+      "title_full": "第六集 (EPISODE 6)",
+      "scenes": [
+        "阿德里安的宅邸 密室 白天 室内",
+        "索恩庄园 议事厅 几天后 白天 室内"
+      ],
+      "characters": [
+        "Adrian",
+        "Caius",
+        "Dante",
+        "Elder A",
+        "Elder B",
+        "Elder C",
+        "Vivienne"
+      ],
+      "num_lines": 46
+    },
+    "7": {
+      "title": "EPISODE 7",
+      "title_full": "第七集 (EPISODE 7)",
+      "scenes": [
+        "索恩庄园 大门走廊 白天 连续 室内/室外"
+      ],
+      "characters": [
+        "Caius",
+        "Elder A",
+        "Elder B"
+      ],
+      "num_lines": 23
+    },
+    "8": {
+      "title": "EPISODE 8",
+      "title_full": "第八集 (EPISODE 8)",
+      "scenes": [
+        "索恩庄园 书房 深夜 战后 室内",
+        "索恩庄园 卧室 同一个夜晚 室内",
+        "索恩庄园 主卧 满月之夜 室内（字幕：满月）",
+        "索恩庄园 走廊 白天 室内(一个月后）",
+        "索恩庄园 主卧 白天 室内"
+      ],
+      "characters": [
+        "Caius",
+        "Dante",
+        "Iris"
+      ],
+      "num_lines": 51
+    },
+    "9": {
+      "title": "EPISODE 9",
+      "title_full": "第九集 (EPISODE 9)",
+      "scenes": [
+        "医院 检查科 白天 室内",
+        "医学院 洗手间 白天 室内",
+        "医学院 校园小道 白天 连续 室外",
+        "校园附近的巷子 白天 连续 室外"
+      ],
+      "characters": [
+        "Caius",
+        "Iris",
+        "Vivienne"
+      ],
+      "num_lines": 56
+    },
+    "10": {
+      "title": "EPISODE 10",
+      "title_full": "第十集 (EPISODE 10)",
+      "scenes": [
+        "索恩庄园 书房 白天 室内",
+        "一个小镇 花园 白天 室外"
+      ],
+      "characters": [
+        "Bisola",
+        "Caius",
+        "Dante",
+        "Luna"
+      ],
+      "num_lines": 46
+    },
+    "11": {
+      "title": "EPISODE 11",
+      "title_full": "第十一集 (EPISODE 11)",
+      "scenes": [
+        "小镇 卧室 下午 室内",
+        "小镇 街道 靠近人行横道 下午 连续 室外"
+      ],
+      "characters": [
+        "Caius",
+        "Dante",
+        "Iris",
+        "Luna",
+        "Theo"
+      ],
+      "num_lines": 49
+    },
+    "12": {
+      "title": "EPISODE 12",
+      "title_full": "第十二集 (EPISODE 12)",
+      "scenes": [
+        "小镇 卧室 下午 室内",
+        "小镇 六年前 深夜 室内",
+        "小镇 卧室 下午 现在 室内",
+        "小镇 多个地点 同一时间 室内/室外"
+      ],
+      "characters": [
+        "Dante",
+        "Iris",
+        "Theo"
+      ],
+      "num_lines": 54
+    },
+    "13": {
+      "title": "EPISODE 13",
+      "title_full": "第十三集 (EPISODE 13)",
+      "scenes": [
+        "小镇 卧室 傍晚 室内",
+        "Adrian和Vivienne的庄园 客厅 同一时间 室内",
+        "多个地点 交叉剪辑 同一个夜晚 室内/室外"
+      ],
+      "characters": [
+        "Adrian",
+        "Iris",
+        "Luna",
+        "Theo",
+        "Vivienne"
+      ],
+      "num_lines": 33
+    },
+    "14": {
+      "title": "EPISODE 14",
+      "title_full": "第十四集 (EPISODE 14)",
+      "scenes": [
+        "小镇医院 走廊 挂号台 深夜 室内"
+      ],
+      "characters": [
+        "Caius",
+        "Iris"
+      ],
+      "num_lines": 31
+    },
+    "15": {
+      "title": "EPISODE 15",
+      "title_full": "第十五集 (EPISODE 15)",
+      "scenes": [
+        "小镇医院 走廊 深夜 连续 室内"
+      ],
+      "characters": [
+        "Caius",
+        "Dante",
+        "Iris"
+      ],
+      "num_lines": 32
+    },
+    "16": {
+      "title": "EPISODE 16",
+      "title_full": "第十六集 (EPISODE 16)",
+      "scenes": [
+        "小镇医院 走廊 街道 深夜 连续 室内/室外",
+        "小镇 房子 卧室 厨房 同一时间 室内",
+        "松树林边缘 镇外 同一时间 室外"
+      ],
+      "characters": [
+        "Adrian",
+        "Caius",
+        "Luna"
+      ],
+      "num_lines": 27
+    },
+    "17": {
+      "title": "EPISODE 17",
+      "title_full": "第十七集 (EPISODE 17)",
+      "scenes": [
+        "松树林边缘 深夜 连续 室外"
+      ],
+      "characters": [
+        "Adrian",
+        "Caius",
+        "Iris",
+        "Luna"
+      ],
+      "num_lines": 32
+    },
+    "18": {
+      "title": "EPISODE 18",
+      "title_full": "第十八集 (EPISODE 18)",
+      "scenes": [
+        "松树林 深夜 连续 室外"
+      ],
+      "characters": [
+        "Adrian",
+        "Caius",
+        "Iris",
+        "Luna"
+      ],
+      "num_lines": 29
+    },
+    "19": {
+      "title": "EPISODE 19",
+      "title_full": "第十九集 (EPISODE 19)",
+      "scenes": [
+        "小镇医院 病房 白天 室内",
+        "小镇 街角咖啡馆 同一天 室内"
+      ],
+      "characters": [
+        "Caius",
+        "Luna",
+        "Theo"
+      ],
+      "num_lines": 39
+    },
+    "20": {
+      "title": "EPISODE 20",
+      "title_full": "第二十集 (EPISODE 20)",
+      "scenes": [
+        "小镇医院 病房 某个下午 室内",
+        "小镇医院 病房 走廊 同一天 稍后 室内",
+        "索恩庄园 花园 多年后 室外"
+      ],
+      "characters": [
+        "Caius",
+        "Iris",
+        "Luna",
+        "Theo"
+      ],
+      "num_lines": 57
+    },
+    "21": {
+      "title": "EPISODE 21",
+      "title_full": "第二十一集 (EPISODE 21)",
+      "scenes": [
+        "索恩狼族庄园 密室 深夜 室内 （字幕：索恩狼族领地 - Alpha庄园） △ 密室。石墙上雕刻着古老的狼族图腾。烛光昏暗。 △ 凯厄斯·索恩（CAIUS THORNE，30岁，深色西装）双膝跪地，胸口如火烧般灼热，强行压制着体内翻涌的力量。 △ [VFX] 金色的狂暴纹路从他的手背一直蔓延到手臂。几名手下被他失控的气场震飞出去，重重地撞在墙上。 △ 凯厄斯吐出一口血，从地上站了起来。 △ 奥德里克·赛拉斯（ALDRIC SILAS，狼族长老，60多岁）走进来，看都没看一眼倒在地上的手下，直接跨了过去。他在距离凯厄斯三步远的地方停下。",
+        "小镇 街道 黄昏 室外 △ 夕阳将街道染成一片金黄。艾里斯·温（IRIS WYNN，21岁）背着书包，一手拿着手机，边走边笑。"
+      ],
+      "characters": [],
+      "num_lines": 29
+    },
+    "22": {
+      "title": "EPISODE 22",
+      "title_full": "第二十二集 (EPISODE 22)",
+      "scenes": [
+        "狼人的树林法阵 夜晚 室外 △ 艾里斯逐渐苏醒，发现自己被绑在一根石柱上。眼前是很多根石柱，每根石柱上都用银链捆着一个赤裸的女人，双手被吊起，形成龟甲缚。女人们的身体下方都露出了狼尾。旁边围着许多贪婪的狼人。 △ 阿德里安手里把玩着小马鞭，正在轻轻抽打其中一个女人。 △ 尼克也肆意摸着另一个裸体的女狼人。 △ 艾里斯吓坏了，拼命挣扎。"
+      ],
+      "characters": [],
+      "num_lines": 18
+    },
+    "23": {
+      "title": "EPISODE 23",
+      "title_full": "第二十三集 (EPISODE 23)",
+      "scenes": [
+        "狼人的树林法阵 夜晚 室外 △ 惨烈的打斗结束。那些女人被凯厄斯的手下扛着带走。 △ 凯厄斯浑身是血和伤痕，他面无表情地捡起地上的西装外套，走向艾里斯。艾里斯抱着自己瑟瑟发抖的身体坐在地上，眼泪汪汪地看着他。为她披上了西装外套。"
+      ],
+      "characters": [],
+      "num_lines": 12
+    },
+    "24": {
+      "title": "EPISODE 24",
+      "title_full": "第二十四集 (EPISODE 24)",
+      "scenes": [
+        "狼人的树林法阵 夜晚 室外 △ 内衣崩开的瞬间，艾里斯惊慌地将手死死抵在凯厄斯的胸口上。推不开。就在这时，一股纯粹的银色能量从艾里斯掌心释放，注入男主体内。 △ 凯厄斯猛地倒抽一口气，眼底的狂乱褪去，逐渐变得理智清醒。艾里斯大口喘着粗气，月光下两人久久对视。",
+        "索恩庄园 客房 夜晚 室内 △ 夜晚，女主穿着真丝吊带睡衣，在极尽奢华的卧室里和闺蜜打电话。"
+      ],
+      "characters": [],
+      "num_lines": 24
+    },
+    "25": {
+      "title": "EPISODE 25",
+      "title_full": "第二十五集 (EPISODE 25)",
+      "scenes": [
+        "索恩庄园 客房 夜晚 室内 △ 两人正准备彻底沉沦之时，凯厄斯浑身一僵，猛地偏过头，极其痛苦地呕出了一大口黑血。 △ 情欲瞬间粉碎，艾里斯吓坏了。",
+        "索恩庄园 书房 稍后 室内 △ 温暖而昏暗的书房里，凯厄斯单膝跪地，靠着沉重的书桌支撑身体。Alpha之怒全面发作，恐怖的金色纹路爬满他的脖颈。他紧咬牙关，呼吸急促而吃力。 △ 艾里本能地将双手按在他的胸口。 △ [VFX] 纯净的银色能量从艾里斯掌心涌出。凯厄斯的呼吸逐渐平复，金纹褪去。然而，艾里斯的手背上却浮现出代表反噬的黑色血管。 △ 极度虚弱的艾里斯喘息着，累得倒在了凯厄斯的怀里。",
+        "索恩庄园 花园 次日早晨 室外 △ 阳光明媚的早晨。艾里斯坐在花园的桌旁，单手托腮，脸上带着浅浅的微笑。 △ 女佣克拉拉（CLARA，40多岁，热情健谈）端着早餐走过来，激动地一把拉住艾里斯的手。",
+        "索恩庄园 二楼走廊 同时 室内 △ 冰冷的单向落地玻璃后。凯厄斯站在阴影中，居高临下地俯视着花园里的艾里斯。看着她的笑容。 △ 长老奥德里克悄无声息地走上前，压低声音。"
+      ],
+      "characters": [
+        "Iris"
+      ],
+      "num_lines": 24
+    }
+  }
+}

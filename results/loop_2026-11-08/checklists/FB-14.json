@@ -1,0 +1,324 @@
+{
+  "shot_id": "FB-14",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, rapid pan.\nInside the playing field, a young player in a red-and-blue jersey sprints wildly in excitement after scoring. The shot uses a rapid pan to track him, with centered composition. He rushes toward the stands, raises five fingers high in celebration, and shouts, \"We're sure to win!\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "script_spans": [
+    "Inside the playing field, a young player in a red-and-blue jersey sprints wildly in excitement after scoring. The shot uses a rapid pan to track him, with centered composition. He rushes toward the stands, raises five fingers high in celebration, and shouts,",
+    "young player",
+    "We're sure to win!"
+  ],
+  "items": [
+    {
+      "id": "A1.1",
+      "check_id": "A1",
+      "kind": "must",
+      "text": "The line \"We're sure to win!\" is spoken in English, complete and verbatim.",
+      "priority": "critical",
+      "evidence": "tool",
+      "params": {
+        "line": "We're sure to win!",
+        "language": "en",
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.1",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The young player visibly sprints excitedly after scoring.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "sprints wildly in excitement after scoring",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.2",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The camera rapidly pans to keep the player tracked.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "rapid pan to track him",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.3",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The player visibly rushes toward the stands.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "rushes toward the stands",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.4",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The player raises one hand with five fingers held high.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "raises five fingers high in celebration",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.5",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The player visibly shouts the spoken line.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "shouts",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.1",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The shot takes place inside the playing field.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "Inside the playing field",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.2",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "Stands are visible in the direction the player rushes.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "the stands",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.1",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Everyone on screen is in the script's cast: young player. Nobody else appears.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.2",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Only young player speaks; no other voice says a line.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.3",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "No unscripted event changes the scene: nobody enters, no cut to another place.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A5.1",
+      "check_id": "A5",
+      "kind": "premise",
+      "text": "The player has already scored before the celebration shown in the shot.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A6.1",
+      "check_id": "A6",
+      "kind": "must",
+      "text": "medium close-up, rapid pan, vertical 9:16, young player centred.",
+      "priority": "minor",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B1.1",
+      "check_id": "B1",
+      "kind": "must_not",
+      "text": "Objects and liquids move plausibly: gravity, contact and momentum look normal.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B2.1",
+      "check_id": "B2",
+      "kind": "must_not",
+      "text": "Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B3.1",
+      "check_id": "B3",
+      "kind": "must_not",
+      "text": "The same face, voice and clothing persist through the whole take.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B4.1",
+      "check_id": "B4",
+      "kind": "must_not",
+      "text": "No unintended cut, freeze, jump or loop.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B5.1",
+      "check_id": "B5",
+      "kind": "must",
+      "text": "Lip movement matches the spoken line and the voice belongs to the person on screen.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B6.1",
+      "check_id": "B6",
+      "kind": "must",
+      "text": "8 s, 9:16, 480p, audio track present.",
+      "priority": "info",
+      "evidence": "tool",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B7.1",
+      "check_id": "B7",
+      "kind": "must_not",
+      "text": "No subtitles, captions or watermarks.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C1.1",
+      "check_id": "C1",
+      "kind": "must",
+      "text": "The emotion is happiness (cues: excitement).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C2.1",
+      "check_id": "C2",
+      "kind": "must",
+      "text": "Face and voice intensity within [2, 3] on the 0-4 scale (strong).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": [
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "author": "openai/gpt-5.6-luna"
+}

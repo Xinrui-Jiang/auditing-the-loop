@@ -1,0 +1,1037 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>LoopAuditor M1 — Analyser writes the checklist</title><style>
+:root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
+@media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:1500px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+.sub,.note{color:var(--muted);margin:0 0 12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}}
+.col h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.panel{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
+.in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
+pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
+</style></head><body><main><h1>LoopAuditor M1 — Analyser writes the checklist</h1><p class='sub'>30 shots of prompt_set_v2_30; one checklist each.</p><h2>Run summary</h2><p class='note'>30 of 30 shots produced a checklist; 0 failed; total LLM cost $0.0000. Rules write A1, the setting and sound items, A4, A6, all B items and C1/C2/C4; the LLM supplies actions, props, other people, premise facts and implied must-nots, each tied to a span copied from the script.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">settings</div><pre>model: openai/gpt-5.6-luna
+prompt set: data/prompts/prompt_set_v2_30.jsonl
+item range: 8-24
+span check: every LLM span must be a substring of prompt_raw; one retry, then error</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">per shot: items by family, retry, conflicts, cost</div><pre>DB-16  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+DB-35  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+DB-38  A13 B 7 C 3  total 23  retry no   conflicts 0  $0.0000
+SB-01  A 9 B 7 C 3  total 19  retry no   conflicts 0  $0.0000
+DB-03  A 9 B 7 C 3  total 19  retry no   conflicts 0  $0.0000
+DB-11  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+DB-19  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+DB-21  A10 B 7 C 3  total 20  retry no   conflicts 0  $0.0000
+DB-22  A 8 B 7 C 3  total 18  retry no   conflicts 0  $0.0000
+DB-39  A10 B 7 C 3  total 20  retry no   conflicts 0  $0.0000
+DB-60  A10 B 7 C 3  total 20  retry no   conflicts 0  $0.0000
+SB-07  A13 B 7 C 3  total 23  retry no   conflicts 0  $0.0000
+DB-43  A13 B 7 C 3  total 23  retry no   conflicts 0  $0.0000
+DB-06  A12 B 7 C 3  total 22  retry no   conflicts 0  $0.0000
+DB-10  A 8 B 7 C 3  total 18  retry no   conflicts 0  $0.0000
+DB-33  A 9 B 7 C 3  total 19  retry no   conflicts 0  $0.0000
+DB-37  A11 B 7 C 3  total 21  retry no   conflicts 1  $0.0000
+DB-52  A10 B 7 C 3  total 20  retry no   conflicts 0  $0.0000
+DB-48  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+FB-12  A11 B 7 C 2  total 20  retry no   conflicts 0  $0.0000
+SB-04  A 8 B 7 C 3  total 18  retry no   conflicts 0  $0.0000
+FB-04  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+FB-08  A12 B 7 C 3  total 22  retry no   conflicts 0  $0.0000
+FB-14  A13 B 7 C 2  total 22  retry no   conflicts 0  $0.0000
+FB-05  A10 B 7 C 2  total 19  retry no   conflicts 0  $0.0000
+DB-61  A10 B 7 C 3  total 20  retry no   conflicts 0  $0.0000
+DB-64  A 8 B 7 C 3  total 18  retry no   conflicts 0  $0.0000
+DB-63  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+DB-27  A11 B 7 C 3  total 21  retry no   conflicts 0  $0.0000
+DB-28  A12 B 7 C 3  total 22  retry no   conflicts 0  $0.0000</pre></div><div class="panel"><div class="label">failures</div><pre>(none)</pre></div></div></div><h2>DB-38: hand-written (M0) vs Analyser (M1)</h2><p class='note'>Same shot, two checklists. Left: written by hand on 2026-11-07. Right: written by the Analyser.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">hand-written</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Grandma, they found me.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The phone call ends: she lowers or hangs up the phone.  [span: The call ends.]
+A2.2   must      critical  description Haitong&#x27;s portfolio slips out of her hands.  [span: Haitong&#x27;s portfolio slips.]
+A2.3   must      critical  description Pages scatter out of the portfolio.  [span: Pages scatter]
+A3.1   must      major     description The setting is the stairwell of an old building, interior, daytime.  [span: INT. OLD BUILDING STAIRWELL - DAY]
+A3.2   must      major     description The scattering pages are audible (paper rustling or falling).  [span: Pages scatter—her resume, shredded by rain.]
+A4.1   must_not  critical  description Only one person, Haitong, is on camera; nobody else appears.
+A4.2   must_not  major     description No unscripted event changes the scene (nobody enters, no cut to another place).
+A5.1   premise   major     description Haitong is 17 and has just lost a job offer over the phone; &#x27;Grandma&#x27; is addressed but not present.
+A6.1   must      minor     tool_panel  Medium close-up, static camera at eye level, vertical 9:16, Haitong centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cue: crying).
+C2.1   must      major     panel       Intensity is strong but not hysterical: face and voice within [2, 3] on the 0-4 scale.  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery sounds like crying: broken voice, uneven pace.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">Analyser</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Grandma, they found me.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The phone call visibly ends before the remaining actions occur.  [span: The call ends.]
+A2.2   must      critical  description Haitong&#x27;s portfolio is seen slipping from her grasp.  [span: Haitong&#x27;s portfolio slips.]
+A2.3   must      critical  description Pages scatter on screen, including Haitong&#x27;s rain-shredded resume.  [span: Pages scatter—her resume, shredded by rain.]
+A3.1   must      major     description The setting matches the heading: INT. OLD BUILDING STAIRWELL - DAY.  [span: INT. OLD BUILDING STAIRWELL - DAY]
+A3.2   must      major     description The scripted sound is audible: Pages scatter—her resume, shredded by rain.  [span: Pages scatter—her resume, shredded by rain.]
+A3.3   must      major     description Haitong&#x27;s portfolio is visible in the scene.  [span: Haitong&#x27;s portfolio]
+A3.4   must      major     description Her resume is visible among the scattered pages and is shredded by rain.  [span: her resume]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: HAITONG. Nobody else appears.
+A4.2   must_not  major     description Only HAITONG speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description Grandma is only addressed and is not physically present in the scene.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, HAITONG centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: crying).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;crying&#x27;.</pre></div></div></div><h2>DB-16: hand-written (M0) vs Analyser (M1)</h2><p class='note'>Same shot, two checklists. Left: written by hand on 2026-11-07. Right: written by the Analyser.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">hand-written</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;He won&#x27;t help us. Not after what I did.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description She stares at the door.  [span: She stares at the door.]
+A2.2   must      critical  description She blinks the memory away: a blink that clears her expression.  [span: She blinks it away.]
+A3.1   must      major     description The setting is the entrance of a house, exterior, daytime.  [span: EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY]
+A4.1   must_not  critical  description Only one person, Xu Zhiyi, is on camera; nobody else appears.
+A4.2   must_not  major     description No unscripted event changes the scene.
+A5.1   premise   major     description The memory (falling snow, another door, a betrayal) shows only on her face; the shot does not cut to a flashback.
+A5.2   premise   major     description Xu Zhiyi is 28 and looks exhausted but determined.
+A6.1   must      minor     tool_panel  Medium close-up, static camera at eye level, vertical 9:16, Xu Zhiyi centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion class is surprise (lexicon cue: blinks).
+C2.1   must      major     panel       Intensity is calm: face and voice within [0, 1] on the 0-4 scale.  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery is quiet: low volume, soft tone.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">Analyser</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;He won&#x27;t help us. Not after what I did.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description XU ZHIYI must be visibly staring at the door.  [span: She stares at the door.]
+A2.2   must      critical  description A brief memory of falling snow, a different door, and a different betrayal must be conveyed across XU ZHIYI&#x27;s face.  [span: A flicker of memory crosses her face—falling snow, a different door, a different betrayal.]
+A2.3   must      critical  description XU ZHIYI must visibly blink and end the memory.  [span: She blinks it away.]
+A3.1   must      major     description The setting matches the heading: EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY.  [span: EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY]
+A3.2   must      major     description A door at the house entrance must be visible for XU ZHIYI to stare at.  [span: the door]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: XU ZHIYI. Nobody else appears.
+A4.2   must_not  major     description Only XU ZHIYI speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The memory must remain a brief visual impression on XU ZHIYI&#x27;s face, while the shot stays at the house entrance in the present.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, XU ZHIYI centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is surprise (cues: blinks).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;quietly&#x27;.</pre></div></div></div><h2>DB-16 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY
+XU ZHIYI (28, exhausted but determined)
+She stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away.
+XU ZHIYI
+(quietly)
+He won&#x27;t help us. Not after what I did.
+
+Speaker: XU ZHIYI
+Spoken line: &quot;He won&#x27;t help us. Not after what I did.&quot;
+Delivery cue: quietly
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;He won&#x27;t help us. Not after what I did.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description XU ZHIYI must be visibly staring at the door.  [span: She stares at the door.]
+A2.2   must      critical  description A brief memory of falling snow, a different door, and a different betrayal must be conveyed across XU ZHIYI&#x27;s face.  [span: A flicker of memory crosses her face—falling snow, a different door, a different betrayal.]
+A2.3   must      critical  description XU ZHIYI must visibly blink and end the memory.  [span: She blinks it away.]
+A3.1   must      major     description The setting matches the heading: EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY.  [span: EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY]
+A3.2   must      major     description A door at the house entrance must be visible for XU ZHIYI to stare at.  [span: the door]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: XU ZHIYI. Nobody else appears.
+A4.2   must_not  major     description Only XU ZHIYI speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The memory must remain a brief visual impression on XU ZHIYI&#x27;s face, while the shot stays at the house entrance in the present.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, XU ZHIYI centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is surprise (cues: blinks).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;quietly&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;She stares at the door.&quot;,&quot;check&quot;:&quot;XU ZHIYI must be visibly staring at the door.&quot;},{&quot;span&quot;:&quot;A flicker of memory crosses her face—falling snow, a different door, a different betrayal.&quot;,&quot;check&quot;:&quot;A brief memory of falling snow, a different door, and a different betrayal must be conveyed across XU ZHIYI&#x27;s face.&quot;},{&quot;span&quot;:&quot;She blinks it away.&quot;,&quot;check&quot;:&quot;XU ZHIYI must visibly blink and end the memory.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot must take place at SHEN YUNAN&#x27;S house entrance during the day.&quot;},{&quot;span&quot;:&quot;the door&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A door at the house entrance must be visible for XU ZHIYI to stare at.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The memory must remain a brief visual impression on XU ZHIYI&#x27;s face, while the shot stays at the house entrance in the present.&quot;,&quot;span&quot;:&quot;A flicker of memory crosses her face—falling snow, a different door, a different betrayal.&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-35 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. VILLAGE HOSPITAL - NIGHT
+Rain lashes a dark window. HE XI runs beside her HUSBAND as he pushes a hospital bed. On it, ZHAO WANRU, 25, writhes in advanced labor.
+HE XI
+(shouting)
+Doctor! My mistress—she&#x27;s breech!
+
+Speaker: HE XI
+Spoken line: &quot;Doctor! My mistress—she&#x27;s breech!&quot;
+Delivery cue: shouting
+Sound cue: Rain lashes a dark window.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Doctor! My mistress—she&#x27;s breech!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description HE XI must be seen running beside HUSBAND while HUSBAND pushes the hospital bed.  [span: HE XI runs beside her HUSBAND as he pushes a hospital bed.]
+A2.2   must      critical  description ZHAO WANRU must be seen writhing on the bed as a 25-year-old in advanced labor.  [span: ZHAO WANRU, 25, writhes in advanced labor.]
+A3.1   must      major     description The setting matches the heading: INT. VILLAGE HOSPITAL - NIGHT.  [span: INT. VILLAGE HOSPITAL - NIGHT]
+A3.2   must      major     description The scripted sound is audible: Rain lashes a dark window.  [span: Rain lashes a dark window.]
+A3.3   must      major     description A hospital bed must be visible and be pushed by HUSBAND.  [span: hospital bed]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: HE XI, HUSBAND, ZHAO WANRU. Nobody else appears.
+A4.2   must_not  major     description Only HE XI speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot takes place in a village hospital at night.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, HE XI centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is anger (cues: shouting).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;shouting&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;HE XI runs beside her HUSBAND as he pushes a hospital bed.&quot;,&quot;check&quot;:&quot;HE XI must be seen running beside HUSBAND while HUSBAND pushes the hospital bed.&quot;},{&quot;span&quot;:&quot;ZHAO WANRU, 25, writhes in advanced labor.&quot;,&quot;check&quot;:&quot;ZHAO WANRU must be seen writhing on the bed as a 25-year-old in advanced labor.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. VILLAGE HOSPITAL - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must visibly be set inside a village hospital at night.&quot;},{&quot;span&quot;:&quot;hospital bed&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A hospital bed must be visible and be pushed by HUSBAND.&quot;},{&quot;span&quot;:&quot;Rain lashes a dark window.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;Rain must be heard while a dark window is visible.&quot;}],&quot;other_people&quot;:[&quot;HUSBAND&quot;,&quot;ZHAO WANRU&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot takes place in a village hospital at night.&quot;,&quot;span&quot;:&quot;INT. VILLAGE HOSPITAL - NIGHT&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-38 — 23 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. OLD BUILDING STAIRWELL - DAY
+HAITONG (17)
+The call ends. Haitong&#x27;s portfolio slips. Pages scatter—her resume, shredded by rain.
+HAITONG
+(crying)
+Grandma, they found me.
+
+Speaker: HAITONG
+Spoken line: &quot;Grandma, they found me.&quot;
+Delivery cue: crying
+Sound cue: Pages scatter—her resume, shredded by rain.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Grandma, they found me.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The phone call visibly ends before the remaining actions occur.  [span: The call ends.]
+A2.2   must      critical  description Haitong&#x27;s portfolio is seen slipping from her grasp.  [span: Haitong&#x27;s portfolio slips.]
+A2.3   must      critical  description Pages scatter on screen, including Haitong&#x27;s rain-shredded resume.  [span: Pages scatter—her resume, shredded by rain.]
+A3.1   must      major     description The setting matches the heading: INT. OLD BUILDING STAIRWELL - DAY.  [span: INT. OLD BUILDING STAIRWELL - DAY]
+A3.2   must      major     description The scripted sound is audible: Pages scatter—her resume, shredded by rain.  [span: Pages scatter—her resume, shredded by rain.]
+A3.3   must      major     description Haitong&#x27;s portfolio is visible in the scene.  [span: Haitong&#x27;s portfolio]
+A3.4   must      major     description Her resume is visible among the scattered pages and is shredded by rain.  [span: her resume]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: HAITONG. Nobody else appears.
+A4.2   must_not  major     description Only HAITONG speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description Grandma is only addressed and is not physically present in the scene.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, HAITONG centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: crying).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;crying&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;The call ends.&quot;,&quot;check&quot;:&quot;The phone call visibly ends before the remaining actions occur.&quot;},{&quot;span&quot;:&quot;Haitong&#x27;s portfolio slips.&quot;,&quot;check&quot;:&quot;Haitong&#x27;s portfolio is seen slipping from her grasp.&quot;},{&quot;span&quot;:&quot;Pages scatter—her resume, shredded by rain.&quot;,&quot;check&quot;:&quot;Pages scatter on screen, including Haitong&#x27;s rain-shredded resume.&quot;},{&quot;span&quot;:&quot;(crying)&quot;,&quot;check&quot;:&quot;Haitong is visibly crying while delivering her line.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. OLD BUILDING STAIRWELL - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot takes place in an old building stairwell during the day.&quot;},{&quot;span&quot;:&quot;Haitong&#x27;s portfolio&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;Haitong&#x27;s portfolio is visible in the scene.&quot;},{&quot;span&quot;:&quot;her resume&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;Her resume is visible among the scattered pages and is shredded by rain.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;Grandma is only addressed and is not physically present in the scene.&quot;,&quot;span&quot;:&quot;Grandma&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>SB-01 — 19 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. LUXURY PENTHOUSE - CONTINUOUS
+Cold filtered sunlight bathes the space. Julian enters, eyes widening in shock. He walks through living room — everything unchanged from four years ago. A frozen museum, time capsule, shrine.
+JULIAN
+(whispering)
+What… what is this?
+
+Speaker: JULIAN
+Spoken line: &quot;What… what is this?&quot;
+Delivery cue: whispering
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;What… what is this?&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description Julian must enter the space and visibly widen his eyes in shock.  [span: Julian enters, eyes widening in shock.]
+A2.2   must      critical  description Julian must walk through the living room, which must visibly appear unchanged from four years ago.  [span: He walks through living room — everything unchanged from four years ago.]
+A3.1   must      major     description The setting matches the heading: INT. LUXURY PENTHOUSE - CONTINUOUS.  [span: INT. LUXURY PENTHOUSE - CONTINUOUS]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: JULIAN. Nobody else appears.
+A4.2   must_not  major     description Only JULIAN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The space must appear unchanged from four years ago.
+A6.1   must      minor     tool_panel  medium close-up, static camera, slight high angle, vertical 9:16, JULIAN centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is surprise (cues: shock, eyes widening).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;whispering&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Julian enters, eyes widening in shock.&quot;,&quot;check&quot;:&quot;Julian must enter the space and visibly widen his eyes in shock.&quot;},{&quot;span&quot;:&quot;He walks through living room — everything unchanged from four years ago.&quot;,&quot;check&quot;:&quot;Julian must walk through the living room, which must visibly appear unchanged from four years ago.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. LUXURY PENTHOUSE - CONTINUOUS&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must take place continuously inside a luxury penthouse.&quot;},{&quot;span&quot;:&quot;Cold filtered sunlight bathes the space.&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;Cold, filtered sunlight must visibly bathe the space.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The space must appear unchanged from four years ago.&quot;,&quot;span&quot;:&quot;everything unchanged from four years ago.&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>DB-03 — 19 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. HOSPITAL DELIVERY ROOM - DAY
+YI SHUQIN (28, exhausted but focused)
+YI SHUQIN bears down, a primal sound escaping through gritted teeth.
+YI SHUQIN
+(whispering)
+He&#x27;s coming... just wait...
+
+Speaker: YI SHUQIN
+Spoken line: &quot;He&#x27;s coming... just wait...&quot;
+Delivery cue: whispering
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;He&#x27;s coming... just wait...&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description YI SHUQIN must be visibly bearing down with gritted teeth while a primal sound is audible.  [span: YI SHUQIN bears down, a primal sound escaping through gritted teeth.]
+A3.1   must      major     description The setting matches the heading: INT. HOSPITAL DELIVERY ROOM - DAY.  [span: INT. HOSPITAL DELIVERY ROOM - DAY]
+A3.2   must      major     description A primal sound must be audible as YI SHUQIN bears down.  [span: a primal sound escaping through gritted teeth]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: YI SHUQIN. Nobody else appears.
+A4.2   must_not  major     description Only YI SHUQIN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description YI SHUQIN is exhausted but focused.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, YI SHUQIN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is anger (cues: gritted teeth, through gritted teeth).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;whispering&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;YI SHUQIN bears down, a primal sound escaping through gritted teeth.&quot;,&quot;check&quot;:&quot;YI SHUQIN must be visibly bearing down with gritted teeth while a primal sound is audible.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. HOSPITAL DELIVERY ROOM - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot must take place in a hospital delivery room during the day.&quot;},{&quot;span&quot;:&quot;a primal sound escaping through gritted teeth&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;A primal sound must be audible as YI SHUQIN bears down.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;YI SHUQIN is exhausted but focused.&quot;,&quot;span&quot;:&quot;YI SHUQIN (28, exhausted but focused)&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-11 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. SU XIA&#x27;S APARTMENT - DAY
+YE LIN (26, sharp features masking desperation)
+Ye Lin intercepts her, snatching the bag with trembling hands. She examines it like a prosecutor with evidence.
+YE LIN
+(quietly fierce)
+New scratches. Right across the clasp.
+
+Speaker: YE LIN
+Spoken line: &quot;New scratches. Right across the clasp.&quot;
+Delivery cue: quietly fierce
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;New scratches. Right across the clasp.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description Ye Lin must intercept the other person and snatch the bag with visibly trembling hands.  [span: Ye Lin intercepts her, snatching the bag with trembling hands.]
+A2.2   must      critical  description Ye Lin must examine the bag intently and scrutinize it as though it were evidence.  [span: She examines it like a prosecutor with evidence.]
+A3.1   must      major     description The setting matches the heading: INT. SU XIA&#x27;S APARTMENT - DAY.  [span: INT. SU XIA&#x27;S APARTMENT - DAY]
+A3.2   must      major     description A bag must be visible for Ye Lin to snatch and examine.  [span: the bag]
+A3.3   must      major     description The bag must visibly have new scratches running across its clasp.  [span: New scratches. Right across the clasp.]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: YE LIN. Nobody else appears.
+A4.2   must_not  major     description Only YE LIN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The bag has new scratches across the clasp.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, YE LIN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is fear (cues: trembling).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;quietly fierce&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Ye Lin intercepts her, snatching the bag with trembling hands.&quot;,&quot;check&quot;:&quot;Ye Lin must intercept the other person and snatch the bag with visibly trembling hands.&quot;},{&quot;span&quot;:&quot;She examines it like a prosecutor with evidence.&quot;,&quot;check&quot;:&quot;Ye Lin must examine the bag intently and scrutinize it as though it were evidence.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. SU XIA&#x27;S APARTMENT - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must take place inside Su Xia&#x27;s apartment during the day.&quot;},{&quot;span&quot;:&quot;the bag&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A bag must be visible for Ye Lin to snatch and examine.&quot;},{&quot;span&quot;:&quot;New scratches. Right across the clasp.&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;The bag must visibly have new scratches running across its clasp.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The bag has new scratches across the clasp.&quot;,&quot;span&quot;:&quot;New scratches. Right across the clasp.&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-19 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. LOTTERY SHOP - DAY
+The LOTTERY SHOP OWNER (40s, skeptical) scans it. His eyes widen. He checks twice.
+LOTTERY SHOP OWNER
+(whispering)
+Ma&#x27;am... do you know what this is?
+
+Speaker: LOTTERY SHOP OWNER
+Spoken line: &quot;Ma&#x27;am... do you know what this is?&quot;
+Delivery cue: whispering
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Ma&#x27;am... do you know what this is?&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The LOTTERY SHOP OWNER visibly scans the same unspecified item.  [span: The LOTTERY SHOP OWNER (40s, skeptical) scans it.]
+A2.2   must      critical  description The LOTTERY SHOP OWNER&#x27;s eyes visibly widen.  [span: His eyes widen.]
+A2.3   must      critical  description The LOTTERY SHOP OWNER visibly checks the item two times.  [span: He checks twice.]
+A3.1   must      major     description The setting matches the heading: INT. LOTTERY SHOP - DAY.  [span: INT. LOTTERY SHOP - DAY]
+A3.2   must      major     description An unspecified item is visible for the LOTTERY SHOP OWNER to scan and check.  [span: it]
+A3.3   must      major     description The LOTTERY SHOP OWNER delivers his spoken line in a whisper.  [span: (whispering)]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: LOTTERY SHOP OWNER. Nobody else appears.
+A4.2   must_not  major     description Only LOTTERY SHOP OWNER speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, LOTTERY SHOP OWNER centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is surprise (cues: eyes widen).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;whispering&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;The LOTTERY SHOP OWNER (40s, skeptical) scans it.&quot;,&quot;check&quot;:&quot;The LOTTERY SHOP OWNER visibly scans the same unspecified item.&quot;},{&quot;span&quot;:&quot;His eyes widen.&quot;,&quot;check&quot;:&quot;The LOTTERY SHOP OWNER&#x27;s eyes visibly widen.&quot;},{&quot;span&quot;:&quot;He checks twice.&quot;,&quot;check&quot;:&quot;The LOTTERY SHOP OWNER visibly checks the item two times.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. LOTTERY SHOP - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene is visibly set inside a lottery shop during the day.&quot;},{&quot;span&quot;:&quot;it&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;An unspecified item is visible for the LOTTERY SHOP OWNER to scan and check.&quot;},{&quot;span&quot;:&quot;(whispering)&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The LOTTERY SHOP OWNER delivers his spoken line in a whisper.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>DB-21 — 20 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. OFFICE - DAY
+LU HUAIXING looks down at the bracelet, his eyes becoming tender.
+LU HUAIXING
+(softly)
+Mrs. Lu can only be Duole.
+
+Speaker: LU HUAIXING
+Spoken line: &quot;Mrs. Lu can only be Duole.&quot;
+Delivery cue: softly
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Mrs. Lu can only be Duole.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description LU HUAIXING must be seen looking down at the bracelet.  [span: looks down at the bracelet]
+A2.2   must      critical  description LU HUAIXING&#x27;s eyes must visibly become tender.  [span: his eyes becoming tender]
+A3.1   must      major     description The setting matches the heading: INT. OFFICE - DAY.  [span: INT. OFFICE - DAY]
+A3.2   must      major     description A bracelet must be visible for LU HUAIXING to look at.  [span: bracelet]
+A3.3   must      major     description LU HUAIXING must deliver the spoken line softly.  [span: (softly)]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: LU HUAIXING. Nobody else appears.
+A4.2   must_not  major     description Only LU HUAIXING speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, LU HUAIXING centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is happiness (cues: tender).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;softly&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;looks down at the bracelet&quot;,&quot;check&quot;:&quot;LU HUAIXING must be seen looking down at the bracelet.&quot;},{&quot;span&quot;:&quot;his eyes becoming tender&quot;,&quot;check&quot;:&quot;LU HUAIXING&#x27;s eyes must visibly become tender.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. OFFICE - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must be visibly set in an office during the day.&quot;},{&quot;span&quot;:&quot;bracelet&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A bracelet must be visible for LU HUAIXING to look at.&quot;},{&quot;span&quot;:&quot;(softly)&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;LU HUAIXING must deliver the spoken line softly.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>DB-22 — 18 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. ROOM - DAY
+SHEN MENGYAN (20s)
+SHEN MENGYAN reveals a calculated smile.
+SHEN MENGYAN
+(quietly)
+Not when you don&#x27;t know how to take it.
+
+Speaker: SHEN MENGYAN
+Spoken line: &quot;Not when you don&#x27;t know how to take it.&quot;
+Delivery cue: quietly
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Not when you don&#x27;t know how to take it.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description SHEN MENGYAN visibly reveals a calculated smile.  [span: SHEN MENGYAN reveals a calculated smile.]
+A3.1   must      major     description The setting matches the heading: INT. ROOM - DAY.  [span: INT. ROOM - DAY]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: SHEN MENGYAN. Nobody else appears.
+A4.2   must_not  major     description Only SHEN MENGYAN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot remains in a room during the day.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, SHEN MENGYAN centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is happiness (cues: smile).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;quietly&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;SHEN MENGYAN reveals a calculated smile.&quot;,&quot;check&quot;:&quot;SHEN MENGYAN visibly reveals a calculated smile.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. ROOM - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene is visibly set indoors in a room during the day.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot remains in a room during the day.&quot;,&quot;span&quot;:&quot;INT. ROOM - DAY&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>DB-39 — 20 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. WASTELAND - DAY
+XIAO YU (8)
+She slaps Wang Quan. He doesn&#x27;t flinch, just holds Xiao Yu.
+XIAO YU
+(crying)
+Take them! Just go!
+
+Speaker: XIAO YU
+Spoken line: &quot;Take them! Just go!&quot;
+Delivery cue: crying
+Sound cue: She slaps Wang Quan.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Take them! Just go!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description Xiao Yu must be seen slapping Wang Quan.  [span: She slaps Wang Quan.]
+A2.2   must      critical  description Wang Quan must remain unfazed and hold Xiao Yu.  [span: He doesn&#x27;t flinch, just holds Xiao Yu.]
+A3.1   must      major     description The setting matches the heading: EXT. WASTELAND - DAY.  [span: EXT. WASTELAND - DAY]
+A3.2   must      major     description The scripted sound is audible: She slaps Wang Quan.  [span: She slaps Wang Quan.]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: XIAO YU, Wang Quan. Nobody else appears.
+A4.2   must_not  major     description Only XIAO YU speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description Wang Quan does not flinch when Xiao Yu slaps him.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, XIAO YU centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: crying).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;crying&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;She slaps Wang Quan.&quot;,&quot;check&quot;:&quot;Xiao Yu must be seen slapping Wang Quan.&quot;},{&quot;span&quot;:&quot;He doesn&#x27;t flinch, just holds Xiao Yu.&quot;,&quot;check&quot;:&quot;Wang Quan must remain unfazed and hold Xiao Yu.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. WASTELAND - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must be visibly set in a wasteland during the day.&quot;},{&quot;span&quot;:&quot;(crying)&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;Xiao Yu must deliver the line while crying.&quot;}],&quot;other_people&quot;:[&quot;Wang Quan&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;Wang Quan does not flinch when Xiao Yu slaps him.&quot;,&quot;span&quot;:&quot;He doesn&#x27;t flinch, just holds Xiao Yu.&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-60 — 20 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. HOSPITAL CORRIDOR - DAY
+RUAN NINGXIA (30s)
+RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG&#x27;S ASSISTANT with JIANG YAO, both in power suits.
+RUAN NINGXIA
+(pretending to cry)
+Assistant Chen! My husband?
+
+Speaker: RUAN NINGXIA
+Spoken line: &quot;Assistant Chen! My husband?&quot;
+Delivery cue: pretending to cry
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Assistant Chen! My husband?&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description RUAN NINGXIA must be visibly dressed in luxurious fur and a dress, clutching a designer bag too tightly while running anxiously through the corridor.  [span: RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor.]
+A2.2   must      critical  description FU LINCHENG&#x27;S ASSISTANT and JIANG YAO must both be visible in power suits as RUAN NINGXIA sees them.  [span: She sees FU LINCHENG&#x27;S ASSISTANT with JIANG YAO, both in power suits.]
+A3.1   must      major     description The setting matches the heading: INT. HOSPITAL CORRIDOR - DAY.  [span: INT. HOSPITAL CORRIDOR - DAY]
+A3.2   must      major     description A designer bag must be visible in RUAN NINGXIA&#x27;s grasp.  [span: designer bag]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: RUAN NINGXIA, FU LINCHENG&#x27;S ASSISTANT, JIANG YAO. Nobody else appears.
+A4.2   must_not  major     description Only RUAN NINGXIA speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description RUAN NINGXIA is pretending to cry rather than genuinely crying.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, RUAN NINGXIA centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: cry).
+C2.1   must      major     panel       Face and voice intensity within [3, 4] on the 0-4 scale (exaggerated).  [interval [3, 4]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;pretending to cry&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor.&quot;,&quot;check&quot;:&quot;RUAN NINGXIA must be visibly dressed in luxurious fur and a dress, clutching a designer bag too tightly while running anxiously through the corridor.&quot;},{&quot;span&quot;:&quot;She sees FU LINCHENG&#x27;S ASSISTANT with JIANG YAO, both in power suits.&quot;,&quot;check&quot;:&quot;FU LINCHENG&#x27;S ASSISTANT and JIANG YAO must both be visible in power suits as RUAN NINGXIA sees them.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. HOSPITAL CORRIDOR - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must visibly take place in a hospital corridor during the day.&quot;},{&quot;span&quot;:&quot;designer bag&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A designer bag must be visible in RUAN NINGXIA&#x27;s grasp.&quot;}],&quot;other_people&quot;:[&quot;FU LINCHENG&#x27;S ASSISTANT&quot;,&quot;JIANG YAO&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;RUAN NINGXIA is pretending to cry rather than genuinely crying.&quot;,&quot;span&quot;:&quot;(pretending to cry)&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>SB-07 — 23 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. DESERT HIGHWAY - DAY
+SLOW MOTION: Phone slips from fingers, tumbles to asphalt, shatters in Jeep’s wake — past left behind. Julian faces sun. Laughs loud, unrestrained, joyful — first time in series.
+JULIAN
+(screaming to canyon walls, ringing freedom)
+I’m just going to live my own life!
+
+Speaker: JULIAN
+Spoken line: &quot;I’m just going to live my own life!&quot;
+Delivery cue: screaming to canyon walls, ringing freedom
+Sound cue: SLOW MOTION: Phone slips from fingers, tumbles to asphalt, shatters in Jeep’s wake — past left behind.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;I’m just going to live my own life!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The phone must visibly slip from fingers, tumble onto the asphalt, and shatter behind the Jeep.  [span: Phone slips from fingers, tumbles to asphalt, shatters in Jeep’s wake]
+A2.2   must      critical  description Julian must be visibly facing the sun.  [span: Julian faces sun.]
+A2.3   must      critical  description Julian must visibly laugh loudly, freely, and joyfully.  [span: Laughs loud, unrestrained, joyful — first time in series.]
+A3.1   must      major     description The setting matches the heading: EXT. DESERT HIGHWAY - DAY.  [span: EXT. DESERT HIGHWAY - DAY]
+A3.2   must      major     description The scripted sound is audible: SLOW MOTION: Phone slips from fingers, tumbles to asphalt, shatters in Jeep’s wake — past left behind.  [span: SLOW MOTION: Phone slips from fingers, tumbles to asphalt, shatters in Jeep’s wake — past left behind.]
+A3.3   must      major     description A phone must be visible as the object that falls and shatters.  [span: Phone]
+A3.4   must      major     description A Jeep must be visible as the vehicle leaving the phone in its wake.  [span: Jeep]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: JULIAN. Nobody else appears.
+A4.2   must_not  major     description Only JULIAN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot must remain in the present and must not show the past as a separate visual memory.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, JULIAN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is happiness (cues: laughs, joyful).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;screaming to canyon walls, ringing freedom&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Phone slips from fingers, tumbles to asphalt, shatters in Jeep’s wake&quot;,&quot;check&quot;:&quot;The phone must visibly slip from fingers, tumble onto the asphalt, and shatter behind the Jeep.&quot;},{&quot;span&quot;:&quot;Julian faces sun.&quot;,&quot;check&quot;:&quot;Julian must be visibly facing the sun.&quot;},{&quot;span&quot;:&quot;Laughs loud, unrestrained, joyful — first time in series.&quot;,&quot;check&quot;:&quot;Julian must visibly laugh loudly, freely, and joyfully.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. DESERT HIGHWAY - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot must show a desert highway in daylight.&quot;},{&quot;span&quot;:&quot;Phone&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A phone must be visible as the object that falls and shatters.&quot;},{&quot;span&quot;:&quot;Jeep&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A Jeep must be visible as the vehicle leaving the phone in its wake.&quot;},{&quot;span&quot;:&quot;canyon walls&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;Canyon walls must be present for Julian’s scream to carry toward them.&quot;},{&quot;span&quot;:&quot;screaming to canyon walls, ringing freedom&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;Julian’s delivery must be a loud scream that rings toward or echoes from the canyon walls.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot must remain in the present and must not show the past as a separate visual memory.&quot;,&quot;span&quot;:&quot;past left behind&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-43 — 23 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. DRUNKEN FLOWER BROTHEL - DAY
+He spills golden taels like water. They clink against the floorboards, rolling. The Madam&#x27;s eyes fix on the gold, then on Su Wanwan—truly seeing her for the first time.
+MADAM
+(hand trembling as she extends the contract)
+Take her. She was born for better things.
+
+Speaker: MADAM
+Spoken line: &quot;Take her. She was born for better things.&quot;
+Delivery cue: hand trembling as she extends the contract
+Sound cue: They clink against the floorboards, rolling.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Take her. She was born for better things.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description Golden taels must be visibly spilled in a large quantity.  [span: He spills golden taels like water.]
+A2.2   must      critical  description The taels must be seen rolling across the floorboards.  [span: They clink against the floorboards, rolling.]
+A2.3   must      critical  description The Madam must visibly look first at the gold and then at Su Wanwan.  [span: The Madam&#x27;s eyes fix on the gold, then on Su Wanwan—truly seeing her for the first time.]
+A3.1   must      major     description The setting matches the heading: INT. DRUNKEN FLOWER BROTHEL - DAY.  [span: INT. DRUNKEN FLOWER BROTHEL - DAY]
+A3.2   must      major     description The scripted sound is audible: They clink against the floorboards, rolling.  [span: They clink against the floorboards, rolling.]
+A3.3   must      major     description Golden taels must be visible.  [span: golden taels]
+A3.4   must      major     description A contract must be visible as it is extended.  [span: the contract]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: MADAM, Su Wanwan. Nobody else appears.
+A4.2   must_not  major     description Only MADAM speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The Madam is seeing Su Wanwan for the first time in this moment.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, MADAM centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is fear (cues: trembling).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;hand trembling as she extends the contract&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;He spills golden taels like water.&quot;,&quot;check&quot;:&quot;Golden taels must be visibly spilled in a large quantity.&quot;},{&quot;span&quot;:&quot;They clink against the floorboards, rolling.&quot;,&quot;check&quot;:&quot;The taels must be seen rolling across the floorboards.&quot;},{&quot;span&quot;:&quot;The Madam&#x27;s eyes fix on the gold, then on Su Wanwan—truly seeing her for the first time.&quot;,&quot;check&quot;:&quot;The Madam must visibly look first at the gold and then at Su Wanwan.&quot;},{&quot;span&quot;:&quot;(hand trembling as she extends the contract)&quot;,&quot;check&quot;:&quot;The Madam&#x27;s hand must visibly tremble while she extends the contract.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. DRUNKEN FLOWER BROTHEL - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must visibly take place inside the Drunken Flower Brothel during the day.&quot;},{&quot;span&quot;:&quot;golden taels&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;Golden taels must be visible.&quot;},{&quot;span&quot;:&quot;the contract&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A contract must be visible as it is extended.&quot;},{&quot;span&quot;:&quot;They clink against the floorboards, rolling.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The taels must audibly clink against the floorboards while rolling.&quot;}],&quot;other_people&quot;:[&quot;Su Wanwan&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The Madam is seeing Su Wanwan for the first time in this moment.&quot;,&quot;span&quot;:&quot;The Madam&#x27;s eyes fix on the gold, then on Su Wanwan—truly seeing her for the first time.&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-06 — 22 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. MODERN OFFICE - CUBICLE - NIGHT
+OFFICE WORKER (20s, hoodie, dead eyes)
+She slams the laptop shut. The blue standby light flares, reflecting in her glasses. It pulses once, twice—then floods the cubicle.
+OFFICE WORKER
+(tired, unsurprised)
+Third time this month.
+
+Speaker: OFFICE WORKER
+Spoken line: &quot;Third time this month.&quot;
+Delivery cue: tired, unsurprised
+Sound cue: She slams the laptop shut.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Third time this month.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description OFFICE WORKER visibly slams the laptop closed.  [span: She slams the laptop shut.]
+A2.2   must      critical  description The blue standby light flares and its reflection is visible in OFFICE WORKER&#x27;s glasses.  [span: The blue standby light flares, reflecting in her glasses.]
+A2.3   must      critical  description The blue light pulses exactly twice and then floods the cubicle.  [span: It pulses once, twice—then floods the cubicle.]
+A3.1   must      major     description The setting matches the heading: INT. MODERN OFFICE - CUBICLE - NIGHT.  [span: INT. MODERN OFFICE - CUBICLE - NIGHT]
+A3.2   must      major     description The scripted sound is audible: She slams the laptop shut.  [span: She slams the laptop shut.]
+A3.3   must      major     description A laptop is visible and can be slammed shut.  [span: laptop]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: OFFICE WORKER. Nobody else appears.
+A4.2   must_not  major     description Only OFFICE WORKER speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description OFFICE WORKER delivers the line tired and unsurprised.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, OFFICE WORKER centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: tired).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;tired, unsurprised&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;She slams the laptop shut.&quot;,&quot;check&quot;:&quot;OFFICE WORKER visibly slams the laptop closed.&quot;},{&quot;span&quot;:&quot;The blue standby light flares, reflecting in her glasses.&quot;,&quot;check&quot;:&quot;The blue standby light flares and its reflection is visible in OFFICE WORKER&#x27;s glasses.&quot;},{&quot;span&quot;:&quot;It pulses once, twice—then floods the cubicle.&quot;,&quot;check&quot;:&quot;The blue light pulses exactly twice and then floods the cubicle.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. MODERN OFFICE - CUBICLE - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot takes place inside a modern office cubicle at night.&quot;},{&quot;span&quot;:&quot;laptop&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A laptop is visible and can be slammed shut.&quot;},{&quot;span&quot;:&quot;She slams the laptop shut.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The laptop slam is audible.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;OFFICE WORKER delivers the line tired and unsurprised.&quot;,&quot;span&quot;:&quot;(tired, unsurprised)&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-10 — 18 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. RAINY NIGHT ROAD - NIGHT
+LING YUE (16)
+She looks up at the rain.
+LING YUE
+(softly, broken)
+I was so stupid.
+
+Speaker: LING YUE
+Spoken line: &quot;I was so stupid.&quot;
+Delivery cue: softly, broken
+Sound cue: She looks up at the rain.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;I was so stupid.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description LING YUE must be seen looking upward at the rain.  [span: She looks up at the rain.]
+A3.1   must      major     description The setting matches the heading: INT. RAINY NIGHT ROAD - NIGHT.  [span: INT. RAINY NIGHT ROAD - NIGHT]
+A3.2   must      major     description The scripted sound is audible: She looks up at the rain.  [span: She looks up at the rain.]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: LING YUE. Nobody else appears.
+A4.2   must_not  major     description Only LING YUE speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, LING YUE centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: broken).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;softly, broken&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;She looks up at the rain.&quot;,&quot;check&quot;:&quot;LING YUE must be seen looking upward at the rain.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. RAINY NIGHT ROAD - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must take place on a rainy road at night.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-33 — 19 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. LUXURIOUS BANQUET HALL - DAY
+LI WUJIANG slams her teacup. It shatters.
+LI WUJIANG
+(furious)
+Retrieve him. Immediately.
+
+Speaker: LI WUJIANG
+Spoken line: &quot;Retrieve him. Immediately.&quot;
+Delivery cue: furious
+Sound cue: LI WUJIANG slams her teacup.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Retrieve him. Immediately.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description LI WUJIANG must be seen slamming her teacup.  [span: slams her teacup]
+A3.1   must      major     description The setting matches the heading: INT. LUXURIOUS BANQUET HALL - DAY.  [span: INT. LUXURIOUS BANQUET HALL - DAY]
+A3.2   must      major     description The scripted sound is audible: LI WUJIANG slams her teacup.  [span: LI WUJIANG slams her teacup.]
+A3.3   must      major     description A teacup must be visible for LI WUJIANG to slam.  [span: teacup]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: LI WUJIANG. Nobody else appears.
+A4.2   must_not  major     description Only LI WUJIANG speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, LI WUJIANG centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is anger (cues: furious).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;furious&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;slams her teacup&quot;,&quot;check&quot;:&quot;LI WUJIANG must be seen slamming her teacup.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. LUXURIOUS BANQUET HALL - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must take place in a luxurious banquet hall during the day.&quot;},{&quot;span&quot;:&quot;teacup&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A teacup must be visible for LI WUJIANG to slam.&quot;},{&quot;span&quot;:&quot;It shatters.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The teacup must be heard shattering.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-37 — 21 items — conflict recorded</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. FOREST CLEARING - NIGHT
+He smashes the jade against his brow. Blinding light erupts, searing his vision white.
+RED-ROBED WOMAN
+(shielding her face, snarling)
+The resonance! He&#x27;s triggered the blood seal!
+
+Speaker: RED-ROBED WOMAN
+Spoken line: &quot;The resonance! He&#x27;s triggered the blood seal!&quot;
+Delivery cue: shielding her face, snarling
+Sound cue: He smashes the jade against his brow.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;The resonance! He&#x27;s triggered the blood seal!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The man visibly strikes the jade against his forehead.  [span: He smashes the jade against his brow.]
+A2.2   must      critical  description A blinding burst of light visibly erupts and whites out his vision.  [span: Blinding light erupts, searing his vision white.]
+A3.1   must      major     description The setting matches the heading: EXT. FOREST CLEARING - NIGHT.  [span: EXT. FOREST CLEARING - NIGHT]
+A3.2   must      major     description The scripted sound is audible: He smashes the jade against his brow.  [span: He smashes the jade against his brow.]
+A3.3   must      major     description A jade object is visibly present and used in the impact.  [span: jade]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: RED-ROBED WOMAN, the man. Nobody else appears.
+A4.2   must_not  major     description Only RED-ROBED WOMAN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot remains in the forest clearing at night while the light erupts; it does not visibly relocate elsewhere.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, RED-ROBED WOMAN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is anger (cues: snarling).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;shielding her face, snarling&#x27;.
+
+conflicts: a pronoun in the action line refers to someone other than RED-ROBED WOMAN; &#x27;the man&#x27; added to the cast</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;He smashes the jade against his brow.&quot;,&quot;check&quot;:&quot;The man visibly strikes the jade against his forehead.&quot;},{&quot;span&quot;:&quot;Blinding light erupts, searing his vision white.&quot;,&quot;check&quot;:&quot;A blinding burst of light visibly erupts and whites out his vision.&quot;},{&quot;span&quot;:&quot;shielding her face, snarling&quot;,&quot;check&quot;:&quot;The red-robed woman shields her face and snarls while speaking.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. FOREST CLEARING - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot visibly takes place in a forest clearing at night.&quot;},{&quot;span&quot;:&quot;jade&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A jade object is visibly present and used in the impact.&quot;},{&quot;span&quot;:&quot;He smashes the jade against his brow.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The impact of the jade against his brow is audibly heard.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot remains in the forest clearing at night while the light erupts; it does not visibly relocate elsewhere.&quot;,&quot;span&quot;:&quot;EXT. FOREST CLEARING - NIGHT&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-52 — 20 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. BALCONY - NIGHT
+CHU TIAN (40s, tailored suit, exhaustion etched in his features)
+Chu Tian stumbles. The glass shatters against marble.
+CHU TIAN
+(gasping)
+The wine... you&#x27;ve been...
+
+Speaker: CHU TIAN
+Spoken line: &quot;The wine... you&#x27;ve been...&quot;
+Delivery cue: gasping
+Sound cue: The glass shatters against marble.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;The wine... you&#x27;ve been...&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description CHU TIAN must be seen stumbling.  [span: Chu Tian stumbles.]
+A2.2   must      critical  description The glass must be seen shattering against the marble.  [span: The glass shatters against marble.]
+A3.1   must      major     description The setting matches the heading: INT. BALCONY - NIGHT.  [span: INT. BALCONY - NIGHT]
+A3.2   must      major     description The scripted sound is audible: The glass shatters against marble.  [span: The glass shatters against marble.]
+A3.3   must      major     description A glass must be present and break during the shot.  [span: The glass]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: CHU TIAN. Nobody else appears.
+A4.2   must_not  major     description Only CHU TIAN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, CHU TIAN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is surprise (cues: gasping).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;gasping&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Chu Tian stumbles.&quot;,&quot;check&quot;:&quot;CHU TIAN must be seen stumbling.&quot;},{&quot;span&quot;:&quot;The glass shatters against marble.&quot;,&quot;check&quot;:&quot;The glass must be seen shattering against the marble.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. BALCONY - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot must take place on a balcony at night.&quot;},{&quot;span&quot;:&quot;The glass&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A glass must be present and break during the shot.&quot;},{&quot;span&quot;:&quot;The glass shatters against marble.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The sound of glass shattering against marble must be heard.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-48 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. CEMETERY - DAY
+She shoves him away, her knee cracking against the tombstone&#x27;s edge. She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.
+ELDEST DAUGHTER OF THE YE FAMILY
+(covering her face, shocked)
+Nan Xi, you dare hit me? I&#x27;m pregnant!
+
+Speaker: ELDEST DAUGHTER OF THE YE FAMILY
+Spoken line: &quot;Nan Xi, you dare hit me? I&#x27;m pregnant!&quot;
+Delivery cue: covering her face, shocked
+Sound cue: She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Nan Xi, you dare hit me? I&#x27;m pregnant!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The shot must show her shoving him away while her knee strikes the tombstone&#x27;s edge.  [span: She shoves him away, her knee cracking against the tombstone&#x27;s edge.]
+A2.2   must      critical  description The shot must show her raising a hand and slapping the ELDEST DAUGHTER OF THE YE FAMILY across the face.  [span: She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.]
+A3.1   must      major     description The setting matches the heading: EXT. CEMETERY - DAY.  [span: EXT. CEMETERY - DAY]
+A3.2   must      major     description The scripted sound is audible: She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.  [span: She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.]
+A3.3   must      major     description A tombstone must be visible where the knee strikes it.  [span: tombstone]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: ELDEST DAUGHTER OF THE YE FAMILY, Nan Xi. Nobody else appears.
+A4.2   must_not  major     description Only ELDEST DAUGHTER OF THE YE FAMILY speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The ELDEST DAUGHTER OF THE YE FAMILY is pregnant.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, ELDEST DAUGHTER OF THE YE FAMILY centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is surprise (cues: shocked).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;covering her face, shocked&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;She shoves him away, her knee cracking against the tombstone&#x27;s edge.&quot;,&quot;check&quot;:&quot;The shot must show her shoving him away while her knee strikes the tombstone&#x27;s edge.&quot;},{&quot;span&quot;:&quot;She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.&quot;,&quot;check&quot;:&quot;The shot must show her raising a hand and slapping the ELDEST DAUGHTER OF THE YE FAMILY across the face.&quot;},{&quot;span&quot;:&quot;(covering her face, shocked)&quot;,&quot;check&quot;:&quot;The ELDEST DAUGHTER OF THE YE FAMILY must be seen covering her face with a shocked expression.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. CEMETERY - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must visibly take place in a cemetery during the day.&quot;},{&quot;span&quot;:&quot;tombstone&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A tombstone must be visible where the knee strikes it.&quot;},{&quot;span&quot;:&quot;She raises a hand and slaps the ELDEST DAUGHTER OF THE YE FAMILY across the face.&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The slap must be audible.&quot;}],&quot;other_people&quot;:[&quot;Nan Xi&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The ELDEST DAUGHTER OF THE YE FAMILY is pregnant.&quot;,&quot;span&quot;:&quot;I&#x27;m pregnant!&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>FB-12 — 20 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+In the same dim modern operating room at night, a young Asian male patient is wearing a blue-and-white striped hospital gown and is restrained; his facial features are sharply defined, and at this moment his face is covered in sweat, his eyes filled with fear and panic. He keeps shaking his head left and right, pleading in terror to someone ahead on the right: &quot;No, let me go!&quot;; The shot uses a shoulder-up close-up, an eye-level locked-off camera, and rule-of-thirds composition.
+
+Speaker: young Asian male patient
+Spoken line: &quot;No, let me go!&quot;
+Delivery cue: none
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;No, let me go!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The patient must visibly be restrained.  [span: is restrained]
+A2.2   must      critical  description The patient must repeatedly shake his head from side to side.  [span: keeps shaking his head left and right]
+A2.3   must      critical  description The patient&#x27;s sweaty face and fearful, panicked eyes must be visible.  [span: his face is covered in sweat, his eyes filled with fear and panic]
+A3.1   must      major     description The shot must take place in the same dim modern operating room at night.  [span: same dim modern operating room at night]
+A3.2   must      major     description The patient must be wearing a blue-and-white striped hospital gown.  [span: blue-and-white striped hospital gown]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: young Asian male patient. Nobody else appears.
+A4.2   must_not  major     description Only young Asian male patient speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot stays in the same dim modern operating room at night.
+A6.1   must      minor     tool_panel  close-up, eye-level locked-off camera, vertical 9:16, young Asian male patient centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is fear (cues: terror, fear, panic, shaking, pleading).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;is restrained&quot;,&quot;check&quot;:&quot;The patient must visibly be restrained.&quot;},{&quot;span&quot;:&quot;keeps shaking his head left and right&quot;,&quot;check&quot;:&quot;The patient must repeatedly shake his head from side to side.&quot;},{&quot;span&quot;:&quot;his face is covered in sweat, his eyes filled with fear and panic&quot;,&quot;check&quot;:&quot;The patient&#x27;s sweaty face and fearful, panicked eyes must be visible.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;same dim modern operating room at night&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot must take place in the same dim modern operating room at night.&quot;},{&quot;span&quot;:&quot;blue-and-white striped hospital gown&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;The patient must be wearing a blue-and-white striped hospital gown.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot stays in the same dim modern operating room at night.&quot;,&quot;span&quot;:&quot;same dim modern operating room at night&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>SB-04 — 18 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. GREY ESTATE - MILO’S BEDROOM - NIGHT
+Victor’s pupils contract. Soothing expression freezes, then shatters inch by inch.
+VICTOR
+(voice trembling, shocked rage building)
+Milo… what did you say? Who threw him out in the rain?
+
+Speaker: VICTOR
+Spoken line: &quot;Milo… what did you say? Who threw him out in the rain?&quot;
+Delivery cue: voice trembling, shocked rage building
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Milo… what did you say? Who threw him out in the rain?&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description Victor’s pupils must visibly contract on screen.  [span: Victor’s pupils contract.]
+A2.2   must      critical  description Victor’s soothing expression must freeze and then visibly break down gradually.  [span: Soothing expression freezes, then shatters inch by inch.]
+A3.1   must      major     description The setting matches the heading: INT. GREY ESTATE - MILO’S BEDROOM - NIGHT.  [span: INT. GREY ESTATE - MILO’S BEDROOM - NIGHT]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: VICTOR. Nobody else appears.
+A4.2   must_not  major     description Only VICTOR speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, slow push-in, over-the-shoulder, vertical 9:16, VICTOR centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is fear (cues: trembling).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;voice trembling, shocked rage building&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Victor’s pupils contract.&quot;,&quot;check&quot;:&quot;Victor’s pupils must visibly contract on screen.&quot;},{&quot;span&quot;:&quot;Soothing expression freezes, then shatters inch by inch.&quot;,&quot;check&quot;:&quot;Victor’s soothing expression must freeze and then visibly break down gradually.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. GREY ESTATE - MILO’S BEDROOM - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot must take place in Milo’s bedroom at the Grey Estate at night.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>FB-04 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+In the same bedroom, the camera moves on a semi-orbiting track toward a side close shot of the long-haired young woman. She raises her head slightly, her brow faintly furrowed, her eyes filled with probing concern, and asks cautiously: &quot;How much would that cost?&quot;
+
+Speaker: young woman
+Spoken line: &quot;How much would that cost?&quot;
+Delivery cue: none
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;How much would that cost?&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The camera visibly follows a semi-orbiting track toward a side close-up of the young woman.  [span: the camera moves on a semi-orbiting track toward a side close shot of the long-haired young woman]
+A2.2   must      critical  description The young woman visibly raises her head slightly.  [span: She raises her head slightly]
+A2.3   must      critical  description Her brow is visibly faintly furrowed.  [span: her brow faintly furrowed]
+A2.4   must      critical  description Her eyes visibly convey probing concern.  [span: her eyes filled with probing concern]
+A3.1   must      major     description The shot takes place in the same bedroom.  [span: same bedroom]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: young woman. Nobody else appears.
+A4.2   must_not  major     description Only young woman speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot remains in the same bedroom.
+A6.1   must      minor     tool_panel  close shot, static camera, eye level, vertical 9:16, young woman centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is fear (cues: cautiously).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C3.1   must      minor     panel       The scripted emotional turn happens, at the moment the script places it.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;the camera moves on a semi-orbiting track toward a side close shot of the long-haired young woman&quot;,&quot;check&quot;:&quot;The camera visibly follows a semi-orbiting track toward a side close-up of the young woman.&quot;},{&quot;span&quot;:&quot;She raises her head slightly&quot;,&quot;check&quot;:&quot;The young woman visibly raises her head slightly.&quot;},{&quot;span&quot;:&quot;her brow faintly furrowed&quot;,&quot;check&quot;:&quot;Her brow is visibly faintly furrowed.&quot;},{&quot;span&quot;:&quot;her eyes filled with probing concern&quot;,&quot;check&quot;:&quot;Her eyes visibly convey probing concern.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;same bedroom&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot takes place in the same bedroom.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot remains in the same bedroom.&quot;,&quot;span&quot;:&quot;same bedroom&quot;}],&quot;transition_scripted&quot;:true,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>FB-08 — 22 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+In the same dining room, the camera cuts to a close shot of the young woman, with an eye-level locked-off camera and rule-of-thirds composition. She has yellow-brown short hair, wears a star-shaped ear clip on her left ear, and has pink lipstick on. Looking impatient, she lowers her head and drops her gaze, responding coldly: &quot;I&#x27;ve already blocked him.&quot;, with obvious irritation in her tone.
+
+Speaker: young woman
+Spoken line: &quot;I&#x27;ve already blocked him.&quot;
+Delivery cue: none
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;I&#x27;ve already blocked him.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The young woman visibly appears impatient.  [span: Looking impatient]
+A2.2   must      critical  description The young woman lowers her head and looks downward.  [span: she lowers her head and drops her gaze]
+A3.1   must      major     description The shot takes place in the same dining room.  [span: same dining room]
+A3.2   must      major     description A star-shaped ear clip is visible on the young woman&#x27;s left ear.  [span: a star-shaped ear clip on her left ear]
+A3.3   must      major     description The young woman&#x27;s voice conveys obvious irritation.  [span: obvious irritation in her tone]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: young woman. Nobody else appears.
+A4.2   must_not  major     description Only young woman speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot is a close shot of the young woman with an eye-level locked-off camera and rule-of-thirds composition.
+A5.2   premise   major     description The young woman has yellow-brown short hair and pink lipstick.
+A6.1   must      minor     tool_panel  close shot, eye-level locked-off camera, vertical 9:16, young woman centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is contempt (cues: coldly).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C3.1   must      minor     panel       The scripted emotional turn happens, at the moment the script places it.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Looking impatient&quot;,&quot;check&quot;:&quot;The young woman visibly appears impatient.&quot;},{&quot;span&quot;:&quot;she lowers her head and drops her gaze&quot;,&quot;check&quot;:&quot;The young woman lowers her head and looks downward.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;same dining room&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot takes place in the same dining room.&quot;},{&quot;span&quot;:&quot;a star-shaped ear clip on her left ear&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A star-shaped ear clip is visible on the young woman&#x27;s left ear.&quot;},{&quot;span&quot;:&quot;obvious irritation in her tone&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The young woman&#x27;s voice conveys obvious irritation.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot is a close shot of the young woman with an eye-level locked-off camera and rule-of-thirds composition.&quot;,&quot;span&quot;:&quot;the camera cuts to a close shot of the young woman, with an eye-level locked-off camera and rule-of-thirds composition&quot;},{&quot;fact&quot;:&quot;The young woman has yellow-brown short hair and pink lipstick.&quot;,&quot;span&quot;:&quot;She has yellow-brown short hair, wears a star-shaped ear clip on her left ear, and has pink lipstick on.&quot;}],&quot;transition_scripted&quot;:true,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>FB-14 — 22 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+Inside the playing field, a young player in a red-and-blue jersey sprints wildly in excitement after scoring. The shot uses a rapid pan to track him, with centered composition. He rushes toward the stands, raises five fingers high in celebration, and shouts, &quot;We&#x27;re sure to win!&quot;
+
+Speaker: young player
+Spoken line: &quot;We&#x27;re sure to win!&quot;
+Delivery cue: none
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;We&#x27;re sure to win!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The young player visibly sprints excitedly after scoring.  [span: sprints wildly in excitement after scoring]
+A2.2   must      critical  description The camera rapidly pans to keep the player tracked.  [span: rapid pan to track him]
+A2.3   must      critical  description The player visibly rushes toward the stands.  [span: rushes toward the stands]
+A2.4   must      critical  description The player raises one hand with five fingers held high.  [span: raises five fingers high in celebration]
+A2.5   must      critical  description The player visibly shouts the spoken line.  [span: shouts]
+A3.1   must      major     description The shot takes place inside the playing field.  [span: Inside the playing field]
+A3.2   must      major     description Stands are visible in the direction the player rushes.  [span: the stands]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: young player. Nobody else appears.
+A4.2   must_not  major     description Only young player speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The player has already scored before the celebration shown in the shot.
+A6.1   must      minor     tool_panel  medium close-up, rapid pan, vertical 9:16, young player centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is happiness (cues: excitement).
+C2.1   must      major     panel       Face and voice intensity within [2, 3] on the 0-4 scale (strong).  [interval [2, 3]]</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;sprints wildly in excitement after scoring&quot;,&quot;check&quot;:&quot;The young player visibly sprints excitedly after scoring.&quot;},{&quot;span&quot;:&quot;rapid pan to track him&quot;,&quot;check&quot;:&quot;The camera rapidly pans to keep the player tracked.&quot;},{&quot;span&quot;:&quot;rushes toward the stands&quot;,&quot;check&quot;:&quot;The player visibly rushes toward the stands.&quot;},{&quot;span&quot;:&quot;raises five fingers high in celebration&quot;,&quot;check&quot;:&quot;The player raises one hand with five fingers held high.&quot;},{&quot;span&quot;:&quot;shouts&quot;,&quot;check&quot;:&quot;The player visibly shouts the spoken line.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;Inside the playing field&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The shot takes place inside the playing field.&quot;},{&quot;span&quot;:&quot;the stands&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;Stands are visible in the direction the player rushes.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The player has already scored before the celebration shown in the shot.&quot;,&quot;span&quot;:&quot;after scoring&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>FB-05 — 19 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, &quot;What&#x27;s going on?&quot; A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.
+
+Speaker: woman
+Spoken line: &quot;What&#x27;s going on?&quot;
+Delivery cue: none
+Sound cue: In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, &quot; &quot; A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;What&#x27;s going on?&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The woman looks upward with a visibly terrified expression.  [span: looks up in terror]
+A2.2   must      critical  description The shot begins from a low angle, slowly tilts upward to her face, and keeps her composed according to the rule of thirds.  [span: A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.]
+A3.1   must      major     description The scripted sound is audible: In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, &quot; &quot; A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.  [span: In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, &quot; &quot; A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.]
+A3.2   must      major     description The woman is shown in a dim stairwell.  [span: dim stairwell]
+A3.3   must      major     description The woman is visibly wearing a floral top.  [span: floral top]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: woman. Nobody else appears.
+A4.2   must_not  major     description Only woman speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, slow tilt, vertical 9:16, woman centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is fear (cues: terror).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;looks up in terror&quot;,&quot;check&quot;:&quot;The woman looks upward with a visibly terrified expression.&quot;},{&quot;span&quot;:&quot;A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.&quot;,&quot;check&quot;:&quot;The shot begins from a low angle, slowly tilts upward to her face, and keeps her composed according to the rule of thirds.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;dim stairwell&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The woman is shown in a dim stairwell.&quot;},{&quot;span&quot;:&quot;floral top&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;The woman is visibly wearing a floral top.&quot;},{&quot;span&quot;:&quot;commotion&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;Commotion is audible as the woman reacts to it.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>DB-61 — 20 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. VILLA - DAY
+Suddenly, a young woman, SONG WAN, rushes in.
+SONG WAN
+(screaming hysterically)
+Dad! Dad! Dad!
+SONG WAN kneels on the ground, holding SONG TINGCHEN who is now lying on the floor, crying bitterly.
+
+Speaker: SONG WAN
+Spoken line: &quot;Dad! Dad! Dad!&quot;
+Delivery cue: screaming hysterically
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Dad! Dad! Dad!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description SONG WAN must be seen rushing into the scene.  [span: Suddenly, a young woman, SONG WAN, rushes in.]
+A2.2   must      critical  description SONG WAN must be seen kneeling and holding SONG TINGCHEN, who is lying on the floor and crying bitterly.  [span: SONG WAN kneels on the ground, holding SONG TINGCHEN who is now lying on the floor, crying bitterly.]
+A3.1   must      major     description The setting matches the heading: INT. VILLA - DAY.  [span: INT. VILLA - DAY]
+A3.2   must      major     description SONG WAN&#x27;s spoken line must be delivered as hysterical screaming.  [span: (screaming hysterically)]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: SONG WAN, SONG TINGCHEN. Nobody else appears.
+A4.2   must_not  major     description Only SONG WAN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description SONG TINGCHEN is lying on the floor while SONG WAN holds him.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, SONG WAN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is sadness (cues: crying).
+C2.1   must      major     panel       Face and voice intensity within [3, 4] on the 0-4 scale (exaggerated).  [interval [3, 4]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;screaming hysterically&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;Suddenly, a young woman, SONG WAN, rushes in.&quot;,&quot;check&quot;:&quot;SONG WAN must be seen rushing into the scene.&quot;},{&quot;span&quot;:&quot;SONG WAN kneels on the ground, holding SONG TINGCHEN who is now lying on the floor, crying bitterly.&quot;,&quot;check&quot;:&quot;SONG WAN must be seen kneeling and holding SONG TINGCHEN, who is lying on the floor and crying bitterly.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. VILLA - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must be visibly set inside a villa during the day.&quot;},{&quot;span&quot;:&quot;(screaming hysterically)&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;SONG WAN&#x27;s spoken line must be delivered as hysterical screaming.&quot;}],&quot;other_people&quot;:[&quot;SONG TINGCHEN&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;SONG TINGCHEN is lying on the floor while SONG WAN holds him.&quot;,&quot;span&quot;:&quot;holding SONG TINGCHEN who is now lying on the floor&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-64 — 18 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. DUNGEON - NIGHT
+GU YUTING suddenly bursts into maniacal laughter.
+GU YUTING
+(laughing wildly)
+Ha ha ha! Ha ha!
+
+Speaker: GU YUTING
+Spoken line: &quot;Ha ha ha! Ha ha!&quot;
+Delivery cue: laughing wildly
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Ha ha ha! Ha ha!&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description GU YUTING visibly begins laughing wildly and maniacally.  [span: GU YUTING suddenly bursts into maniacal laughter.]
+A3.1   must      major     description The setting matches the heading: INT. DUNGEON - NIGHT.  [span: INT. DUNGEON - NIGHT]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: GU YUTING. Nobody else appears.
+A4.2   must_not  major     description Only GU YUTING speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot remains in the dungeon at night while GU YUTING laughs.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, GU YUTING centred.
+B1.1   must_not  minor     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is happiness (cues: laughing).
+C2.1   must      major     panel       Face and voice intensity within [3, 4] on the 0-4 scale (exaggerated).  [interval [3, 4]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;laughing wildly&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;GU YUTING suddenly bursts into maniacal laughter.&quot;,&quot;check&quot;:&quot;GU YUTING visibly begins laughing wildly and maniacally.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. DUNGEON - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene is visibly set in a dungeon at night.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot remains in the dungeon at night while GU YUTING laughs.&quot;,&quot;span&quot;:&quot;INT. DUNGEON - NIGHT&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:false}</pre></div></div></div><h2>DB-63 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+INT. YUNZHOU CITY PLAZA - NIGHT
+The Four Evil Gods—DEMON EMPEROR TUNTIA N, DEMON WITCH SHEMEI, DEMON MONK WUXIN, and DEMON KING GUIYU—appear as phantoms, radiating evil energy. In the plaza, two dozen SURVIVORS kneel. Among them, MEI (8) clutches a jade amulet.
+DEMON MONK WUXIN
+(laughing maniacally)
+The tender taste of hope...
+
+Speaker: DEMON MONK WUXIN
+Spoken line: &quot;The tender taste of hope...&quot;
+Delivery cue: laughing maniacally
+Sound cue: none</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;The tender taste of hope...&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description The four Evil Gods must be visible as phantoms and visibly radiate evil energy.  [span: The Four Evil Gods—DEMON EMPEROR TUNTIA N, DEMON WITCH SHEMEI, DEMON MONK WUXIN, and DEMON KING GUIYU—appear as phantoms, radiating evil energy.]
+A2.2   must      critical  description Two dozen SURVIVORS must be visible kneeling in the plaza.  [span: In the plaza, two dozen SURVIVORS kneel.]
+A2.3   must      critical  description MEI must be visibly clutching the jade amulet.  [span: MEI (8) clutches a jade amulet.]
+A3.1   must      major     description The setting matches the heading: INT. YUNZHOU CITY PLAZA - NIGHT.  [span: INT. YUNZHOU CITY PLAZA - NIGHT]
+A3.2   must      major     description A jade amulet must be visible in MEI&#x27;s grasp.  [span: a jade amulet]
+A3.3   must      major     description DEMON MONK WUXIN&#x27;s spoken line must be delivered with maniacal laughter.  [span: (laughing maniacally)]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: DEMON MONK WUXIN, DEMON EMPEROR TUNTIA N, DEMON WITCH SHEMEI, DEMON KING GUIYU, SURVIVORS, MEI. Nobody else appears.
+A4.2   must_not  major     description Only DEMON MONK WUXIN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, DEMON MONK WUXIN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is happiness (cues: laughing).
+C2.1   must      major     panel       Face and voice intensity within [3, 4] on the 0-4 scale (exaggerated).  [interval [3, 4]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;laughing maniacally&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;The Four Evil Gods—DEMON EMPEROR TUNTIA N, DEMON WITCH SHEMEI, DEMON MONK WUXIN, and DEMON KING GUIYU—appear as phantoms, radiating evil energy.&quot;,&quot;check&quot;:&quot;The four Evil Gods must be visible as phantoms and visibly radiate evil energy.&quot;},{&quot;span&quot;:&quot;In the plaza, two dozen SURVIVORS kneel.&quot;,&quot;check&quot;:&quot;Two dozen SURVIVORS must be visible kneeling in the plaza.&quot;},{&quot;span&quot;:&quot;MEI (8) clutches a jade amulet.&quot;,&quot;check&quot;:&quot;MEI must be visibly clutching the jade amulet.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;INT. YUNZHOU CITY PLAZA - NIGHT&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must take place in YUNZHOU CITY PLAZA at night.&quot;},{&quot;span&quot;:&quot;a jade amulet&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A jade amulet must be visible in MEI&#x27;s grasp.&quot;},{&quot;span&quot;:&quot;(laughing maniacally)&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;DEMON MONK WUXIN&#x27;s spoken line must be delivered with maniacal laughter.&quot;}],&quot;other_people&quot;:[&quot;DEMON EMPEROR TUNTIA N&quot;,&quot;DEMON WITCH SHEMEI&quot;,&quot;DEMON KING GUIYU&quot;,&quot;SURVIVORS&quot;,&quot;MEI&quot;],&quot;premise&quot;:[],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-27 — 21 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. WEDDING VENUE - DAY
+CHEN MEILING rushes forward and slaps FU XIN. FU XIN falls, veil tearing.
+MING HAO
+(coldly)
+You gave us a cremation instead.
+
+Speaker: MING HAO
+Spoken line: &quot;You gave us a cremation instead.&quot;
+Delivery cue: coldly
+Sound cue: CHEN MEILING rushes forward and slaps FU XIN.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;You gave us a cremation instead.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description CHEN MEILING must be seen rushing forward and slapping FU XIN.  [span: CHEN MEILING rushes forward and slaps FU XIN.]
+A2.2   must      critical  description FU XIN must be seen falling as the veil tears.  [span: FU XIN falls, veil tearing.]
+A3.1   must      major     description The setting matches the heading: EXT. WEDDING VENUE - DAY.  [span: EXT. WEDDING VENUE - DAY]
+A3.2   must      major     description The scripted sound is audible: CHEN MEILING rushes forward and slaps FU XIN.  [span: CHEN MEILING rushes forward and slaps FU XIN.]
+A3.3   must      major     description A veil must be visible and tear when FU XIN falls.  [span: veil]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: MING HAO, CHEN MEILING, FU XIN. Nobody else appears.
+A4.2   must_not  major     description Only MING HAO speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description The shot remains at the wedding venue during the day.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, MING HAO centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is contempt (cues: coldly).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;coldly&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;CHEN MEILING rushes forward and slaps FU XIN.&quot;,&quot;check&quot;:&quot;CHEN MEILING must be seen rushing forward and slapping FU XIN.&quot;},{&quot;span&quot;:&quot;FU XIN falls, veil tearing.&quot;,&quot;check&quot;:&quot;FU XIN must be seen falling as the veil tears.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. WEDDING VENUE - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene must visibly take place at a wedding venue during the day.&quot;},{&quot;span&quot;:&quot;veil&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A veil must be visible and tear when FU XIN falls.&quot;},{&quot;span&quot;:&quot;coldly&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;MING HAO must deliver the spoken line in a cold manner.&quot;}],&quot;other_people&quot;:[&quot;CHEN MEILING&quot;,&quot;FU XIN&quot;],&quot;premise&quot;:[{&quot;fact&quot;:&quot;The shot remains at the wedding venue during the day.&quot;,&quot;span&quot;:&quot;EXT. WEDDING VENUE - DAY&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div><h2>DB-28 — 22 items</h2><p class='note'>Analyser model openai/gpt-5.6-luna; 1 call(s); $0.0000.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">what the Analyser reads</div><pre>SCRIPT (verbatim):
+EXT. ROADSIDE - DAY
+A nondescript van screeches to a halt behind him. DA EN steps out, alone, in a delivery uniform. He approaches casually, but his posture screams military precision.
+DA EN
+(flat, rehearsed)
+Your delivery. Sign here.
+
+Speaker: DA EN
+Spoken line: &quot;Your delivery. Sign here.&quot;
+Delivery cue: flat, rehearsed
+Sound cue: A nondescript van screeches to a halt behind him.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">checklist items</div><pre>id     kind      priority  evidence    text
+A1.1   must      critical  tool        The line &quot;Your delivery. Sign here.&quot; is spoken in English, complete and verbatim.
+A2.1   must      critical  description A van visibly stops behind DA EN.  [span: A nondescript van screeches to a halt behind him.]
+A2.2   must      critical  description DA EN exits the van alone while wearing a delivery uniform.  [span: DA EN steps out, alone, in a delivery uniform.]
+A2.3   must      critical  description DA EN approaches with casual movement but maintains visibly military-precise posture.  [span: He approaches casually, but his posture screams military precision.]
+A3.1   must      major     description The setting matches the heading: EXT. ROADSIDE - DAY.  [span: EXT. ROADSIDE - DAY]
+A3.2   must      major     description The scripted sound is audible: A nondescript van screeches to a halt behind him.  [span: A nondescript van screeches to a halt behind him.]
+A3.3   must      major     description A plain, nondescript van is visible.  [span: A nondescript van]
+A4.1   must_not  critical  description Everyone on screen is in the script&#x27;s cast: DA EN. Nobody else appears.
+A4.2   must_not  major     description Only DA EN speaks; no other voice says a line.
+A4.3   must_not  major     description No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1   premise   major     description DA EN is alone when he exits the van, with no other person physically shown in the scene.
+A6.1   must      minor     tool_panel  medium close-up, static camera, eye level, vertical 9:16, DA EN centred.
+B1.1   must_not  major     panel       Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1   must_not  major     panel       Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1   must_not  major     tool_panel  The same face, voice and clothing persist through the whole take.
+B4.1   must_not  major     tool_panel  No unintended cut, freeze, jump or loop.
+B5.1   must      major     panel       Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1   must      info      tool        8 s, 9:16, 480p, audio track present.
+B7.1   must_not  minor     panel       No subtitles, captions or watermarks.
+C1.1   must      major     panel       The emotion is contempt (cues: flat).
+C2.1   must      major     panel       Face and voice intensity within [0, 1] on the 0-4 scale (calm).  [interval [0, 1]]
+C4.1   must      minor     panel       Delivery matches the cue &#x27;flat, rehearsed&#x27;.</pre></div><div class="panel"><div class="label">LLM extraction (raw JSON answer)</div><pre>{&quot;actions&quot;:[{&quot;span&quot;:&quot;A nondescript van screeches to a halt behind him.&quot;,&quot;check&quot;:&quot;A van visibly stops behind DA EN.&quot;},{&quot;span&quot;:&quot;DA EN steps out, alone, in a delivery uniform.&quot;,&quot;check&quot;:&quot;DA EN exits the van alone while wearing a delivery uniform.&quot;},{&quot;span&quot;:&quot;He approaches casually, but his posture screams military precision.&quot;,&quot;check&quot;:&quot;DA EN approaches with casual movement but maintains visibly military-precise posture.&quot;}],&quot;elements&quot;:[{&quot;span&quot;:&quot;EXT. ROADSIDE - DAY&quot;,&quot;kind&quot;:&quot;setting&quot;,&quot;check&quot;:&quot;The scene is outdoors at a roadside during the day.&quot;},{&quot;span&quot;:&quot;A nondescript van&quot;,&quot;kind&quot;:&quot;prop&quot;,&quot;check&quot;:&quot;A plain, nondescript van is visible.&quot;},{&quot;span&quot;:&quot;screeches&quot;,&quot;kind&quot;:&quot;sound&quot;,&quot;check&quot;:&quot;The van&#x27;s abrupt stop is accompanied by a screeching sound.&quot;}],&quot;other_people&quot;:[],&quot;premise&quot;:[{&quot;fact&quot;:&quot;DA EN is alone when he exits the van, with no other person physically shown in the scene.&quot;,&quot;span&quot;:&quot;alone&quot;}],&quot;transition_scripted&quot;:false,&quot;physics_involved&quot;:true}</pre></div></div></div></main></body></html>

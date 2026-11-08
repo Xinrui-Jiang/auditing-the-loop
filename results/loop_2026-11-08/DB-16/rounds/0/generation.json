@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY. XU ZHIYI (28, exhausted but determined). She stares at the door. A flicker of memory crosses her face\u2014falling snow, a different door, a different betrayal. She blinks it away. XU ZHIYI says quietly: \"He won't help us. Not after what I did.\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0",
+  "generation_id": "gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794112211-0gwiQ5Qw7AFIQlcw5qu0/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T043521Z&X-Goog-Expires=86394&X-Goog-SignedHeaders=host&X-Goog-Signature=5b1cc2223e536f2aec34632a9c623cd6192545879181f1e96bf0b5864d22c6a936d5f4e354b47212b31479b924f7a58e72e28be7272fb419f949d980273808065c5433aacad60c3c988e084132f9270e0e8095eb52a06ab3f2c893385c1e1faa55e73881f7a6ac721f827a7d4bd32fe40b980cb47e9cc2419aa6126845ada89ce9a880f4fd10e9f581edfa5615053d1e4487048525b6e823a0d93e590ffbacbe8a4e35c98f8257c0c865118232b92d0c38118a81a1d4896cbe1b66267bb23c527cc7d42e29add7d2a744b2932791db1217f3efe4e0322d5aea798dc5f69903b996fa4eecbaf55eb93040b2cc3fc051b2e10d8bd272b5c9ae58c11b1463a755a8"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794198915
+ }
+}

@@ -1,0 +1,1016 @@
+[
+ {
+  "item_id": "A1.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman shouts 'Assistant Chen! My husband!' from 00:05 to 00:08.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00, Ruan Ningxia is seen wearing luxurious fur and a dress while clutching a designer bag and running through the corridor.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00, Fu Lincheng's assistant and Jiang Yao are visible in power suits down the hallway.",
+  "span": [
+   0.0,
+   1.0
+  ],
+  "value": null,
+  "face_intensity": 1,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The scene takes place in a hospital corridor during the day, visible throughout the clip.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A designer handbag is clearly visible in Ruan Ningxia's grasp from 00:00 to 00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Ruan Ningxia, Jiang Yao, and Fu Lincheng's assistant appear in the clip.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Ruan Ningxia speaks during the clip.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No unscripted events or cuts to other places occur; the characters remain in the hallway.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/primary/order1",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Ruan Ningxia's crying is shown, but whether it is a pretense cannot be definitively determined from visual cues alone.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/primary/order1",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The shot begins with a medium tracking/moving shot before cutting to a close-up, not a static medium close-up throughout.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The lines 'Assistant Chen!' and 'My husband!' are spoken in English by RUAN NINGXIA between 00:05 and 00:08.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "RUAN NINGXIA is dressed in a fur coat and dress, clutching a designer bag while running.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "FU LINCHENG'S ASSISTANT and JIANG YAO are both visible in power suits in the background.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The setting is clearly a hospital corridor during the day.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A designer handbag is visible in RUAN NINGXIA's grasp at 00:00 and onwards.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only RUAN NINGXIA, FU LINCHENG'S ASSISTANT, and JIANG YAO are visible on screen.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only RUAN NINGXIA speaks during the clip.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No unscripted events or cuts to another place occur throughout the clip.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/primary/order2",
+  "status": "uncertain",
+  "visibility": "not_observable",
+  "evidence": "It is not possible to determine if her crying is genuine or pretended from visual cues alone.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The camera starts as a tracking medium shot and switches to a close-up frontal shot, not a static medium close-up.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:04-00:07 her breathless, crying voice calls out 'Assistant Chen! My husband!' in English, matching the expected line verbatim.",
+  "span": [
+   4.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:00-00:07 she runs anxiously toward the camera in a thick beige fur coat over a sequined dress, clutching a monogram handbag tightly.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00 a woman in a dark gray pantsuit and men in tailored suits stand in the corridor exactly as she rushes in, i.e., in power suits in her line of sight.",
+  "span": [
+   0.0,
+   1.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The bright interior corridor with wall handrails, room doors, bench seating and glossy reflective floor reads as a hospital corridor in daytime throughout 00:00-00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A GG-monogram designer bag with brown leather trim and gold hardware is clearly in her grasp from 00:01-00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00 four people are on screen \u2014 Ruan Ningxia plus a woman and two men in the background \u2014 one more than the three-character cast (Ruan Ningxia, Fu Lincheng's assistant, Jiang Yao).",
+  "span": [
+   0.0,
+   1.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Ruan Ningxia's voice is heard (panting 00:00-00:04, line 00:04-00:07); no other character speaks.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip remains in the same hospital corridor with no cut to another place, and the only person entering frame is Ruan Ningxia herself, who is scripted to run through.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/second",
+  "status": "uncertain",
+  "visibility": "not_observable",
+  "evidence": "00:02-00:07 shows tears, panicked breathing and anguish, but nothing visible or audible reveals whether the crying is feigned or genuine.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:01-00:07 the vertical 9:16 frame holds a static, eye-level medium close-up with Ruan Ningxia centred as she approaches the lens.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman runs and stops with normal physical momentum and gravity from 00:00 to 00:04.",
+  "span": [
+   0.0,
+   4.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Hands, face, and anatomy remain normal throughout the clip without morphing.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman's appearance, clothing, and voice remain consistent across the take.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "There is a clean camera cut at 00:00 to 00:01, with no unintended freezes or jumps afterwards.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Lip movements match the spoken dialogue 'Assistant Chen! My husband!' from 00:05 to 00:08.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip is 8 seconds long, vertical 9:16 format, with an active audio track.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions, or watermarks appear in the video.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The handbag and clothing move plausibly with gravity and momentum as she runs and stops.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Hands, face, and clothing remain anatomically normal with no morphing artifacts.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman's face, voice, and fur coat clothing remain consistent throughout the clip.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The camera transitions smoothly from tracking shot to close-up without any unintended cuts, freezes, or loops.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman's lip movements match the spoken English lines 'Assistant Chen!' and 'My husband!' perfectly.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip is 8 seconds long, vertical 9:16 format, standard definition, with audio present.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions or watermarks are present in the clip.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:01-00:03 P1's hair and handbag swing naturally with her run, and at 00:04-00:07 the bag hangs plausibly at her front while her right hand rests on her chest; no objects defy gravity or momentum.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00 the corridor wall posters and the green overhead sign show garbled, illegible text, and at 00:04-00:07 P1's fingers on her chest and the handbag handle/strap show soft morphing.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:01 to 00:07 the same woman with identical face, pearl earrings, jeweled collar, fur coat and sequined dress persists, and the single breathless female voice remains consistent throughout.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The shot runs continuously from the wide corridor view at 00:00 through her approach at 00:01-00:02 to the close-up at 00:04-00:07 with no cut, freeze, jump or loop; background figures simply fall out of focus/occlusion.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 2,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:04-00:07 P1's mouth opens and closes in sync with the spoken line 'Assistant Chen! My husband!', and the crying female voice clearly belongs to her on screen.",
+  "span": [
+   4.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip is vertical 9:16, runs about 8 seconds (00:00-00:07), and carries an audio track with panting at 00:00-00:04 and speech at 00:04-00:07.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 1
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions or watermarks appear anywhere in the frames from 00:00 to 00:07.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman is crying and appears distressed throughout 00:00 to 00:08.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Both facial expressions and vocal delivery are extremely intense (level 4) with sobbing and loud crying.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The delivery matches the melodramatic or exaggerated crying style typical of dramatic television.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman exhibits clear crying and distress regarding her husband from 00:00 to 00:08.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Both facial expression (wide eyes, crying) and vocal delivery (frantic screaming/sobbing) are extremely intense at 4.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman runs up gasping and sobbing while calling out desperately for Assistant Chen and her husband from 00:00 to 00:08.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:02-00:07 P1's eyes are wet with visible tears on her cheeks, her brow is furrowed and her mouth contorts in sobs while she cries out, clearly expressing sadness.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:07 her face shows extreme anguish (wide tear-filled eyes, open wailing mouth, hand clutched to chest) and her voice is a loud, breathless, sobbing cry, both at the exaggerated 3-4 level.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "Throughout 00:02-00:07 the crying appears genuine \u2014 real tears stream down her cheeks, her panting and sobbing are uncontrolled and continuous \u2014 with no cues (dry eyes, glancing about, abrupt mood shift) indicating she is pretending to cry.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The speech is described as \"Assistant Chen! My husband!\" rather than the expected verbatim line \"Assistant Chen! My husband?\".",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "P1 is described as wearing \"a champagne/silver sequined dress under a thick beige fur coat\" and \"carrying a beige monogram handbag,\" while the visual event says she \"rushes\" and is distressed; however, the bag is not described as being clutched \"too tightly.\"",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "\"P2, P3, and P4 stand talking in the middle distance,\" with P2 in a \"dark gray pantsuit\" and P3/P4 in suits, but the descriptions do not identify which people are FU LINCHENG'S ASSISTANT and JIANG YAO.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The setting is described as \"A bright hospital corridor\" and \"a hospital corridor.\"",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "P1 is described as \"carrying a beige monogram handbag,\" and later \"she holds the handbag in front of her.\"",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The description lists P1, P2, P3, and P4, including \"P2, P3, and P4\" in the corridor, whereas the script's cast names only RUAN NINGXIA, FU LINCHENG'S ASSISTANT, and JIANG YAO.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The only speech listed is P1 saying \"Assistant Chen! My husband!\"; the audio is described as \"A woman's voice, breathless and crying.\"",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The visual description says \"P1 rushes into the frame from the left foreground,\" contradicting the requirement that nobody enters.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "P1 is described as having \"eyes wide and wet with tears\" and as \"Continuously crying,\" with \"tears visible on cheeks,\" indicating genuine crying rather than pretending.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "The clip is described as having \"Vertical 9:16 framing\" and the camera \"holds position\" while P1 approaches, ending on a \"tight frontal close-up,\" but it also \"opens as a static wide shot\" and does not specify eye-level framing.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B6.1",
+  "source": "tool/ffprobe",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "496x864, 8.06 s, 24.0 fps, audio=yes",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "tool/ffmpeg",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "scene cuts at []; frozen spans [] (0.0 s)",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "tool/asr",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "language=hi, WER=1.00, heard: '\u0905\u0938\u093f\u0938\u094d\u091f\u0928 \u091a\u094d\u092f\u0928, \u092e\u0948\u0902 \u0939\u0941\u0938\u094d\u091f\u0928...'",
+  "span": [
+   4.22,
+   8.04
+  ],
+  "value": 1.0,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/reinspect",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The woman says \"Assistant Chen! My husband?\" from 00:00 to 00:03.",
+  "span": [
+   0.0,
+   3.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/reinspect",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:00 to 00:09, the camera tracks forward, so it is not a static camera.",
+  "span": [
+   0.0,
+   9.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ }
+]

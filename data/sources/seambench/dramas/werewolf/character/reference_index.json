@@ -1,0 +1,191 @@
+{
+  "drama": "werewolf",
+  "note": "角色参考图索引。所有唯一图集中于 _pool/，各集通过 image 字段引用；已按剧本语义重命名并按内容去重。episodes 集号依据现有图目录与剧本首次出场推断。",
+  "pool_dir": "_pool",
+  "unique_images": 12,
+  "total_references": 24,
+  "episodes": {
+    "ep01": [
+      {
+        "role": "凯厄斯",
+        "state": "caius_alpha",
+        "image": "_pool/caius_alpha.jpg",
+        "original_name": "Caius Throne",
+        "description": "凯厄斯·索恩，30岁，狼族Alpha，深色西装，金色双眸"
+      },
+      {
+        "role": "艾里斯",
+        "state": "iris_omega",
+        "image": "_pool/iris_omega.jpg",
+        "original_name": "Iris Wynn",
+        "description": "艾里斯·温，21岁，纯血Omega，后腰有新月形标记"
+      },
+      {
+        "role": "奥德里克",
+        "state": "aldric_长老",
+        "image": "_pool/aldric_长老.jpg",
+        "original_name": "Aldric Silas",
+        "description": "奥德里克·赛拉斯，狼族长老，60多岁"
+      },
+      {
+        "role": "但丁",
+        "state": "dante_助理",
+        "image": "_pool/dante_助理.jpg",
+        "original_name": "Dante Throne",
+        "description": "但丁，凯厄斯的助理，28岁"
+      }
+    ],
+    "ep02": [
+      {
+        "role": "凯厄斯",
+        "state": "caius_alpha",
+        "image": "_pool/caius_alpha.jpg",
+        "original_name": "Caius Throne",
+        "description": "凯厄斯·索恩，30岁，狼族Alpha，深色西装，金色双眸"
+      },
+      {
+        "role": "艾里斯",
+        "state": "iris_omega",
+        "image": "_pool/iris_omega.jpg",
+        "original_name": "Iris Wynn",
+        "description": "艾里斯·温，21岁，纯血Omega，后腰有新月形标记"
+      },
+      {
+        "role": "但丁",
+        "state": "dante_助理",
+        "image": "_pool/dante_助理.jpg",
+        "original_name": "Dante Throne",
+        "description": "但丁，凯厄斯的助理，28岁"
+      },
+      {
+        "role": "阿德里安",
+        "state": "adrian_英俊",
+        "image": "_pool/adrian_英俊.jpg",
+        "original_name": "Adrian Throne",
+        "description": "阿德里安，28岁，英俊，带着令人不安的微笑，凯厄斯的继弟"
+      }
+    ],
+    "ep03": [
+      {
+        "role": "凯厄斯",
+        "state": "caius_alpha",
+        "image": "_pool/caius_alpha.jpg",
+        "original_name": "Caius Throne",
+        "description": "凯厄斯·索恩，30岁，狼族Alpha，深色西装，金色双眸"
+      },
+      {
+        "role": "艾里斯",
+        "state": "iris_omega",
+        "image": "_pool/iris_omega.jpg",
+        "original_name": "Iris Wynn",
+        "description": "艾里斯·温，21岁，纯血Omega，后腰有新月形标记"
+      },
+      {
+        "role": "阿德里安",
+        "state": "adrian_英俊",
+        "image": "_pool/adrian_英俊.jpg",
+        "original_name": "Adrian Throne",
+        "description": "阿德里安，28岁，英俊，带着令人不安的微笑，凯厄斯的继弟"
+      }
+    ],
+    "ep04": [
+      {
+        "role": "凯厄斯",
+        "state": "caius_alpha",
+        "image": "_pool/caius_alpha.jpg",
+        "original_name": "Caius Throne",
+        "description": "凯厄斯·索恩，30岁，狼族Alpha，深色西装，金色双眸"
+      },
+      {
+        "role": "艾里斯",
+        "state": "iris_omega",
+        "image": "_pool/iris_omega.jpg",
+        "original_name": "Iris Wynn",
+        "description": "艾里斯·温，21岁，纯血Omega，后腰有新月形标记"
+      }
+    ],
+    "ep05": [
+      {
+        "role": "凯厄斯",
+        "state": "caius_alpha",
+        "image": "_pool/caius_alpha.jpg",
+        "original_name": "Caius Throne",
+        "description": "凯厄斯·索恩，30岁，狼族Alpha，深色西装，金色双眸"
+      },
+      {
+        "role": "艾里斯",
+        "state": "iris_omega",
+        "image": "_pool/iris_omega.jpg",
+        "original_name": "Iris Wynn",
+        "description": "艾里斯·温，21岁，纯血Omega，后腰有新月形标记"
+      },
+      {
+        "role": "奥德里克",
+        "state": "aldric_长老",
+        "image": "_pool/aldric_长老.jpg",
+        "original_name": "Aldric Silas",
+        "description": "奥德里克·赛拉斯，狼族长老，60多岁"
+      },
+      {
+        "role": "但丁",
+        "state": "dante_助理",
+        "image": "_pool/dante_助理.jpg",
+        "original_name": "Dante Throne",
+        "description": "但丁，凯厄斯的助理，28岁"
+      },
+      {
+        "role": "克拉拉",
+        "state": "clara_女佣",
+        "image": "_pool/clara_女佣.png",
+        "original_name": "Clara",
+        "description": "克拉拉，庄园女佣，40多岁，热情健谈"
+      }
+    ],
+    "ep06": [
+      {
+        "role": "薇薇安",
+        "state": "vivienne_继母",
+        "image": "_pool/vivienne_继母.png",
+        "original_name": "Vivienne Throne",
+        "description": "薇薇安，凯厄斯的继母，从容的贵妇形象"
+      },
+      {
+        "role": "薇薇安",
+        "state": "vivienne_ep06",
+        "image": "_pool/vivienne_ep06.jpg",
+        "original_name": "Vivienne Throne（EP06)",
+        "description": "薇薇安，EP06 起的形象"
+      },
+      {
+        "role": "首席长老",
+        "state": "长老a",
+        "image": "_pool/长老a.jpg",
+        "original_name": "长老a",
+        "description": "狼族首席长老"
+      },
+      {
+        "role": "长老B",
+        "state": "长老b",
+        "image": "_pool/长老b.jpg",
+        "original_name": "长老b",
+        "description": "狼族长老B"
+      },
+      {
+        "role": "长老C",
+        "state": "长老c",
+        "image": "_pool/长老c.jpg",
+        "original_name": "长老c",
+        "description": "狼族长老C"
+      }
+    ],
+    "ep11": [
+      {
+        "role": "西奥",
+        "state": "theo_医生",
+        "image": "_pool/theo_医生.png",
+        "original_name": "Theo",
+        "description": "西奥，家庭医生，60多岁，黑人，笑容温暖"
+      }
+    ]
+  }
+}

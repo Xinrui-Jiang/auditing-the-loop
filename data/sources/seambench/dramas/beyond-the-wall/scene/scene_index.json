@@ -1,0 +1,90 @@
+{
+  "drama": "beyond-the-wall",
+  "note": "场景参考图索引，由 shotlist_to_keyframe Stage 0 生成。",
+  "pool_dir": "_pool",
+  "unique_scenes": 5,
+  "episodes": {
+    "ep01": [
+      {
+        "scene": "外景·保护区电网墙·夜晚",
+        "original_name": "外景·保护区·电网墙·夜晚",
+        "image": "_pool/外景_保护区电网墙_夜晚.png",
+        "description": "A towering electrified metal-grid wall stretching into darkness, blue electrical currents crackling along its structure. Heavy rain and wind whip debris horizontally. Cold industrial blue lights cast harsh shadows, with a distant cityscape silhouette beyond. Oppressive, high-contrast blue-black palette."
+      },
+      {
+        "scene": "内景·废弃仓库",
+        "original_name": "内景·废弃仓库·连续",
+        "image": "_pool/内景_废弃仓库.png",
+        "description": "A large abandoned industrial warehouse with crumbling concrete walls, damaged roof with holes allowing light beams through. Heavy metal doors at the entrance. Dust particles float in visible shafts of light. Shifts from near-total darkness at night to soft golden tones by day. Raw concrete floor, rusted metal fixtures."
+      }
+    ],
+    "ep02": [
+      {
+        "scene": "内景·废弃仓库",
+        "original_name": "内景·废弃仓库·夜晚",
+        "image": "_pool/内景_废弃仓库.png",
+        "description": "A large abandoned industrial warehouse with crumbling concrete walls, damaged roof with holes allowing light beams through. Heavy metal doors at the entrance. Dust particles float in visible shafts of light. Shifts from near-total darkness at night to soft golden tones by day. Raw concrete floor, rusted metal fixtures."
+      }
+    ],
+    "ep03": [
+      {
+        "scene": "内景·废弃仓库",
+        "original_name": "仓库-白天",
+        "image": "_pool/内景_废弃仓库.png",
+        "description": "A large abandoned industrial warehouse with crumbling concrete walls, damaged roof with holes allowing light beams through. Heavy metal doors at the entrance. Dust particles float in visible shafts of light. Shifts from near-total darkness at night to soft golden tones by day. Raw concrete floor, rusted metal fixtures."
+      },
+      {
+        "scene": "内景·废弃仓库",
+        "original_name": "仓库入口",
+        "image": "_pool/内景_废弃仓库.png",
+        "description": "A large abandoned industrial warehouse with crumbling concrete walls, damaged roof with holes allowing light beams through. Heavy metal doors at the entrance. Dust particles float in visible shafts of light. Shifts from near-total darkness at night to soft golden tones by day. Raw concrete floor, rusted metal fixtures."
+      }
+    ],
+    "ep04": [
+      {
+        "scene": "内景·废弃仓库",
+        "original_name": "禁闭室-夜晚",
+        "image": "_pool/内景_废弃仓库.png",
+        "description": "A large abandoned industrial warehouse with crumbling concrete walls, damaged roof with holes allowing light beams through. Heavy metal doors at the entrance. Dust particles float in visible shafts of light. Shifts from near-total darkness at night to soft golden tones by day. Raw concrete floor, rusted metal fixtures."
+      },
+      {
+        "scene": "外景·保护区电网墙·夜晚",
+        "original_name": "墙边缘-夜晚",
+        "image": "_pool/外景_保护区电网墙_夜晚.png",
+        "description": "A towering electrified metal-grid wall stretching into darkness, blue electrical currents crackling along its structure. Heavy rain and wind whip debris horizontally. Cold industrial blue lights cast harsh shadows, with a distant cityscape silhouette beyond. Oppressive, high-contrast blue-black palette."
+      },
+      {
+        "scene": "内景·内门通道",
+        "original_name": "内门",
+        "image": "_pool/内景_内门通道.png",
+        "description": "A sterile corridor with perfectly smooth white surfaces and seamless walls, clinical and oppressive. Black surveillance drones hover silently with red scanning beams. Flickering overhead lights create momentary shadows. Cold white and red accent lighting, minimalist geometric architecture, antiseptic atmosphere."
+      },
+      {
+        "scene": "内景·控制室",
+        "original_name": "控制室-夜晚",
+        "image": "_pool/内景_控制室.png",
+        "description": "A dark enclosed room dominated by multiple glowing surveillance screens stacked in layers. Cold blue light from monitors illuminates only fragments of the occupant. No windows, creating a claustrophobic voyeuristic atmosphere. Deep shadows contrast with harsh screen glow, blue-black color palette."
+      },
+      {
+        "scene": "内景·控制室",
+        "original_name": "控制室",
+        "image": "_pool/内景_控制室.png",
+        "description": "A dark enclosed room dominated by multiple glowing surveillance screens stacked in layers. Cold blue light from monitors illuminates only fragments of the occupant. No windows, creating a claustrophobic voyeuristic atmosphere. Deep shadows contrast with harsh screen glow, blue-black color palette."
+      }
+    ],
+    "ep05": [
+      {
+        "scene": "外景·优化之城街道·白天",
+        "original_name": "外景·优化之城·主街-白天",
+        "image": "_pool/外景_优化之城街道_白天.png",
+        "description": "A pristine futuristic city street bathed in even shadowless white light. Geometric minimalist buildings in white and pale grey line both sides with perfect symmetry. Citizens in white uniforms move in synchronized patterns. Sterile, overexposed atmosphere with flat lighting and monochromatic cool-white palette."
+      },
+      {
+        "scene": "外景·优化之城街道·白天",
+        "original_name": "外景·城市街道-连续",
+        "image": "_pool/外景_优化之城街道_白天.png",
+        "description": "A pristine futuristic city street bathed in even shadowless white light. Geometric minimalist buildings in white and pale grey line both sides with perfect symmetry. Citizens in white uniforms move in synchronized patterns. Sterile, overexposed atmosphere with flat lighting and monochromatic cool-white palette."
+      }
+    ]
+  }
+}

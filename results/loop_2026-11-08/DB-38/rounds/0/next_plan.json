@@ -1,0 +1,11 @@
+{
+  "branch_from": 0,
+  "revised_prompt": "Vertical 9:16, 480p, 8-second live-action short-drama take with audio. Medium close-up, static camera, eye level, HAITONG centred throughout. One continuous shot in an old building stairwell during daytime. Only HAITONG is visible; Grandma is only heard through the phone and is never physically present. No subtitles, captions, watermarks, cuts, freezes, loops, or other people.\n\nINT. OLD BUILDING STAIRWELL - DAY\nHAITONG (17)\nThe call ends. Haitong's portfolio slips. Pages scatter—her resume, shredded by rain.\nHAITONG\ncrying\nGrandma, they found me.\n\nAction timing: Haitong visibly ends the phone call first, before any remaining action. Immediately afterward, while still centred in the medium close-up, her clearly visible portfolio slips completely from her grasp and falls naturally. The portfolio and its pages must be plainly visible as they leave her hands. Pages visibly scatter across the frame, including a clearly identifiable resume that is visibly shredded by rain. Make the falling and scattering readable on screen, with natural gravity and contact. Include a distinct, audible sound of pages scattering, specifically her rain-shredded resume. Haitong then delivers the exact English line \"Grandma, they found me.\" on camera with matching lip movement, crying strongly but naturally. Only Haitong speaks; no additional dialogue or voice. Preserve her same face, voice, clothing, anatomy, and sad crying emotion for the entire continuous take. Do not introduce any unscripted event or change of location.",
+  "rationale": "Branch from round 0 because it already passed the setting, cast exclusion, phone-call ending, framing, dialogue, continuity, and crying-performance requirements. The blocking failures were caused by the portfolio and pages remaining on her lap, with no visible scatter, no audible page sound, and no clearly visible rain-shredded resume. The revised prompt makes the post-call order explicit, requires the portfolio to visibly leave her grasp, makes the scattered pages and resume readable in frame, and adds the required distinct sound while protecting the passes.",
+  "targets": [
+    "A2.2",
+    "A2.3",
+    "A3.2",
+    "A3.4"
+  ]
+}

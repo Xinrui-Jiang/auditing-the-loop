@@ -1,0 +1,152 @@
+{
+  "shot_id": "DB-60",
+  "round": 0,
+  "take_sha256": "33f985ce4b384c981f3847060e1fbd2055ab5b9aa0407d3c09b8176a13b6e647",
+  "verdicts": [
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Only one person (Ruan Ningxia) speaks during the clip.",
+        "[flash_order_b] pass/seen_clearly: Only Ruan Ningxia is visible on camera during the dialogue and is the sole speaker.",
+        "[qwen_second_opinion] pass/seen_clearly: Although background figures are visible (00:03-00:05) and a suited man is partially in frame (00:06-00:08), only RUAN NINGXIA speaks; no second voice is heard."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": false,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "model said pass but ASR says fail (WER=0.5)",
+        "ASR WER=0.50 -> tool fail",
+        "[flash_order_a] pass/seen_clearly: At 00:05-00:07, she says 'Assistant Chen! My husband?'.",
+        "[flash_order_b] pass/seen_clearly: At 00:06-00:08 Ruan Ningxia says 'Assistant Chen! My husband?'.",
+        "[qwen_second_opinion] pass/seen_clearly: At 00:05-00:08 she audibly says exactly 'Assistant Chen! My husband?'",
+        "[escalate_R2] pass/seen_clearly: At 00:06-00:08 the woman's speech is clearly audible and matches the required line word for word: 'Assistant Chen! My husband?'"
+      ],
+      "deviation": 0.5,
+      "reinspected": true
+    },
+    {
+      "item_id": "A2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Ruan Ningxia is shown running anxiously through the hospital corridor wearing a fur coat and dress while clutching a designer bag.",
+        "[flash_order_b] pass/seen_clearly: From 00:00 to 00:03 Ruan Ningxia wearing luxurious fur and dress, clutching her designer bag, runs anxiously through the corridor.",
+        "[qwen_second_opinion] pass/seen_clearly: 00:00-00:03 shows her in a luxurious fur coat and black dress, gripping a brown designer handbag, running anxiously down the corridor toward camera."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: At 00:03, she sees Assistant Chen and Jiang Yao standing in power suits in the corridor.",
+        "[flash_order_b] pass/seen_clearly: At 00:03-00:04 Ruan Ningxia sees Assistant Chen and Jiang Yao standing further down the corridor in power suits.",
+        "[qwen_second_opinion] pass/seen_clearly: At 00:03-00:05 she turns and visibly looks at the pair in business attire (man in dark suit, woman in blue/black power dressing) standing in the corridor behind her."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "median intensity face=4 voice=3 vs target [3, 4] -> d=0",
+        "[flash_order_a] pass/seen_clearly: Ruan Ningxia displays crying and distressed facial expressions and vocal delivery. | She displays intense crying facial expressions with tears and a high-pitched distressed voice.",
+        "[flash_order_b] pass/seen_clearly: Ruan Ningxia displays exaggerated sadness by crying and sobbing dramatically while speaking to Assistant Chen. | Her face shows distorted weeping expressions and her voice is high-pitched and sobbing.",
+        "[qwen_second_opinion] pass/seen_clearly: 00:05-00:08 shows an exaggerated crying face with tears, contorted brow and open sobbing mouth, delivered in a strained, breathless, trembling voice. | Face is fully tearful and sobbing (extreme), while the voice is shaky and panting but the line is short, so slightly below extreme."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The setting is an indoor hospital corridor during the day.",
+        "[flash_order_b] pass/seen_clearly: The entire clip is set inside a brightly lit hospital corridor during the day.",
+        "[qwen_second_opinion] pass/seen_clearly: The setting is an indoor corridor with fluorescent lighting, green exit sign, handrails and patient-room doors, consistent with a hospital corridor in daytime."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": null,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] fail/seen_clearly: The camera starts as a wide shot tracking her running forward and then transitions closer, rather than a static medium close-up.",
+        "[flash_order_b] pass/seen_clearly: From 00:05 to 00:08 the shot is a medium close-up with a static camera at eye level.",
+        "[qwen_second_opinion] pass/seen_clearly: The camera stays static at eye level throughout, and the framing tightens to a medium close-up of her face/upper body during the dialogue at 00:05-00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.007536
+}

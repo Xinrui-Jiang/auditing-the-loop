@@ -1,0 +1,91 @@
+shot_id,source,bin,emotion,sfx,gender,coarse_family,fine_family,total,checkability,atoms,feasibility,asr,asr_flagged_tokens,cue_clarity,length,selected,reason_if_not
+DB-16,DramaBench,calm,surprise,False,female,home,shen yunan's house entrance,1.0,1.0,4,1.0,1.0,,1.0,1.0,True,
+DB-35,DramaBench,strong,anger,True,male,hospital,village hospital,1.0,1.0,5,1.0,1.0,,1.0,1.0,True,
+DB-38,DramaBench,strong,sadness,True,female,other,old building stairwell,1.0,1.0,4,1.0,1.0,,1.0,1.0,True,
+SB-01,SEAM-Bench,calm,surprise,False,male,home,luxury penthouse,1.0,1.0,4,1.0,1.0,,1.0,1.0,True,
+DB-03,DramaBench,calm,anger,False,female,hospital,hospital delivery room,0.97,1.0,4,1.0,1.0,,1.0,0.7,True,
+DB-11,DramaBench,calm,fear,False,female,home,su xia's apartment,0.97,1.0,5,1.0,1.0,,0.8,1.0,True,
+DB-19,DramaBench,calm,surprise,False,male,public,lottery shop,0.97,1.0,4,1.0,1.0,,1.0,0.7,True,
+DB-21,DramaBench,calm,happiness,False,male,office,office,0.97,1.0,4,1.0,1.0,,1.0,0.7,True,
+DB-22,DramaBench,calm,happiness,False,female,other,room,0.97,1.0,4,1.0,1.0,,1.0,0.7,True,
+DB-39,DramaBench,strong,sadness,True,female,other,wasteland,0.97,1.0,5,1.0,1.0,,1.0,0.7,True,
+DB-42,DramaBench,strong,sadness,True,male,home,rural farmhouse courtyard,0.97,1.0,4,1.0,1.0,,0.8,1.0,False,coarse setting family 'home' at cap
+DB-51,DramaBench,strong,surprise,True,female,home,bedroom,0.97,1.0,5,1.0,1.0,,0.8,1.0,False,coarse setting family 'home' at cap
+DB-60,DramaBench,exaggerated,sadness,False,female,hospital,hospital corridor,0.97,1.0,5,1.0,1.0,,0.8,1.0,True,
+SB-07,SEAM-Bench,strong,happiness,True,male,other,desert highway,0.97,1.0,4,1.0,1.0,,0.8,1.0,True,
+DB-02,DramaBench,calm,anger,False,female,public,hotel room,0.9533,1.0,4,1.0,0.767,dared,1.0,1.0,False,removed to satisfy minimum emo=contempt
+DB-46,DramaBench,strong,fear,True,female,hospital,hospital room,0.95,1.0,5,1.0,0.75,Xiaoting,1.0,1.0,False,coarse setting family 'hospital' at cap
+DB-43,DramaBench,strong,fear,True,female,other,drunken flower brothel,0.945,1.0,5,1.0,0.875,things,0.8,1.0,True,
+DB-05,DramaBench,calm,anger,False,male,home,xia yao's living room,0.94,1.0,4,1.0,1.0,,0.6,1.0,False,coarse setting family 'home' at cap
+DB-06,DramaBench,calm,sadness,True,female,office,modern office,0.94,1.0,5,1.0,1.0,,0.6,1.0,True,
+DB-07,DramaBench,calm,sadness,False,male,palace,rural courtyard,0.94,1.0,4,1.0,1.0,,0.6,1.0,False,removed to satisfy minimum bin=exaggerated
+DB-10,DramaBench,calm,sadness,True,female,street,rainy night road,0.94,1.0,4,1.0,1.0,,0.8,0.7,True,
+DB-13,DramaBench,calm,fear,False,male,other,ground floor area,0.94,0.8,3,1.0,1.0,,1.0,1.0,False,removed to satisfy minimum bin=exaggerated
+DB-14,DramaBench,calm,fear,False,male,office,high-rise office,0.94,1.0,4,1.0,0.85,,1.0,0.7,False,removed to satisfy minimum bin=exaggerated
+DB-27,DramaBench,calm,contempt,True,male,other,wedding venue,0.94,0.8,3,1.0,1.0,,1.0,1.0,True,
+DB-28,DramaBench,calm,contempt,True,male,street,roadside,0.94,1.0,5,1.0,1.0,,0.6,1.0,True,
+DB-31,DramaBench,calm,contempt,False,male,hospital,hospital ward,0.94,1.0,5,1.0,1.0,,0.6,1.0,False,intensity-bin quota reached
+DB-33,DramaBench,strong,anger,True,female,other,luxurious banquet hall,0.94,1.0,5,1.0,0.85,,1.0,0.7,True,
+DB-37,DramaBench,strong,anger,True,female,nature,forest clearing,0.94,1.0,4,1.0,1.0,,0.6,1.0,True,
+DB-49,DramaBench,strong,surprise,True,female,home,kitchen,0.94,1.0,6,1.0,1.0,,0.6,1.0,False,coarse setting family 'home' at cap
+DB-52,DramaBench,strong,surprise,True,male,other,balcony,0.94,1.0,4,1.0,1.0,,0.6,1.0,True,
+DB-61,DramaBench,exaggerated,sadness,False,female,home,villa,0.94,1.0,4,1.0,0.85,,0.8,1.0,True,
+SB-04,SEAM-Bench,strong,fear,False,male,home,grey estate,0.94,1.0,4,1.0,0.85,,0.8,1.0,True,
+DB-36,DramaBench,strong,anger,True,female,home,living room,0.9375,1.0,4,0.75,1.0,,1.0,1.0,False,coarse setting family 'home' at cap
+DB-17,DramaBench,calm,surprise,False,male,other,café,0.9367,1.0,4,1.0,0.833,opens,1.0,0.7,False,intensity-bin quota reached
+DB-48,DramaBench,strong,surprise,True,female,other,cemetery,0.9325,1.0,5,0.85,1.0,,0.8,1.0,True,
+DB-25,DramaBench,calm,happiness,False,male,street,street,0.9114,1.0,6,1.0,0.857,years,0.6,1.0,False,intensity-bin quota reached
+DB-50,DramaBench,strong,surprise,True,female,public,hotel lobby,0.9114,1.0,5,1.0,0.857,Chairman's,0.6,1.0,False,removed to satisfy minimum emo=contempt
+DB-15,DramaBench,calm,fear,False,male,hospital,hospital infusion room,0.91,0.8,3,1.0,1.0,,1.0,0.7,False,source quota 22 reached
+DB-24,DramaBench,calm,happiness,True,female,other,abandoned factory,0.91,1.0,4,1.0,0.85,,0.6,1.0,False,source quota 22 reached
+DB-26,DramaBench,calm,happiness,False,male,home,chu family village,0.91,0.8,3,1.0,1.0,,1.0,0.7,False,source quota 22 reached
+DB-30,DramaBench,calm,contempt,False,male,home,abandoned warehouse,0.91,0.8,3,1.0,0.85,,1.0,1.0,False,source quota 22 reached
+DB-53,DramaBench,strong,happiness,False,female,other,mansion staircase,0.91,0.8,3,1.0,1.0,,1.0,0.7,False,source quota 22 reached
+DB-45,DramaBench,strong,fear,True,female,other,ktv private room,0.9,1.0,5,1.0,0.8,sedatives,0.6,1.0,False,source quota 22 reached
+DB-34,DramaBench,strong,anger,True,female,other,room,0.8918,1.0,5,1.0,0.759,ends,0.6,1.0,False,source quota 22 reached
+SB-05,SEAM-Bench,calm,contempt,False,male,office,grey capital,0.8918,1.0,4,1.0,0.759,Blacklisted,0.6,1.0,False,intensity-bin quota reached
+DB-57,DramaBench,strong,contempt,False,male,public,prison cafeteria,0.885,1.0,4,1.0,0.875,boy's,0.6,0.7,False,source quota 22 reached
+DB-09,DramaBench,calm,sadness,True,male,public,antique shop,0.8814,1.0,5,1.0,0.857,mother's,0.6,0.7,False,source quota 22 reached
+DB-01,DramaBench,calm,anger,False,male,public,star shore hotel,0.88,0.8,3,1.0,1.0,,0.6,1.0,False,source quota 22 reached
+DB-20,DramaBench,calm,surprise,False,male,public,bar,0.88,0.8,3,1.0,1.0,,0.6,1.0,False,source quota 22 reached
+DB-41,DramaBench,strong,sadness,True,male,other,night market,0.88,0.8,3,1.0,0.85,,0.8,1.0,False,source quota 22 reached
+DB-47,DramaBench,strong,fear,True,female,other,high-speed train car,0.88,0.8,7,1.0,1.0,,0.6,1.0,False,source quota 22 reached
+DB-32,DramaBench,calm,contempt,True,male,other,indoor pool,0.8767,1.0,5,1.0,0.683,rankings expected,0.8,0.7,False,source quota 22 reached
+DB-40,DramaBench,strong,sadness,True,male,home,ancient bathhouse,0.8733,1.0,4,1.0,0.667,Qianqian matches,0.6,1.0,False,source quota 22 reached
+DB-08,DramaBench,calm,sadness,False,male,other,ji family mansion,0.8618,0.8,3,1.0,0.759,Shishi,0.8,1.0,False,source quota 22 reached
+DB-56,DramaBench,strong,happiness,False,male,other,pool party,0.8618,0.8,3,1.0,0.759,helped,0.8,1.0,False,source quota 22 reached
+DB-04,DramaBench,calm,anger,False,female,home,village open space,0.8578,0.8,3,1.0,0.889,permits,0.6,1.0,False,source quota 22 reached
+DB-23,DramaBench,calm,happiness,False,male,other,gambling den,0.85,0.8,3,1.0,0.85,,0.8,0.7,False,source quota 22 reached
+DB-64,DramaBench,exaggerated,happiness,False,female,other,dungeon,0.85,0.8,3,1.0,1.0,,0.6,0.7,True,
+FB-04,FilmBench,calm,fear,False,female,other,unknown,0.85,0.8,3,1.0,1.0,,0.4,1.0,True,
+FB-08,FilmBench,calm,contempt,False,female,other,unknown,0.85,0.8,3,1.0,1.0,,0.4,1.0,True,
+FB-12,FilmBench,strong,fear,False,male,other,unknown,0.85,0.8,3,1.0,1.0,,0.4,1.0,True,
+FB-14,FilmBench,strong,happiness,False,male,other,unknown,0.85,0.8,3,1.0,1.0,,0.4,1.0,True,
+DB-59,DramaBench,strong,contempt,True,male,public,restaurant,0.8475,1.0,5,0.75,0.85,,0.6,1.0,False,source quota 22 reached
+DB-58,DramaBench,strong,contempt,False,female,other,wedding venue,0.83,0.8,3,1.0,0.75,Leaf's explains,0.6,1.0,False,source quota 22 reached
+DB-63,DramaBench,exaggerated,happiness,False,male,other,yunzhou city plaza,0.82,0.5,2,1.0,1.0,,0.8,1.0,True,
+FB-05,FilmBench,calm,fear,True,female,other,unknown,0.82,0.8,3,1.0,0.85,,0.4,1.0,True,
+SB-06,SEAM-Bench,calm,happiness,False,male,nature,"western national park (e.g., zion or grand canyon)",0.82,0.8,3,1.0,0.85,,0.6,0.7,False,intensity-bin quota reached
+DB-62,DramaBench,exaggerated,surprise,False,female,home,bedroom,0.8167,0.8,3,1.0,0.833,Jian,0.6,0.7,False,source quota 22 reached
+DB-69,DramaBench,exaggerated,contempt,False,female,other,mourning hall,0.8167,0.8,3,1.0,0.683,died died,0.6,1.0,False,source quota 22 reached
+SB-02,SEAM-Bench,calm,contempt,False,female,home,luxury penthouse,0.8125,0.8,3,0.85,0.85,,0.6,1.0,False,intensity-bin quota reached
+SB-03,SEAM-Bench,exaggerated,contempt,False,female,home,luxury penthouse,0.8,0.8,3,1.0,0.6,picks things plays,0.6,1.0,False,coarse setting family 'home' at cap
+DB-54,DramaBench,strong,happiness,False,female,palace,pei manor courtyard,0.7993,1.0,5,0.75,0.759,belonged,0.6,0.7,False,source quota 22 reached
+DB-65,DramaBench,exaggerated,happiness,False,unknown,other,consciousness space,0.7978,0.5,2,1.0,0.889,Liu,0.8,1.0,False,source quota 22 reached
+DB-68,DramaBench,exaggerated,contempt,True,male,public,funeral shop,0.7975,0.8,7,0.75,0.75,Qin Qian,0.8,1.0,False,source quota 22 reached
+DB-29,DramaBench,calm,contempt,False,male,palace,courtyard,0.79,0.5,2,1.0,1.0,,0.6,1.0,False,source quota 22 reached
+DB-66,DramaBench,exaggerated,happiness,False,male,palace,courtyard,0.79,0.5,2,1.0,0.85,,0.8,1.0,False,source quota 22 reached
+FB-01,FilmBench,calm,sadness,False,female,other,unknown,0.7836,0.8,3,1.0,0.668,has changed,0.4,1.0,False,intensity-bin quota reached
+DB-44,DramaBench,strong,fear,True,female,other,doorway,0.7731,0.8,3,0.75,0.778,Yan'er goodbye,0.6,1.0,False,source quota 22 reached
+DB-12,DramaBench,calm,fear,True,male,other,liu family ancestral hall,0.76,1.0,4,0.4,0.85,,0.6,1.0,False,source quota 22 reached
+DB-18,DramaBench,calm,surprise,False,male,other,lounge,0.76,0.5,2,1.0,0.85,,0.8,0.7,False,source quota 22 reached
+DB-55,DramaBench,strong,happiness,False,female,other,top of stone steps,0.7525,0.8,3,0.65,0.8,believed BS,0.6,1.0,False,source quota 22 reached
+DB-67,DramaBench,exaggerated,happiness,False,female,other,chen residence,0.74,0.5,2,1.0,0.75,We've,0.6,1.0,False,source quota 22 reached
+FB-09,FilmBench,strong,anger,False,male,other,unknown,0.7378,0.5,2,1.0,0.889,gentlemen,0.4,1.0,False,coarse setting family 'other' at cap
+FB-06,FilmBench,calm,happiness,False,male,other,unknown,0.73,0.5,2,1.0,1.0,,0.4,0.7,False,intensity-bin quota reached
+FB-07,FilmBench,calm,contempt,False,male,other,unknown,0.73,0.5,2,1.0,0.85,,0.4,1.0,False,intensity-bin quota reached
+FB-13,FilmBench,strong,surprise,False,male,other,unknown,0.72,0.5,2,1.0,0.8,Has,0.4,1.0,False,coarse setting family 'other' at cap
+FB-03,FilmBench,calm,sadness,False,female,other,unknown,0.7133,0.5,2,1.0,0.767,hiding,0.4,1.0,False,intensity-bin quota reached
+FB-10,FilmBench,strong,anger,False,male,other,unknown,0.7125,0.8,3,0.44999999999999996,1.0,,0.4,1.0,False,coarse setting family 'other' at cap
+FB-11,FilmBench,strong,fear,False,male,other,unknown,0.655,0.5,2,0.7,1.0,,0.4,0.7,False,coarse setting family 'other' at cap
+FB-02,FilmBench,calm,sadness,False,female,other,unknown,0.6475,0.5,2,0.5499999999999999,1.0,,0.4,1.0,False,intensity-bin quota reached

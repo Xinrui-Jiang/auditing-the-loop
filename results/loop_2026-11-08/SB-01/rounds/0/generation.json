@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, slight high angle.\nINT. LUXURY PENTHOUSE - CONTINUOUS. Cold filtered sunlight bathes the space. Julian enters, eyes widening in shock. He walks through living room \u2014 everything unchanged from four years ago. A frozen museum, time capsule, shrine. JULIAN, whispering, says: \"What\u2026 what is this?\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794113758-1a236kYTokGuegknUb13",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113758-1a236kYTokGuegknUb13",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794113758-1a236kYTokGuegknUb13",
+  "generation_id": "gen-vid-1794113758-1a236kYTokGuegknUb13",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113758-1a236kYTokGuegknUb13",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794113758-1a236kYTokGuegknUb13/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794113758-1a236kYTokGuegknUb13/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T045814Z&X-Goog-Expires=86396&X-Goog-SignedHeaders=host&X-Goog-Signature=31941b883c9b616818e78955fddc1a5bf2973653df684fb658dae42973a20fecb3d37e0108c0950aed62c10730f8fb6fbb40c81237ce60b77ff6ce00c2aaed97fcf6bcea3d108a4b19f4ed4a2bd620f3cba53da77730f34909f2e3b52ed1e8cdeb8a994c05b5820cab8176f2167b800ac62c37f2c40978fba93ba646e750249095f2b651b33f7dcc338625083c3e94cffd92baa9d06387d3f8ae35874a029f6ea6fa9feae8a3893d1da0c90bd568aca54ae89205528e5bfa4bf31cbaf14a14cd3eaed14ed9154822c743a11988949ed38525c46e29753097981fe0051b1728f8faf5c02bba32c2e8f87027989cdc36d64874886e0634aa4d2ae094c331ee67c7"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794200290
+ }
+}

@@ -1,0 +1,325 @@
+{
+  "shot_id": "FB-08",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. close shot, eye-level locked-off camera.\nIn the same dining room, the camera cuts to a close shot of the young woman, with an eye-level locked-off camera and rule-of-thirds composition. She has yellow-brown short hair, wears a star-shaped ear clip on her left ear, and has pink lipstick on. Looking impatient, she lowers her head and drops her gaze, responding coldly: \"I've already blocked him.\", with obvious irritation in her tone.\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "script_spans": [
+    "In the same dining room, the camera cuts to a close shot of the young woman, with an eye-level locked-off camera and rule-of-thirds composition. She has yellow-brown short hair, wears a star-shaped ear clip on her left ear, and has pink lipstick on. Looking impatient, she lowers her head and drops her gaze, responding coldly:",
+    "young woman",
+    "I've already blocked him.",
+    ", with obvious irritation in her tone."
+  ],
+  "items": [
+    {
+      "id": "A1.1",
+      "check_id": "A1",
+      "kind": "must",
+      "text": "The line \"I've already blocked him.\" is spoken in English, complete and verbatim.",
+      "priority": "critical",
+      "evidence": "tool",
+      "params": {
+        "line": "I've already blocked him.",
+        "language": "en",
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.1",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The young woman visibly appears impatient.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "Looking impatient",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.2",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The young woman lowers her head and looks downward.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "she lowers her head and drops her gaze",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.1",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The shot takes place in the same dining room.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "same dining room",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.2",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "A star-shaped ear clip is visible on the young woman's left ear.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "a star-shaped ear clip on her left ear",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.3",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The young woman's voice conveys obvious irritation.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "obvious irritation in her tone",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.1",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Everyone on screen is in the script's cast: young woman. Nobody else appears.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.2",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Only young woman speaks; no other voice says a line.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.3",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "No unscripted event changes the scene: nobody enters, no cut to another place.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A5.1",
+      "check_id": "A5",
+      "kind": "premise",
+      "text": "The shot is a close shot of the young woman with an eye-level locked-off camera and rule-of-thirds composition.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A5.2",
+      "check_id": "A5",
+      "kind": "premise",
+      "text": "The young woman has yellow-brown short hair and pink lipstick.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A6.1",
+      "check_id": "A6",
+      "kind": "must",
+      "text": "close shot, eye-level locked-off camera, vertical 9:16, young woman centred.",
+      "priority": "minor",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B1.1",
+      "check_id": "B1",
+      "kind": "must_not",
+      "text": "Objects and liquids move plausibly: gravity, contact and momentum look normal.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B2.1",
+      "check_id": "B2",
+      "kind": "must_not",
+      "text": "Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B3.1",
+      "check_id": "B3",
+      "kind": "must_not",
+      "text": "The same face, voice and clothing persist through the whole take.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B4.1",
+      "check_id": "B4",
+      "kind": "must_not",
+      "text": "No unintended cut, freeze, jump or loop.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B5.1",
+      "check_id": "B5",
+      "kind": "must",
+      "text": "Lip movement matches the spoken line and the voice belongs to the person on screen.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B6.1",
+      "check_id": "B6",
+      "kind": "must",
+      "text": "8 s, 9:16, 480p, audio track present.",
+      "priority": "info",
+      "evidence": "tool",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B7.1",
+      "check_id": "B7",
+      "kind": "must_not",
+      "text": "No subtitles, captions or watermarks.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C1.1",
+      "check_id": "C1",
+      "kind": "must",
+      "text": "The emotion is contempt (cues: coldly).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C2.1",
+      "check_id": "C2",
+      "kind": "must",
+      "text": "Face and voice intensity within [0, 1] on the 0-4 scale (calm).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "C3.1",
+      "check_id": "C3",
+      "kind": "must",
+      "text": "The scripted emotional turn happens, at the moment the script places it.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    }
+  ],
+  "conflicts": [],
+  "author": "openai/gpt-5.6-luna"
+}

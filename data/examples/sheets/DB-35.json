@@ -1,0 +1,154 @@
+{
+  "shot_id": "DB-35",
+  "round": 0,
+  "take_sha256": "24ad924bc1172cb95049f5756bbcaed63e355073b9e9d0d79653be46732978f9",
+  "verdicts": [
+    {
+      "item_id": "A4.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] fail/seen_clearly: Multiple people appear on camera and a second man is visible pushing the hospital bed in the later seconds.",
+        "[flash_order_b] fail/seen_clearly: Although He Xi is the only person speaking, two people are visible on camera in the clip (He Xi and the husband pushing the bed).",
+        "[qwen_second_opinion] fail/seen_clearly: Three people are on camera (HE XI running, the husband pushing the bed, and the patient lying on it) from 00:04-00:08, although only HE XI speaks."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": false,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "model said pass but ASR says fail (WER=1.0)",
+        "ASR WER=1.00 -> tool fail",
+        "[flash_order_a] pass/seen_clearly: He Xi says 医生！我的太太，他是屯位！ (Doctor! My mistress—she's breech!) between 00:01 and 00:05.",
+        "[flash_order_b] pass/seen_clearly: He Xi says '医 生 ! 我 的 秘 书 , 她 是 臀 位 !' (Doctor! My mistress—she's breech!) from 00:01 to 00:04.",
+        "[qwen_second_opinion] pass/seen_clearly: At 00:01-00:05 HE XI shouts \"医生！我的mistress——她是臀位！\", the Chinese delivery (with the English word 'mistress' inserted) of 'Doctor! My mistress—she's breech!'.",
+        "[escalate_R2] pass/seen_clearly: At 00:01-00:05 the wet-haired woman runs toward the camera and audibly shouts 'Doctor! My mistress—she's breech!', matching the required line word for word over the rain ambience."
+      ],
+      "deviation": 1.0,
+      "reinspected": true
+    },
+    {
+      "item_id": "A2.1",
+      "status": "uncertain",
+      "severity": "warning",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": null,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] fail/seen_clearly: He Xi runs toward the camera alone while shouting; her husband is pushing the hospital bed separately in the background.",
+        "[flash_order_b] pass/seen_clearly: From 00:04 to 00:07, He Xi's husband is shown pushing a hospital bed, with He Xi running beside him.",
+        "[qwen_second_opinion] pass/seen_clearly: At 00:04-00:05 HE XI is seen running in the foreground while her husband pushes the hospital bed directly behind her.",
+        "[escalate_R3] uncertain/not_observable: (judge returned no entry for this requirement)"
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Heavy rain lashing a window is audible from 00:00 to 00:04.",
+        "[flash_order_b] pass/seen_clearly: Rain lashing against a dark window is heard from 00:00 to 00:01.",
+        "[qwen_second_opinion] pass/seen_clearly: Heavy rain sound is audible across 00:00-00:08, matching the rain-streaked dark window shown at 00:00-00:01."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "fail",
+      "severity": "warning",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "median intensity face=3 voice=4 vs target [2, 3] -> d=1",
+        "judges' category votes ['pass', 'pass', 'pass'] differ from the intensity-derived status (status follows intensity, DESIGN_v2 §7.1)",
+        "[flash_order_a] pass/seen_clearly: He Xi displays anger and urgency with loud shouting. | Face shows wide-eyed distress and anger with tense mouth, and voice is a loud shout.",
+        "[flash_order_b] pass/seen_clearly: He Xi shouts urgently and angrily from 00:01 to 00:04. | He Xi exhibits strong anger and distress while shouting with wide eyes and intense vocal projection.",
+        "[qwen_second_opinion] pass/seen_clearly: In the 00:02-00:03 window her brow is deeply furrowed and mouth wide open in a shout, and her voice is a loud, strained cry. | At 00:02-00:03 she screams with a contorted, furious/distressed face and a maximally loud, cracking shout."
+      ],
+      "deviation": 1.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The scene is set indoors at a village hospital at night.",
+        "[flash_order_b] pass/seen_clearly: The setting is an indoor village hospital at night during the hospital corridor and bed scenes.",
+        "[qwen_second_opinion] pass/seen_clearly: 00:00-00:08 shows a dim interior with peeling paint, a metal gurney, a striped patient gown, and night rain outside the window — an indoor village hospital at night."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The camera angle is medium close-up, static, and at eye level on He Xi.",
+        "[flash_order_b] pass/seen_clearly: From 00:01 to 00:04, the shot of He Xi is a medium close-up, static camera, at eye level.",
+        "[qwen_second_opinion] fail/seen_clearly: After the brief static window shot, the camera is handheld and tracks backward with visible shake as HE XI runs (00:01-00:08), so it is not a static eye-level medium close-up."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.009331
+}

@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Create an 8-second live-action short-drama take in 480p, vertical 9:16, with a present audio track. Use one single continuous unbroken take with no cuts, transitions, freezes, jumps, loops, or camera movement. The camera is completely locked off and static at eye level; it must not track, pan, tilt, zoom, shake, or move backward. Use a medium close-up composition with HE XI centred while keeping HUSBAND, the hospital bed, and ZHAO WANRU visibly present in the same frame as much as possible. Preserve the same faces, voices, clothing, anatomy, and plausible object motion throughout.\n\nINT. VILLAGE HOSPITAL - NIGHT\nRain lashes a dark window. HE XI runs beside her HUSBAND as he pushes a hospital bed. On it, ZHAO WANRU, 25, writhes in advanced labor.\nHE XI\nshouting\nDoctor! My mistress\u2014she's breech!\n\nHE XI must be the only visible speaker. Show HE XI's face clearly while she visibly articulates the entire line, and make the voice unmistakably come from HE XI. HE XI alone says the complete line exactly as written, including the em dash and the final word \u201cbreech!\u201d; do not paraphrase, omit, reorder, shorten, or assign any word to HUSBAND or ZHAO WANRU. HUSBAND is completely silent. ZHAO WANRU is completely silent and does not scream, speak, or produce dialogue; she only visibly writhes on the bed in advanced labor. Do not let any other character vocalize.\n\nThe delivery is an angry, forceful shout directed at the doctor: furrowed brow, tense jaw, assertive facial expression, and strong voice intensity between 2 and 3. It must read as anger rather than panic, fear, crying, or distress. Keep HE XI visibly running beside HUSBAND as he pushes the bed, with ZHAO WANRU visibly writhing on it. Stage the movement through the locked-off frame; never move the camera to follow them. Show only HE XI, HUSBAND, and ZHAO WANRU. Nobody else appears, enters, or is heard. Keep the village hospital at night clearly visible, including the dark window and audible rain lashing it. No subtitles, captions, watermarks, or text overlays.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F",
+  "generation_id": "gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794115293-pOX1wJnTylOB8ajRWs8F/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T052450Z&X-Goog-Expires=86396&X-Goog-SignedHeaders=host&X-Goog-Signature=76819245e90344283f95467a2b57029032bc20b6a4b0112a2db70ed422f8caf1e7a6820f293d6d7c4ea11e46c2672638cb828ef774a1775ca91df15ff4a4806a290c815e41ed8bb3f2045d201d3d335058fcfb152afb6c6ac394dd5cca9202d05e1ce811519f91114ec66cfd9258f717d060b58afafdb4f8bc929c23c94c1b9acafc54f19bc59f92c6d2af1f72edbabbc57da9635f954ab5e26ce95ccf28d0faa72cb6359c2b25abb10e91defc1064fd631ab707b981240939af5fe138f612d7da37f7db5f9ecbaa0e50d25cca7a54946827f613bd3ba010e72236a182f6710832e52d686c2852daa650efe3e798f44144d7f7032e439356fe1a1ba0f869a3ec"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794201886
+ }
+}

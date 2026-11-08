@@ -1,0 +1,33 @@
+SEAM-Bench Dataset License
+==========================
+
+Copyright (c) 2027 the SEAM-Bench authors and the respective rights holders of
+the underlying short dramas.
+
+This dataset (screenplays, human-director storyboards, reference images, and
+derived index/metadata files) is released under the
+
+    Creative Commons Attribution-NonCommercial 4.0 International
+    (CC BY-NC 4.0)
+
+license. Full text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+You are free to:
+  - Share  — copy and redistribute the material in any medium or format.
+  - Adapt  — remix, transform, and build upon the material.
+
+Under the following terms:
+  - Attribution  — You must give appropriate credit and cite the accompanying
+    paper (see README.md), provide a link to the license, and indicate if
+    changes were made.
+  - NonCommercial — You may not use the material for commercial purposes,
+    including training generative models intended for commercial release.
+
+ADDITIONAL NOTICE
+-----------------
+The screenplays, storyboards, and reference images originate from produced
+commercial short dramas and remain the property of their respective rights
+holders. They are provided solely to enable non-commercial research on
+storyboard-continuity evaluation. If you are a rights holder and have concerns
+about any material in this repository, please open an issue and it will be
+addressed promptly.

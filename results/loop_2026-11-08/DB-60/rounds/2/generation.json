@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use one completely continuous, locked-off static camera: medium close-up, eye level, RUAN NINGXIA centred for the entire take. Do not track, pan, zoom, reframe, or cut. Keep the hospital corridor and both people she sees visible in the background or over her shoulder throughout.\n\nINT. HOSPITAL CORRIDOR - DAY\nRUAN NINGXIA (30s)\nRUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits.\nRUAN NINGXIA\npretending to cry\nAssistant Chen! My husband?\n\nRUAN NINGXIA is the only person who speaks. She must speak the line exactly, completely, and verbatim in English, with unmistakable English pronunciation: \"Assistant Chen! My husband?\" Do not translate it, replace it, paraphrase it, or speak it in Chinese or any other language. The line must be clearly audible, and her lips must visibly match every English word; the voice must come from RUAN NINGXIA on screen. She performs exaggerated sadness at intensity 3-4 with visible deliberate fake crying cues, making it clear through her controlled, performative expression that she is pretending to cry rather than genuinely crying.\n\nFU LINCHENG'S ASSISTANT and JIANG YAO must both remain visibly present in power suits as RUAN NINGXIA sees them. Nobody else appears and nobody else speaks. Keep RUAN NINGXIA's fur, dress, designer bag, face, voice, and styling consistent throughout. The designer bag stays clearly visible in her tightly clutching hand. Her anxious running is a brief natural movement within the locked-off framing, with no camera movement. No subtitles, captions, watermarks, or any on-screen text. Keep all hands, faces, limbs, objects, and movement anatomically normal and physically plausible. No entrances, exits, unscripted events, freezes, jumps, loops, or location changes.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I",
+  "generation_id": "gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794115461-OwHnMPxwnWuFCXIfKf7I/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T052649Z&X-Goog-Expires=86392&X-Goog-SignedHeaders=host&X-Goog-Signature=0adb01f114b4686efee9ffc8e565a02d36f46b4aced30f69daea191990c7fb697c02a1d3b8d1793caf2139747cd10e1260e4d866133375508865b7b2defe7a19edc8aa018b95f8f88323d8e564fc309eac8fb4da296f8ac70d8535b67fc6634a6501f9a4f9256977edb45da601a6ef3ef8792105df47cb152654e3aa34c84b24606cf27f5faed3b960ce2b732e62708865a44356dcafd329a006dd0878b513da871dd0e6faa4c1ab776c85531a0bcbeacaff82fd6978cf335ba27e76f62e06c970048006f180d4e3dcde488bd3d3686e241bbe3048384ba75b4653e146b5f0acc6a7476e17aeb52e25e12b4c845ac458e7fc16667fc082c06478275417b91ce8"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794202001
+ }
+}

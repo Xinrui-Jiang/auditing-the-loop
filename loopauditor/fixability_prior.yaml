@@ -1,0 +1,20 @@
+# Default fixability per check (PLAN.md §5). Revised once after the 30-shot pilot, then fixed.
+A1: prompt_fixable   # wrong language or words: say so in the prompt
+A2: prompt_fixable
+A3: prompt_fixable
+A4: prompt_fixable
+A5: prompt_fixable
+A6: prompt_fixable
+B1: retry_fixable    # physics glitches vary with the seed
+B2: retry_fixable    # hands, faces, morphing
+B3: retry_fixable
+B4: retry_fixable
+B5: backend_limited  # lip sync is the model's own ability
+B6: backend_limited  # duration / resolution are what the backend delivers
+B7: prompt_fixable
+C1: prompt_fixable
+C2: prompt_fixable
+C3: prompt_fixable
+C4: prompt_fixable
+C5: prompt_fixable
+C6: retry_fixable

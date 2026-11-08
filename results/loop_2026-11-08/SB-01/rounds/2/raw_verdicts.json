@@ -1,0 +1,938 @@
+[
+ {
+  "item_id": "A1.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian says 'What? What is this?' from 00:05 to 00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian enters the space at 00:01 and widens his eyes in shock from 00:02 to 00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian walks through the living room which appears unchanged.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The setting is a luxury penthouse living room.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Julian appears on screen.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Julian speaks in the clip.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No unscripted events or cuts occur in the scene.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The space appears as an unchanged luxury penthouse living room.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The camera angle is static and slightly high, showing Julian centered.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian speaks the line \"What? What is this?\" verbatim from 00:05 to 00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian enters and widens his eyes in shock from 00:02 to 00:07.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian walks through the living room from 00:01 to 00:02.",
+  "span": [
+   1.0,
+   2.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The setting is visibly an interior luxury penthouse with large windows from 00:00 to 00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Julian appears on screen in the clip from 00:01 to 00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only Julian speaks during the clip from 00:05 to 00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian enters the frame as scripted and no unscripted events or cuts occur from 00:01 to 00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The luxury penthouse living room appears clean and unchanged with the sofa and city view visible from 00:00 to 00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian is centered in a medium close-up, static shot from a slight high angle in vertical 9:16 format from 00:02 to 00:07.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05-00:07 a male voice clearly says 'What... what is this?' in English, matching the expected line verbatim.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian enters from the right at 00:01-00:02 and at 00:02-00:04 his eyes widen and mouth opens in visible shock as he looks around and up.",
+  "span": [
+   1.0,
+   4.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Julian walks from the right edge through the living room to the center foreground (00:01-00:04), and the room appears pristine and undisturbed (sofa, columns, martini glass all in place), showing no sign of alteration.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip shows an interior luxury penthouse lounge with floor-to-ceiling windows over a hazy city skyline, consistent with INT. LUXURY PENTHOUSE - CONTINUOUS (00:00-00:07).",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only one person, Julian, appears on screen at any point (00:01-00:07); no other individuals are visible.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The only speech (00:05-00:07) comes from Julian, whose mouth moves in sync on screen; no other voice is heard.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The single continuous static shot (00:00-00:07) contains no cuts and no unscripted entries; Julian's entrance is the scripted action.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The lounge appears immaculate and untouched at 00:00-00:01 (made sofa, martini glass still on the side table, sunlit windows), consistent with a space unchanged over time.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "Although the camera is static, vertical 9:16, and Julian ends centered, the framing is a pronounced high-angle wide/medium-wide shot of the whole lounge with Julian only waist-up in the lower center (00:04-00:07), not a medium close-up with a slight high angle.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man walks and stops naturally with correct physics applied at 00:01-00:03.",
+  "span": [
+   1.0,
+   3.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Hands, face, and limbs remain anatomically normal throughout without morphing at 00:01-00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man's identity, face, voice, and clothing persist consistently across the take at 00:01-00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The take is continuous with no unintended cuts, freezes, jumps, or loops.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Lip movements match the spoken lines 'What?' and 'What is this?' at 00:05-00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Video is 7 seconds long (close to 8s spec), 9:16 aspect ratio, 480p resolution, with audio present.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "There are no subtitles, captions, or watermarks present in the video.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Walking motion and object positions follow normal physics and gravity.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Hands, face, and limbs remain anatomically normal throughout with no morphing.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man's face, voice, and clothing (white shirt, black blazer) persist consistently through his appearance.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Single continuous take without any unintended cuts, freezes, jumps, or loops.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Lip movements for 'What?' and 'What is this?' match the man's speech and voice.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Video is 7 seconds long in 9:16 aspect ratio at 480p with audio present.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions, or watermarks are present in the video at any time.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The martini glass remains stationary on the side table and the man's walk from 00:01-00:04 shows natural gait, weight shift, and contact with the floor.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Across 00:02-00:07 the man's face, arms, and hands remain anatomically coherent with no morphing, extra digits, or garbled text anywhere in frame.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "From entry at 00:02 to 00:07 the same man with short light-brown hair, black jacket, and white collared shirt persists, and the single male voice matches him.",
+  "span": [
+   1.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip is one continuous static high-angle take from 00:00-00:07 with no cuts, freezes, or jumps.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05-00:07 the man's mouth opens and moves in sync with the spoken line 'What... what is this?' and the voice is clearly his.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip runs ~8 s in vertical 9:16 (480x854) with an audible track of footsteps, ambient hum, and speech.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions, or watermarks appear at any point from 00:00-00:07.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man looks up with wide eyes and asks 'What is this?' in shock at 00:05.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/primary/order1",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The man's shock intensity is strong (face 3, voice 2), exceeding the [0, 1] calm threshold.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man delivers his lines in a low, questioning whisper starting at 00:05.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man displays surprise with widened eyes and shock upon looking up at 00:02-00:07.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 1
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The man's facial expression of shock and wide eyes has intensity around 3, exceeding the [0, 1] calm range.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 1
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man speaks in a hushed, whispering tone at 00:05-00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 1
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:04 the man's eyes widen and his mouth opens as he looks around, and at 00:05-00:07 he freezes facing the camera with raised brows, asking 'What... what is this?' \u2014 a clear surprise/shock reaction.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The expression at 00:02-00:07 (wide eyes, open mouth, raised brows, stunned question) is a clear-to-strong surprise, far above the calm 0-1 band required.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The line 'What... what is this?' at 00:05-00:07 is delivered in a hushed, breathy whisper consistent with his stunned, frozen posture.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 1
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A male voice says, 'What... what is this?'",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "P1 enters from the right edge of the frame... Eyes widen and mouth opens in surprise as he looks around and up",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "P1 enters from the right edge of the frame, walks toward the center foreground",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Static view of an empty modern high-rise lounge... floor-to-ceiling windows showing a hazy city skyline",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "P1 is the only person described on screen, entering from the right edge of the frame",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A male voice says, 'What... what is this?'",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "P1 enters from the right edge of the frame",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Static view of an empty modern high-rise lounge",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "Single static high-angle medium-wide shot... P1 stops in the center foreground",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B6.1",
+  "source": "tool/ffprobe",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "496x864, 8.06 s, 24.0 fps, audio=yes",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "tool/ffmpeg",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "scene cuts at []; frozen spans [(0.0, 0.62), (4.54, 5.04), (5.04, 5.96), (5.96, 6.67), (6.67, 7.5)] (3.6 s)",
+  "span": [
+   0.0,
+   0.62
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "tool/asr",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "language=en, WER=0.00, heard: 'What? What is this?'",
+  "span": [
+   5.04,
+   7.76
+  ],
+  "value": 0.0,
+  "face_intensity": null,
+  "voice_intensity": null
+ }
+]

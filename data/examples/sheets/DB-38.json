@@ -1,0 +1,131 @@
+{
+  "shot_id": "DB-38",
+  "round": 0,
+  "take_sha256": "c5efb85c45d57b6b2929344353f93a3abee4fdfdf61bc40d9cbb49ca74b033ac",
+  "verdicts": [
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Throughout the clip 00:00-00:07, exactly one person (Haitong) is visible on camera and speaks the only line of dialogue.",
+        "[flash_order_b] pass/seen_clearly: Exactly one person (Haitong) is visible on camera and speaks, with no second speaker.",
+        "[qwen_second_opinion] pass/seen_clearly: Only one person (the girl) is visible throughout 00:00-00:07 and she is the only one who speaks at 00:05-00:07."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "ASR WER=0.00 -> tool pass",
+        "[flash_order_a] pass/seen_clearly: At 00:06-00:07, Haitong speaks the exact dialogue: \"Grandma, they found me.\"",
+        "[flash_order_b] pass/seen_clearly: The character speaks the exact dialogue: 'Grandma, they found me.' at 00:06-00:07.",
+        "[qwen_second_opinion] pass/seen_clearly: The exact line 'Grandma, they found me.' is audible at 00:05-00:07."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": null,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] fail/seen_clearly: At 00:01-00:03, paper rustling sound is heard as she moves the papers, but the specific SFX of pages scattering/shredded by rain is absent.",
+        "[flash_order_b] pass/seen_clearly: Pages scattering and tearing are heard audibly between 00:02 and 00:04 as she drops the papers.",
+        "[qwen_second_opinion] pass/seen_clearly: Paper rustling/scattering sounds are heard at 00:00-00:03 as she handles and drops the torn, rain-damaged resume, with loose pages visibly scattered on the table.",
+        "[escalate_R3] pass/seen_clearly: At 00:02-00:04 a distinct paper crinkle/rustle is audible exactly as she drops the shredded resume onto the table, and the visuals confirm torn, jagged pages with rain-like wet spots on the surface."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "C2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "median intensity face=3 voice=3 vs target [2, 3] -> d=0",
+        "[flash_order_a] pass/seen_clearly: At 00:05-00:07, the character expresses strong sadness through crying with tears on her face and a tearful delivery of her line. | Face shows clear crying with tears and quivering lips (intensity 3); voice has a crying, trembling tone (intensity 3).",
+        "[flash_order_b] pass/seen_clearly: The character displays strong sadness with visible tears and a crying vocal delivery ('Grandma, they found me.'). | The face shows clear teary eyes and crying expression (intensity 3), and the voice delivers the line with audible sobbing and a broken tone (intensity 3).",
+        "[qwen_second_opinion] pass/seen_clearly: From 00:03-00:07 her face shows teary, reddened eyes and trembling lips, and her delivered line at 00:05-00:07 is cracked and sobbing, matching strong sadness with crying. | Watery eyes, red nose and quivering mouth are clearly visible 00:03-00:07, and the voice breaks with sobs on 'Grandma, they found me.'"
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Throughout 00:00-00:07, the setting is clearly an indoor old building stairwell during daytime.",
+        "[flash_order_b] pass/seen_clearly: The setting is clearly an indoor old building stairwell with stairs and a clock visible in the background during daylight.",
+        "[qwen_second_opinion] pass/seen_clearly: Background shows an interior old-building stairwell with concrete steps, peeling plaster, a wall clock, and daylight through windows for the whole clip."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Throughout 00:00-00:07, the shot is a medium close-up with a static camera at eye level framing Haitong from the chest up.",
+        "[flash_order_b] pass/seen_clearly: The shot is a medium close-up from a static, eye-level camera angle throughout the clip.",
+        "[qwen_second_opinion] pass/seen_clearly: The framing is a chest-up medium close-up at eye level, and the camera does not move at any point 00:00-00:07."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.007103
+}

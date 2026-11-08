@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16 framing, medium close-up, static camera, eye level, 480p, 8 seconds, XU ZHIYI centred. Keep the shot continuous at the exterior house entrance in daylight, with the door clearly visible beside her. Only XU ZHIYI is on screen and only she speaks; nobody enters, and do not cut to another place. Preserve the same face, voice, clothing, anatomy, and identity throughout. No subtitles, captions, watermarks, or text.\n\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY\nXU ZHIYI (28, exhausted but determined)\nShe stares at the door. A flicker of memory crosses her face\u2014falling snow, a different door, a different betrayal. She blinks it away.\nXU ZHIYI\nquietly\nHe won't help us. Not after what I did.\n\nStage the memory as only a very brief, subtle visual impression conveyed through XU ZHIYI's face while the camera remains at the present-day house entrance: her eyes and expression momentarily register falling snow, a different door, and a different betrayal, without showing a separate location or adding anyone else. Then she visibly blinks once, clearly ending the memory, and returns to calmly staring at the present door. Make the emotion a restrained flicker of surprise, with a visible blink but low facial and vocal intensity, remaining calm rather than anxious or dramatic. Speak the complete line exactly in English, softly and quietly, with accurate on-camera lip sync. Keep all movement natural and physically plausible, with no unintended cuts, freezes, jumps, loops, morphing, or extra voices. Audio must be present.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu",
+  "generation_id": "gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794112719-5UGXjHRfhinLIMSFAkmu/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T044055Z&X-Goog-Expires=86395&X-Goog-SignedHeaders=host&X-Goog-Signature=237aaa70af0a14afff95eb15f435c356a094098dc39b45f6120bffa5f56b47bc0566b659cf077ffa49ec6258878189971c7125249236043d6510e1ff1432e5f162f9db8593690b319c7569e8fffd5c7b7fd146b6e8ca92e9a74cffd8c6845d401a1825e51392723f952b3f93d0a6bf963b2af723220a2d9c6338d04af51d5a9efcf8a2d8f6ff667ce2b0a0f0953da36c0a37d0e0d6b5084cf95cbf1f757ae73feb9fec427115e25b77052fbb6f03f8e015381756f5f7e0e9deca2a8c5328c565f0e1bc1ef21090e94bff9995bf5b6038118d8b2238885dbf30ef2d5fc1207019bc475b94b1b7857b03a1fe47452d710fa8cdc46c1189b9b8908e5d478a9312a6"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794199250
+ }
+}

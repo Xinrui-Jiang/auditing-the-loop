@@ -1,0 +1,1097 @@
+[
+ {
+  "item_id": "A1.1",
+  "source": "A/primary/order1",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05-00:07, the husband says 'Doctor! My mistress, she's' instead of 'Doctor! My mistress\u2014she's breech!'.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/primary/order1",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:07, the woman is standing still in the background, not running beside the husband.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/primary/order1",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "At 00:02-00:07, a pregnant woman is seen screaming on the bed, but her age and exact labor stage are not verifiable from visual appearance alone.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00-00:07, the scene is set in a hospital hallway at night.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00-00:01, rain is visible lashing the dark window in the background.",
+  "span": [
+   0.0,
+   1.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "A3.3",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:07, a hospital bed is visible and being pushed down the hallway by the shirtless man.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/primary/order1",
+  "status": "uncertain",
+  "visibility": "seen_clearly",
+  "evidence": "The characters present match the described roles, but their identities as HE XI, HUSBAND, and ZHAO WANRU cannot be verified directly from the video.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/primary/order1",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05-00:07, the husband speaks lines, contrary to the rule that only HE XI speaks.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00-00:07, the scene remains in the hospital hallway without unscripted entrances or cuts to other places.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00-00:07, the shot takes place in a hospital hallway at night.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/primary/order1",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:00-00:01, the shot is a medium close-up of the woman, but the camera is not static as it shakes slightly.",
+  "span": [
+   0.0,
+   1.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The dialogue spoken is 'Doctor! My mistress, she's' without the completion '--she's breech!'.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "He Xi is standing stationary in the background, not running beside the husband while he pushes the bed.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A pregnant woman is seen writhing and screaming on the hospital bed.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The setting is clearly an indoor hospital hallway at night.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Rain is visible lashing against dark windows at the end of the hallway.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.3",
+  "source": "A/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "A hospital bed is visible and pushed by a shirtless man down the hallway from 00:02 to 00:07.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/primary/order2",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Unclear character identities from the script are presented in the AI-generated video.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "A male character speaks lines, not He Xi alone.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "Multiple people appear and cuts occur between different camera angles and locations within the hallway.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/primary/order2",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "The clip shows a hospital hallway at night, but whether it is a village hospital is not explicitly confirmed visually.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The shot is not a medium close-up of He Xi centered with a static camera at eye level.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05-00:08 the female line is audible as 'Doctor! My mistress, she's br\u2014' and cuts off mid-word, so the full verbatim line 'she's breech!' is never completed.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:03 HE XI is seen behind the gurney chasing with mouth open, and after the 00:03 POV switch she is out of frame entirely; she is never shown running beside HUSBAND.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 2,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:03-00:07 ZHAO WANRU lies still under a white sheet with only one hand clutching it; no writhing is shown and her face/age are never visible.",
+  "span": [
+   3.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Throughout 00:00-00:07 the action occurs inside a dim teal-walled hospital corridor with fluorescent panels and a rain-streaked dark window, matching an interior hospital at night.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The audio track contains only panting, a scream, gurney rumble and shouting (00:00-00:08); no sound of rain lashing the window is audible, rain is only visible.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.3",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:07 a hospital gurney/bed carrying a sheet-covered patient is clearly visible being pushed by the shirtless HUSBAND.",
+  "span": [
+   2.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Only three figures appear across 00:00-00:07: HE XI (gray tank top), HUSBAND (shirtless man), and ZHAO WANRU (on the bed); no additional person enters.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The only spoken line (00:05-00:08) is HE XI's 'Doctor! My mistress\u2026'; HUSBAND's vocalizations at 00:03-00:07 are wordless shouts/grunts, not lines.",
+  "span": [
+   3.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip stays in the same hospital corridor throughout 00:00-00:07; the husband's entrance with the bed is the scripted action and there is no cut to another location.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The setting is a hospital interior at night (dark rainy window, fluorescent corridor lighting) as seen from 00:00-00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The camera is not static: it pulls back from the close-up at 00:01-00:02 and switches at 00:03 to a shaky, retreating gurney-level POV, so the required static medium close-up of HE XI centred does not hold.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man pushes the hospital gurney down the hallway with natural momentum from 00:01 to 00:07.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Hands and faces remain anatomically normal throughout the clip without morphing.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Characters maintain consistent identity and clothing throughout their appearances.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "There is a single intended camera cut at 00:01 with no unintended freezes or loops.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man's lip movements match his spoken dialogue 'Doctor! My mistress, she's' from 00:05 to 00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The video has proper duration, aspect ratio, and includes an audio track.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions, or watermarks appear anywhere in the clip.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The physical movements and actions throughout the clip appear natural and plausible at 00:00-00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The first woman's hands morph near her neck before the cut at 00:00-00:01.",
+  "span": [
+   0.0,
+   1.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Character faces, voices, and clothing remain consistent throughout the clip.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "There is a clean narrative cut at 00:01, with no unintended jumps or freezes.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Lip sync for the dialogue 'Doctor! My mistress, she's' matches the speaker at 00:05-00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The video duration is approximately 7 seconds, in 9:16 aspect ratio with audio.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions, or watermarks are present in the clip.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B1.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The gurney's roll, the man's pushing stride, the woman's wet hanging hair, and the sheet's drape all obey gravity and momentum across 00:00-00:07 with no floating or impossible motion.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/second",
+  "status": "fail",
+  "visibility": "partially_seen",
+  "evidence": "The hand clutching the sheet at 00:04-00:05 shows irregular, partly fused finger shapes, and P1's face warps slightly during the pull-back at 00:01-00:02, indicating anatomical morphing.",
+  "span": [
+   1.0,
+   5.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B3.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "P1's wet-haired face and gray button-front tank, and P2's shirtless muscular build and short dark hair, remain consistent in every frame where they appear (00:00-00:07).",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 2
+ },
+ {
+  "item_id": "B4.1",
+  "source": "B/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "At ~00:03 the shot jumps abruptly from a third-person corridor view to a gurney-level POV, and P1, who was directly behind the gurney at 00:02-00:03, vanishes from frame without explanation.",
+  "span": [
+   2.0,
+   4.0
+  ],
+  "value": null,
+  "face_intensity": 2,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B5.1",
+  "source": "B/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The female line 'Doctor! My mistress, she's br\u2014' (00:05-00:08) plays while only P2 and the sheet-covered P3 are on screen; no visible character's lips match the speech.",
+  "span": [
+   5.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 2,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "B6.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The clip runs ~8 s in vertical 9:16 at 480p and carries a full audio track (panting, scream, gurney rumble, shouted dialogue).",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "B7.1",
+  "source": "B/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "No subtitles, captions, or watermarks are present in any frame from 00:00 to 00:07.",
+  "span": [
+   0.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05-00:07, P2 shouts 'Doctor! My mistress, she's' with an angry and distressed tone.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Intensity of P2's shouting is strong, rated at 3 for face and voice.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/primary/order1",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The delivery is shouting as P2 calls for the doctor.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/primary/order2",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The man is shouting \"Doctor! My mistress, she's...\" out of panic, urgency, and distress rather than anger at 00:05-00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man's shouting intensity is strong, rated around 3 on the 0-4 scale between 00:05 and 00:07.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/primary/order2",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:05, the man shouts \"Doctor!\" while pushing the bed.",
+  "span": [
+   5.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:02-00:08 the vocal output is a terrified scream and an urgent cry of 'Doctor! My mistress, she's br\u2014', and P1's wide-eyed, trembling face shows panic/fear, not anger; P2's bared-teeth shout reads as exertion/desperation while pushing the gurney.",
+  "span": [
+   2.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": 0,
+  "voice_intensity": 0
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/second",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "The emotional display at 00:01-00:07 is extreme \u2014 full-throated screaming, contorted terrified face, and a strained bared-teeth shout (intensity 4) \u2014 exceeding the required [2, 3] band, and no anger is present at any intensity.",
+  "span": [
+   1.0,
+   7.0
+  ],
+  "value": null,
+  "face_intensity": 4,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "C4.1",
+  "source": "C/second",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "At 00:02-00:08 the audio contains a loud sustained scream and a shouted 'Doctor! My mistress, she's br\u2014', and P2 is visibly shouting with mouth open, matching the 'shouting' delivery cue.",
+  "span": [
+   2.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "Audio cuts off mid-word ('she's br\u2014') at the end of the clip.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "P2 rushes into frame from the right pushing a gurney carrying P3 under a white sheet; P1 is behind them in the hallway, mouth open, chasing.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A2.2",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "P3's face not visible; only dark hair and a hand on the sheet are seen.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.1",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Tight close-up of P1's terrified, sweating face in a dim corridor; the camera pulls back to reveal her standing in a teal-walled hospital hallway.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.2",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Rain-streaked window behind her.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A3.3",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "P2 rushes into frame from the right pushing a gurney carrying P3 under a white sheet.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.1",
+  "source": "A/entailment",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "P2 runs toward the camera down the fluorescent-lit corridor, shouting, while P3's hand grips the sheet in the foreground; P1 falls out of frame.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "P2 pushes a hospital bed; speech identifies P2 saying, \"Doctor!\" and \"My mistress, she's\".",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.3",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "P2 rushes into frame from the right pushing a gurney; Perspective jump/cut around 00:03 from a third-person view to the gurney POV.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A5.1",
+  "source": "A/entailment",
+  "status": "uncertain",
+  "visibility": "partially_seen",
+  "evidence": "Dim teal lighting with overhead fluorescent panels and a rainy window at the far end.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A6.1",
+  "source": "A/entailment",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "Begins as a tight close-up on P1, pulls back to a medium shot, then switches to a low, gurney-level point-of-view shot; handheld shake throughout.",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B6.1",
+  "source": "tool/ffprobe",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "496x864, 8.06 s, 24.0 fps, audio=yes",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "B4.1",
+  "source": "tool/ffmpeg",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "scene cuts at []; frozen spans [] (0.0 s)",
+  "span": null,
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A1.1",
+  "source": "tool/asr",
+  "status": "fail",
+  "visibility": "seen_clearly",
+  "evidence": "language=en, WER=1.00, heard: \"Dr! My mistress! She's br-\"",
+  "span": [
+   4.78,
+   8.04
+  ],
+  "value": 1.0,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "A4.2",
+  "source": "A/reinspect",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Throughout the clip from 00:00 to 00:03, only the male character HE XI speaks, shouting 'Doctor!' and 'My mistress, she's...",
+  "span": [
+   0.0,
+   3.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 4
+ },
+ {
+  "item_id": "B2.1",
+  "source": "B/reinspect",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "Hands, faces, and limbs maintain anatomical normality with no unnatural morphing throughout the clip from 00:00 to 00:08.",
+  "span": [
+   0.0,
+   8.0
+  ],
+  "value": null,
+  "face_intensity": null,
+  "voice_intensity": null
+ },
+ {
+  "item_id": "C1.1",
+  "source": "C/reinspect",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "The man pushes the stretcher down the hospital hallway while shouting with an angry and desperate expression at 00:00.",
+  "span": [
+   0.0,
+   4.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ },
+ {
+  "item_id": "C2.1",
+  "source": "C/reinspect",
+  "status": "pass",
+  "visibility": "seen_clearly",
+  "evidence": "From 00:00 to 00:03, the man shouting \"Doctor, my mistress she's...\" shows strong facial and vocal intensity with a panicked tone.",
+  "span": [
+   0.0,
+   3.0
+  ],
+  "value": null,
+  "face_intensity": 3,
+  "voice_intensity": 3
+ }
+]

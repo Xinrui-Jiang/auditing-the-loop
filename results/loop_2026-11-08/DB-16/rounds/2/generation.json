@@ -1,0 +1,28 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16, 480p, 8-second live-action short-drama take with audio. Medium close-up, static camera, eye level, XU ZHIYI centred. Keep one continuous shot at the exterior house entrance in daylight. The house door must be clearly visible, and XU ZHIYI must aim her gaze directly at the door itself, visibly staring at it rather than past it or to the side. Only XU ZHIYI appears on screen and only she speaks. No one enters, no cutaway or location change, no subtitles, captions, watermarks, or text. Preserve the same face, voice, clothing, identity, and anatomy throughout.\n\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY\nXU ZHIYI (28, exhausted but determined)\nShe stares at the door. A flicker of memory crosses her face\u2014falling snow, a different door, a different betrayal. She blinks it away.\nXU ZHIYI\nquietly\nHe won't help us. Not after what I did.\n\nKeep the camera and background at the present-day house entrance for the entire take. While XU ZHIYI continues staring directly at the visible door, create a clearly readable but brief face-only memory impression lasting about half a second: her eyes briefly widen and catch the cold visual suggestion of falling snow, her expression registers a different door and the shock of a different betrayal. Convey all three memory elements through her eyes and facial reaction only; do not show another location, another door, actual snowfall, or any other person. The memory must be an impression across her face, not a cutaway or scene change. Immediately end it with one unmistakable visible blink, then return to the same direct stare at the present door. Make the emotion restrained surprise, not sadness, resignation, anxiety, or determination: a small eyebrow lift, slight eye widening, and brief alertness, with facial and vocal intensity kept very low, around 0.5 on a 0-4 scale. Speak the complete line exactly in English, quietly and softly, after the blink, with accurate on-camera lip sync. Keep all motion natural and physically plausible, with no unintended cuts, freezes, jumps, loops, morphing, extra voices, or garbled text.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794112973-tTokRGT34BQvey6VyHHI",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794112973-tTokRGT34BQvey6VyHHI",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794112973-tTokRGT34BQvey6VyHHI",
+  "generation_id": "gen-vid-1794112973-tTokRGT34BQvey6VyHHI",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794112973-tTokRGT34BQvey6VyHHI",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794112973-tTokRGT34BQvey6VyHHI/content?index=0"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  }
+ }
+}

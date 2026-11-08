@@ -1,0 +1,28 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16, 480p, 8-second live-action short-drama take with audio. Medium close-up, static camera, eye level, XU ZHIYI centred. Keep one continuous shot at the exterior house entrance in daylight, with the real house door clearly visible beside her. XU ZHIYI keeps her eyes directed at and visibly staring at the door itself, never at the camera or past the doorway. Only XU ZHIYI appears on screen and only she speaks. Nobody enters, there is no cutaway or location change. Preserve the same face, voice, clothing, identity, and anatomy throughout. No subtitles, captions, watermarks, or text.\n\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY\nXU ZHIYI (28, exhausted but determined)\nShe stares at the door. A flicker of memory crosses her face\u2014falling snow, a different door, a different betrayal. She blinks it away.\nXU ZHIYI\nquietly\nHe won't help us. Not after what I did.\n\nStage the facial acting in a clear sequence while the camera, background, door, and present-day location remain unchanged. First, XU ZHIYI stares directly at the visible present-day door. Then, for a brief half-second, her face visibly registers an internal memory: a tiny lift of the brows and slight widening of the eyes suggest falling snow, then her expression briefly recognizes a different door and the shock of a different betrayal. These three elements must be readable as a fleeting emotional impression across her face, without showing snow, another door, another place, or any other person. Keep her gaze aimed toward the present-day door rather than the camera even during the memory. Immediately after the memory impression, she makes one deliberate, unmistakable blink that visibly ends it, then resumes the same direct stare at the door. The reaction is restrained surprise\u2014brief alert eyes and a small eyebrow lift\u2014not sadness, worry, resignation, anxiety, or determination. Keep facial and vocal intensity very low and calm, within 0 to 1 on the 0-4 scale. After the blink, she speaks the complete line exactly in English, softly and quietly, with accurate on-camera lip sync. Keep all motion natural and physically plausible, with no unintended cuts, freezes, jumps, loops, morphing, extra voices, or garbled text. Audio must be present.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794113218-VzWW4F4KoiJKxBFMg0mv",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113218-VzWW4F4KoiJKxBFMg0mv",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794113218-VzWW4F4KoiJKxBFMg0mv",
+  "generation_id": "gen-vid-1794113218-VzWW4F4KoiJKxBFMg0mv",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113218-VzWW4F4KoiJKxBFMg0mv",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794113218-VzWW4F4KoiJKxBFMg0mv/content?index=0"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  }
+ }
+}

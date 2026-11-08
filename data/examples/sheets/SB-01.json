@@ -1,0 +1,152 @@
+{
+  "shot_id": "SB-01",
+  "round": 0,
+  "take_sha256": "cbcee5f6f228b48a14c00f96c3da8bdcf38ea2775815a6ba9278cb41e260c425",
+  "verdicts": [
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Only one person, Julian, is on camera and speaks throughout the entire clip (00:00-00:07).",
+        "[flash_order_b] pass/seen_clearly: Throughout 00:00-00:07, only Julian is visible on camera and speaks.",
+        "[qwen_second_opinion] pass/seen_clearly: Only Julian is visible throughout (00:00-00:09) and only his voice is heard speaking (00:05-00:09); no second person or speaker appears."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "ASR WER=0.00 -> tool pass",
+        "[flash_order_a] pass/seen_clearly: The character says 'What… what is this?' from 00:03 to 00:07.",
+        "[flash_order_b] pass/seen_clearly: At 00:04-00:07, Julian says 'What... what is this?'",
+        "[qwen_second_opinion] pass/seen_clearly: The whispered line matches exactly: \"What... what is this?\" (00:05-00:09)."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Julian is shown entering the room and his eyes visibly widen in shock from 00:00 to 00:07.",
+        "[flash_order_b] pass/seen_clearly: From 00:01 to 00:03, Julian enters the frame while his eyes widen in shock.",
+        "[qwen_second_opinion] pass/seen_clearly: Julian walks into the room from the window side (00:00-00:04) and his eyes visibly widen with a parted mouth as he stops and looks around (00:04-00:09)."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.2",
+      "status": "uncertain",
+      "severity": "warning",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": null,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] fail/seen_clearly: Julian is shown walking into an office setting with a computer and desk, not a living room.",
+        "[flash_order_b] pass/seen_clearly: From 00:00 to 00:02, Julian is shown walking through the room.",
+        "[qwen_second_opinion] uncertain/partially_seen: He clearly walks through the interior (00:00-00:04), but the room is furnished as an office/study (desk, CRT monitor, landline phone) and nothing on screen establishes it as a living room or that everything is unchanged from four years ago.",
+        "[escalate_R4] pass/seen_clearly: From 00:00-00:03 he is visibly shown walking through the room, and the dated furnishings (CRT monitor, landline phone, bare-branch plant) remain static as he stops and surveys them at 00:03-00:07, depicting the space as unchanged while he moves through it."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "C2.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "median intensity face=3 voice=2 vs target [0, 1] -> d=2",
+        "judges' category votes ['pass', 'pass', 'pass'] differ from the intensity-derived status (status follows intensity, DESIGN_v2 §7.1)",
+        "[flash_order_a] pass/seen_clearly: Julian displays surprise and shock with wide eyes and a whispered, intense delivery. | Julian's eyes widen significantly with a tense, shocked facial expression (intensity 3), and he speaks in a hushed, breathy whisper (intensity 2).",
+        "[flash_order_b] pass/seen_clearly: Julian displays surprise and shock with widening eyes and a whispering voice delivering the line at 00:04-00:07. | Julian's face shows mild shock with widened eyes and his voice is a quiet whisper.",
+        "[qwen_second_opinion] pass/seen_clearly: Surprise is shown via widened eyes, raised brows and parted lips (00:04-00:09), and the line is delivered in a hushed whisper (00:05-00:09), matching calm, controlled shock. | Face shows clear shock (wide eyes, open mouth) but restrained rather than extreme; voice is a soft, breathy whisper conveying contained surprise."
+      ],
+      "deviation": 2.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The scene is set in an upscale indoor office/penthouse space with large windows overlooking a city skyline (00:00-00:07).",
+        "[flash_order_b] pass/seen_clearly: Throughout 00:00-00:07, the setting is an upscale indoor penthouse office.",
+        "[qwen_second_opinion] pass/seen_clearly: The scene is an interior high-rise space with floor-to-ceiling windows over a city skyline, hardwood floors and upscale furnishings, consistent with a luxury penthouse (00:00-00:09)."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The shot is a medium close-up filmed from a static camera with a slight high angle as Julian approaches (00:00-00:07).",
+        "[flash_order_b] pass/seen_clearly: From 00:02 to 00:07, the shot is a medium close-up of Julian with a static camera at a slight high angle.",
+        "[qwen_second_opinion] pass/partially_seen: The camera is static (background desk, plant and window frames never shift) and the framing settles into a medium close-up from ~00:05 onward, though the clip opens on a fuller shot as he approaches; the angle reads as roughly eye-level to slightly high."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.007615
+}

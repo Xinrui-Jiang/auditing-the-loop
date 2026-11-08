@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use one continuous unbroken shot: no cuts, freezes, jumps, loops, or camera shake. Static camera at eye level, medium close-up composition with HE XI centred; keep HUSBAND pushing the hospital bed and ZHAO WANRU visibly on the bed within the same frame or immediately beside HE XI throughout the action. Preserve consistent faces, voices, clothing, anatomy, and object motion.\n\nINT. VILLAGE HOSPITAL - NIGHT\nRain lashes a dark window. HE XI runs beside her HUSBAND as he pushes a hospital bed. On it, ZHAO WANRU, 25, writhes in advanced labor.\nHE XI\nshouting\nDoctor! My mistress\u2014she's breech!\n\nHE XI is the only person who speaks or produces any voice. HUSBAND remains completely silent while pushing the bed. ZHAO WANRU remains silent and visibly writhes in advanced labor. HE XI clearly speaks the complete line exactly as written, including \u201cbreech!\u201d, with accurate lip sync; do not paraphrase, omit, reorder, or assign any part of the line to another character. HE XI performs angry, forceful shouting with strong face and voice intensity, level 2\u20133. Show only HE XI, HUSBAND, and ZHAO WANRU; nobody else appears, enters, or is heard. Keep the setting visibly a village hospital at night, with rain audibly lashing a dark window. No subtitles, captions, watermarks, or text overlays.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794114902-3B3slJOPPpXKgKqowbRz",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114902-3B3slJOPPpXKgKqowbRz",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794114902-3B3slJOPPpXKgKqowbRz",
+  "generation_id": "gen-vid-1794114902-3B3slJOPPpXKgKqowbRz",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114902-3B3slJOPPpXKgKqowbRz",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794114902-3B3slJOPPpXKgKqowbRz/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794114902-3B3slJOPPpXKgKqowbRz/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T051944Z&X-Goog-Expires=86394&X-Goog-SignedHeaders=host&X-Goog-Signature=017f00681ce8547bafc2f57f8455b9f941eaff17b1dd45e744df2f476cbb2a5f277bcf2cef7b4830f2a89311b8921359bae053dee3323ca47fe4e17a1fc70a933927f044a98b79c98166fb9f0f8aa9157e56f2d27b2949a269f7b29ee3f650f0e87df1c0035aa9cef9999ce967555e4cafd01966945b442807ee50889d1a7e0e51ab66494524e3e5fd90dd93154e6c23893ffc56b81383dc9704a4024dbf5f65df89d0d07d25c55e77ee78f061e38e118b16b654e882d0b69c446d9f95937f85f6d95c1465ebd6eb2c026e5a1ee443c01e71cb9db51f99c6b5f4e14c309f3c498af02516a853f9aa82abd6eef32a143fdff089dbc72e36e3aad704f5cf2894b6"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794201578
+ }
+}

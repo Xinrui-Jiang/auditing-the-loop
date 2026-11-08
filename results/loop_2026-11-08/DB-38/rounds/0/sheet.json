@@ -1,0 +1,485 @@
+{
+  "shot_id": "DB-38",
+  "round": 0,
+  "take_sha256": "2fcfb11554008e235239a96eb302d38827300db66a8e5f88adc0da4529599c4e",
+  "verdicts": [
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Haitong says \"Grandma, they found me.\" from 00:05 to 00:07.",
+        "A/primary/order2: The line 'Grandma, they found me.' is spoken clearly in English by Haitong from 00:05 to 00:07.",
+        "A/second: At 00:06-00:08 she says, in a tearful English voice, exactly 'Grandma, they found me.'",
+        "A/entailment: P1 speaks: \"Grandma, they found me.\" (language: English)",
+        "tool/asr: language=en, WER=0.00, heard: 'Grandma, they found me.'"
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Haitong drops her phone onto her lap at 00:01.",
+        "A/primary/order2: The phone call visibly ends at 00:01 before the subsequent crying and dialogue occur.",
+        "A/second: At 00:01-00:02 she lowers the phone from her ear before looking at the papers, crying, and speaking.",
+        "A/entailment: P1 lowers the phone away from her ear, followed by her staring at the documents and then crying."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.2",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The clipboard and papers remain held or resting on her lap throughout the clip and do not slip from her grasp.",
+        "A/primary/order2: No portfolio is seen slipping from her grasp from 00:00 to 00:07.",
+        "A/second: From 00:00-00:08 the clipboard/folder stays supported on her lap and never slips from her grasp.",
+        "A/entailment: P1 lowers the phone away from her ear while her left hand supports a black clipboard/folder resting on her lap."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.3",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The pages do not scatter on screen.",
+        "A/primary/order2: Pages do not scatter on screen from 00:00 to 00:07.",
+        "A/second: The pages remain stacked on the clipboard throughout 00:00-00:08; nothing scatters on screen.",
+        "A/entailment: P1's gaze drops fully to the documents on the clipboard."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The scene is set in an old building stairwell during the day.",
+        "A/primary/order2: The setting is an indoor old building stairwell during daytime from 00:00 to 00:07.",
+        "A/second: Concrete stairs, worn walls, and a barred window with daylight (00:00-00:08) match an old-building stairwell in daytime.",
+        "A/entailment: P1 is seated on concrete steps in a dim interior with a barred window behind her."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.2",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No sound of scattering pages is heard at 00:01.",
+        "A/primary/order2: No pages scattering sound or rain-shredding sound is heard at 00:00 to 00:01.",
+        "A/second: The audio holds only a gasp, faint paper rustle, piano, and sobbing (00:01-00:08); no pages-scattering sound occurs.",
+        "A/entailment: A sharp intake of breath / gasp is heard, followed by the rustle of paper; no pages-scattering or rain-shredded-resume sound is described."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.3",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Haitong's clipboard and papers are visible on her lap.",
+        "A/primary/order2: No portfolio is visible in the scene, only a clipboard and papers from 00:00 to 00:07.",
+        "A/second: A black clipboard/folder with documents is visible on her lap from 00:00-00:08.",
+        "A/entailment: Her left hand supports a black clipboard/folder resting on her lap."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.4",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: A rain-shredded paper/resume is visible on top of the clipboard.",
+        "A/primary/order2: The papers visible on her lap do not show a resume shredded by rain from 00:00 to 00:07.",
+        "A/second: The stained sheets stay inside the folder (00:00-00:08); no resume is visible among scattered pages.",
+        "A/entailment: The papers show large brown stain marks across the printed pages, and the brown marks appear as irregular stain shapes with no clear source.",
+        "A/reinspect: The papers she holds and looks at from 00:00 to 00:07 are charred/burnt rather than being shredded by rain."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only Haitong appears on screen.",
+        "A/primary/order2: Only Haitong appears on screen throughout the clip.",
+        "A/second: Only the young woman (Haitong) appears on screen during 00:00-00:08.",
+        "A/entailment: The people description lists only P1, a young woman, on screen from 00:00-00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only Haitong speaks in the clip.",
+        "A/primary/order2: Only Haitong speaks in the scene from 00:05 to 00:07.",
+        "A/second: The sole voice heard is Haitong's line at 00:06-00:08; no other speaker occurs.",
+        "A/entailment: P1 speaks in a tearful, trembling voice; the speech entry identifies P1 as the speaker."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.3",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No unscripted events or cuts occur.",
+        "A/primary/order2: No unscripted event changes the scene and nobody else enters throughout 00:00 to 00:07.",
+        "A/second: A single continuous static shot (00:00-00:08) with no one entering and no cut to another place.",
+        "A/entailment: Static medium shot ... no camera movement or cuts."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Grandma is addressed over the phone and is not physically present.",
+        "A/primary/order2: Grandma is only addressed on the phone and is not present in the scene from 00:05 to 00:07.",
+        "A/second: Grandma is only addressed in the 00:06-00:08 line and never appears in frame.",
+        "A/entailment: P1 says, \"Grandma, they found me.\" The people description lists only P1 on screen."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The shot is a medium close-up, static, eye-level, 9:16 vertical framing with Haitong centered.",
+        "A/primary/order2: The shot is a medium close-up, static, at eye level, in vertical 9:16 format with Haitong centered from 00:00 to 00:07.",
+        "A/second: The 9:16 vertical frame is a static, eye-level medium close-up with Haitong centered throughout 00:00-00:08.",
+        "A/entailment: Static medium shot at roughly eye level, subject centered; no vertical 9:16 aspect ratio is specified."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The smartphone drops naturally onto the papers on lap at 00:01.",
+        "B/primary/order2: Objects and liquids move plausibly, such as dropping the phone onto papers, from 00:00-00:07.",
+        "B/second: At 00:00-00:02 the phone is lowered with natural hand motion and the clipboard rests stably on her lap; tears run down her cheeks with normal gravity through 00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "partially_seen"
+      },
+      "evidence": [
+        "B/primary/order1: Hands, face, and fingers maintain normal anatomy throughout the clip.",
+        "B/primary/order2: Hands, face, and limbs stay anatomically normal with no morphing or garbled text from 00:00-00:07.",
+        "B/second: Hands and face remain anatomically consistent, but the printed lines on the documents from 00:02-00:08 are indistinct garbled stroke patterns rather than legible text."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The young woman's face, clothing, and voice remain consistent throughout.",
+        "B/primary/order2: The same face, voice, and clothing persist through the whole take from 00:00-00:07.",
+        "B/second: The same face, long black hair, gray zip hoodie and white tee persist from 00:00 to 00:08, and the sobbing/tearful voice matches the on-screen person throughout."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Continuous take with no unintended cuts, freezes, or jumps.",
+        "B/primary/order2: There are no unintended cuts, freezes, jumps, or loops throughout the 00:00-00:07 duration.",
+        "B/second: A single continuous static take runs 00:00-00:08 with no cuts, freezes, jumps, or loops.",
+        "tool/ffmpeg: scene cuts at []; frozen spans [] (0.0 s)"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Lip movements match the spoken line 'Grandma, they found me' from 00:05 to 00:07.",
+        "B/primary/order2: Lip movement matches the spoken line 'Grandma, they found me' from 00:05 to 00:07.",
+        "B/second: At 00:06-00:08 her lips move in sync with the trembling line 'Grandma, they found me,' and the voice clearly belongs to the crying woman on screen."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The clip duration is around 7 seconds, 9:16 aspect ratio, with audio present.",
+        "B/primary/order2: The video is 7 seconds long, 9:16 aspect ratio, 480p resolution, with an audio track present from 00:00-00:07.",
+        "B/second: The clip is 8 s long in vertical 9:16 framing and carries an audio track (gasp, paper rustle, piano, sobs, speech).",
+        "tool/ffprobe: 496x864, 8.06 s, 24.0 fps, audio=yes"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B7.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: No subtitles, captions, or watermarks are present in the clip.",
+        "B/primary/order2: No subtitles, captions or watermarks are present in the video at 00:00-00:07.",
+        "B/second: No subtitles, captions, or watermarks appear anywhere in the 00:00-00:08 frame."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The young woman breaks down crying and speaks to her grandma between 00:03 and 00:07.",
+        "C/primary/order2: At 00:04-00:07, the character exhibits sadness through crying.",
+        "C/second: From 00:03 to 00:08 P1's face crumples, tears stream down both cheeks, and audible sobbing accompanies her speech, clearly conveying sadness."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The intensity of her facial expressions and crying delivery is strong, fitting level 3.",
+        "C/primary/order2: At 00:04-00:07, both facial expression and voice show strong sadness and crying intensity.",
+        "C/second: At 00:03-00:08 the crying face (knitted brow, trembling lips, streaming tears) reads as strong (3), and the trembling, tear-choked delivery of 'Grandma, they found me' at 00:06-00:08 also reads as strong (3), both within [2,3]."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "C4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: Her vocal delivery is choked and tearful, directly matching the 'crying' cue.",
+        "C/primary/order2: At 00:04-00:07, the character cries and speaks in a tearful tone.",
+        "C/second: The spoken line at 00:06-00:08 is delivered through sobs with a shaky, breathy, trembling voice, matching the 'crying' cue."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.021204
+}

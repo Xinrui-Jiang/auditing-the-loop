@@ -1,0 +1,57 @@
+{
+  "drama": "his-toyboy",
+  "note": "场景参考图索引。所有唯一图集中于 _pool/，各集通过 image 字段引用；已按剧本语义重命名并按内容去重。episodes 集号依据剧本首次出场推断。",
+  "pool_dir": "_pool",
+  "unique_scenes": 7,
+  "total_references": 7,
+  "episodes": {
+    "ep01": [
+      {
+        "scene": "外景·毕业典礼体育场",
+        "original_name": "毕业典礼体育场",
+        "image": "_pool/外景_毕业典礼体育场.jpeg",
+        "description": "A large outdoor medical university graduation ceremony in a sports stadium during bright daylight. Crowds of graduates in gowns and caps fill the tiered seating, cheering and applauding. Banners and a festive stage in the distance. Warm sunlight, celebratory bright color palette, shallow depth of field on the crowd."
+      },
+      {
+        "scene": "内景·毕业典礼主席台",
+        "original_name": "毕业典礼主席台",
+        "image": "_pool/内景_毕业典礼主席台.png",
+        "description": "A formal graduation ceremony podium and stage with a microphone at the front, university crest backdrop, floral arrangements, and rows of seated dignitaries. Polished wooden lectern, warm stage lighting, formal and prestigious atmosphere."
+      },
+      {
+        "scene": "外景·毕业典礼角落",
+        "original_name": "毕业典礼角落",
+        "image": "_pool/外景_毕业典礼角落.jpeg",
+        "description": "A quiet corner of the graduation stadium away from the crowd, with concrete pillars and railings, scattered graduates in the background out of focus. Daylight with soft shadows, intimate and slightly tense mood for private conversation."
+      },
+      {
+        "scene": "内景·顶层公寓",
+        "original_name": "Victor的高层顶级公寓",
+        "image": "_pool/内景_顶层公寓.png",
+        "description": "A luxurious high-rise penthouse at night, floor-to-ceiling glass walls overlooking a glittering city skyline. Cold neon light slices through the darkness, staining surfaces in electric blue and magenta. Sleek modern furniture, marble and dark wood, oppressive and dangerously seductive atmosphere."
+      }
+    ],
+    "ep03": [
+      {
+        "scene": "内景·顶层公寓晚餐",
+        "original_name": "高级公寓晚餐客厅",
+        "image": "_pool/内景_顶层公寓晚餐.png",
+        "description": "An elegant dinner setting inside a luxury penthouse at night. A refined dining table at the center bathed in soft flickering candlelight, silver cloches on plates, fine tableware. Warm golden glow contrasting with the dark city night beyond the windows, intimate yet tense atmosphere."
+      }
+    ],
+    "ep04": [
+      {
+        "scene": "内景·顶层公寓客厅沙发",
+        "original_name": "高级公寓客厅沙发",
+        "image": "_pool/内景_顶层公寓客厅沙发.jpeg",
+        "description": "The living room of a luxury penthouse with a large leather sofa as the centerpiece, facing floor-to-ceiling windows with a city view. Warm ambient lighting, tasteful decor, plush rugs, an upscale and comfortable domestic atmosphere."
+      },
+      {
+        "scene": "内景·顶层公寓客厅沙发侧面",
+        "original_name": "高级公寓客厅沙发侧面",
+        "image": "_pool/内景_顶层公寓客厅沙发侧面.jpeg",
+        "description": "Side-angle view of a luxury penthouse living room, the leather sofa seen in profile against expansive windows and city skyline. Warm side lighting emphasizing the depth of the space, refined modern interior, calm domestic mood."
+      }
+    ]
+  }
+}

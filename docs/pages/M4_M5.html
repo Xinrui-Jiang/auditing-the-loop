@@ -1,0 +1,2599 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>LoopAuditor M4 + M5 — verifier panel and labels</title><style>
+:root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
+@media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:1500px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+.sub,.note{color:var(--muted);margin:0 0 12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}}
+.col h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.panel{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
+.in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
+pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
+</style></head><body><main><h1>LoopAuditor M4 + M5 — verifier panel and labels</h1><p class='sub'>Pilot takes, M1 checklists; panel never sees any history.</p><h2>DB-38: panel + labels in 221 s, 19 model/tool calls, $0.0232</h2><p class='note'>Left: the take and the checklist the panel received (never the trajectory). Right: the feedback sheet after aggregation and re-inspects, then the blind descriptions and the raw verdicts per source.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/data/pilot_takes/DB-38/attempt1_seedance480.mp4
+sha256 c5efb85c45d57b6b2929344353f93a3abee4fdfdf61bc40d9cbb49ca74b033ac</pre></div><div class="panel"><div class="label">checklist items</div><pre>A1.1 [must, critical] The line &quot;Grandma, they found me.&quot; is spoken in English, complete and verbatim.
+A2.1 [must, critical] The phone call visibly ends before the remaining actions occur.
+A2.2 [must, critical] Haitong&#x27;s portfolio is seen slipping from her grasp.
+A2.3 [must, critical] Pages scatter on screen, including Haitong&#x27;s rain-shredded resume.
+A3.1 [must, major] The setting matches the heading: INT. OLD BUILDING STAIRWELL - DAY.
+A3.2 [must, major] The scripted sound is audible: Pages scatter—her resume, shredded by rain.
+A3.3 [must, major] Haitong&#x27;s portfolio is visible in the scene.
+A3.4 [must, major] Her resume is visible among the scattered pages and is shredded by rain.
+A4.1 [must_not, critical] Everyone on screen is in the script&#x27;s cast: HAITONG. Nobody else appears.
+A4.2 [must_not, major] Only HAITONG speaks; no other voice says a line.
+A4.3 [must_not, major] No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1 [premise, major] Grandma is only addressed and is not physically present in the scene.
+A6.1 [must, minor] medium close-up, static camera, eye level, vertical 9:16, HAITONG centred.
+B1.1 [must_not, major] Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1 [must_not, major] Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1 [must_not, major] The same face, voice and clothing persist through the whole take.
+B4.1 [must_not, major] No unintended cut, freeze, jump or loop.
+B5.1 [must, major] Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1 [must, info] 8 s, 9:16, 480p, audio track present.
+B7.1 [must_not, minor] No subtitles, captions or watermarks.
+C1.1 [must, major] The emotion is sadness (cues: crying).
+C2.1 [must, major] Face and voice intensity within [2, 3] on the 0-4 scale (strong).
+C4.1 [must, minor] Delivery matches the cue &#x27;crying&#x27;.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">feedback sheet (M5)</div><pre>item   status    severity uncertainty    fixability       swap  2nd   tool  evidence
+A1.1   pass      info     confident      prompt_fixable   yes   yes   yes   A/primary/order1: At 00:06-00:07, Haitong says &#x27;Grandma, they found me.&#x27; in English.
+A2.1   fail      error    confident      prompt_fixable   yes   yes   -     A/primary/order1: No phone call is shown or ends in the clip.
+A2.2   fail      error    uncertain      prompt_fixable   yes   no    -     A/primary/order1: Haitong places the clipboard down rather than having her portfolio slip from her grasp.
+A2.3   fail      error    confident      prompt_fixable   yes   no    -     A/primary/order1: Pages do not scatter on screen.
+A3.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: The setting is an old building stairwell during the day.
+A3.2   fail      error    confident      prompt_fixable   yes   no    -     A/primary/order1: The sound of pages scattering does not occur.
+A3.3   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: The clipboard/portfolio is visible held by Haitong at 00:00.
+A3.4   fail      error    confident      prompt_fixable   yes   no    -     A/primary/order1: Papers are not scattered and shredded by rain in the scene.
+A4.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: Only Haitong appears on screen throughout the clip.
+A4.2   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: Only Haitong speaks in the clip.
+A4.3   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: No unscripted events or cuts occur in the scene.
+A5.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: Grandma is only addressed verbally and is not physically present.
+A6.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: The shot is a medium/medium close-up, static, eye-level vertical framing with Haitong centered.
+B1.1   pass      info     confident      retry_fixable    yes   yes   -     B/primary/order1: The girl sets the clipboard down on the table smoothly between 00:02 and 00:03.
+B2.1   fail      error    confident      retry_fixable    yes   yes   -     B/primary/order1: The text on the paper held by the girl at 00:00-00:02 is completely garbled and morphing.
+B3.1   pass      info     confident      retry_fixable    yes   yes   -     B/primary/order1: The girl&#x27;s appearance and hoodie remain consistent throughout the clip.
+B4.1   pass      info     confident      retry_fixable    yes   yes   yes   B/primary/order1: The video plays continuously without any unintended cuts, freezes, or jumps.
+B5.1   pass      info     confident      backend_limited  yes   yes   -     B/primary/order1: The girl&#x27;s lip movements match the spoken dialogue &#x27;Grandma, they found me&#x27; at 00:06-00:07.
+B6.1   pass      info     confident      backend_limited  yes   yes   yes   B/primary/order1: The video duration is about 7 seconds, 9:16 aspect ratio, with audio present.
+B7.1   pass      info     confident      prompt_fixable   yes   yes   -     B/primary/order1: There are no subtitles, captions, or watermarks present in the clip.
+C1.1   pass      info     confident      prompt_fixable   yes   yes   -     C/primary/order1: The girl has a tearful, crying expression as she speaks in 00:04-00:07.
+C2.1   pass      info     confident      prompt_fixable   yes   yes   -     C/primary/order1: Face and voice intensity are strong (level 3) reflecting her crying and sadness.
+C4.1   pass      info     confident      prompt_fixable   yes   yes   -     C/primary/order1: The delivery matches the crying emotion as she speaks with a tearful voice at 00:06.
+
+BLOCKING: [&#x27;A2.1&#x27;, &#x27;A2.2&#x27;, &#x27;A2.3&#x27;, &#x27;A3.2&#x27;, &#x27;A3.4&#x27;, &#x27;B2.1&#x27;]  -&gt;  stop rule: continue
+verification cost $0.0232</pre></div><div class="panel"><div class="label">raw verdicts per source (M4 + tools)</div><pre>{
+ &quot;A/primary/order1&quot;: 13,
+ &quot;A/primary/order2&quot;: 13,
+ &quot;A/second&quot;: 13,
+ &quot;B/primary/order1&quot;: 7,
+ &quot;B/primary/order2&quot;: 7,
+ &quot;B/second&quot;: 7,
+ &quot;C/primary/order1&quot;: 3,
+ &quot;C/primary/order2&quot;: 3,
+ &quot;C/second&quot;: 3,
+ &quot;A/entailment&quot;: 13,
+ &quot;tool/ffprobe&quot;: 1,
+ &quot;tool/ffmpeg&quot;: 1,
+ &quot;tool/asr&quot;: 1,
+ &quot;A/reinspect&quot;: 4
+}</pre></div><div class="panel"><div class="label">blind description: describe/google/gemini-3.5-flash-lite</div><pre>```json
+{&quot;people&quot;: [{&quot;id&quot;: &quot;P1&quot;, &quot;description&quot;: &quot;a young girl with short black hair, wearing a gray hoodie and a white shirt underneath&quot;, &quot;on_screen&quot;: &quot;00:00-00:07&quot;}],
+ &quot;events&quot;: [{&quot;start&quot;: &quot;00:00&quot;, &quot;end&quot;: &quot;00:02&quot;, &quot;channel&quot;: &quot;visual&quot;, &quot;description&quot;: &quot;a young girl looks down at a paper on a clipboard held in her hands&quot;},
+   {&quot;start&quot;: &quot;00:02&quot;, &quot;end&quot;: &quot;00:03&quot;, &quot;channel&quot;: &quot;visual&quot;, &quot;description&quot;: &quot;the girl sets the clipboard down on a desk and looks up&quot;},
+   {&quot;start&quot;: &quot;00:03&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;channel&quot;: &quot;visual&quot;, &quot;description&quot;: &quot;the girl looks forward with a tearful expression&quot;}],
+ &quot;speech&quot;: [{&quot;start&quot;: &quot;00:06&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;speaker&quot;: &quot;P1&quot;, &quot;text&quot;: &quot;Grandma, they found me.&quot;, &quot;language&quot;: &quot;English&quot;}],
+ &quot;face_over_time&quot;: [{&quot;start&quot;: &quot;00:00&quot;, &quot;end&quot;: &quot;00:04&quot;, &quot;expression&quot;: &quot;neutral to sad&quot;},
+   {&quot;start&quot;: &quot;00:04&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;expression&quot;: &quot;tearful and crying&quot;}],
+ &quot;camera&quot;: &quot;medium shot, static framing, centered on the girl&quot;,
+ &quot;artifacts&quot;: [&quot;morphing text on the paper held by the girl&quot;]}
+```</pre></div><div class="panel"><div class="label">blind description: describe/qwen/qwen3.8-omni-flash</div><pre>```json
+{
+  &quot;people&quot;: [
+    {
+      &quot;id&quot;: &quot;P1&quot;,
+      &quot;description&quot;: &quot;Young girl with short black bob hair and bangs, wearing a light gray hooded sweatshirt over a white collared shirt; seated at a table in a worn stairwell/hallway with peeling paint, a round wall clock, and stairs behind her.&quot;,
+      &quot;on_screen&quot;: &quot;00:00-00:07&quot;
+    }
+  ],
+  &quot;events&quot;: [
+    {
+      &quot;start&quot;: &quot;00:00&quot;,
+      &quot;end&quot;: &quot;00:02&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1 holds a brown clipboard/folder upright with both hands, head bowed, eyes fixed on a printed document clipped to it.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:02&quot;,
+      &quot;end&quot;: &quot;00:03&quot;,
+      &quot;channel&quot;: &quot;audio&quot;,
+      &quot;description&quot;: &quot;Paper rustling/crinkling sound as the document is moved.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:02&quot;,
+      &quot;end&quot;: &quot;00:04&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1 lowers the clipboard and paper flat onto the table in front of her; torn sheets of paper are visible on the tabletop, and the stained front of her hoodie becomes visible.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:04&quot;,
+      &quot;end&quot;: &quot;00:06&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1 lifts her head and looks directly toward the camera; her eyes are red and watery, her expression is sad and strained.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:05&quot;,
+      &quot;end&quot;: &quot;00:06&quot;,
+      &quot;channel&quot;: &quot;audio&quot;,
+      &quot;description&quot;: &quot;A shaky breath/sniffle is heard before she speaks.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:06&quot;,
+      &quot;end&quot;: &quot;00:07&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1&#x27;s mouth moves as she speaks to the camera, face tense and near tears.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:06&quot;,
+      &quot;end&quot;: &quot;00:07&quot;,
+      &quot;channel&quot;: &quot;audio&quot;,
+      &quot;description&quot;: &quot;P1 says, &#x27;Grandma, they found me.&#x27;&quot;
+    }
+  ],
+  &quot;speech&quot;: [
+    {
+      &quot;start&quot;: &quot;00:06&quot;,
+      &quot;end&quot;: &quot;00:07&quot;,
+      &quot;speaker&quot;: &quot;P1&quot;,
+      &quot;text&quot;: &quot;Grandma, they found me.&quot;,
+      &quot;language&quot;: &quot;English&quot;
+    }
+  ],
+  &quot;face_over_time&quot;: [
+    {
+      &quot;start&quot;: &quot;00:00&quot;,
+      &quot;end&quot;: &quot;00:02&quot;,
+      &quot;expression&quot;: &quot;Head down, eyes on the document, neutral/focused reading expression.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:02&quot;,
+      &quot;end&quot;: &quot;00:04&quot;,
+      &quot;expression&quot;: &quot;Still looking down while lowering the paper; gaze begins to shift upward, expression turning somber.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:04&quot;,
+      &quot;end&quot;: &quot;00:06&quot;,
+      &quot;expression&quot;: &quot;Looking at the camera; eyes red and teary, brows slightly drawn, lips pressed together, distressed.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:06&quot;,
+      &quot;end&quot;: &quot;00:07&quot;,
+      &quot;expression&quot;: &quot;Mouth opens to speak; face strained, on the verge of crying.&quot;
+    }
+  ],
+  &quot;camera&quot;: &quot;Static vertical medium shot; girl centered at a table, background shows an old stairwell with a window at upper left, a round wall clock at upper right, and stairs descending on the right. No camera movement.&quot;,
+  &quot;artifacts&quot;: [
+    &quot;The text on the document is garbled/illegible pseudo-text (AI-generated), with a blue heading that does not form real words.&quot;,
+    &quot;The wall clock&#x27;s numerals and hands are distorted and inconsistent.&quot;,
+    &quot;Continuity change: the neatly clipped document on the clipboard becomes torn, differently laid-out sheets once placed on the table.&quot;,
+    &quot;Slight morphing/inconsistency in the hands and paper edges during the lowering motion around 00:02-00:03.&quot;
+  ]
+}
+```</pre></div><div class="panel"><div class="label">all raw verdicts</div><pre>[
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:06-00:07, Haitong says &#x27;Grandma, they found me.&#x27; in English.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No phone call is shown or ends in the clip.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Haitong places the clipboard down rather than having her portfolio slip from her grasp.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Pages do not scatter on screen.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The setting is an old building stairwell during the day.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The sound of pages scattering does not occur.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clipboard/portfolio is visible held by Haitong at 00:00.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.4&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Papers are not scattered and shredded by rain in the scene.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only Haitong appears on screen throughout the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only Haitong speaks in the clip.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No unscripted events or cuts occur in the scene.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Grandma is only addressed verbally and is not physically present.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The shot is a medium/medium close-up, static, eye-level vertical framing with Haitong centered.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Haitong speaks the line &#x27;Grandma, they found me.&#x27; completely and verbatim in English.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;There is no phone call depicted ending in the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Haitong sets the clipboard down rather than having her portfolio slip from her grasp.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Pages do not scatter on screen, and no rain-shredded resume is shown scattering.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The setting matches an old building stairwell during the day.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No sound of pages scattering or being shredded by rain is audible.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Haitong&#x27;s portfolio/clipboard is visible in the scene.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.4&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Her resume is visible on the clipboard and scattered papers, but it is not shredded by rain.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only Haitong appears on screen throughout the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only Haitong speaks the scripted line.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No unscripted events occur and no one enters or cuts to another place.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Grandma is addressed in speech but does not appear physically on screen.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The shot is a medium close-up, static, eye-level, vertical 9:16, with Haitong centered from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:06-00:07 the girl looks at the camera and says, in English, &#x27;Grandma, they found me.&#x27; verbatim.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No phone call occurs anywhere in the clip; she is alone at the table with no phone visible or audible before or during the other actions.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:02-00:03 the brown portfolio/clipboard leaves her hands and drops flat onto the table as her grip releases.&quot;,
+  &quot;span&quot;: [
+   2.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;From 00:03 onward, torn wet-looking sheets including the printed resume lie scattered on the tabletop in front of her.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Throughout 00:00-00:07 the background shows a worn stairwell with peeling paint, descending stairs, a round wall clock, and daylight from a window.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;A paper rustling/scattering sound is audible at 00:02-00:03 as the pages come down onto the table.&quot;,
+  &quot;span&quot;: [
+   2.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.3&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The brown portfolio/clipboard is held upright at 00:00-00:02 and rests on the table from 00:03 to the end.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   4.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.4&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The printed resume document appears as torn, rain-damaged sheets among the scattered pages on the table from 00:03, with water droplets visible on the surface.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only the girl (Haitong) appears on screen for the entire 00:00-00:07 duration; no other person enters or is visible.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The only voice in the clip is Haitong&#x27;s line at 00:06-00:07; no other speaker is heard.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clip is one continuous static shot of the stairwell table; nobody enters and there is no cut to another location.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Grandma is only addressed in the spoken line at 00:06-00:07 and never appears physically in the scene.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The framing is a vertical 9:16 static medium close-up at eye level with Haitong centered at the table throughout 00:00-00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B1.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl sets the clipboard down on the table smoothly between 00:02 and 00:03.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B2.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The text on the paper held by the girl at 00:00-00:02 is completely garbled and morphing.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   2.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B3.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl&#x27;s appearance and hoodie remain consistent throughout the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The video plays continuously without any unintended cuts, freezes, or jumps.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B5.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl&#x27;s lip movements match the spoken dialogue &#x27;Grandma, they found me&#x27; at 00:06-00:07.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The video duration is about 7 seconds, 9:16 aspect ratio, with audio present.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B7.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;There are no subtitles, captions, or watermarks present in the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B1.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clipboard is set down and dropped papers land plausibly on the desk from 00:00 to 00:03.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B2.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The text on the paper held by the girl morphs and becomes garbled from 00:00 to 00:02.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   2.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B3.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl&#x27;s face, voice, and gray hoodie remain consistent throughout the entire clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;There are no unintended cuts, freezes, jumps, or loops in the video.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B5.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl&#x27;s lip movements match the spoken dialogue &#x27;Grandma, they found me&#x27; from 00:06 to 00:07.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The video duration is 8 seconds with audio present, though resolution is 480p and aspect ratio 9:16.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B7.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No subtitles, captions, or watermarks are present in the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B1.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:02-00:04 the clipboard and papers are lowered onto the table and settle with normal contact and gravity, with no floating or implausible momentum.&quot;,
+  &quot;span&quot;: [
+   2.0,
+   4.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B2.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The document bears garbled pseudo-text and the wall clock shows distorted numerals (00:00-00:02), and the hands/paper edges morph as the neatly clipped sheet becomes torn sheets on the table (00:02-00:03).&quot;,
+  &quot;span&quot;: [
+   0.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B3.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The same girl with short black bob, gray hoodie over white collar, and childlike voice persists consistently from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The static vertical shot runs continuously from 00:00 to 00:07 with no cut, freeze, jump, or loop; the paper-state change is a morph within the take, not an edit.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B5.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:06-00:07 her lip movements align with the spoken line &#x27;Grandma, they found me,&#x27; delivered in a young female voice matching the on-screen girl.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clip is ~8 s long in 9:16 vertical framing at 480p, with an audible track (paper rustle at 00:02, sniffle and speech at 00:05-00:07).&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;B7.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No subtitles, captions, or watermarks appear anywhere in the frame from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;C1.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl has a tearful, crying expression as she speaks in 00:04-00:07.&quot;,
+  &quot;span&quot;: [
+   4.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Face and voice intensity are strong (level 3) reflecting her crying and sadness.&quot;,
+  &quot;span&quot;: [
+   4.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;C4.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The delivery matches the crying emotion as she speaks with a tearful voice at 00:06.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;C1.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The emotion displayed is clearly sadness with crying at 00:05-00:07.&quot;,
+  &quot;span&quot;: [
+   5.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl shows strong sadness and crying intensity on her face and in her voice at 00:05-00:07 (face level 3, voice level 3).&quot;,
+  &quot;span&quot;: [
+   5.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;C4.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The girl speaks with a crying, tearful delivery at 00:06-00:07.&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;C1.1&quot;,
+  &quot;source&quot;: &quot;C/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;From 00:04-00:07 the girl raises her head with red, watery eyes and a strained, near-tears expression, and her trembling voice on &#x27;Grandma, they found me&#x27; conveys sadness.&quot;,
+  &quot;span&quot;: [
+   4.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:04-00:07 her teary, distressed face and shaky, tear-choked delivery sit clearly in the strong range (face ~3, voice ~2-3), within [2,3].&quot;,
+  &quot;span&quot;: [
+   4.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;C4.1&quot;,
+  &quot;source&quot;: &quot;C/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The audible sniffle/shaky breath at ~00:05 and the quavering, near-crying voice at 00:06-00:07 match the &#x27;crying&#x27; cue.&quot;,
+  &quot;span&quot;: [
+   5.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;P1 says, &#x27;Grandma, they found me.&#x27;&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;No phone call or ending of a phone call is described.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;P1 holds the clipboard/folder and then &#x27;lowers the clipboard and paper flat onto the table&#x27;; no slipping is described.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;Torn sheets of paper are visible on the tabletop, but the descriptions do not say that pages scatter or that a rain-shredded resume is among them.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;The setting is described as &#x27;a worn stairwell/hallway with peeling paint ... and stairs behind her,&#x27; but daytime is not specified.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;A &#x27;Paper rustling/crinkling sound as the document is moved&#x27; is audible, but the described sound is not specifically pages scattering or a resume shredded by rain.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.3&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;P1 holds a &#x27;brown clipboard/folder,&#x27; but it is not identified as Haitong&#x27;s portfolio.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.4&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;The descriptions mention &#x27;torn sheets of paper&#x27; and a printed document, but do not identify a resume or say it was shredded by rain.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only P1, &#x27;a young girl,&#x27; is listed on screen for the clip.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The only described speech is P1 saying, &#x27;Grandma, they found me.&#x27;&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The camera is described as a &#x27;Static vertical medium shot&#x27; with &#x27;No camera movement,&#x27; and no other person entering or location change is described.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;P1 says, &#x27;Grandma, they found me,&#x27; while P1 is the only person listed on screen.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;The camera is described as a &#x27;Static vertical medium shot; girl centered at a table,&#x27; but medium close-up, eye level, and 9:16 are not all explicitly supported.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;tool/ffprobe&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;496x864, 8.05 s, 24.0 fps, audio=yes&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;tool/ffmpeg&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;scene cuts at []; frozen spans [] (0.0 s)&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;tool/asr&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;language=en, WER=0.00, heard: &#x27;Grandma, they found me.&#x27;&quot;,
+  &quot;span&quot;: [
+   6.0,
+   7.4
+  ],
+  &quot;value&quot;: 0.0,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Haitong&#x27;s portfolio is seen slipping from her grasp between 00:01 and 00:02.&quot;,
+  &quot;span&quot;: [
+   1.0,
+   2.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:00-00:03, the girl holds a clipboard with resume pages and removes the page without scattering them.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:01-00:03 the girl rips the paper off the clipboard rather than scattering pages shredded by rain.&quot;,
+  &quot;span&quot;: [
+   1.0,
+   3.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.4&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The resume is shown being torn by the girl at 00:01-00:03, but not shredded by rain.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   4.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ }
+]</pre></div></div></div><h2>DB-16: panel + labels in 188 s, 19 model/tool calls, $0.0215</h2><p class='note'>Left: the take and the checklist the panel received (never the trajectory). Right: the feedback sheet after aggregation and re-inspects, then the blind descriptions and the raw verdicts per source.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">take</div><pre>/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/data/pilot_takes/DB-16/attempt1_seedance480.mp4
+sha256 9bd545020961cdf25ec0801720eef4c2ccd31227fde76efcabc117d14e4022c8</pre></div><div class="panel"><div class="label">checklist items</div><pre>A1.1 [must, critical] The line &quot;He won&#x27;t help us. Not after what I did.&quot; is spoken in English, complete and verbatim.
+A2.1 [must, critical] XU ZHIYI must be visibly staring at the door.
+A2.2 [must, critical] A brief memory of falling snow, a different door, and a different betrayal must be conveyed across XU ZHIYI&#x27;s face.
+A2.3 [must, critical] XU ZHIYI must visibly blink and end the memory.
+A3.1 [must, major] The setting matches the heading: EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY.
+A3.2 [must, major] A door at the house entrance must be visible for XU ZHIYI to stare at.
+A4.1 [must_not, critical] Everyone on screen is in the script&#x27;s cast: XU ZHIYI. Nobody else appears.
+A4.2 [must_not, major] Only XU ZHIYI speaks; no other voice says a line.
+A4.3 [must_not, major] No unscripted event changes the scene: nobody enters, no cut to another place.
+A5.1 [premise, major] The memory must remain a brief visual impression on XU ZHIYI&#x27;s face, while the shot stays at the house entrance in the present.
+A6.1 [must, minor] medium close-up, static camera, eye level, vertical 9:16, XU ZHIYI centred.
+B1.1 [must_not, major] Objects and liquids move plausibly: gravity, contact and momentum look normal.
+B2.1 [must_not, major] Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.
+B3.1 [must_not, major] The same face, voice and clothing persist through the whole take.
+B4.1 [must_not, major] No unintended cut, freeze, jump or loop.
+B5.1 [must, major] Lip movement matches the spoken line and the voice belongs to the person on screen.
+B6.1 [must, info] 8 s, 9:16, 480p, audio track present.
+B7.1 [must_not, minor] No subtitles, captions or watermarks.
+C1.1 [must, major] The emotion is surprise (cues: blinks).
+C2.1 [must, major] Face and voice intensity within [0, 1] on the 0-4 scale (calm).
+C4.1 [must, minor] Delivery matches the cue &#x27;quietly&#x27;.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">feedback sheet (M5)</div><pre>item   status    severity uncertainty    fixability       swap  2nd   tool  evidence
+A1.1   fail      error    confident      prompt_fixable   yes   yes   yes   A/primary/order1: The character speaks in Mandarin from 00:03 to 00:07 instead of English.
+A2.1   fail      error    confident      prompt_fixable   no    no    -     A/primary/order1: Xu Zhiyi is looking forward and slightly right towards the door handle, not staring intently at the door itself.
+A2.2   fail      error    confident      prompt_fixable   yes   yes   -     A/primary/order1: No memory of falling snow appears on her face.
+A2.3   fail      error    confident      prompt_fixable   yes   no    -     A/primary/order1: No memory transition or blinking out of a memory occurs.
+A3.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: The setting is clearly outside a house entrance during daytime.
+A3.2   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: A wooden door is visible behind the character.
+A4.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: Only Xu Zhiyi is visible on screen.
+A4.2   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: Only Xu Zhiyi speaks during the clip.
+A4.3   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: No unscripted events or cuts occur.
+A5.1   fail      warning  uncertain      prompt_fixable   no    no    -     A/primary/order1: No memory impression is conveyed on her face.
+A6.1   pass      info     confident      prompt_fixable   yes   yes   -     A/primary/order1: The shot is a medium close-up, static, eye-level, vertical 9:16 with Xu Zhiyi centered.
+B1.1   pass      info     confident      retry_fixable    yes   yes   -     B/primary/order1: Objects and person remain stable throughout the clip from 00:00 to 00:07.
+B2.1   pass      info     confident      retry_fixable    yes   yes   -     B/primary/order1: The woman&#x27;s face and hands remain anatomically consistent without morphing from 00:00 to 00:07.
+B3.1   pass      info     confident      retry_fixable    yes   yes   -     B/primary/order1: Face, voice, and clothing of the woman remain consistent from 00:00 to 00:07.
+B4.1   pass      info     confident      retry_fixable    yes   yes   yes   B/primary/order1: No unintended cuts, freezes, or jumps occur between 00:00 and 00:07.
+B5.1   pass      info     confident      backend_limited  yes   yes   -     B/primary/order1: Lip movements match the Mandarin speech from 00:03 to 00:07.
+B6.1   pass      info     confident      backend_limited  yes   yes   yes   B/primary/order1: The clip is approximately 7 seconds long, vertical aspect ratio, with audio present.
+B7.1   pass      info     confident      prompt_fixable   yes   yes   -     B/primary/order1: No subtitles, captions, or watermarks appear in the clip.
+C1.1   fail      error    confident      prompt_fixable   yes   yes   -     C/primary/order1: The woman shows a serious and concerned expression without showing surprise from 00:00 to 00:07.
+C2.1   fail      warning  uncertain      prompt_fixable   yes   no    -     C/primary/order1: Face and voice intensity remain calm within the [0, 1] range from 00:00 to 00:07.
+C4.1   pass      info     confident      prompt_fixable   yes   yes   -     C/primary/order1: The woman delivers her lines quietly and steadily from 00:03 to 00:07.
+
+BLOCKING: [&#x27;A1.1&#x27;, &#x27;A2.1&#x27;, &#x27;A2.2&#x27;, &#x27;A2.3&#x27;, &#x27;C1.1&#x27;]  -&gt;  stop rule: continue
+verification cost $0.0215</pre></div><div class="panel"><div class="label">raw verdicts per source (M4 + tools)</div><pre>{
+ &quot;A/primary/order1&quot;: 11,
+ &quot;A/primary/order2&quot;: 11,
+ &quot;A/second&quot;: 11,
+ &quot;B/primary/order1&quot;: 7,
+ &quot;B/primary/order2&quot;: 7,
+ &quot;B/second&quot;: 7,
+ &quot;C/primary/order1&quot;: 3,
+ &quot;C/primary/order2&quot;: 3,
+ &quot;C/second&quot;: 3,
+ &quot;A/entailment&quot;: 11,
+ &quot;tool/ffprobe&quot;: 1,
+ &quot;tool/ffmpeg&quot;: 1,
+ &quot;tool/asr&quot;: 1,
+ &quot;A/reinspect&quot;: 3,
+ &quot;C/reinspect&quot;: 1
+}</pre></div><div class="panel"><div class="label">blind description: describe/google/gemini-3.5-flash-lite</div><pre>```json
+{&quot;people&quot;: [{&quot;id&quot;: &quot;P1&quot;, &quot;description&quot;: &quot;Asian woman with short black hair, wearing a gray blazer over a white shirt, standing outside by a wooden door&quot;, &quot;on_screen&quot;: &quot;00:00-00:07&quot;}],
+ &quot;events&quot;: [{&quot;start&quot;: &quot;00:00&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;channel&quot;: &quot;visual&quot;, &quot;description&quot;: &quot;A woman stands in front of a wooden door and talks.&quot;},
+           {&quot;start&quot;: &quot;00:03&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;channel&quot;: &quot;audio&quot;, &quot;description&quot;: &quot;The woman speaks in Mandarin&quot;}],
+ &quot;speech&quot;: [{&quot;start&quot;: &quot;00:03&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;speaker&quot;: &quot;P1&quot;, &quot;text&quot;: &quot;\u4ed6\u4e0d\u4f1a\u5e2e\u6211\u4eec\u7684\u3002 \u5728\u6211\u505a\u4e86\u90a3\u4ef6\u4e8b\u540e\uff0c&quot;, &quot;language&quot;: &quot;Chinese&quot;}],
+ &quot;face_over_time&quot;: [{&quot;start&quot;: &quot;00:00&quot;, &quot;end&quot;: &quot;00:07&quot;, &quot;expression&quot;: &quot;Serious, concerned expression, moving mouth to speak&quot;}],
+ &quot;camera&quot;: &quot;Medium shot, static framing, eye-level angle&quot;,
+ &quot;artifacts&quot;: []}
+```</pre></div><div class="panel"><div class="label">blind description: describe/qwen/qwen3.8-omni-flash</div><pre>```json
+{
+  &quot;people&quot;: [
+    {
+      &quot;id&quot;: &quot;P1&quot;,
+      &quot;description&quot;: &quot;East Asian woman with short black bob hair, wearing a light grey plaid suit jacket over a white button-up collared shirt; standing in front of a dark wooden door with brass hardware, a wall lantern visible at left.&quot;,
+      &quot;on_screen&quot;: &quot;00:00-00:08&quot;
+    }
+  ],
+  &quot;events&quot;: [
+    {
+      &quot;start&quot;: &quot;00:00&quot;,
+      &quot;end&quot;: &quot;00:08&quot;,
+      &quot;channel&quot;: &quot;audio&quot;,
+      &quot;description&quot;: &quot;A low, continuous ambient hum/drone plays throughout the clip.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:00&quot;,
+      &quot;end&quot;: &quot;00:02&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1 stands still, facing slightly off-camera with a somber expression; she blinks and her gaze drops.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:02&quot;,
+      &quot;end&quot;: &quot;00:03&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1 closes her eyes briefly, then opens them again, looking forward.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:04&quot;,
+      &quot;end&quot;: &quot;00:04&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1&#x27;s eyes close again and her head tilts slightly downward.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:05&quot;,
+      &quot;end&quot;: &quot;00:08&quot;,
+      &quot;channel&quot;: &quot;visual&quot;,
+      &quot;description&quot;: &quot;P1 opens her eyes and moves her mouth, speaking with a tense, downcast expression.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:05&quot;,
+      &quot;end&quot;: &quot;00:08&quot;,
+      &quot;channel&quot;: &quot;audio&quot;,
+      &quot;description&quot;: &quot;A female voice speaks in Mandarin over the ambient hum.&quot;
+    }
+  ],
+  &quot;speech&quot;: [
+    {
+      &quot;start&quot;: &quot;00:05&quot;,
+      &quot;end&quot;: &quot;00:08&quot;,
+      &quot;speaker&quot;: &quot;P1&quot;,
+      &quot;text&quot;: &quot;他不会帮我们的。在我做了那件事后&quot;,
+      &quot;language&quot;: &quot;Mandarin Chinese&quot;
+    }
+  ],
+  &quot;face_over_time&quot;: [
+    {
+      &quot;start&quot;: &quot;00:00&quot;,
+      &quot;end&quot;: &quot;00:02&quot;,
+      &quot;expression&quot;: &quot;Serious, somber; eyes open then blinking, gaze lowered.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:03&quot;,
+      &quot;end&quot;: &quot;00:03&quot;,
+      &quot;expression&quot;: &quot;Eyes open, looking ahead, sad/neutral.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:04&quot;,
+      &quot;end&quot;: &quot;00:04&quot;,
+      &quot;expression&quot;: &quot;Eyes closed, head slightly bowed.&quot;
+    },
+    {
+      &quot;start&quot;: &quot;00:05&quot;,
+      &quot;end&quot;: &quot;00:08&quot;,
+      &quot;expression&quot;: &quot;Eyes open, brows slightly drawn, mouth moving as she speaks; pained, restrained expression.&quot;
+    }
+  ],
+  &quot;camera&quot;: &quot;Static medium close-up, vertical framing, eye-level angle; subject centered against the wooden door, background softly out of focus; no camera movement or cuts.&quot;,
+  &quot;artifacts&quot;: []
+}
+```</pre></div><div class="panel"><div class="label">all raw verdicts</div><pre>[
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The character speaks in Mandarin from 00:03 to 00:07 instead of English.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Xu Zhiyi is looking forward and slightly right towards the door handle, not staring intently at the door itself.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No memory of falling snow appears on her face.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No memory transition or blinking out of a memory occurs.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The setting is clearly outside a house entrance during daytime.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;A wooden door is visible behind the character.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only Xu Zhiyi is visible on screen.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only Xu Zhiyi speaks during the clip.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No unscripted events or cuts occur.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No memory impression is conveyed on her face.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The shot is a medium close-up, static, eye-level, vertical 9:16 with Xu Zhiyi centered.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The line is spoken in Chinese (&#x27;他不会帮我们的。 在我做了那件事后，&#x27;) rather than English from 00:03 to 00:07.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;XU ZHIYI is visibly staring toward the door area from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No brief memory of falling snow, a different door, and betrayal is conveyed across her face from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;XU ZHIYI does not display a visual memory of falling snow or a different door from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The setting matches the exterior of a house entrance during daytime from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;A wooden door at the house entrance is visible behind XU ZHIYI from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only XU ZHIYI is visible on screen from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only XU ZHIYI speaks on audio from 00:03 to 00:07.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No one enters and there are no cuts to another place from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The shot remains at the house entrance in the present throughout 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;XU ZHIYI is centered in a medium close-up, static shot at eye level in vertical 9:16 format from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:05-00:08 the line is delivered in Mandarin (&#x27;他不会帮我们的。在我做了那件事后&#x27;), not in English as required.&quot;,
+  &quot;span&quot;: [
+   5.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Throughout 00:00-00:08 she faces away from the door behind her, looking off-camera/downward, never staring at the door.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Her somber expression at 00:02-00:04 conveys only generic sadness; nothing on her face suggests falling snow, a different door, or a past betrayal.&quot;,
+  &quot;span&quot;: [
+   2.0,
+   4.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;She visibly closes her eyes around 00:02-00:04 and reopens them by 00:05, ending the downcast pause before speaking.&quot;,
+  &quot;span&quot;: [
+   2.0,
+   5.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;From 00:00-00:08 she stands outdoors in daylight at a house entrance with a wooden door and wall lantern, matching EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;A dark wooden door with brass handle and knocker is clearly visible behind her for the whole clip 00:00-00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Only the single woman (XU ZHIYI) appears on screen from 00:00-00:08; no other person enters the frame.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The only voice heard at 00:05-00:08 belongs to the on-screen woman; no other speaker is audible.&quot;,
+  &quot;span&quot;: [
+   5.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The shot remains a single static take at the entrance from 00:00-00:08 with no cuts, entries, or scene changes.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Although the shot stays at the entrance (00:00-00:08), no memory impression (snow, different door, betrayal) is conveyed on her face, so the premise condition is unmet.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clip is a static, eye-level vertical 9:16 medium close-up with XU ZHIYI centered against the door throughout 00:00-00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B1.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Objects and person remain stable throughout the clip from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B2.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman&#x27;s face and hands remain anatomically consistent without morphing from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B3.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Face, voice, and clothing of the woman remain consistent from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No unintended cuts, freezes, or jumps occur between 00:00 and 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B5.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Lip movements match the Mandarin speech from 00:03 to 00:07.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clip is approximately 7 seconds long, vertical aspect ratio, with audio present.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B7.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No subtitles, captions, or watermarks appear in the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B1.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The environment and background objects remain stable and physically plausible.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B2.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Facial features and anatomy remain normal without any morphing or distortion.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B3.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman&#x27;s face, voice, and gray blazer/white shirt outfit remain consistent throughout the take.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;There are no unintended cuts, freezes, jumps, or loops throughout the clip.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B5.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Lip movements accurately match the Mandarin speech from 00:03 to 00:07.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The video duration is approximately 7-8 seconds, vertical 9:16 aspect ratio, and includes an audio track.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B7.1&quot;,
+  &quot;source&quot;: &quot;B/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No subtitles, captions or watermarks are present in the video from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B1.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Background objects (wooden door, brass handle, wall lantern) remain fixed with no implausible motion or physics violations across 00:00-00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B2.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman&#x27;s face, hair, and suit remain anatomically coherent with no morphing or distortion through blinks and speech at 00:00-00:08; hands are not visible but no limb anomalies appear.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 4,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B3.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Same face, short black bob, grey plaid jacket and white shirt persist in every frame from 00:00 to 00:08, and the speaking voice matches the on-screen woman.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 4,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The shot is a single continuous static take with smooth motion (blinks, head tilt, speech) and no cuts, freezes, or jumps between 00:00 and 00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 3,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B5.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;From 00:05 to 00:08 her mouth opens and articulates in sync with the Mandarin line &#x27;他不会帮我们的。在我做了那件事后&#x27;, and the female voice belongs to the on-screen speaker.&quot;,
+  &quot;span&quot;: [
+   5.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 4,
+  &quot;voice_intensity&quot;: 4
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The clip runs ~8 s in vertical 9:16 framing at 480p with a continuous audio track (ambient hum plus speech) from 00:00 to 00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: 3
+ },
+ {
+  &quot;item_id&quot;: &quot;B7.1&quot;,
+  &quot;source&quot;: &quot;B/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;No subtitles, captions, or watermarks appear anywhere in the frame during 00:00-00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;C1.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order1&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman shows a serious and concerned expression without showing surprise from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Face and voice intensity remain calm within the [0, 1] range from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C4.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order1&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman delivers her lines quietly and steadily from 00:03 to 00:07.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C1.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order2&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The emotion displayed is serious and concerned resignation, not surprise.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The expression and voice are restrained and mild, with intensity within [0, 1].&quot;,
+  &quot;span&quot;: [
+   0.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C4.1&quot;,
+  &quot;source&quot;: &quot;C/primary/order2&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman speaks in a subdued, quiet tone at 00:03-00:07.&quot;,
+  &quot;span&quot;: [
+   3.0,
+   7.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C1.1&quot;,
+  &quot;source&quot;: &quot;C/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Her blinks at 00:00-00:04 are slow and paired with a lowered gaze and bowed head, and her brows stay drawn while speaking at 00:05-00:08, showing restrained sadness/guilt rather than surprise (no widened eyes, raised brows, or open-mouth shock).&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 0,
+  &quot;voice_intensity&quot;: 0
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/second&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;From 00:00-00:08 her drawn brows, downcast eyes, and pained mouth convey clearly perceptible sadness (face 2), exceeding the calm [0,1] band, even though her voice stays subdued (1).&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;C4.1&quot;,
+  &quot;source&quot;: &quot;C/second&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:05-00:08 she delivers &#x27;他不会帮我们的。在我做了那件事后&#x27; in a soft, low, slow voice over the ambient hum, matching the &#x27;quietly&#x27; cue.&quot;,
+  &quot;span&quot;: [
+   5.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: 1
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;The woman speaks in Mandarin&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;P1 stands still, facing slightly off-camera with a somber expression; she blinks and her gaze drops.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.2&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;P1 opens her eyes and moves her mouth, speaking with a tense, downcast expression.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;P1 blinks and her eyes close briefly, then opens them again, looking forward.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;Asian woman with short black hair, wearing a gray blazer over a white shirt, standing outside by a wooden door&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A3.2&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;A woman stands in front of a wooden door and talks.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;P1 stands still, facing slightly off-camera with a somber expression&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.2&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;A female voice speaks in Mandarin over the ambient hum.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A4.3&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Static medium close-up, vertical framing, eye-level angle; subject centered against the wooden door, background softly out of focus; no camera movement or cuts.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;uncertain&quot;,
+  &quot;visibility&quot;: &quot;partially_seen&quot;,
+  &quot;evidence&quot;: &quot;P1 opens her eyes and moves her mouth, speaking with a tense, downcast expression.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A6.1&quot;,
+  &quot;source&quot;: &quot;A/entailment&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Static medium close-up, vertical framing, eye-level angle; subject centered against the wooden door&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B6.1&quot;,
+  &quot;source&quot;: &quot;tool/ffprobe&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;496x864, 8.05 s, 24.0 fps, audio=yes&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;B4.1&quot;,
+  &quot;source&quot;: &quot;tool/ffmpeg&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;scene cuts at []; frozen spans [] (0.0 s)&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A1.1&quot;,
+  &quot;source&quot;: &quot;tool/asr&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;language=zh, WER=1.00, heard: &#x27;他不会帮我们的在我做了那件事后&#x27;&quot;,
+  &quot;span&quot;: [
+   3.58,
+   7.78
+  ],
+  &quot;value&quot;: 1.0,
+  &quot;face_intensity&quot;: null,
+  &quot;voice_intensity&quot;: null
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.1&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;XU ZHIYI is looking toward the camera/forward, not staring at the door, throughout the clip from 00:00 to 00:08.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;A2.3&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;fail&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;XU ZHIYI does not blink or end the memory in the video clip from 00:00 to 00:07.&quot;,
+  &quot;span&quot;: null,
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 0,
+  &quot;voice_intensity&quot;: 0
+ },
+ {
+  &quot;item_id&quot;: &quot;A5.1&quot;,
+  &quot;source&quot;: &quot;A/reinspect&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;At 00:00 to 00:08, the shot stays at the house entrance while Xu Zhiyi speaks about a past event with a brief visual impression of memory on her face.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 2,
+  &quot;voice_intensity&quot;: 2
+ },
+ {
+  &quot;item_id&quot;: &quot;C2.1&quot;,
+  &quot;source&quot;: &quot;C/reinspect&quot;,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;visibility&quot;: &quot;seen_clearly&quot;,
+  &quot;evidence&quot;: &quot;Throughout the clip from 00:00 to 00:08, the woman speaks in a calm, composed tone with low-key, calm facial expressions.&quot;,
+  &quot;span&quot;: [
+   0.0,
+   8.0
+  ],
+  &quot;value&quot;: null,
+  &quot;face_intensity&quot;: 1,
+  &quot;voice_intensity&quot;: 1
+ }
+]</pre></div></div></div></main></body></html>

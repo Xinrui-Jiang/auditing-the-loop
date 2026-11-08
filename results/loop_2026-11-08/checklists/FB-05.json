@@ -1,0 +1,283 @@
+{
+  "shot_id": "FB-05",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, slow tilt.\nIn the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, \"What's going on?\" A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "script_spans": [
+    "In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly,",
+    "woman",
+    "What's going on?",
+    "A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition."
+  ],
+  "items": [
+    {
+      "id": "A1.1",
+      "check_id": "A1",
+      "kind": "must",
+      "text": "The line \"What's going on?\" is spoken in English, complete and verbatim.",
+      "priority": "critical",
+      "evidence": "tool",
+      "params": {
+        "line": "What's going on?",
+        "language": "en",
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.1",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The woman looks upward with a visibly terrified expression.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "looks up in terror",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A2.2",
+      "check_id": "A2",
+      "kind": "must",
+      "text": "The shot begins from a low angle, slowly tilts upward to her face, and keeps her composed according to the rule of thirds.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.1",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The scripted sound is audible: In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, \" \" A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "In the dim stairwell, a woman in a floral top hears the commotion and looks up in terror, murmuring softly, \" \" A low-angle upward shot, then a slow tilt up to focus on her face, with rule-of-thirds composition.",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.2",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The woman is shown in a dim stairwell.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "dim stairwell",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A3.3",
+      "check_id": "A3",
+      "kind": "must",
+      "text": "The woman is visibly wearing a floral top.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": "floral top",
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.1",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Everyone on screen is in the script's cast: woman. Nobody else appears.",
+      "priority": "critical",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.2",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "Only woman speaks; no other voice says a line.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A4.3",
+      "check_id": "A4",
+      "kind": "must_not",
+      "text": "No unscripted event changes the scene: nobody enters, no cut to another place.",
+      "priority": "major",
+      "evidence": "description",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "A6.1",
+      "check_id": "A6",
+      "kind": "must",
+      "text": "medium close-up, slow tilt, vertical 9:16, woman centred.",
+      "priority": "minor",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B1.1",
+      "check_id": "B1",
+      "kind": "must_not",
+      "text": "Objects and liquids move plausibly: gravity, contact and momentum look normal.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B2.1",
+      "check_id": "B2",
+      "kind": "must_not",
+      "text": "Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B3.1",
+      "check_id": "B3",
+      "kind": "must_not",
+      "text": "The same face, voice and clothing persist through the whole take.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B4.1",
+      "check_id": "B4",
+      "kind": "must_not",
+      "text": "No unintended cut, freeze, jump or loop.",
+      "priority": "major",
+      "evidence": "tool_panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B5.1",
+      "check_id": "B5",
+      "kind": "must",
+      "text": "Lip movement matches the spoken line and the voice belongs to the person on screen.",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B6.1",
+      "check_id": "B6",
+      "kind": "must",
+      "text": "8 s, 9:16, 480p, audio track present.",
+      "priority": "info",
+      "evidence": "tool",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "B7.1",
+      "check_id": "B7",
+      "kind": "must_not",
+      "text": "No subtitles, captions or watermarks.",
+      "priority": "minor",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C1.1",
+      "check_id": "C1",
+      "kind": "must",
+      "text": "The emotion is fear (cues: terror).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": null
+      }
+    },
+    {
+      "id": "C2.1",
+      "check_id": "C2",
+      "kind": "must",
+      "text": "Face and voice intensity within [0, 1] on the 0-4 scale (calm).",
+      "priority": "major",
+      "evidence": "panel",
+      "params": {
+        "line": null,
+        "language": null,
+        "element": null,
+        "target_interval": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "conflicts": [],
+  "author": "openai/gpt-5.6-luna"
+}

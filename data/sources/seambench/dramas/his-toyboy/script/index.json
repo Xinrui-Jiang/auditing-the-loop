@@ -1,0 +1,525 @@
+{
+  "title": "His toyboy: The Billionaire's Trap",
+  "logline": "一个背负巨额学贷的医学生为了生存，与冷酷的亿万财阀签下了一年的“秘密契 约”。四年后，两人因一个三岁的奶团子宿命般重逢，曾经的猎手步步紧逼试图 将他重新囚禁，但这一次， 金丝雀决定斩断一切，拿回属于自己的人生。",
+  "total_lines": 2560,
+  "num_episodes": 23,
+  "volumes": [
+    "第一卷： 金丝笼与断翅的鸟 (The Cage & The Escape)",
+    "第二卷：命运的重逢 (The Inevitable Collision)",
+    "第三卷：温柔的陷阱与深渊 (The Trap & The Shrine)",
+    "第四卷：剧毒的谎言 (The Poisoned Illusion)",
+    "第五卷：王者的崩塌 (The Shattered Empire)",
+    "第六卷：旷野与新生 (The Rebirth)"
+  ],
+  "episodes": {
+    "1": {
+      "title": "The Mark (咬痕)",
+      "summary": "毕业典礼上，朱利安脖子上的咬痕引出四年前 压抑、疯狂的契约关系。维克托作为赞助商登场，视线锁定猎物。",
+      "title_en_full": "EPISODE 1: The Mark",
+      "scenes_en": [
+        "EXT. MEDICAL UNIVERSITY COMMENCEMENT - STADIUM - DAY",
+        "INT. LUXURY PENTHOUSE - NIGHT",
+        "EXT. MEDICAL UNIVERSITY COMMENCEMENT - STADIUM - DAY"
+      ],
+      "characters_en": [
+        "DEAN",
+        "EVAN",
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 72,
+      "title_cn_full": "第1集",
+      "scenes_cn": [
+        "外景. 医科大学毕业典礼 - 体育场 - 白天",
+        "内景. 豪华顶层公寓 - 夜晚",
+        "外景. 医科大学毕业典礼-体育场-白天"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 69
+    },
+    "2": {
+      "title": "The Price (代价)",
+      "summary": "雨夜的疯狂与屈辱。闪回交代朱利安因家庭变 故和巨额债务被迫签下契约的悲惨过往。",
+      "title_en_full": "EPISODE 2: THE PRICE",
+      "scenes_en": [
+        "EXT. MEDICAL UNIVERSITY COMMENCEMENT - STADIUM - DAY",
+        "INT. LUXURY PENTHOUSE - NIGHT"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 59,
+      "title_cn_full": "第2集",
+      "scenes_cn": [
+        "外景. 医科大学毕业典礼 - 体育场 - 白天",
+        "内景. 豪华顶层公寓 - 夜晚"
+      ],
+      "characters_cn": [
+        "回到现在"
+      ],
+      "num_lines_cn": 67
+    },
+    "3": {
+      "title": "The Final Night (最后一夜)",
+      "summary": "契约到期日。朱利安拒绝了维克托 赠予的劳力士，戴上父亲的旧手链，宣布两清并决绝离开，留下震惊的 维克托。",
+      "title_en_full": "EPISODE 3: THE FINAL NIGHT5.",
+      "scenes_en": [
+        "EXT. MEDICAL UNIVERSITY CAMPUS - EVENING",
+        "INT. LUXURY PENTHOUSE - NIGHT"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 58,
+      "title_cn_full": "第3集",
+      "scenes_cn": [
+        "外景. 医科大学校园 - 傍晚",
+        "内景. 豪华顶层公寓 - 夜晚"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 60
+    },
+    "4": {
+      "title": "Dada's Wife (爸爸的妻子)",
+      "summary": "四年后，住院医朱利安在医院偶遇三 岁的迈洛。迈洛当众大喊“Mama Ju”，引发社死。朱利安收到带有监控    照片的生日宴请柬，被迫赴约。",
+      "title_en_full": "EPISODE 4: DADA'S WIFE",
+      "scenes_en": [
+        "INT. HOSPITAL CORRIDOR - DAY",
+        "INT. GREY ESTATE STUDY - DAY",
+        "INT. HOSPITAL LOCKER ROOM - DAY"
+      ],
+      "characters_en": [
+        "ELEANOR",
+        "EMMA",
+        "INVITATION",
+        "JULIAN",
+        "MILO",
+        "PAYWALL",
+        "VICTOR"
+      ],
+      "num_lines_en": 72,
+      "title_cn_full": "第4集：爸爸的老婆",
+      "scenes_cn": [
+        "内景. 医院走廊 - 白天",
+        "内景. 格雷庄园书房 - 白天",
+        "内景. 医院更衣室 - 白天"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 87
+    },
+    "5": {
+      "title": "The Birthday Party (生日晚宴)",
+      "summary": "奢华的宴会大厅，维克托如帝 王般降临。他在人群中精准锁定了试图逃跑的朱利安，捕猎正式重新开 始。",
+      "title_en_full": "EPISODE 5: THE BIRTHDAY PARTY",
+      "scenes_en": [
+        "INT. GREY ESTATE - BALLROOM - NIGHT"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 55,
+      "title_cn_full": "第5集：生日派对",
+      "scenes_cn": [
+        "内景. 格雷庄园宴会厅 - 夜晚"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 39
+    },
+    "6": {
+      "title": "Mine (我的)",
+      "summary": "迈洛的护短与维克托的绝对占有欲。维克托当众警 告搭讪的女配，并用极具压迫感的方式宣示对朱利安的主权。",
+      "title_en_full": "EPISODE 6: MINE",
+      "scenes_en": [
+        "INT. GREY ESTATE - BALLROOM - CONTINUOUS"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "MILO",
+        "PAIGE",
+        "VICTOR"
+      ],
+      "num_lines_en": 47,
+      "title_cn_full": "第6集",
+      "scenes_cn": [
+        "内景. 格雷庄园宴会厅 - 继续"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 47
+    },
+    "7": {
+      "title": "Trapped (困兽)",
+      "summary": "维克托强行扣留朱利安。在衣帽间里，熟悉的  香味和维克托极致色气的言语挑逗，让朱利安的身体与自尊陷入激烈交 战。",
+      "title_en_full": "EPISODE 7: TRAPPED",
+      "scenes_en": [
+        "INT. GREY ESTATE - FOYER - NIGHT",
+        "INT. GREY ESTATE - MASTER BEDROOM - NIGHT",
+        "INT. GREY ESTATE - MASTER WALK-IN CLOSET - CONTINUOUS",
+        "INT. LUXURY PENTHOUSE - NIGHT"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "MILO",
+        "QUICK FLASHBACK",
+        "VICTOR"
+      ],
+      "num_lines_en": 56,
+      "title_cn_full": "第7集：困住",
+      "scenes_cn": [
+        "内景. 格雷庄园 - 门厅 - 夜晚",
+        "内景. 格雷庄园 - 主卧室 - 夜晚",
+        "内景. 格雷庄园 - 主卧步入式衣帽间 - 继续"
+      ],
+      "characters_cn": [
+        "回到现在",
+        "快速闪回"
+      ],
+      "num_lines_cn": 90
+    },
+    "8": {
+      "title": "Through the Glass (隔墙交锋)",
+      "summary": "浴室名场面。维克托利用解皮 带的声音唤醒朱利安的身体记忆，并在湿漉漉的浴室里将他逼入死角 。",
+      "title_en_full": "EPISODE 8: THROUGH THE GLASS",
+      "scenes_en": [
+        "INT. GREY ESTATE - MASTER BEDROOM / BATHROOM - NIGHT",
+        "INT. GREY ESTATE - MASTER BATHROOM - CONTINUOUS"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 49,
+      "title_cn_full": "第8集：透过玻璃",
+      "scenes_cn": [
+        "内景. 格雷庄园 - 主卧室 / 浴室 - 夜晚"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 76
+    },
+    "9": {
+      "title": "Morning Wood (晨间恶作剧)",
+      "summary": "晨间的同床共枕。维克托利用生 理反应故意羞辱和逗弄朱利安，迈洛的纯真发问让朱利安羞愤逃离。",
+      "title_en_full": "EPISODE 9: MORNING WOOD15.",
+      "scenes_en": [
+        "INT. GREY ESTATE - MASTER BEDROOM - MORNING"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "MILO",
+        "VICTOR"
+      ],
+      "num_lines_en": 44,
+      "title_cn_full": "第9集：早晨的反应",
+      "scenes_cn": [
+        "内景. 格雷庄园 - 主卧室 - 早晨"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 46
+    },
+    "10": {
+      "title": "The Illusion (幻境)",
+      "summary": "花园里短暂的“一家三口”温情，被突然降  落的私人直升机和西装革履的高管们打破。朱利安清醒地认识到两人世 界的不可逾越。",
+      "title_en_full": "EPISODE 10: THE ILLUSION",
+      "scenes_en": [
+        "EXT. GREY ESTATE GARDENS - AFTERNOON"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "MILO",
+        "VICTOR"
+      ],
+      "num_lines_en": 45,
+      "title_cn_full": "第10集：幻象",
+      "scenes_cn": [
+        "外景. 格雷庄园花园 - 下午"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 47
+    },
+    "11": {
+      "title": "Frozen Assets (冻结的资产)",
+      "summary": "朱利安的银行卡被冻结，被迫来 到VIP室，却发现维克托四年前给他的黑卡里，静静躺着 5000 万美金的 巨款。",
+      "title_en_full": "EPISODE 11: FROZEN ASSETS",
+      "scenes_en": [
+        "INT. HOSPITAL CAFETERIA - DAY",
+        "INT. GLOBAL BANK - VIP LOUNGE - LATER"
+      ],
+      "characters_en": [
+        "CASHIER",
+        "JULIAN",
+        "MANAGER"
+      ],
+      "num_lines_en": 53,
+      "title_cn_full": "第11集：冻结的资产",
+      "scenes_cn": [
+        "内景. 医院自助餐厅 - 白天",
+        "内景. 环球银行 - 贵宾室 - 稍后"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 49
+    },
+    "12": {
+      "title": "The Shrine (神龛)",
+      "summary": "朱利安用备用门卡刷开顶层公寓，震惊地 发现这里维持着四年前的原样，连他廉价的旧牙刷都被当做圣物般供   奉。维克托在会议室接到开门提醒，露出胜利的微笑。",
+      "title_en_full": "EPISODE 12: THE SHRINE19.",
+      "scenes_en": [
+        "INT. LUXURY PENTHOUSE HALLWAY - DAY",
+        "INT. LUXURY PENTHOUSE - CONTINUOUS",
+        "INT. GREY CAPITAL - BOARDROOM - DAY"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 39,
+      "title_cn_full": "第12集：圣地",
+      "scenes_cn": [
+        "内景. 豪华顶层公寓走廊 - 白天",
+        "内景. 豪华顶层公寓 - 继续",
+        "内景. 格雷资本 - 董事会会议室 - 白天"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 59
+    },
+    "13": {
+      "title": "The Interloper (不速之客)",
+      "summary": "维克托远赴伦敦。女高管 Serena 趁虚而入，在公寓里用高傲的姿态和“慈善项目”的言论，精准刺痛朱利 安的阶级自卑。",
+      "title_en_full": "EPISODE 13: THE INTERLOPER",
+      "scenes_en": [
+        "INT. LUXURY PENTHOUSE - DAY"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "SERENA"
+      ],
+      "num_lines_en": 52,
+      "title_cn_full": "第13集：闯入者",
+      "scenes_cn": [
+        "内景. 豪华顶层公寓 - 白天"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 50
+    },
+    "14": {
+      "title": "Blocked (切断联系)",
+      "summary": "极度思念迈洛的朱利安打给保姆，却被   Serena 接听并用“继承人课程”冷酷羞辱。伦敦的维克托抚摸着旧项圈， 因思念决定提前回国。",
+      "title_en_full": "EPISODE 14: BLOCKED",
+      "scenes_en": [
+        "INT. JULIAN'S APARTMENT - NIGHT"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "SERENA"
+      ],
+      "num_lines_en": 45,
+      "title_cn_full": "第14集：阻断",
+      "scenes_cn": [
+        "内景. 朱利安的公寓 - 夜晚",
+        "内景. 伦敦豪华酒店套房 - 夜晚（插切）"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 63
+    },
+    "15": {
+      "title": "The Outsider (局外人)",
+      "summary": "咖啡馆的玻璃窗内外，朱利安看着维  克托、Serena 和迈洛宛如完美一家人 。Serena 利用信息差向维克托撒 谎，彻底阻断了两人的沟通。",
+      "title_en_full": "EPISODE 15: THE OUTSIDER",
+      "scenes_en": [
+        "INT. STREET CORNER CAFE - DAY",
+        "EXT. LUXURY BOUTIQUE STREET - CONTINUOUS (JULIAN'S POV",
+        "INT. STREET CORNER CAFE - CONTINUOUS"
+      ],
+      "characters_en": [
+        "JULIAN"
+      ],
+      "num_lines_en": 32,
+      "title_cn_full": "第15集：局外人",
+      "scenes_cn": [
+        "内景. 街角咖啡馆 - 白天",
+        "外景. 奢侈品 boutique 街道 - 继续（朱利安透过玻璃的 POV）",
+        "内景. 街角咖啡馆 - 继续",
+        "外景. 奢侈品 boutique 街道 - 继续"
+      ],
+      "characters_cn": [
+        "回到场景"
+      ],
+      "num_lines_cn": 70
+    },
+    "16": {
+      "title": "Stolen Promise (偷来的拥抱)",
+      "summary": "接到保姆求救电话，朱利安冒   雨闯入庄园，与高烧的迈洛抱头痛哭。 Serena 带着保安出现，用极度羞 辱的方式将朱利安拖进雨夜， 而维克托正在楼上开会， 一无所知。",
+      "title_en_full": "EPISODE 16: STOLEN PROMISE",
+      "scenes_en": [
+        "INT. GREY ESTATE - BACK CORRIDOR - NIGHT",
+        "INT. GREY ESTATE - GRAND STAIRCASE - CONTINUOUS"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "MILO",
+        "SERENA"
+      ],
+      "num_lines_en": 53,
+      "title_cn_full": "第16集：被撕毁的承诺",
+      "scenes_cn": [
+        "内景. 朱利安的公寓 - 夜晚",
+        "内景. 格雷庄园 - 门厅 - 夜晚"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 62
+    },
+    "17": {
+      "title": "Apart (分离)",
+      "summary": "朱利安被扔出门外；与此同时，楼上的维克托虽 然察觉到 Serena 汇报的漏洞，却因上位者的致命骄傲，错过了下楼拯  救爱人的唯一机会。",
+      "title_en_full": "EPISODE 17: POISON",
+      "scenes_en": [
+        "INT. HOSPITAL - JULIAN’S OFFICE - DAY"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "SERENA"
+      ],
+      "num_lines_en": 49,
+      "title_cn_full": "第17集：分离",
+      "scenes_cn": [
+        "内景. 格雷庄园 - 门厅 - 夜晚",
+        "内景. 格雷庄园 - 顶层书房 - 夜晚（同时发生）"
+      ],
+      "characters_cn": [
+        "回到场景"
+      ],
+      "num_lines_cn": 63
+    },
+    "18": {
+      "title": "Poison (诛心之毒)",
+      "summary": "Serena 杀到诊所，用 “性别认知障碍”和“摧 毁继承人未来”的心理学逻辑对朱利安进行降维打击。朱利安心理防线彻 底崩溃，流着泪撕毁了写给迈洛的承诺。",
+      "title_en_full": "EPISODE 18: THE DECISION27.",
+      "scenes_en": [
+        "EXT. GREY ESTATE - GATES - LATE AFTERNOON",
+        "EXT. GREY ESTATE - GARDENS - CONTINUOUS (JULIAN'S POV THROUGH"
+      ],
+      "characters_en": [
+        "JULIAN"
+      ],
+      "num_lines_en": 42,
+      "title_cn_full": "第18集：毒药",
+      "scenes_cn": [
+        "内景. 医院 - 朱利安的办公室 - 白天"
+      ],
+      "characters_cn": [
+        "回到场景"
+      ],
+      "num_lines_cn": 55
+    },
+    "19": {
+      "title": "The Decision (最后的决定)",
+      "summary": "夕阳下，朱利安躲在庄园铁门外  的阴影里，最后一次看着草坪上的父子。他流着泪微笑诀别，转身走向 彻底的孤独。",
+      "title_en_full": "EPISODE 19: EMPTY APT",
+      "scenes_en": [
+        "INT. JULIAN’S APARTMENT - DAY",
+        "INT. GREY ESTATE - MILO’S BEDROOM - NIGHT"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "MILO",
+        "VICTOR"
+      ],
+      "num_lines_en": 61,
+      "title_cn_full": "第19集：决定",
+      "scenes_cn": [
+        "外景. 格雷庄园 - 大门 - 傍晚",
+        "外景. 格雷庄园 - 花园 - 继续（朱利安透过栏杆的 POV）"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 24
+    },
+    "20": {
+      "title": "Empty Apt (人去楼空)",
+      "summary": "朱利安留下黑卡和告别信，拉着行李箱 在雨天离开。当晚，迈洛在床前的一句哭诉，瞬间撕碎了 Serena 的谎   言，维克托的怒火彻底被点燃。",
+      "title_en_full": "EPISODE 20: TOO LATE",
+      "scenes_en": [
+        "INT. GREY CAPITAL - VICTOR’S OFFICE - DAY",
+        "EXT. NEW YORK STREETS / INT. ASTON MARTIN - CONTINUOUS",
+        "INT. JULIAN’S APARTMENT BUILDING - DAY"
+      ],
+      "characters_en": [
+        "SERENA",
+        "VICTOR"
+      ],
+      "num_lines_en": 47,
+      "title_cn_full": "第20集：空公寓",
+      "scenes_cn": [
+        "内景. 朱利安的公寓 - 白天",
+        "内景. 格雷庄园 - 米洛的卧室 - 夜晚"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 48
+    },
+    "21": {
+      "title": "Too Late (迟来的真相)",
+      "summary": "维克托雷霆手段封杀 Serena，带着求 婚钻戒一路狂飙冲向朱利安的出租屋，却只看到敞开的衣柜和一室死\n寂。",
+      "title_en_full": "EPISODE 21: SHATTERED",
+      "scenes_en": [
+        "INT. JULIAN’S APARTMENT - CONTINUOUS"
+      ],
+      "characters_en": [
+        "JULIAN",
+        "VICTOR"
+      ],
+      "num_lines_en": 32,
+      "title_cn_full": "第21集：太迟了",
+      "scenes_cn": [
+        "内景. 格雷资本 - 维克多的办公室 - 白天",
+        "外景. 纽约街道 / 内景. 阿斯顿·马丁 - 继续",
+        "内景. 朱利安的公寓楼 - 白天"
+      ],
+      "characters_cn": [
+        "维克多"
+      ],
+      "num_lines_cn": 45
+    },
+    "22": {
+      "title": "Shattered (崩塌)",
+      "summary": "维克托看着桌上的诀别信和玩具车，这位掌  控一切的财阀双膝跪地，将脸埋在手里痛哭失声：“我赢了世界，却失去 了你。”",
+      "title_en_full": "EPISODE 22: THE JOURNEY",
+      "scenes_en": [
+        "EXT. WESTERN NATIONAL PARK (E.G., ZION OR GRAND CANYON) - DAY"
+      ],
+      "characters_en": [
+        "HARPER",
+        "JULIAN"
+      ],
+      "num_lines_en": 47,
+      "title_cn_full": "第22集：崩溃",
+      "scenes_cn": [
+        "内景. 朱利安的公寓 - 继续"
+      ],
+      "characters_cn": [],
+      "num_lines_cn": 34
+    },
+    "23": {
+      "title": "The Journey & Live My Life (漫长旅途与为自己而\n活)",
+      "summary": "镜头硬切至阳光明媚的西部峡谷。朱利安在女向导 Harper 的带领 下，坐着越野车驰骋在公路上。他将旧手机扔出窗外摔得粉碎，迎着风  放声大笑。画面定格在他重获自由、明媚至极的笑容上。",
+      "title_en_full": "EPISODE 23: LIVE MY LIFE",
+      "scenes_en": [
+        "EXT. DESERT HIGHWAY - DAY"
+      ],
+      "characters_en": [
+        "HARPER",
+        "JULIAN",
+        "中文剧本"
+      ],
+      "num_lines_en": 45,
+      "title_cn_full": "第23集：旅程与活出自我",
+      "scenes_cn": [
+        "外景. 西部国家公园（锡安/大峡谷） - 白天",
+        "外景. 沙漠公路 - 稍后"
+      ],
+      "characters_cn": [
+        "剧终"
+      ],
+      "num_lines_cn": 88
+    }
+  }
+}

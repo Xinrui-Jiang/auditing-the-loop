@@ -1,0 +1,1483 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>VGLoop M0 — data objects</title><style>
+:root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
+@media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:1500px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+.sub,.note{color:var(--muted);margin:0 0 12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}}
+.col h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.panel{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
+.in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
+pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
+</style></head><body><main><h1>VGLoop M0 — data objects</h1><p class='sub'>Real data: two hand-written checklists, five pilot feedback sheets, the stop rule, a cache key, a live cost record.</p><h2>What M0 defines</h2><p class='note'>All objects later modules exchange. Priorities and evidence types come from CHECK_DEFAULTS (PLAN.md §2); the stop rule lives in Verdict.blocks() / FeedbackSheet.blocking().</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">PLAN.md §7 M0</div><pre>schemas.py 271 lines, config.py 50, cache.py 43, cost.py 34; 13 tests pass.</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">Objects and fields</div><pre>ChecklistItem
+    id: &lt;class &#x27;str&#x27;&gt;, check_id: Literal[&#x27;A1&#x27;, &#x27;A2&#x27;, &#x27;A3&#x27;, &#x27;A4&#x27;, &#x27;A5&#x27;, &#x27;A6&#x27;, &#x27;B1&#x27;, &#x27;B2&#x27;, &#x27;B3&#x27;, &#x27;B4&#x27;, &#x27;B5&#x27;, &#x27;B6&#x27;, &#x27;B7&#x27;, &#x27;C1&#x27;, &#x27;C2&#x27;, &#x27;C3&#x27;, &#x27;C4&#x27;, &#x27;C5&#x27;, &#x27;C6&#x27;], kind: Literal[&#x27;must&#x27;, &#x27;must_not&#x27;, &#x27;premise&#x27;], text: &lt;class &#x27;str&#x27;&gt;, priority: Literal[&#x27;critical&#x27;, &#x27;major&#x27;, &#x27;minor&#x27;, &#x27;info&#x27;], evidence: Literal[&#x27;tool&#x27;, &#x27;description&#x27;, &#x27;panel&#x27;, &#x27;tool_panel&#x27;], params: &lt;class &#x27;ItemParams&#x27;&gt;
+
+Checklist
+    shot_id: &lt;class &#x27;str&#x27;&gt;, prompt: &lt;class &#x27;str&#x27;&gt;, script_spans: list[str], items: list[ChecklistItem], conflicts: list[str], author: &lt;class &#x27;str&#x27;&gt;
+
+Take
+    shot_id: &lt;class &#x27;str&#x27;&gt;, round: &lt;class &#x27;int&#x27;&gt;, path: &lt;class &#x27;str&#x27;&gt;, backend: &lt;class &#x27;str&#x27;&gt;, seed: int | None, duration_s: &lt;class &#x27;int&#x27;&gt;, resolution: &lt;class &#x27;str&#x27;&gt;, aspect_ratio: &lt;class &#x27;str&#x27;&gt;, prompt_sha256: &lt;class &#x27;str&#x27;&gt;, sha256: &lt;class &#x27;str&#x27;&gt;, cost_usd: &lt;class &#x27;float&#x27;&gt;, request_id: &lt;class &#x27;str&#x27;&gt;, latency_s: &lt;class &#x27;float&#x27;&gt;
+
+Observation
+    source: &lt;class &#x27;str&#x27;&gt;, model_id: &lt;class &#x27;str&#x27;&gt;, request_id: str | None, cost_usd: &lt;class &#x27;float&#x27;&gt;, text: &lt;class &#x27;str&#x27;&gt;, raw_path: str | None
+
+RawVerdict
+    item_id: &lt;class &#x27;str&#x27;&gt;, source: &lt;class &#x27;str&#x27;&gt;, status: Literal[&#x27;pass&#x27;, &#x27;fail&#x27;, &#x27;uncertain&#x27;, &#x27;not_applicable&#x27;], visibility: Literal[&#x27;seen_clearly&#x27;, &#x27;partially_seen&#x27;, &#x27;not_observable&#x27;], evidence: &lt;class &#x27;str&#x27;&gt;, span: tuple[float, float] | None, face_intensity: int | None, voice_intensity: int | None
+
+Signals
+    order_swap_agree: bool | None, second_family_agree: bool | None, tool_agree: bool | None, visibility: Literal[&#x27;seen_clearly&#x27;, &#x27;partially_seen&#x27;, &#x27;not_observable&#x27;]
+
+Verdict
+    item_id: &lt;class &#x27;str&#x27;&gt;, status: Literal[&#x27;pass&#x27;, &#x27;fail&#x27;, &#x27;uncertain&#x27;, &#x27;not_applicable&#x27;], severity: Literal[&#x27;error&#x27;, &#x27;warning&#x27;, &#x27;info&#x27;], uncertainty_state: Literal[&#x27;confident&#x27;, &#x27;uncertain&#x27;, &#x27;not_observable&#x27;], fixability: Literal[&#x27;prompt_fixable&#x27;, &#x27;retry_fixable&#x27;, &#x27;backend_limited&#x27;], signals: &lt;class &#x27;Signals&#x27;&gt;, evidence: list[str], deviation: float | None, reinspected: &lt;class &#x27;bool&#x27;&gt;
+
+FeedbackSheet
+    shot_id: &lt;class &#x27;str&#x27;&gt;, round: &lt;class &#x27;int&#x27;&gt;, take_sha256: &lt;class &#x27;str&#x27;&gt;, verdicts: list[Verdict], cost_usd: &lt;class &#x27;float&#x27;&gt;
+
+Round
+    round: &lt;class &#x27;int&#x27;&gt;, prompt: &lt;class &#x27;str&#x27;&gt;, branched_from: int | None, rationale: &lt;class &#x27;str&#x27;&gt;, targets: list[str], take_path: &lt;class &#x27;str&#x27;&gt;, sheet_path: &lt;class &#x27;str&#x27;&gt;, cost_usd: &lt;class &#x27;float&#x27;&gt;
+
+RevisionPlan
+    branch_from: &lt;class &#x27;int&#x27;&gt;, revised_prompt: &lt;class &#x27;str&#x27;&gt;, rationale: &lt;class &#x27;str&#x27;&gt;, targets: list[str]
+
+Trajectory
+    shot_id: &lt;class &#x27;str&#x27;&gt;, checklist_path: &lt;class &#x27;str&#x27;&gt;, rounds: list[Round], status: Literal[&#x27;running&#x27;, &#x27;output&#x27;, &#x27;hand_off&#x27;], output_round: int | None
+
+HandOffReport
+    shot_id: &lt;class &#x27;str&#x27;&gt;, best_round: &lt;class &#x27;int&#x27;&gt;, reason: &lt;class &#x27;str&#x27;&gt;, open_item_ids: list[str], trajectory_path: &lt;class &#x27;str&#x27;&gt;</pre></div></div></div><h2>Checklist for DB-38 (hand-written, the way M1&#x27;s Analyser will write it)</h2><p class='note'>20 items; 6 script spans all found in the prompt (rule 2 check). Saved to data/examples/checklists/DB-38.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prompt</div><pre>Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.
+INT. OLD BUILDING STAIRWELL - DAY. HAITONG (17). The call ends. Haitong&#x27;s portfolio slips. Pages scatter—her resume, shredded by rain. HAITONG, crying, says: &quot;Grandma, they found me.&quot; Sound: Pages scatter—her resume, shredded by rain.
+Live-action short-drama look. Audio on; the line is spoken on camera.</pre></div><div class="panel"><div class="label">structured fields</div><pre>{
+  &quot;shot_id&quot;: &quot;DB-38&quot;,
+  &quot;line&quot;: &quot;Grandma, they found me.&quot;,
+  &quot;speaker_cue&quot;: &quot;HAITONG&quot;,
+  &quot;parenthetical&quot;: &quot;crying&quot;,
+  &quot;emotion_class&quot;: &quot;sadness&quot;,
+  &quot;emotion_cue&quot;: [
+    &quot;crying&quot;
+  ],
+  &quot;native_intensity_bin&quot;: &quot;strong&quot;,
+  &quot;target_intensity_interval&quot;: [
+    2,
+    3
+  ],
+  &quot;sfx_cue&quot;: &quot;Pages scatter—her resume, shredded by rain.&quot;,
+  &quot;shot_scale&quot;: &quot;medium close-up&quot;,
+  &quot;camera&quot;: &quot;static camera, eye level&quot;
+}</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">Checklist (JSON)</div><pre>{
+  &quot;shot_id&quot;: &quot;DB-38&quot;,
+  &quot;prompt&quot;: &quot;Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nINT. OLD BUILDING STAIRWELL - DAY. HAITONG (17). The call ends. Haitong&#x27;s portfolio slips. Pages scatter—her resume, shredded by rain. HAITONG, crying, says: \&quot;Grandma, they found me.\&quot; Sound: Pages scatter—her resume, shredded by rain.\nLive-action short-drama look. Audio on; the line is spoken on camera.&quot;,
+  &quot;script_spans&quot;: [
+    &quot;INT. OLD BUILDING STAIRWELL - DAY&quot;,
+    &quot;HAITONG (17)&quot;,
+    &quot;The call ends. Haitong&#x27;s portfolio slips. Pages scatter—her resume, shredded by rain.&quot;,
+    &quot;HAITONG&quot;,
+    &quot;crying&quot;,
+    &quot;Grandma, they found me.&quot;
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;A1.1&quot;,
+      &quot;check_id&quot;: &quot;A1&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The line \&quot;Grandma, they found me.\&quot; is spoken in English, complete and verbatim.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;tool&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: &quot;Grandma, they found me.&quot;,
+        &quot;language&quot;: &quot;en&quot;,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A2.1&quot;,
+      &quot;check_id&quot;: &quot;A2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The phone call ends: she lowers or hangs up the phone.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;The call ends.&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A2.2&quot;,
+      &quot;check_id&quot;: &quot;A2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Haitong&#x27;s portfolio slips out of her hands.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;Haitong&#x27;s portfolio slips.&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A2.3&quot;,
+      &quot;check_id&quot;: &quot;A2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Pages scatter out of the portfolio.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;Pages scatter&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A3.1&quot;,
+      &quot;check_id&quot;: &quot;A3&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The setting is the stairwell of an old building, interior, daytime.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;INT. OLD BUILDING STAIRWELL - DAY&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A3.2&quot;,
+      &quot;check_id&quot;: &quot;A3&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The scattering pages are audible (paper rustling or falling).&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;Pages scatter—her resume, shredded by rain.&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A4.1&quot;,
+      &quot;check_id&quot;: &quot;A4&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;Only one person, Haitong, is on camera; nobody else appears.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A4.2&quot;,
+      &quot;check_id&quot;: &quot;A4&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;No unscripted event changes the scene (nobody enters, no cut to another place).&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A5.1&quot;,
+      &quot;check_id&quot;: &quot;A5&quot;,
+      &quot;kind&quot;: &quot;premise&quot;,
+      &quot;text&quot;: &quot;Haitong is 17 and has just lost a job offer over the phone; &#x27;Grandma&#x27; is addressed but not present.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A6.1&quot;,
+      &quot;check_id&quot;: &quot;A6&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Medium close-up, static camera at eye level, vertical 9:16, Haitong centred.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;tool_panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B1.1&quot;,
+      &quot;check_id&quot;: &quot;B1&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;Objects and liquids move plausibly: gravity, contact and momentum look normal.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B2.1&quot;,
+      &quot;check_id&quot;: &quot;B2&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B3.1&quot;,
+      &quot;check_id&quot;: &quot;B3&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;The same face, voice and clothing persist through the whole take.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;tool_panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B4.1&quot;,
+      &quot;check_id&quot;: &quot;B4&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;No unintended cut, freeze, jump or loop.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;tool_panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B5.1&quot;,
+      &quot;check_id&quot;: &quot;B5&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Lip movement matches the spoken line and the voice belongs to the person on screen.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B6.1&quot;,
+      &quot;check_id&quot;: &quot;B6&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;8 s, 9:16, 480p, audio track present.&quot;,
+      &quot;priority&quot;: &quot;info&quot;,
+      &quot;evidence&quot;: &quot;tool&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B7.1&quot;,
+      &quot;check_id&quot;: &quot;B7&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;No subtitles, captions or watermarks.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;C1.1&quot;,
+      &quot;check_id&quot;: &quot;C1&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The emotion is sadness (cue: crying).&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;C2.1&quot;,
+      &quot;check_id&quot;: &quot;C2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Intensity is strong but not hysterical: face and voice within [2, 3] on the 0-4 scale.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;C4.1&quot;,
+      &quot;check_id&quot;: &quot;C4&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Delivery sounds like crying: broken voice, uneven pace.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    }
+  ],
+  &quot;conflicts&quot;: [],
+  &quot;author&quot;: &quot;manual&quot;
+}</pre></div></div></div><h2>Checklist for DB-16 (hand-written, the way M1&#x27;s Analyser will write it)</h2><p class='note'>19 items; 6 script spans all found in the prompt (rule 2 check). Saved to data/examples/checklists/DB-16.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prompt</div><pre>Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.
+EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY. XU ZHIYI (28, exhausted but determined). She stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away. XU ZHIYI says quietly: &quot;He won&#x27;t help us. Not after what I did.&quot;
+Live-action short-drama look. Audio on; the line is spoken on camera.</pre></div><div class="panel"><div class="label">structured fields</div><pre>{
+  &quot;shot_id&quot;: &quot;DB-16&quot;,
+  &quot;line&quot;: &quot;He won&#x27;t help us. Not after what I did.&quot;,
+  &quot;speaker_cue&quot;: &quot;XU ZHIYI&quot;,
+  &quot;parenthetical&quot;: &quot;quietly&quot;,
+  &quot;emotion_class&quot;: &quot;surprise&quot;,
+  &quot;emotion_cue&quot;: [
+    &quot;blinks&quot;
+  ],
+  &quot;native_intensity_bin&quot;: &quot;calm&quot;,
+  &quot;target_intensity_interval&quot;: [
+    0,
+    1
+  ],
+  &quot;sfx_cue&quot;: null,
+  &quot;shot_scale&quot;: &quot;medium close-up&quot;,
+  &quot;camera&quot;: &quot;static camera, eye level&quot;
+}</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">Checklist (JSON)</div><pre>{
+  &quot;shot_id&quot;: &quot;DB-16&quot;,
+  &quot;prompt&quot;: &quot;Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nEXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY. XU ZHIYI (28, exhausted but determined). She stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away. XU ZHIYI says quietly: \&quot;He won&#x27;t help us. Not after what I did.\&quot;\nLive-action short-drama look. Audio on; the line is spoken on camera.&quot;,
+  &quot;script_spans&quot;: [
+    &quot;EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY&quot;,
+    &quot;XU ZHIYI (28, exhausted but determined)&quot;,
+    &quot;She stares at the door. A flicker of memory crosses her face—falling snow, a different door, a different betrayal. She blinks it away.&quot;,
+    &quot;XU ZHIYI&quot;,
+    &quot;quietly&quot;,
+    &quot;He won&#x27;t help us. Not after what I did.&quot;
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;A1.1&quot;,
+      &quot;check_id&quot;: &quot;A1&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The line \&quot;He won&#x27;t help us. Not after what I did.\&quot; is spoken in English, complete and verbatim.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;tool&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: &quot;He won&#x27;t help us. Not after what I did.&quot;,
+        &quot;language&quot;: &quot;en&quot;,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A2.1&quot;,
+      &quot;check_id&quot;: &quot;A2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;She stares at the door.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;She stares at the door.&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A2.2&quot;,
+      &quot;check_id&quot;: &quot;A2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;She blinks the memory away: a blink that clears her expression.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;She blinks it away.&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A3.1&quot;,
+      &quot;check_id&quot;: &quot;A3&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The setting is the entrance of a house, exterior, daytime.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: &quot;EXT. SHEN YUNAN&#x27;S HOUSE ENTRANCE - DAY&quot;,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A4.1&quot;,
+      &quot;check_id&quot;: &quot;A4&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;Only one person, Xu Zhiyi, is on camera; nobody else appears.&quot;,
+      &quot;priority&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A4.2&quot;,
+      &quot;check_id&quot;: &quot;A4&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;No unscripted event changes the scene.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A5.1&quot;,
+      &quot;check_id&quot;: &quot;A5&quot;,
+      &quot;kind&quot;: &quot;premise&quot;,
+      &quot;text&quot;: &quot;The memory (falling snow, another door, a betrayal) shows only on her face; the shot does not cut to a flashback.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A5.2&quot;,
+      &quot;check_id&quot;: &quot;A5&quot;,
+      &quot;kind&quot;: &quot;premise&quot;,
+      &quot;text&quot;: &quot;Xu Zhiyi is 28 and looks exhausted but determined.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;description&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;A6.1&quot;,
+      &quot;check_id&quot;: &quot;A6&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Medium close-up, static camera at eye level, vertical 9:16, Xu Zhiyi centred.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;tool_panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B1.1&quot;,
+      &quot;check_id&quot;: &quot;B1&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;Objects and liquids move plausibly: gravity, contact and momentum look normal.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B2.1&quot;,
+      &quot;check_id&quot;: &quot;B2&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;Hands, face and limbs stay anatomically normal; nothing morphs; no garbled text.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B3.1&quot;,
+      &quot;check_id&quot;: &quot;B3&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;The same face, voice and clothing persist through the whole take.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;tool_panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B4.1&quot;,
+      &quot;check_id&quot;: &quot;B4&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;No unintended cut, freeze, jump or loop.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;tool_panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B5.1&quot;,
+      &quot;check_id&quot;: &quot;B5&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Lip movement matches the spoken line and the voice belongs to the person on screen.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B6.1&quot;,
+      &quot;check_id&quot;: &quot;B6&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;8 s, 9:16, 480p, audio track present.&quot;,
+      &quot;priority&quot;: &quot;info&quot;,
+      &quot;evidence&quot;: &quot;tool&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;B7.1&quot;,
+      &quot;check_id&quot;: &quot;B7&quot;,
+      &quot;kind&quot;: &quot;must_not&quot;,
+      &quot;text&quot;: &quot;No subtitles, captions or watermarks.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;C1.1&quot;,
+      &quot;check_id&quot;: &quot;C1&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;The emotion class is surprise (lexicon cue: blinks).&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    },
+    {
+      &quot;id&quot;: &quot;C2.1&quot;,
+      &quot;check_id&quot;: &quot;C2&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Intensity is calm: face and voice within [0, 1] on the 0-4 scale.&quot;,
+      &quot;priority&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      &quot;id&quot;: &quot;C4.1&quot;,
+      &quot;check_id&quot;: &quot;C4&quot;,
+      &quot;kind&quot;: &quot;must&quot;,
+      &quot;text&quot;: &quot;Delivery is quiet: low volume, soft tone.&quot;,
+      &quot;priority&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;panel&quot;,
+      &quot;params&quot;: {
+        &quot;line&quot;: null,
+        &quot;language&quot;: null,
+        &quot;element&quot;: null,
+        &quot;target_interval&quot;: null
+      }
+    }
+  ],
+  &quot;conflicts&quot;: [],
+  &quot;author&quot;: &quot;manual&quot;
+}</pre></div></div></div><h2>Feedback sheet for DB-38, imported from the 2026-11-07 pilot</h2><p class='note'>Stop rule: output the video; prototype decision was &#x27;accept&#x27;. Saved to data/examples/sheets/DB-38.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prototype verdicts (id, type, status, severity, uncertainty, fixability)</div><pre> R1 single_speaker pass      info     confident      prompt_fixable
+ R2 dialogue       pass      info     confident      prompt_fixable
+ R3 sfx            pass      info     confident      prompt_fixable
+ R4 emotion        pass      info     confident      retry_fixable
+ R5 setting        pass      info     confident      prompt_fixable
+ R6 shot           pass      info     confident      prompt_fixable</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">blocking items (error + confident/uncertain + prompt/retry-fixable)</div><pre>[]</pre></div><div class="panel"><div class="label">FeedbackSheet (JSON)</div><pre>{
+ &quot;shot_id&quot;: &quot;DB-38&quot;,
+ &quot;round&quot;: 0,
+ &quot;take_sha256&quot;: &quot;c5efb85c45d57b6b2929344353f93a3abee4fdfdf61bc40d9cbb49ca74b033ac&quot;,
+ &quot;verdicts&quot;: [
+  {
+   &quot;item_id&quot;: &quot;A4.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Throughout the clip 00:00-00:07, exactly one person (Haitong) is visible on camera and speaks the only line of dialogue.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Exactly one person (Haitong) is visible on camera and speaks, with no second speaker.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Only one person (the girl) is visible throughout 00:00-00:07 and she is the only one who speaks at 00:05-00:07.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A1.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: true,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;ASR WER=0.00 -&gt; tool pass&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: At 00:06-00:07, Haitong speaks the exact dialogue: \&quot;Grandma, they found me.\&quot;&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The character speaks the exact dialogue: &#x27;Grandma, they found me.&#x27; at 00:06-00:07.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The exact line &#x27;Grandma, they found me.&#x27; is audible at 00:05-00:07.&quot;
+   ],
+   &quot;deviation&quot;: 0.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: false,
+    &quot;second_family_agree&quot;: null,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] fail/seen_clearly: At 00:01-00:03, paper rustling sound is heard as she moves the papers, but the specific SFX of pages scattering/shredded by rain is absent.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Pages scattering and tearing are heard audibly between 00:02 and 00:04 as she drops the papers.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Paper rustling/scattering sounds are heard at 00:00-00:03 as she handles and drops the torn, rain-damaged resume, with loose pages visibly scattered on the table.&quot;,
+    &quot;[escalate_R3] pass/seen_clearly: At 00:02-00:04 a distinct paper crinkle/rustle is audible exactly as she drops the shredded resume onto the table, and the visuals confirm torn, jagged pages with rain-like wet spots on the surface.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;C2.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;retry_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;median intensity face=3 voice=3 vs target [2, 3] -&gt; d=0&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: At 00:05-00:07, the character expresses strong sadness through crying with tears on her face and a tearful delivery of her line. | Face shows clear crying with tears and quivering lips (intensity 3); voice has a crying, trembling tone (intensity 3).&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The character displays strong sadness with visible tears and a crying vocal delivery (&#x27;Grandma, they found me.&#x27;). | The face shows clear teary eyes and crying expression (intensity 3), and the voice delivers the line with audible sobbing and a broken tone (intensity 3).&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: From 00:03-00:07 her face shows teary, reddened eyes and trembling lips, and her delivered line at 00:05-00:07 is cracked and sobbing, matching strong sadness with crying. | Watery eyes, red nose and quivering mouth are clearly visible 00:03-00:07, and the voice breaks with sobs on &#x27;Grandma, they found me.&#x27;&quot;
+   ],
+   &quot;deviation&quot;: 0.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.2&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Throughout 00:00-00:07, the setting is clearly an indoor old building stairwell during daytime.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The setting is clearly an indoor old building stairwell with stairs and a clock visible in the background during daylight.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Background shows an interior old-building stairwell with concrete steps, peeling plaster, a wall clock, and daylight through windows for the whole clip.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A6.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Throughout 00:00-00:07, the shot is a medium close-up with a static camera at eye level framing Haitong from the chest up.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The shot is a medium close-up from a static, eye-level camera angle throughout the clip.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The framing is a chest-up medium close-up at eye level, and the camera does not move at any point 00:00-00:07.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  }
+ ],
+ &quot;cost_usd&quot;: 0.007103
+}</pre></div></div></div><h2>Feedback sheet for DB-60, imported from the 2026-11-07 pilot</h2><p class='note'>Stop rule: output the video; prototype decision was &#x27;accept&#x27;. Saved to data/examples/sheets/DB-60.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prototype verdicts (id, type, status, severity, uncertainty, fixability)</div><pre> R1 single_speaker pass      info     confident      prompt_fixable
+ R2 dialogue       pass      info     confident      prompt_fixable
+ R3 action         pass      info     confident      prompt_fixable
+ R4 action         pass      info     confident      prompt_fixable
+ R5 emotion        pass      info     confident      retry_fixable
+ R6 setting        pass      info     confident      prompt_fixable
+ R7 shot           pass      info     uncertain      prompt_fixable</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">blocking items (error + confident/uncertain + prompt/retry-fixable)</div><pre>[]</pre></div><div class="panel"><div class="label">FeedbackSheet (JSON)</div><pre>{
+ &quot;shot_id&quot;: &quot;DB-60&quot;,
+ &quot;round&quot;: 0,
+ &quot;take_sha256&quot;: &quot;33f985ce4b384c981f3847060e1fbd2055ab5b9aa0407d3c09b8176a13b6e647&quot;,
+ &quot;verdicts&quot;: [
+  {
+   &quot;item_id&quot;: &quot;A4.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Only one person (Ruan Ningxia) speaks during the clip.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Only Ruan Ningxia is visible on camera during the dialogue and is the sole speaker.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Although background figures are visible (00:03-00:05) and a suited man is partially in frame (00:06-00:08), only RUAN NINGXIA speaks; no second voice is heard.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A1.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: false,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;model said pass but ASR says fail (WER=0.5)&quot;,
+    &quot;ASR WER=0.50 -&gt; tool fail&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: At 00:05-00:07, she says &#x27;Assistant Chen! My husband?&#x27;.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: At 00:06-00:08 Ruan Ningxia says &#x27;Assistant Chen! My husband?&#x27;.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: At 00:05-00:08 she audibly says exactly &#x27;Assistant Chen! My husband?&#x27;&quot;,
+    &quot;[escalate_R2] pass/seen_clearly: At 00:06-00:08 the woman&#x27;s speech is clearly audible and matches the required line word for word: &#x27;Assistant Chen! My husband?&#x27;&quot;
+   ],
+   &quot;deviation&quot;: 0.5,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Ruan Ningxia is shown running anxiously through the hospital corridor wearing a fur coat and dress while clutching a designer bag.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:00 to 00:03 Ruan Ningxia wearing luxurious fur and dress, clutching her designer bag, runs anxiously through the corridor.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: 00:00-00:03 shows her in a luxurious fur coat and black dress, gripping a brown designer handbag, running anxiously down the corridor toward camera.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.2&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: At 00:03, she sees Assistant Chen and Jiang Yao standing in power suits in the corridor.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: At 00:03-00:04 Ruan Ningxia sees Assistant Chen and Jiang Yao standing further down the corridor in power suits.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: At 00:03-00:05 she turns and visibly looks at the pair in business attire (man in dark suit, woman in blue/black power dressing) standing in the corridor behind her.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;C2.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;retry_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;median intensity face=4 voice=3 vs target [3, 4] -&gt; d=0&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: Ruan Ningxia displays crying and distressed facial expressions and vocal delivery. | She displays intense crying facial expressions with tears and a high-pitched distressed voice.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Ruan Ningxia displays exaggerated sadness by crying and sobbing dramatically while speaking to Assistant Chen. | Her face shows distorted weeping expressions and her voice is high-pitched and sobbing.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: 00:05-00:08 shows an exaggerated crying face with tears, contorted brow and open sobbing mouth, delivered in a strained, breathless, trembling voice. | Face is fully tearful and sobbing (extreme), while the voice is shaky and panting but the line is short, so slightly below extreme.&quot;
+   ],
+   &quot;deviation&quot;: 0.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The setting is an indoor hospital corridor during the day.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The entire clip is set inside a brightly lit hospital corridor during the day.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The setting is an indoor corridor with fluorescent lighting, green exit sign, handrails and patient-room doors, consistent with a hospital corridor in daytime.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A6.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;uncertain&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: false,
+    &quot;second_family_agree&quot;: null,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] fail/seen_clearly: The camera starts as a wide shot tracking her running forward and then transitions closer, rather than a static medium close-up.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:05 to 00:08 the shot is a medium close-up with a static camera at eye level.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The camera stays static at eye level throughout, and the framing tightens to a medium close-up of her face/upper body during the dialogue at 00:05-00:08.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  }
+ ],
+ &quot;cost_usd&quot;: 0.007536
+}</pre></div></div></div><h2>Feedback sheet for DB-16, imported from the 2026-11-07 pilot</h2><p class='note'>Stop rule: continue the loop; prototype decision was &#x27;regenerate&#x27;. Saved to data/examples/sheets/DB-16.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prototype verdicts (id, type, status, severity, uncertainty, fixability)</div><pre> R1 single_speaker pass      info     confident      prompt_fixable
+ R2 dialogue       fail      error    confident      prompt_fixable
+ R3 action         uncertain warning  uncertain      prompt_fixable
+ R4 action         pass      info     confident      prompt_fixable
+ R5 emotion        pass      info     confident      retry_fixable
+ R6 setting        pass      info     confident      prompt_fixable
+ R7 shot           pass      info     confident      prompt_fixable</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">blocking items (error + confident/uncertain + prompt/retry-fixable)</div><pre>[
+  {
+    &quot;item_id&quot;: &quot;A1.1&quot;,
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;uncertainty_state&quot;: &quot;confident&quot;,
+    &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+    &quot;evidence&quot;: [
+      &quot;ASR WER=1.00 -&gt; tool fail&quot;,
+      &quot;[flash_order_a] fail/seen_clearly: The spoken Chinese dialogue translates to &#x27;She won&#x27;t help us. After what I did,&#x27; not the English quote &#x27;He won&#x27;t help us. Not after what I did.&#x27;&quot;,
+      &quot;[flash_order_b] fail/seen_clearly: The spoken dialogue in Chinese translates to &#x27;He won&#x27;t help us. After I did that thing&#x27;, which does not match the English quote requirement word for word.&quot;,
+      &quot;[qwen_second_opinion] pass/seen_clearly: At 00:05-00:08 she says &#x27;\u4ed6\u4e0d\u4f1a\u5e2e\u6211\u4eec\u7684\u3002\u5728\u6211\u505a\u4e86\u90a3\u4ef6\u4e8b\u540e\u3002&#x27;, which corresponds exactly to &#x27;He won&#x27;t help us. Not after what I did.&#x27;&quot;
+    ]
+  }
+]</pre></div><div class="panel"><div class="label">FeedbackSheet (JSON)</div><pre>{
+ &quot;shot_id&quot;: &quot;DB-16&quot;,
+ &quot;round&quot;: 0,
+ &quot;take_sha256&quot;: &quot;9bd545020961cdf25ec0801720eef4c2ccd31227fde76efcabc117d14e4022c8&quot;,
+ &quot;verdicts&quot;: [
+  {
+   &quot;item_id&quot;: &quot;A4.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Only one person, Xu Zhiyi, is visible on camera and speaks throughout the 00:00-00:07 clip.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Exactly one person (Xu Zhiyi) is visible on camera and speaks from 00:00 to 00:08.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Only one person (the woman in the gray suit) is visible throughout 00:00-00:08, and she is the only speaker (00:05-00:08); no second voice is heard.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A1.1&quot;,
+   &quot;status&quot;: &quot;fail&quot;,
+   &quot;severity&quot;: &quot;error&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: false,
+    &quot;tool_agree&quot;: true,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;ASR WER=1.00 -&gt; tool fail&quot;,
+    &quot;[flash_order_a] fail/seen_clearly: The spoken Chinese dialogue translates to &#x27;She won&#x27;t help us. After what I did,&#x27; not the English quote &#x27;He won&#x27;t help us. Not after what I did.&#x27;&quot;,
+    &quot;[flash_order_b] fail/seen_clearly: The spoken dialogue in Chinese translates to &#x27;He won&#x27;t help us. After I did that thing&#x27;, which does not match the English quote requirement word for word.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: At 00:05-00:08 she says &#x27;他不会帮我们的。在我做了那件事后。&#x27;, which corresponds exactly to &#x27;He won&#x27;t help us. Not after what I did.&#x27;&quot;
+   ],
+   &quot;deviation&quot;: 1.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.1&quot;,
+   &quot;status&quot;: &quot;uncertain&quot;,
+   &quot;severity&quot;: &quot;warning&quot;,
+   &quot;uncertainty_state&quot;: &quot;uncertain&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: false,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: She stands facing forward and stares towards the door/camera area across the entire clip.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: She stares intently ahead toward the door during 00:00-00:08.&quot;,
+    &quot;[qwen_second_opinion] fail/seen_clearly: The door is behind her and her gaze stays fixed forward/off-camera for the whole clip (00:00-00:08); she never turns to or looks at the door, so staring at the door is not shown.&quot;,
+    &quot;[escalate_R3] fail/seen_clearly: From 00:00 to 00:08 the door is behind the woman and her gaze is consistently directed forward toward the camera/off-screen (with a brief downward blink at 00:02-00:03); she never turns or looks at the door, so the action &#x27;stares at the door&#x27; is not shown on camera.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.2&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: false,
+    &quot;second_family_agree&quot;: null,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] fail/seen_clearly: The woman does not blink away anything or exhibit the requested blinking action; she maintains a steady gaze without tears.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: She blinks during the clip from 00:00 to 00:08.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: She visibly closes her eyes in slow blinks at 00:02-00:03 and again around 00:04-00:05, as if blinking emotion away.&quot;,
+    &quot;[escalate_R4] pass/seen_clearly: Her eyelids visibly close and reopen in distinct blinks at ~00:02 and ~00:04, shown on camera before she resumes speaking.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;C2.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;retry_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;partially_seen&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;median intensity face=1 voice=1 vs target [0, 1] -&gt; d=0&quot;,
+    &quot;judges&#x27; category votes [&#x27;fail&#x27;, &#x27;uncertain&#x27;, &#x27;pass&#x27;] differ from the intensity-derived status (status follows intensity, DESIGN_v2 §7.1)&quot;,
+    &quot;[flash_order_a] fail/seen_clearly: The target emotion is surprise with calm intensity, but the depicted emotion is serious/worried, not surprise. | Expression is serious and concerned rather than surprised.&quot;,
+    &quot;[flash_order_b] uncertain/partially_seen: The woman shows a calm, somber expression without clear surprise. | Face expression is calm and subdued (intensity 1), voice is quiet and measured (intensity 1).&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Her restrained, slightly stunned expression with blinks (00:02-00:05) and her quiet, low-volume delivery (00:05-00:08) match &#x27;surprise; calm intensity&#x27; delivered quietly. | Face shows only subtle tension and downcast blinks rather than overt shock, and the voice is soft and controlled, keeping both intensities at 1.&quot;
+   ],
+   &quot;deviation&quot;: 0.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The scene is set outdoors at an entrance with a wooden door during daytime.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The setting is clearly outside the entrance of a house during the day from 00:00 to 00:08.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The scene is outdoors at a house entrance with a dark wooden door, brass knob/handle, and wall lantern in daylight (00:00-00:08).&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A6.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The shot is a medium close-up from eye level with a static camera framing Xu Zhiyi.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The shot is a medium close-up from an eye-level static camera throughout 00:00-00:08.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Framing is a medium close-up from chest up at eye level, and the camera does not move across 00:00-00:08.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  }
+ ],
+ &quot;cost_usd&quot;: 0.009157
+}</pre></div></div></div><h2>Feedback sheet for DB-35, imported from the 2026-11-07 pilot</h2><p class='note'>Stop rule: continue the loop; prototype decision was &#x27;regenerate&#x27;. Saved to data/examples/sheets/DB-35.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prototype verdicts (id, type, status, severity, uncertainty, fixability)</div><pre> R1 single_speaker fail      error    confident      prompt_fixable
+ R2 dialogue       pass      info     confident      prompt_fixable
+ R3 action         uncertain warning  uncertain      prompt_fixable
+ R4 sfx            pass      info     confident      prompt_fixable
+ R5 emotion        fail      warning  confident      retry_fixable
+ R6 setting        pass      info     confident      prompt_fixable
+ R7 shot           pass      info     uncertain      prompt_fixable</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">blocking items (error + confident/uncertain + prompt/retry-fixable)</div><pre>[
+  {
+    &quot;item_id&quot;: &quot;A4.1&quot;,
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;uncertainty_state&quot;: &quot;confident&quot;,
+    &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+    &quot;evidence&quot;: [
+      &quot;[flash_order_a] fail/seen_clearly: Multiple people appear on camera and a second man is visible pushing the hospital bed in the later seconds.&quot;,
+      &quot;[flash_order_b] fail/seen_clearly: Although He Xi is the only person speaking, two people are visible on camera in the clip (He Xi and the husband pushing the bed).&quot;,
+      &quot;[qwen_second_opinion] fail/seen_clearly: Three people are on camera (HE XI running, the husband pushing the bed, and the patient lying on it) from 00:04-00:08, although only HE XI speaks.&quot;
+    ]
+  }
+]</pre></div><div class="panel"><div class="label">FeedbackSheet (JSON)</div><pre>{
+ &quot;shot_id&quot;: &quot;DB-35&quot;,
+ &quot;round&quot;: 0,
+ &quot;take_sha256&quot;: &quot;24ad924bc1172cb95049f5756bbcaed63e355073b9e9d0d79653be46732978f9&quot;,
+ &quot;verdicts&quot;: [
+  {
+   &quot;item_id&quot;: &quot;A4.1&quot;,
+   &quot;status&quot;: &quot;fail&quot;,
+   &quot;severity&quot;: &quot;error&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] fail/seen_clearly: Multiple people appear on camera and a second man is visible pushing the hospital bed in the later seconds.&quot;,
+    &quot;[flash_order_b] fail/seen_clearly: Although He Xi is the only person speaking, two people are visible on camera in the clip (He Xi and the husband pushing the bed).&quot;,
+    &quot;[qwen_second_opinion] fail/seen_clearly: Three people are on camera (HE XI running, the husband pushing the bed, and the patient lying on it) from 00:04-00:08, although only HE XI speaks.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A1.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: false,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;model said pass but ASR says fail (WER=1.0)&quot;,
+    &quot;ASR WER=1.00 -&gt; tool fail&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: He Xi says 医生！我的太太，他是屯位！ (Doctor! My mistress—she&#x27;s breech!) between 00:01 and 00:05.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: He Xi says &#x27;医 生 ! 我 的 秘 书 , 她 是 臀 位 !&#x27; (Doctor! My mistress—she&#x27;s breech!) from 00:01 to 00:04.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: At 00:01-00:05 HE XI shouts \&quot;医生！我的mistress——她是臀位！\&quot;, the Chinese delivery (with the English word &#x27;mistress&#x27; inserted) of &#x27;Doctor! My mistress—she&#x27;s breech!&#x27;.&quot;,
+    &quot;[escalate_R2] pass/seen_clearly: At 00:01-00:05 the wet-haired woman runs toward the camera and audibly shouts &#x27;Doctor! My mistress—she&#x27;s breech!&#x27;, matching the required line word for word over the rain ambience.&quot;
+   ],
+   &quot;deviation&quot;: 1.0,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.1&quot;,
+   &quot;status&quot;: &quot;uncertain&quot;,
+   &quot;severity&quot;: &quot;warning&quot;,
+   &quot;uncertainty_state&quot;: &quot;uncertain&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: false,
+    &quot;second_family_agree&quot;: null,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] fail/seen_clearly: He Xi runs toward the camera alone while shouting; her husband is pushing the hospital bed separately in the background.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:04 to 00:07, He Xi&#x27;s husband is shown pushing a hospital bed, with He Xi running beside him.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: At 00:04-00:05 HE XI is seen running in the foreground while her husband pushes the hospital bed directly behind her.&quot;,
+    &quot;[escalate_R3] uncertain/not_observable: (judge returned no entry for this requirement)&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Heavy rain lashing a window is audible from 00:00 to 00:04.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Rain lashing against a dark window is heard from 00:00 to 00:01.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Heavy rain sound is audible across 00:00-00:08, matching the rain-streaked dark window shown at 00:00-00:01.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;C2.1&quot;,
+   &quot;status&quot;: &quot;fail&quot;,
+   &quot;severity&quot;: &quot;warning&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;retry_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;median intensity face=3 voice=4 vs target [2, 3] -&gt; d=1&quot;,
+    &quot;judges&#x27; category votes [&#x27;pass&#x27;, &#x27;pass&#x27;, &#x27;pass&#x27;] differ from the intensity-derived status (status follows intensity, DESIGN_v2 §7.1)&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: He Xi displays anger and urgency with loud shouting. | Face shows wide-eyed distress and anger with tense mouth, and voice is a loud shout.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: He Xi shouts urgently and angrily from 00:01 to 00:04. | He Xi exhibits strong anger and distress while shouting with wide eyes and intense vocal projection.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: In the 00:02-00:03 window her brow is deeply furrowed and mouth wide open in a shout, and her voice is a loud, strained cry. | At 00:02-00:03 she screams with a contorted, furious/distressed face and a maximally loud, cracking shout.&quot;
+   ],
+   &quot;deviation&quot;: 1.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.2&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The scene is set indoors at a village hospital at night.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: The setting is an indoor village hospital at night during the hospital corridor and bed scenes.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: 00:00-00:08 shows a dim interior with peeling paint, a metal gurney, a striped patient gown, and night rain outside the window — an indoor village hospital at night.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A6.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;uncertain&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: false,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The camera angle is medium close-up, static, and at eye level on He Xi.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:01 to 00:04, the shot of He Xi is a medium close-up, static camera, at eye level.&quot;,
+    &quot;[qwen_second_opinion] fail/seen_clearly: After the brief static window shot, the camera is handheld and tracks backward with visible shake as HE XI runs (00:01-00:08), so it is not a static eye-level medium close-up.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  }
+ ],
+ &quot;cost_usd&quot;: 0.009331
+}</pre></div></div></div><h2>Feedback sheet for SB-01, imported from the 2026-11-07 pilot</h2><p class='note'>Stop rule: continue the loop; prototype decision was &#x27;regenerate&#x27;. Saved to data/examples/sheets/SB-01.json.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">prototype verdicts (id, type, status, severity, uncertainty, fixability)</div><pre> R1 single_speaker pass      info     confident      prompt_fixable
+ R2 dialogue       pass      info     confident      prompt_fixable
+ R3 action         pass      info     confident      prompt_fixable
+ R4 action         uncertain warning  uncertain      prompt_fixable
+ R5 emotion        fail      error    confident      retry_fixable
+ R6 setting        pass      info     confident      prompt_fixable
+ R7 shot           pass      info     confident      prompt_fixable</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">blocking items (error + confident/uncertain + prompt/retry-fixable)</div><pre>[
+  {
+    &quot;item_id&quot;: &quot;C2.1&quot;,
+    &quot;severity&quot;: &quot;error&quot;,
+    &quot;uncertainty_state&quot;: &quot;confident&quot;,
+    &quot;fixability&quot;: &quot;retry_fixable&quot;,
+    &quot;evidence&quot;: [
+      &quot;median intensity face=3 voice=2 vs target [0, 1] -&gt; d=2&quot;,
+      &quot;judges&#x27; category votes [&#x27;pass&#x27;, &#x27;pass&#x27;, &#x27;pass&#x27;] differ from the intensity-derived status (status follows intensity, DESIGN_v2 \u00a77.1)&quot;,
+      &quot;[flash_order_a] pass/seen_clearly: Julian displays surprise and shock with wide eyes and a whispered, intense delivery. | Julian&#x27;s eyes widen significantly with a tense, shocked facial expression (intensity 3), and he speaks in a hushed, breathy whisper (intensity 2).&quot;,
+      &quot;[flash_order_b] pass/seen_clearly: Julian displays surprise and shock with widening eyes and a whispering voice delivering the line at 00:04-00:07. | Julian&#x27;s face shows mild shock with widened eyes and his voice is a quiet whisper.&quot;,
+      &quot;[qwen_second_opinion] pass/seen_clearly: Surprise is shown via widened eyes, raised brows and parted lips (00:04-00:09), and the line is delivered in a hushed whisper (00:05-00:09), matching calm, controlled shock. | Face shows clear shock (wide eyes, open mouth) but restrained rather than extreme; voice is a soft, breathy whisper conveying contained surprise.&quot;
+    ]
+  }
+]</pre></div><div class="panel"><div class="label">FeedbackSheet (JSON)</div><pre>{
+ &quot;shot_id&quot;: &quot;SB-01&quot;,
+ &quot;round&quot;: 0,
+ &quot;take_sha256&quot;: &quot;cbcee5f6f228b48a14c00f96c3da8bdcf38ea2775815a6ba9278cb41e260c425&quot;,
+ &quot;verdicts&quot;: [
+  {
+   &quot;item_id&quot;: &quot;A4.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Only one person, Julian, is on camera and speaks throughout the entire clip (00:00-00:07).&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Throughout 00:00-00:07, only Julian is visible on camera and speaks.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Only Julian is visible throughout (00:00-00:09) and only his voice is heard speaking (00:05-00:09); no second person or speaker appears.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A1.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: true,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;ASR WER=0.00 -&gt; tool pass&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: The character says &#x27;What… what is this?&#x27; from 00:03 to 00:07.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: At 00:04-00:07, Julian says &#x27;What... what is this?&#x27;&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The whispered line matches exactly: \&quot;What... what is this?\&quot; (00:05-00:09).&quot;
+   ],
+   &quot;deviation&quot;: 0.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: Julian is shown entering the room and his eyes visibly widen in shock from 00:00 to 00:07.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:01 to 00:03, Julian enters the frame while his eyes widen in shock.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Julian walks into the room from the window side (00:00-00:04) and his eyes visibly widen with a parted mouth as he stops and looks around (00:04-00:09).&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A2.2&quot;,
+   &quot;status&quot;: &quot;uncertain&quot;,
+   &quot;severity&quot;: &quot;warning&quot;,
+   &quot;uncertainty_state&quot;: &quot;uncertain&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: false,
+    &quot;second_family_agree&quot;: null,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] fail/seen_clearly: Julian is shown walking into an office setting with a computer and desk, not a living room.&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:00 to 00:02, Julian is shown walking through the room.&quot;,
+    &quot;[qwen_second_opinion] uncertain/partially_seen: He clearly walks through the interior (00:00-00:04), but the room is furnished as an office/study (desk, CRT monitor, landline phone) and nothing on screen establishes it as a living room or that everything is unchanged from four years ago.&quot;,
+    &quot;[escalate_R4] pass/seen_clearly: From 00:00-00:03 he is visibly shown walking through the room, and the dated furnishings (CRT monitor, landline phone, bare-branch plant) remain static as he stops and surveys them at 00:03-00:07, depicting the space as unchanged while he moves through it.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: true
+  },
+  {
+   &quot;item_id&quot;: &quot;C2.1&quot;,
+   &quot;status&quot;: &quot;fail&quot;,
+   &quot;severity&quot;: &quot;error&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;retry_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;median intensity face=3 voice=2 vs target [0, 1] -&gt; d=2&quot;,
+    &quot;judges&#x27; category votes [&#x27;pass&#x27;, &#x27;pass&#x27;, &#x27;pass&#x27;] differ from the intensity-derived status (status follows intensity, DESIGN_v2 §7.1)&quot;,
+    &quot;[flash_order_a] pass/seen_clearly: Julian displays surprise and shock with wide eyes and a whispered, intense delivery. | Julian&#x27;s eyes widen significantly with a tense, shocked facial expression (intensity 3), and he speaks in a hushed, breathy whisper (intensity 2).&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Julian displays surprise and shock with widening eyes and a whispering voice delivering the line at 00:04-00:07. | Julian&#x27;s face shows mild shock with widened eyes and his voice is a quiet whisper.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: Surprise is shown via widened eyes, raised brows and parted lips (00:04-00:09), and the line is delivered in a hushed whisper (00:05-00:09), matching calm, controlled shock. | Face shows clear shock (wide eyes, open mouth) but restrained rather than extreme; voice is a soft, breathy whisper conveying contained surprise.&quot;
+   ],
+   &quot;deviation&quot;: 2.0,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A3.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The scene is set in an upscale indoor office/penthouse space with large windows overlooking a city skyline (00:00-00:07).&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: Throughout 00:00-00:07, the setting is an upscale indoor penthouse office.&quot;,
+    &quot;[qwen_second_opinion] pass/seen_clearly: The scene is an interior high-rise space with floor-to-ceiling windows over a city skyline, hardwood floors and upscale furnishings, consistent with a luxury penthouse (00:00-00:09).&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  },
+  {
+   &quot;item_id&quot;: &quot;A6.1&quot;,
+   &quot;status&quot;: &quot;pass&quot;,
+   &quot;severity&quot;: &quot;info&quot;,
+   &quot;uncertainty_state&quot;: &quot;confident&quot;,
+   &quot;fixability&quot;: &quot;prompt_fixable&quot;,
+   &quot;signals&quot;: {
+    &quot;order_swap_agree&quot;: true,
+    &quot;second_family_agree&quot;: true,
+    &quot;tool_agree&quot;: null,
+    &quot;visibility&quot;: &quot;seen_clearly&quot;
+   },
+   &quot;evidence&quot;: [
+    &quot;[flash_order_a] pass/seen_clearly: The shot is a medium close-up filmed from a static camera with a slight high angle as Julian approaches (00:00-00:07).&quot;,
+    &quot;[flash_order_b] pass/seen_clearly: From 00:02 to 00:07, the shot is a medium close-up of Julian with a static camera at a slight high angle.&quot;,
+    &quot;[qwen_second_opinion] pass/partially_seen: The camera is static (background desk, plant and window frames never shift) and the framing settles into a medium close-up from ~00:05 onward, though the clip opens on a fuller shot as he approaches; the angle reads as roughly eye-level to slightly high.&quot;
+   ],
+   &quot;deviation&quot;: null,
+   &quot;reinspected&quot;: false
+  }
+ ],
+ &quot;cost_usd&quot;: 0.007615
+}</pre></div></div></div><h2>Cache key and cost record</h2><p class='note'>The cache key fixes one (model, prompt, media) triple; the cost record is read back live from OpenRouter for the DB-38 pilot take.</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">inputs</div><pre>model: google/gemini-3.5-flash-lite
+prompt sha256: 172a0b5e8755fa27b251121d07e890babfe7a98232285dfce350871234fb9b3e
+mp4 sha256: c5efb85c45d57b6b2929344353f93a3abee4fdfdf61bc40d9cbb49ca74b033ac
+request id: gen-vid-1794087927-e9IzVF1oY7OzrpidhkUP</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">cache_key</div><pre>cf91fbe53092e79557aeb6cf560059ed97f15c205452ab4173bd77a808541930</pre></div><div class="panel"><div class="label">GenerationCost (live)</div><pre>{
+  &quot;request_id&quot;: &quot;gen-vid-1794087927-e9IzVF1oY7OzrpidhkUP&quot;,
+  &quot;model&quot;: &quot;bytedance/seedance-1-5-pro-20260320&quot;,
+  &quot;total_cost_usd&quot;: 0.193848,
+  &quot;tokens_prompt&quot;: null,
+  &quot;tokens_completion&quot;: null
+}</pre></div></div></div></main></body></html>

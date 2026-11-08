@@ -1,0 +1,130 @@
+[
+ {
+  "source": "describe/google/gemini-3.5-flash-lite",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114145-GJmyaFiXIgolIS6NxfOx",
+  "cost_usd": 0.0008299,
+  "text": "```json\n{\"people\": [{\"id\": \"P1\", \"description\": \"A man with dark hair, wearing a white shirt and a gray suit jacket, looks surprised.\", \"on_screen\": \"00:01-00:07\"}],\n \"events\": [{\"start\": \"00:01\", \"end\": \"00:07\", \"channel\": \"visual\", \"description\": \"A man in a suit looks up in astonishment in a living room.\"}],\n \"speech\": [{\"start\": \"00:05\", \"end\": \"00:07\", \"speaker\": \"P1\", \"text\": \"What? What is this?\", \"language\": \"en\"}],\n \"face_over_time\": [{\"start\": \"00:01\", \"end\": \"00:07\", \"expression\": \"surprised and confused expression\"}],\n \"camera\": \"High angle shot, static framing initially, then subtle tracking movement.\",\n \"artifacts\": []}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/85a442d207429b170b421296e4fe9db47047ec877f21f72574557f16f21a0a32.json"
+ },
+ {
+  "source": "describe/qwen/qwen3.8-omni-flash",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794114145-3pdwi3SuZlz0y2vdYbZG",
+  "cost_usd": 0.00119715,
+  "text": "```json\n{\n  \"people\": [\n    {\n      \"id\": \"P1\",\n      \"description\": \"Young man with messy, medium-length brown hair; wearing a dark suit jacket over an open-collared white dress shirt and dark trousers.\",\n      \"on_screen\": \"00:01-00:08\"\n    }\n  ],\n  \"events\": [\n    {\n      \"start\": \"00:00\",\n      \"end\": \"00:01\",\n      \"channel\": \"visual\",\n      \"description\": \"A sunlit, upscale living room is shown empty: white sofas with cushions, a glass-topped coffee table, a mirrored side table holding a crystal decanter and glasses, a candelabra, herringbone wood floors, a large rug, floor-to-ceiling windows, and a black grand piano in the background.\"\n    },\n    {\n      \"start\": \"00:01\",\n      \"end\": \"00:03\",\n      \"channel\": \"visual\",\n      \"description\": \"P1 enters the frame from the bottom right and walks forward into the center of the room, his head tilted upward.\"\n    },\n    {\n      \"start\": \"00:03\",\n      \"end\": \"00:05\",\n      \"channel\": \"visual\",\n      \"description\": \"P1 slows to a stop in the middle of the room, standing still and looking up and around with wide eyes and a slightly open mouth.\"\n    },\n    {\n      \"start\": \"00:05\",\n      \"end\": \"00:08\",\n      \"channel\": \"visual\",\n      \"description\": \"P1 remains standing, turning his gaze around the room while speaking.\"\n    },\n    {\n      \"start\": \"00:00\",\n      \"end\": \"00:05\",\n      \"channel\": \"audio\",\n      \"description\": \"Quiet ambient room tone with faint footstep/rustling sounds as the man walks in.\"\n    },\n    {\n      \"start\": \"00:05\",\n      \"end\": \"00:08\",\n      \"channel\": \"audio\",\n      \"description\": \"P1 speaks in a soft, breathy, bewildered voice: 'What... what is this?'\"\n    }\n  ],\n  \"speech\": [\n    {\n      \"start\": \"00:05\",\n      \"end\": \"00:08\",\n      \"speaker\": \"P1\",\n      \"text\": \"What... what is this?\",\n      \"language\": \"English\"\n    }\n  ],\n  \"face_over_time\": [\n    {\n      \"start\": \"00:02\",\n      \"end\": \"00:04\",\n      \"expression\": \"Eyes wide, mouth slightly parted, head tilted up as he looks toward the ceiling/upper part of the room.\"\n    },\n    {\n      \"start\": \"00:04\",\n      \"end\": \"00:08\",\n      \"expression\": \"Bewildered, dazed look; brows slightly raised, mouth opening to speak, gaze shifting around the room.\"\n    }\n  ],\n  \"camera\": \"High-angle wide shot looking down into the living room; largely static framing with the subject entering from the lower right and settling in the lower center of the frame.\",\n  \"artifacts\": []\n}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/743787d765639ded8ef8348f26a0dc453545d1b076c89aa968cd4d3850a1f2b3.json"
+ },
+ {
+  "source": "A/primary/order1",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114172-IC8r7oHb0YjlyyNucbNd",
+  "cost_usd": 0.0018051,
+  "text": "```json\n{\"items\": {\"A1.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian says 'What? What is this?' instead of 'What\u2026 what is this?' verbatim.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": 2}, \"A2.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian enters the space and visibly widens his eyes in shock from 00:01 to 00:07.\", \"span\": [1, 7], \"face_intensity\": 3, \"voice_intensity\": null}, \"A2.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian walks through the living room which appears unchanged.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The setting is a luxury penthouse living room.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only Julian appears on screen.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only Julian speaks during the clip.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.3\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"No unscripted events or cuts occur in the scene.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The luxury penthouse interior remains visible and unchanged.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A6.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The shot is a high angle medium shot with tracking movement rather than static medium close-up.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/6fb79fc01c7135d348db0a40983ea41b4c3cb53368eed54dd309b0c3264a80b7.json"
+ },
+ {
+  "source": "A/primary/order2",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114172-c9sNe5mWRXUyZHwg7PPB",
+  "cost_usd": 0.0018976,
+  "text": "```json\n{\"items\": {\"A6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian is shown in a medium close-up, static camera with a slight high angle, vertical 9:16 framing, and centered at 00:01-00:07.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The living room background appears as a luxury penthouse setting.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A4.3\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"No unscripted events or cuts to another place occur throughout the clip.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A4.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only Julian speaks in the clip.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only Julian appears on screen.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The setting is a luxury penthouse interior.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A2.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian is present in the living room space.\", \"span\": [1, 7], \"face_intensity\": null, \"voice_intensity\": null},\n\"A2.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian enters the space and widens his eyes in shock at 00:01-00:05.\", \"span\": [1, 5], \"face_intensity\": 3, \"voice_intensity\": null},\n\"A1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian speaks the line 'What? What is this?' at 00:05-00:07.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": 3}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/a2e95a1771ea3b447d86c04f9817d575806e3bd69a36c269d4f77a288d25877a.json"
+ },
+ {
+  "source": "A/second",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794114172-rgJa7iLtXU7iLKiBumNs",
+  "cost_usd": 0.00295686,
+  "text": "{\"items\": {\"A1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:05-00:08 the man softly and breathily says in English, 'What... what is this?', matching the expected line verbatim.\", \"span\": [5, 8], \"face_intensity\": null, \"voice_intensity\": 3}, \"A2.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:01-00:04 Julian enters from the bottom right and his eyes are visibly wide with a dazed, shocked expression as he looks up.\", \"span\": [1, 4], \"face_intensity\": 3, \"voice_intensity\": null}, \"A2.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:01-00:05 Julian walks into and through the living room, which appears immaculate and undisturbed, with no visible signs of alteration.\", \"span\": [1, 5], \"face_intensity\": 2, \"voice_intensity\": null}, \"A3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"From 00:00-00:08 the interior shows a luxury penthouse: floor-to-ceiling windows over a high-rise city view, grand piano, designer white sofas and crystal decor.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Throughout 00:00-00:08 only one person, Julian, appears on screen; no other characters are present.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:05-00:08 the only voice heard is Julian's line; no other speaker is audible.\", \"span\": [5, 8], \"face_intensity\": null, \"voice_intensity\": 3}, \"A4.3\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The clip is one continuous static shot (00:00-00:08); nobody else enters and there is no cut to another location.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:00-00:01 the room is shown pristine and untouched\u2014made beds of cushions, polished surfaces, no dust or decay\u2014so the space appears unchanged.\", \"span\": [0, 1], \"face_intensity\": null, \"voice_intensity\": null}, \"A6.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"Although the camera is static, slightly high-angled, vertical 9:16, and Julian is centered (00:03-00:08), the framing is a wide shot showing the whole living room with Julian only from the thighs up, not a medium close-up.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/bc633503298807f720bd04ddac499a1dedf559269c35f8d6c5863d82c113da7a.json"
+ },
+ {
+  "source": "B/primary/order1",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114172-PojMydutnDcLIawmDAKb",
+  "cost_usd": 0.0017107,
+  "text": "```json\n{\"items\": {\"B1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Movement and objects in the room appear natural from 00:00 to 00:07.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B2.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's hands, face, and suit remain anatomically consistent throughout 00:01-00:07.\", \"span\": [1, 7], \"face_intensity\": 0, \"voice_intensity\": null}, \"B3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's face, clothing, and voice maintain continuity without alteration from 00:01 to 00:07.\", \"span\": [1, 7], \"face_intensity\": 0, \"voice_intensity\": 2}, \"B4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"There are no unintended cuts, freezes, or jumps in the video from 00:00 to 00:07.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's lip movements match his spoken line 'What? What is this?' between 00:05 and 00:07.\", \"span\": [5, 7], \"face_intensity\": 3, \"voice_intensity\": 2}, \"B6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The video is approximately 7 seconds long, 9:16 aspect ratio, standard definition, and contains an audio track.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B7.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"There are no subtitles, captions, or watermarks present in the clip.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/acc60f5d79c32b8a9823b36f886b7d126abf695476d86de652740dc49bc96908.json"
+ },
+ {
+  "source": "B/primary/order2",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114172-WhfgiNGb01XmKk6pQGZl",
+  "cost_usd": 0.0016032,
+  "text": "```json\n{\"items\": {\"B7.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"No subtitles, captions or watermarks are present in the video clip.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The clip duration is around 7 seconds with 9:16 aspect ratio, 480p resolution and an audio track present.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's lip movements match the spoken line 'What? What is this?' from 00:05 to 00:07.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": 3}, \"B4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"There are no unintended cuts, freezes, jumps, or loops during the video clip.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The same face, voice, and clothing of the man persist throughout the clip.\", \"span\": [0, 7], \"face_intensity\": 3, \"voice_intensity\": 3}, \"B2.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Hands, face, and limbs remain anatomically normal with no morphing or distortions observed.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"B1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Objects and the man's movement follow normal physical laws and momentum.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/1b6fe6509055b406ec54a0e756beb8018226f87c76a79c029702b2a0192b1407.json"
+ },
+ {
+  "source": "B/second",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794114172-CyGW5JzoZHDMaDfLgrKw",
+  "cost_usd": 0.000974064,
+  "text": "{\"items\": {\"B1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"From 00:00-00:08 the furniture, decanter, and glasses remain stationary and the man's walk and stop obey normal gravity and momentum with no floating or sliding objects.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"B2.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Across 00:02-00:08 the man's face, hair, and hands at his sides remain anatomically coherent with no morphing, extra digits, or garbled text.\", \"span\": [0, 8], \"face_intensity\": 3, \"voice_intensity\": null}, \"B3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"From entry at 00:01 to 00:08 the same young man keeps the same face, messy brown hair, dark suit jacket, open white shirt, and dark trousers, and the single voice matches him.\", \"span\": [1, 8], \"face_intensity\": 3, \"voice_intensity\": 2}, \"B4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The high-angle shot runs continuously 00:00-00:08 with smooth motion as the man enters, walks, and stops; no cuts, freezes, or loops occur.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"B5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:05-00:08 the man's mouth opens and moves in sync with the soft spoken line 'What... what is this?', and the voice clearly belongs to him on screen.\", \"span\": [5, 8], \"face_intensity\": 3, \"voice_intensity\": 3}, \"B6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The clip runs about 8 seconds in a vertical 9:16 frame at roughly 480p, with an audible ambient track and speech throughout 00:00-00:08.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"B7.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"No subtitles, captions, or watermarks appear anywhere in the frame from 00:00-00:08.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/3f14cb7167c81b96590b9b50cc4cd26398918815fce30fafcb7c8c56845479ac.json"
+ },
+ {
+  "source": "C/primary/order1",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114172-bKkk4IVBKkFlYSdsFmOo",
+  "cost_usd": 0.0009344,
+  "text": "```json\n{\"items\": {\"C1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man looks up with an expression of shock and eyes widening at 00:03.\", \"span\": [1, 7], \"face_intensity\": 3, \"voice_intensity\": 2}, \"C2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's surprise and voice intensity are clearly above 1, around level 2-3.\", \"span\": [1, 7], \"face_intensity\": 3, \"voice_intensity\": 2}, \"C4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man delivers his line 'What? What is this?' in a hushed, whispering tone at 00:05.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/2e495d6cea4885633e27cbe2facdad4bafcf6751423575f8886b31b81a1de7a7.json"
+ },
+ {
+  "source": "C/primary/order2",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114172-zrPCxkLLh3WpihBprEaa",
+  "cost_usd": 0.0009594,
+  "text": "```json\n{\"items\": {\"C4.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man speaks in a normal, startled voice tone at 00:05-00:07 rather than whispering.\", \"span\": [5, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"C2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's surprise and confusion are expressed strongly with high intensity (around 3) in his face and voice.\", \"span\": [1, 7], \"face_intensity\": 3, \"voice_intensity\": 3}, \"C1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The man's expression and reaction display clear surprise and shock from 00:01 to 00:07.\", \"span\": [1, 7], \"face_intensity\": 3, \"voice_intensity\": 3}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/0615b7a0c930f815955edb699b2d885e67f26b58ef5d1a48cf2f69934b13ba74.json"
+ },
+ {
+  "source": "C/second",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794114172-jZGwJP1eK9Ih3VkDuEtR",
+  "cost_usd": 0.00152306,
+  "text": "{\"items\": {\"C1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"From 00:02-00:08 the man stops, tilts his head up with wide eyes and a parted mouth, and asks 'What... what is this?', clearly showing surprise/bewilderment.\", \"span\": [2, 8], \"face_intensity\": 2, \"voice_intensity\": 1}, \"C2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"Although the voice is soft (\u22481), the face at 00:03-00:07 shows distinctly widened eyes, raised brows and an open mouth \u2014 a clear (2) surprise expression, exceeding the calm [0,1] range.\", \"span\": [2, 8], \"face_intensity\": 2, \"voice_intensity\": 1}, \"C4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:05-00:08 the line 'What... what is this?' is delivered in a hushed, breathy, near-whispered tone rather than normal speech.\", \"span\": [5, 8], \"face_intensity\": 2, \"voice_intensity\": 1}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/1eca91879a09740af1e442266b2782dec89f62bfcc2e80e83913cfe71678d15e.json"
+ },
+ {
+  "source": "A/entailment",
+  "model_id": "openai/gpt-5.6-luna",
+  "request_id": "gen-1794114242-OplAXvJjrZdILlv17sXZ",
+  "cost_usd": 0.0013746,
+  "text": "{\"items\":{\"A1.1\":{\"status\":\"fail\",\"evidence\":\"P1 speaks: 'What... what is this?' Another description gives 'What? What is this?', neither matches the expected line verbatim with the specified ellipsis.\"},\"A2.1\":{\"status\":\"uncertain\",\"evidence\":\"P1 enters the frame and later has 'Eyes wide, mouth slightly parted,' but the descriptions do not identify P1 as Julian.\"},\"A2.2\":{\"status\":\"uncertain\",\"evidence\":\"P1 'walks forward into the center of the room,' but there is no description establishing that the living room appears unchanged from four years ago.\"},\"A3.1\":{\"status\":\"uncertain\",\"evidence\":\"The setting is described as 'a sunlit, upscale living room,' but it is not identified as an interior luxury penthouse.\"},\"A4.1\":{\"status\":\"uncertain\",\"evidence\":\"Only P1 is described on screen, but the descriptions do not establish that P1 is Julian.\"},\"A4.2\":{\"status\":\"pass\",\"evidence\":\"The speech description lists only P1 speaking: 'P1 speaks in a soft, breathy, bewildered voice: 'What... what is this?''\"},\"A4.3\":{\"status\":\"pass\",\"evidence\":\"The descriptions show P1 entering and remaining in the same living room, with no other person entering and no cut to another place described.\"},\"A5.1\":{\"status\":\"uncertain\",\"evidence\":\"The descriptions detail the living room, but do not state or show that it appears unchanged from four years ago.\"},\"A6.1\":{\"status\":\"fail\",\"evidence\":\"The camera is described as a 'High-angle wide shot' with P1 'settling in the lower center of the frame,' not a medium close-up with Julian centred; vertical 9:16 is also not stated.\"}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/c1d4e1d00e05a206404b78f616ac091238a46f44793f2e6eb1250cca7ea8a106.json"
+ },
+ {
+  "source": "tool/ffprobe",
+  "model_id": "ffprobe",
+  "request_id": null,
+  "cost_usd": 0.0,
+  "text": "496x864, 8.06 s, 24.0 fps, audio=yes",
+  "raw_path": null
+ },
+ {
+  "source": "tool/ffmpeg",
+  "model_id": "ffmpeg scene+freezedetect",
+  "request_id": null,
+  "cost_usd": 0.0,
+  "text": "scene cuts at []; frozen spans [] (0.0 s)",
+  "raw_path": null
+ },
+ {
+  "source": "tool/asr",
+  "model_id": "mlx-community/whisper-small-mlx",
+  "request_id": null,
+  "cost_usd": 0.0,
+  "text": "{\"text\":\"What? What is this?\",\"language\":\"en\",\"words\":[{\"word\":\"What?\",\"start\":4.42,\"end\":5.58},{\"word\":\"What\",\"start\":6.02,\"end\":6.74},{\"word\":\"is\",\"start\":6.74,\"end\":6.96},{\"word\":\"this?\",\"start\":6.96,\"end\":7.2}]}",
+  "raw_path": null
+ },
+ {
+  "source": "A/reinspect",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794114251-JMmiYBpmI0I5lD2AETTl",
+  "cost_usd": 0.0005381,
+  "text": "```json\n{\"items\": {\"A6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Julian is centered in a medium close-up, static camera, slight high angle, and vertical 9:16 framing from 00:03 to 00:07.\", \"span\": [3, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/8e08e2213d58625e03cb141e9bcad2bd6a0cd2ec398fb10a41e497d291ccafb2.json"
+ }
+]

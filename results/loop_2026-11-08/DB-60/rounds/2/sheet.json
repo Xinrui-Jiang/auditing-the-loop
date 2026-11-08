@@ -1,0 +1,421 @@
+{
+  "shot_id": "DB-60",
+  "round": 2,
+  "take_sha256": "51a7e63ca138d36cd8666c83bcffdf39815e1847a6c30edf80d5ea4c861511c1",
+  "verdicts": [
+    {
+      "item_id": "A1.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:06-00:07, Ruan Ningxia says 'Assistant, my husband?' instead of the exact line 'Assistant Chen! My husband?'",
+        "A/primary/order2: RUAN NINGXIA says 'Assistant, my husband?' instead of 'Assistant Chen! My husband?' at 00:06-00:07.",
+        "A/second: At 00:07-00:09 she clearly says 'Assistant, my husband?' in English, omitting the name 'Chen', so the line is not the verbatim expected 'Assistant Chen! My husband?'.",
+        "A/entailment: P1 says, \"Assistant, my husband?\"",
+        "tool/asr: language=en, WER=0.50, heard: 'A-sistant! My husband?'"
+      ],
+      "deviation": 0.5,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00, Ruan Ningxia is wearing luxurious fur and a dress while holding a bag in the corridor.",
+        "A/primary/order2: RUAN NINGXIA is dressed in luxurious fur and a dress, clutching a designer bag while running anxiously in the corridor.",
+        "A/second: From 00:00-00:08 Ruan Ningxia wears a thick grey-brown fur coat over a champagne satin dress, grips a monogrammed designer handbag, and hurries anxiously down the corridor before stopping in distress.",
+        "A/entailment: The description says P1 \"walks toward the camera\" and is \"carrying a brown patterned handbag,\" but does not show her running or clutching the bag tightly."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00-00:07, Fu Lincheng's assistant and Jiang Yao are visible in business suits in the background.",
+        "A/primary/order2: FU LINCHENG'S ASSISTANT and JIANG YAO are both visible in power suits in the background.",
+        "A/second: At 00:01-00:03, as she turns to look back, a woman in a black pantsuit and a man in a dark navy suit (the assistant and Jiang Yao) are both visible standing together in the background.",
+        "A/entailment: P2 is described as wearing \"a black pantsuit and white blouse,\" P3 as wearing \"a dark navy suit, white shirt and tie,\" and P1 \"stops and turns her head back toward P2 and P3.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00-00:07, the scene is set in a hospital corridor during the day.",
+        "A/primary/order2: The setting is clearly an indoor hospital corridor during the day.",
+        "A/second: Throughout 00:00-00:08 the setting is a bright white-tiled corridor with recessed ceiling light panels and handrails, consistent with an interior hospital corridor in daytime lighting.",
+        "A/entailment: The setting is described as \"a bright, white-tiled corridor with ceiling light panels,\" but it is not identified as a hospital corridor or explicitly as daytime."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00, a designer bag is visible in Ruan Ningxia's grasp.",
+        "A/primary/order2: A designer bag is visible in RUAN NINGXIA's grasp at 00:00.",
+        "A/second: At 00:00 a brown monogram-patterned designer handbag is clearly visible held in Ruan Ningxia's hand as she moves down the corridor.",
+        "A/entailment: P1 is described as \"carrying a brown patterned handbag.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00-00:07, only Ruan Ningxia, Jiang Yao, and Fu Lincheng's assistant appear on screen.",
+        "A/primary/order2: Only RUAN NINGXIA, FU LINCHENG'S ASSISTANT, and JIANG YAO appear on screen.",
+        "A/second: Only three people appear across 00:00-00:08 — Ruan Ningxia in front and the suited pair in the background — with no additional characters entering.",
+        "A/entailment: The people listed are P1, P2, and P3 only: \"Woman with dark hair...\"; \"Woman with long dark hair...\"; and \"Man with short dark hair...\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:06-00:07, only Ruan Ningxia speaks.",
+        "A/primary/order2: Only RUAN NINGXIA speaks during 00:06-00:07.",
+        "A/second: The only speech in the clip is Ruan Ningxia's line at 00:07-00:09; the background pair never speak.",
+        "A/entailment: The only speech listed is P1's: \"P1 speaks through tears\" and \"Assistant, my husband?\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.3",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00-00:07, no unscripted events or scene cuts occur.",
+        "A/primary/order2: No unscripted events or cuts occur throughout the clip.",
+        "A/second: Across 00:00-00:08 the action stays in the same corridor with no one else entering and no cut to a different location, only angle changes on Ruan Ningxia.",
+        "A/entailment: The described action remains in the same location: \"P1 walks toward the camera down a bright, white-tiled corridor\" and then \"rotates to face the camera in close-up.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A5.1",
+      "status": "uncertain",
+      "severity": "info",
+      "uncertainty_state": "not_observable",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "not_observable"
+      },
+      "evidence": [
+        "A/primary/order1: The clip shows Ruan Ningxia crying, but whether she is pretending cannot be definitively determined from the visual alone.",
+        "A/primary/order2: RUAN NINGXIA's exaggerated breakdown and emotional transition in 00:00-00:07 show her pretending to cry.",
+        "A/second: From 00:03-00:08 she displays open weeping with tears and anguish, but nothing in the footage reveals whether the crying is feigned or genuine, so the premise cannot be verified.",
+        "A/entailment: The descriptions show genuine distress: \"tears stream down her cheeks\" and \"Crying openly, tears running down both cheeks.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "uncertain",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: At 00:00-00:07, the camera is a medium close-up, static, eye-level, vertical 9:16 shot with Ruan Ningxia centered.",
+        "A/primary/order2: A medium close-up static camera shot frames RUAN NINGXIA vertically centred from 00:00 to 00:07.",
+        "A/second: At 00:00-00:03 the camera tracks backward with handheld sway rather than remaining static, and in the 00:03-00:08 close-up Ruan Ningxia is framed left of centre with the background pair on the right, not centred.",
+        "A/entailment: The camera is described as \"Medium shot tracking backward... cutting to an over-the-shoulder view... then a close-up\" with \"handheld-style slight sway,\" not a static medium close-up."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Fur coat movement and handbag handling at 00:00-00:07 follow normal physical rules.",
+        "B/primary/order2: Objects and movements look physically plausible throughout the clip at 00:00-00:07.",
+        "B/second: At 00:00 the handbag swings naturally with her stride, and at 00:05-00:08 tears run down her cheeks under normal gravity with no floating or impossible motion."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Facial features, hands, and fingers remain anatomically consistent throughout the clip without morphing.",
+        "B/primary/order2: Hands, face and limbs remain anatomically normal with no morphing at 00:00-00:07.",
+        "B/second: In the close-up at 00:06-00:08 the hand pressed to her chest shows normally proportioned fingers with a ring, her face shows no warping, and no garbled text appears anywhere."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The woman's fur coat, dress, hair style, and facial identity remain consistent across the entire clip.",
+        "B/primary/order2: The woman's face, voice, and clothing persist consistently through the whole take at 00:00-00:07.",
+        "B/second: From the walking shot at 00:00 to the crying close-up at 00:08, P1 keeps the same sleek bun, pearl earrings, grey-brown fur coat, and champagne satin dress, and the single female voice at 00:07 belongs to her."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The shot is continuous with no unintended cuts, freezes, jumps, or loops.",
+        "B/primary/order2: There are no unintended cuts, freezes, jumps or loops at 00:00-00:07.",
+        "B/second: The viewpoint changes at 00:01 and 00:03 are deliberate shot cuts with continuous audio (footsteps giving way to panting) and consistent background staging, with no freezes, jumps, or loops.",
+        "tool/ffmpeg: scene cuts at []; frozen spans [] (0.0 s)"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Lip movements at 00:06-00:07 match the spoken words 'Assistant, my husband?'",
+        "B/primary/order2: Lip movement matches the spoken line 'Assistant, my husband?' at 00:06-00:07.",
+        "B/second: At 00:07-00:08 her mouth moves in time with the line 'Assistant, my husband?' delivered in a female voice matching the tearful woman on screen."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Video is approximately 7 seconds, vertical aspect ratio, and includes audio track.",
+        "B/primary/order2: The video duration is 7 seconds in 9:16 format with an audio track present at 00:00-00:07.",
+        "B/second: The clip runs 00:00-00:08 in vertical 9:16 framing at 480p with an audible track of footsteps, panting, sobbing, and speech.",
+        "tool/ffprobe: 496x864, 8.06 s, 24.0 fps, audio=yes"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B7.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: There are no subtitles, captions, or watermarks present in the video.",
+        "B/primary/order2: There are no subtitles, captions or watermarks visible at 00:00-00:07.",
+        "B/second: No subtitles, captions, or watermarks are visible in any frame from 00:00 to 00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The woman is seen crying and in distress from 00:00 to 00:07.",
+        "C/primary/order2: The character exhibits clear signs of sadness and crying throughout the clip.",
+        "C/second: From 00:04-00:08 P1's face contorts with furrowed brow, tears stream down both cheeks, and she sobs/wails while clutching her chest, clearly conveying sadness via crying."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: Face and voice intensity for her crying and emotional outburst are strong, rated around 3.",
+        "C/primary/order2: The woman's facial expressions and crying show strong emotional distress with high intensity (level 3/4).",
+        "C/second: At 00:05-00:08 the crying is exaggerated: open wailing, tears running, hand pressed to chest, and a broken, sobbing delivery of 'Assistant, my husband?' — face at 4 and voice at 3 on the 0-4 scale."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "C4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The delivery reflects the crying and distressed state shown in the video.",
+        "C/primary/order2: The woman in the fur coat cries and speaks to her assistant in the hallway from 00:00 to 00:07.",
+        "C/second: The crying at 00:04-00:08 reads as genuine anguish — continuous tears, sustained sobbing, and no insincerity cues (no dry-eyed performance, no abrupt shift to a neutral face, no checking on observers) — so the delivery does not match 'pretending to cry'."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.024967
+}

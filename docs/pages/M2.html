@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>LoopAuditor M2 — generation backend</title><style>
+:root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5f66;--line:#d9dbe0;--in:#f3f6fb;--out:#f4faf4;--accent:#2a5bd7}
+@media (prefers-color-scheme:dark){:root{--bg:#121316;--fg:#e8e8ea;--muted:#a0a3aa;--line:#33363c;--in:#1a2030;--out:#182218;--accent:#8ab4ff}}
+body{margin:0;padding:24px 16px;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:1500px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px;padding-top:16px;border-top:1px solid var(--line)}
+.sub,.note{color:var(--muted);margin:0 0 12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}}
+.col h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.panel{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.panel .label{padding:6px 10px;font-weight:600;font-size:13px;border-bottom:1px solid var(--line)}
+.in .panel .label{background:var(--in)}.out .panel .label{background:var(--out)}
+pre{margin:0;padding:10px;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto}
+</style></head><body><main><h1>LoopAuditor M2 — generation backend</h1><p class='sub'>One take for DB-38 with seedance-2.0.</p><h2>DB-38, round 0</h2><p class='note'>Latency 137.6 s, cost $0.5654. File: runs/m2_test/DB-38/take.mp4</p><div class='cols'><div class='col in'><h3>Input</h3><div class="panel"><div class="label">request</div><pre>{
+  &quot;model&quot;: &quot;bytedance/seedance-2.0&quot;,
+  &quot;duration&quot;: 8,
+  &quot;resolution&quot;: &quot;480p&quot;,
+  &quot;aspect_ratio&quot;: &quot;9:16&quot;,
+  &quot;generate_audio&quot;: true,
+  &quot;prompt&quot;: &quot;Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nINT. OLD BUILDING STAIRWELL - DAY. HAITONG (17). The call ends. Haitong&#x27;s portfolio slips. Pages scatter—her resume, shredded by rain. HAITONG, crying, says: \&quot;Grandma, they found me.\&quot; Sound: Pages scatter—her resume, shredded by rain.\nLive-action short-drama look. Audio on; the line is spoken on camera.&quot;
+}</pre></div></div><div class='col out'><h3>Output</h3><div class="panel"><div class="label">Take</div><pre>{
+  &quot;shot_id&quot;: &quot;DB-38&quot;,
+  &quot;round&quot;: 0,
+  &quot;path&quot;: &quot;/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/m2_test/DB-38/take.mp4&quot;,
+  &quot;backend&quot;: &quot;seedance-2.0&quot;,
+  &quot;seed&quot;: null,
+  &quot;duration_s&quot;: 8,
+  &quot;resolution&quot;: &quot;480p&quot;,
+  &quot;aspect_ratio&quot;: &quot;9:16&quot;,
+  &quot;prompt_sha256&quot;: &quot;172a0b5e8755fa27b251121d07e890babfe7a98232285dfce350871234fb9b3e&quot;,
+  &quot;sha256&quot;: &quot;ceda2a684dcd01d72ce2fb2e40403f680d88ca05dd01966ef9308e2d7c8a3350&quot;,
+  &quot;cost_usd&quot;: 0.56539,
+  &quot;request_id&quot;: &quot;gen-vid-1794111515-CIjY1A13d4goo4vQyCjo&quot;,
+  &quot;latency_s&quot;: 137.6
+}</pre></div><div class="panel"><div class="label">ffprobe</div><pre>{
+  &quot;duration_s&quot;: 8.064,
+  &quot;width&quot;: 496,
+  &quot;height&quot;: 864,
+  &quot;fps&quot;: 24.0,
+  &quot;has_audio&quot;: true
+}</pre></div></div></div></main></body></html>

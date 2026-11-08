@@ -1,0 +1,153 @@
+{
+  "shot_id": "DB-16",
+  "round": 0,
+  "take_sha256": "9bd545020961cdf25ec0801720eef4c2ccd31227fde76efcabc117d14e4022c8",
+  "verdicts": [
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: Only one person, Xu Zhiyi, is visible on camera and speaks throughout the 00:00-00:07 clip.",
+        "[flash_order_b] pass/seen_clearly: Exactly one person (Xu Zhiyi) is visible on camera and speaks from 00:00 to 00:08.",
+        "[qwen_second_opinion] pass/seen_clearly: Only one person (the woman in the gray suit) is visible throughout 00:00-00:08, and she is the only speaker (00:05-00:08); no second voice is heard."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A1.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "ASR WER=1.00 -> tool fail",
+        "[flash_order_a] fail/seen_clearly: The spoken Chinese dialogue translates to 'She won't help us. After what I did,' not the English quote 'He won't help us. Not after what I did.'",
+        "[flash_order_b] fail/seen_clearly: The spoken dialogue in Chinese translates to 'He won't help us. After I did that thing', which does not match the English quote requirement word for word.",
+        "[qwen_second_opinion] pass/seen_clearly: At 00:05-00:08 she says '他不会帮我们的。在我做了那件事后。', which corresponds exactly to 'He won't help us. Not after what I did.'"
+      ],
+      "deviation": 1.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "uncertain",
+      "severity": "warning",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: She stands facing forward and stares towards the door/camera area across the entire clip.",
+        "[flash_order_b] pass/seen_clearly: She stares intently ahead toward the door during 00:00-00:08.",
+        "[qwen_second_opinion] fail/seen_clearly: The door is behind her and her gaze stays fixed forward/off-camera for the whole clip (00:00-00:08); she never turns to or looks at the door, so staring at the door is not shown.",
+        "[escalate_R3] fail/seen_clearly: From 00:00 to 00:08 the door is behind the woman and her gaze is consistently directed forward toward the camera/off-screen (with a brief downward blink at 00:02-00:03); she never turns or looks at the door, so the action 'stares at the door' is not shown on camera."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A2.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": null,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] fail/seen_clearly: The woman does not blink away anything or exhibit the requested blinking action; she maintains a steady gaze without tears.",
+        "[flash_order_b] pass/seen_clearly: She blinks during the clip from 00:00 to 00:08.",
+        "[qwen_second_opinion] pass/seen_clearly: She visibly closes her eyes in slow blinks at 00:02-00:03 and again around 00:04-00:05, as if blinking emotion away.",
+        "[escalate_R4] pass/seen_clearly: Her eyelids visibly close and reopen in distinct blinks at ~00:02 and ~00:04, shown on camera before she resumes speaking."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "C2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "partially_seen"
+      },
+      "evidence": [
+        "median intensity face=1 voice=1 vs target [0, 1] -> d=0",
+        "judges' category votes ['fail', 'uncertain', 'pass'] differ from the intensity-derived status (status follows intensity, DESIGN_v2 §7.1)",
+        "[flash_order_a] fail/seen_clearly: The target emotion is surprise with calm intensity, but the depicted emotion is serious/worried, not surprise. | Expression is serious and concerned rather than surprised.",
+        "[flash_order_b] uncertain/partially_seen: The woman shows a calm, somber expression without clear surprise. | Face expression is calm and subdued (intensity 1), voice is quiet and measured (intensity 1).",
+        "[qwen_second_opinion] pass/seen_clearly: Her restrained, slightly stunned expression with blinks (00:02-00:05) and her quiet, low-volume delivery (00:05-00:08) match 'surprise; calm intensity' delivered quietly. | Face shows only subtle tension and downcast blinks rather than overt shock, and the voice is soft and controlled, keeping both intensities at 1."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The scene is set outdoors at an entrance with a wooden door during daytime.",
+        "[flash_order_b] pass/seen_clearly: The setting is clearly outside the entrance of a house during the day from 00:00 to 00:08.",
+        "[qwen_second_opinion] pass/seen_clearly: The scene is outdoors at a house entrance with a dark wooden door, brass knob/handle, and wall lantern in daylight (00:00-00:08)."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "[flash_order_a] pass/seen_clearly: The shot is a medium close-up from eye level with a static camera framing Xu Zhiyi.",
+        "[flash_order_b] pass/seen_clearly: The shot is a medium close-up from an eye-level static camera throughout 00:00-00:08.",
+        "[qwen_second_opinion] pass/seen_clearly: Framing is a medium close-up from chest up at eye level, and the camera does not move across 00:00-00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.009157
+}

@@ -1,0 +1,12 @@
+{
+  "branch_from": 0,
+  "revised_prompt": "Create an 8-second live-action short-drama take in vertical 9:16 at 480p with an audio track. Use one continuous shot with no cuts, freezes, jumps, loops, subtitles, captions, or watermarks. Keep the camera static in a slight high angle, medium close-up, with JULIAN centred. Make the penthouse background sufficiently visible to show the living room as a luxury space that appears unchanged from four years ago: a frozen museum, time capsule, shrine.\n\nSCRIPT SPANS:\nINT. LUXURY PENTHOUSE - CONTINUOUS\nCold filtered sunlight bathes the space. Julian enters, eyes widening in shock. He walks through living room — everything unchanged from four years ago. A frozen museum, time capsule, shrine.\nJULIAN\nwhispering\nWhat… what is this?\n\nAt the very beginning, JULIAN visibly enters the penthouse space from off-screen and then walks through the living room for the duration of the continuous take. Show clear forward walking and contact with the floor while keeping him centred in the static medium close-up. As he enters, his eyes visibly widen in surprise, but keep the facial expression and whispering voice restrained and calm, with surprise intensity within 0 to 1 on the 0-4 scale. JULIAN is the only person visible and the only voice heard. He speaks the line exactly and completely in English, verbatim as written: \"What… what is this?\" Do not paraphrase, add, omit, or change any words. Ensure his lip movements match the line and his voice clearly belongs to him. Preserve the same face, voice, clothing, and anatomy throughout; keep all object and liquid motion physically plausible.",
+  "rationale": "Branch from round 0 because it is the only available take and its stable visual continuity, framing, single-character composition, anatomy, lip sync, and whispering delivery should be preserved. The new guidance makes Julian visibly enter and continuously walk through the living room, which directly addresses A2.1 and A2.2. It also explicitly limits both facial and vocal intensity while retaining widened eyes and surprise, addressing C2.1 without losing the passing surprise cue C1.1. The exact script spans are retained, and the line is reinforced as complete, English, and verbatim to prevent the prior paraphrase. The background is requested to remain visible enough to support the unchanged-four-years-ago premise.",
+  "targets": [
+    "A2.1",
+    "A2.2",
+    "C2.1",
+    "A1.1",
+    "A5.1"
+  ]
+}

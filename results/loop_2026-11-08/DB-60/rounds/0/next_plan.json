@@ -1,0 +1,13 @@
+{
+  "branch_from": 0,
+  "revised_prompt": "Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use a medium close-up, static camera at eye level, with RUAN NINGXIA centred while keeping the two people she sees visibly present in the corridor background/over her shoulder. Keep one continuous shot with no cuts, freezes, jumps, loops, or location changes. INT. HOSPITAL CORRIDOR - DAY\nRUAN NINGXIA (30s)\nRUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits.\nRUAN NINGXIA\npretending to cry\nAssistant Chen! My husband?\n\nRUAN NINGXIA is the only person who speaks. She must say exactly and completely, in clearly audible English: \"Assistant Chen! My husband?\" Her lip movements must match the English words and her voice must come from her on-screen. Perform sadness with exaggerated intensity around 3-4, using visible fake tears and crying cues while making it clear she is pretending to cry rather than genuinely crying. FU LINCHENG'S ASSISTANT and JIANG YAO remain visibly in frame as she sees them; nobody else appears. Keep RUAN NINGXIA's fur, dress, designer bag, face, voice, and styling consistent throughout. The designer bag stays clearly visible in her tightly clutching hand. No subtitles, captions, watermarks, or any on-screen text. Keep all movement anatomically normal and physically plausible, and preserve the hospital-corridor daytime setting.",
+  "rationale": "Branch from round 0 because it is the only available take and already passes the setting, bag, framing, continuity, physical plausibility, single-speaker, and no-cut checks. The revised prompt explicitly requires the exact English line, keeps both named observers visibly in frame, and clarifies visible sadness with deliberate fake crying to address the blocking failures and uncertainties. It also protects the prior passes by retaining the corridor, wardrobe, bag, static medium close-up, continuous shot, single speaker, and consistent appearance, while explicitly banning subtitles.",
+  "targets": [
+    "A1.1",
+    "A2.2",
+    "A4.1",
+    "B7.1",
+    "C1.1",
+    "C4.1"
+  ]
+}

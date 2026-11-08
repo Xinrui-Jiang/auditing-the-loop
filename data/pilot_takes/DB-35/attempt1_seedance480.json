@@ -1,0 +1,14 @@
+{
+ "shot_id": "DB-35",
+ "model": "bytedance/seedance-1-5-pro",
+ "resolution": "480p",
+ "aspect_ratio": "9:16",
+ "duration": 8,
+ "job_id": "gen-vid-1794087925-Pujv15o611glUXC1uCw1",
+ "cost_usd": 0.193848,
+ "gen_model": "bytedance/seedance-1-5-pro-20260320",
+ "sha256": "24ad924bc1172cb95049f5756bbcaed63e355073b9e9d0d79653be46732978f9",
+ "video": "data/candidates/DB-35/attempt1_seedance480.mp4",
+ "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nINT. VILLAGE HOSPITAL - NIGHT. Rain lashes a dark window. HE XI runs beside her HUSBAND as he pushes a hospital bed. On it, ZHAO WANRU, 25, writhes in advanced labor. HE XI, shouting, says: \"Doctor! My mistress\u2014she's breech!\" Sound: Rain lashes a dark window.\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+ "elapsed_s": 86
+}

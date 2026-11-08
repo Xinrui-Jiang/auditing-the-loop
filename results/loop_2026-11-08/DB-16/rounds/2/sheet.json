@@ -1,0 +1,447 @@
+{
+  "shot_id": "DB-16",
+  "round": 2,
+  "take_sha256": "42726a2aa5622ea54ca6266ebe137a2d371cf65e4363bfc3e08199b2d6f76256",
+  "verdicts": [
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The woman speaks the lines 'He won't help us. Not after what I did.' from 00:03 to 00:07.",
+        "A/primary/order2: At 00:03 to 00:07, XU ZHIYI says 'He won't help us. Not after what I did.' in English complete and verbatim.",
+        "A/second: At 00:04-00:08 the woman says in English, 'He won't help us. Not after what I did.', matching the expected line verbatim.",
+        "A/entailment: P1 speaks: \"He won't help us. Not after what I did.\"; language: \"English\"",
+        "tool/asr: language=en, WER=0.00, heard: \"He won't help us, not after what I did.\""
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The woman is looking directly at the camera/viewer, not staring at the door.",
+        "A/primary/order2: At 00:00 to 00:07, XU ZHIYI is visibly staring towards the door area.",
+        "A/second: Throughout 00:00-00:08 she stares straight ahead into the camera, not at the door, which is behind her on the right of frame.",
+        "A/entailment: \"Woman speaks while looking directly at the camera\" and \"keeps looking straight ahead,\" not at the door.",
+        "A/reinspect: XU ZHIYI is looking directly forward towards the camera instead of staring at the door throughout the clip 00:00 to 00:07."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A2.2",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No brief memory of falling snow or betrayal is conveyed across her face.",
+        "A/primary/order2: At 00:00 to 00:01, a brief visual impression of falling snow is reflected or overlayed on her face and eyes.",
+        "A/second: From 00:00-00:08 her face shows only present-tense distress with a tear track; no impression of falling snow, a different door, or a past betrayal ever crosses her expression.",
+        "A/entailment: The descriptions do not mention falling snow, a different door, or a different betrayal being conveyed across her face.",
+        "A/reinspect: At 00:00 to 00:07, XU ZHIYI speaks on the porch, but her facial expression does not convey a memory of falling snow, a different door, or a different betrayal."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A2.3",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "uncertain",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: She blinks at the very beginning (00:00-00:01), but it does not end a memory.",
+        "A/primary/order2: At 00:00 to 00:01, XU ZHIYI visibly blinks, ending the memory transition.",
+        "A/second: No blink ending a memory occurs; her eyes stay open and fixed forward from 00:00-00:03 and she simply begins speaking at 00:04, with no memory ever established.",
+        "A/entailment: \"Woman blinks and closes her eyes briefly,\" but the descriptions do not establish that this ends a memory.",
+        "A/reinspect: XU ZHIYI visibly blinks and closes her eyes around 00:01."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The setting is an exterior house porch/entrance during daytime.",
+        "A/primary/order2: At 00:00 to 00:07, the setting matches the house entrance during daytime.",
+        "A/second: The 00:00-00:08 shot shows an exterior covered porch/walkway of a house in daylight, consistent with EXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY.",
+        "A/entailment: She is described as \"standing on a porch\" and on a \"covered porch/walkway with white railings, columns, and doors behind her,\" but the time of day and exact house-entrance setting are not stated."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: A white door at the house entrance is visible behind and beside the woman.",
+        "A/primary/order2: At 00:00 to 00:07, a door at the house entrance is visible behind XU ZHIYI.",
+        "A/second: A white entrance door with black hardware is clearly visible at frame right from 00:00-00:08.",
+        "A/entailment: She is standing on a \"covered porch/walkway with white railings, columns, and doors behind her.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only the woman appears on screen throughout the clip.",
+        "A/primary/order2: At 00:00 to 00:07, only XU ZHIYI appears on screen.",
+        "A/second: Only the single woman (XU ZHIYI) appears on screen for the entire 00:00-00:08 clip; no other person is present.",
+        "A/entailment: The descriptions identify only one person: \"P1 ... Woman with dark hair pulled back\"; no other people appear."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only the woman speaks in the clip.",
+        "A/primary/order2: At 00:03 to 00:07, only XU ZHIYI speaks.",
+        "A/second: The only voice heard at 00:04-00:08 is the on-screen woman's; no other speaker delivers a line.",
+        "A/entailment: The speech is attributed only to \"P1,\" who says the two lines."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.3",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No unscripted events or cuts occur; the camera and scene remain completely static.",
+        "A/primary/order2: At 00:00 to 00:07, nobody enters and there are no cuts to another place.",
+        "A/second: The shot remains a single continuous take at the porch from 00:00-00:08; nobody enters and there is no cut to another place.",
+        "A/entailment: The camera is described as \"Static medium close-up,\" and no one enters or any cut to another place is described."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A5.1",
+      "status": "fail",
+      "severity": "warning",
+      "uncertainty_state": "uncertain",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No memory visual impression appears on her face at all.",
+        "A/primary/order2: At 00:00 to 00:07, the shot remains at the house entrance in the present.",
+        "A/second: While the shot stays at the house entrance (00:00-00:08), no memory impression of snow or a different door ever appears on her face, so the premise condition is unmet.",
+        "A/entailment: The shot remains at the porch/entrance, but the descriptions do not mention a brief visual memory or impression on her face.",
+        "A/reinspect: From 00:00 to 00:08, the shot stays at the house entrance while Xu Zhiyi displays sorrow and expresses her feelings verbally."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The shot is a medium close-up, static, eye level, vertical 9:16 with the character centered.",
+        "A/primary/order2: At 00:00 to 00:07, XU ZHIYI is centered in a medium close-up, static camera, eye level, vertical format.",
+        "A/second: The 00:00-00:08 framing is a static, eye-level medium close-up in vertical 9:16 with the woman centered.",
+        "A/entailment: The clip is described as a \"Static medium close-up\" with \"vertical framing\" and the \"subject centered,\" but eye level and 9:16 are not explicitly stated."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The woman's head and body movements appear natural and follow normal physical rules throughout 00:00-00:07.",
+        "B/primary/order2: The woman blinks and moves naturally in her environment without any physical plausibility issues.",
+        "B/second: The tear track on P1's cheek at 00:01-00:02 behaves like normal moisture (stays on the skin, no upward or impossible flow), and the background porch elements remain static with no object motion violations."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "partially_seen"
+      },
+      "evidence": [
+        "B/primary/order1: Facial features and anatomy remain stable and anatomically correct throughout the video.",
+        "B/primary/order2: Facial features and proportions remain anatomically normal with no morphing or distortions across 00:00-00:07.",
+        "B/second: P1's face remains anatomically stable with natural blinking and mouth movement from 00:00-00:08; hands are out of frame in this medium close-up, so only the face/neck region could be verified, and no morphing or garbled text appears."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The same Asian woman in a gray robe maintains consistent identity, clothing, and voice from 00:00 to 00:07.",
+        "B/primary/order2: The woman's face, voice, and gray robe remain consistent throughout the entire clip.",
+        "B/second: The same woman with dark pulled-back hair, gray wrap cardigan, and white top, with a consistent voice, persists across the entire take from 00:00 to 00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The shot is a continuous, uninterrupted medium closeup with no unintended cuts or freezes.",
+        "B/primary/order2: The clip is a continuous single take without any unintended cuts, freezes, jumps, or loops.",
+        "B/second: The shot is one continuous static take with smooth micro-movements (blinks, tear, speech) and no cuts, freezes, jumps, or loops between 00:00 and 00:08.",
+        "tool/ffmpeg: scene cuts at []; frozen spans [] (0.0 s)"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Lip movements accurately synchronize with the spoken lines 'He won't help us' and 'Not after what I did'.",
+        "B/primary/order2: Lip movements accurately match the spoken lines 'He won't help us. Not after what I did' from 00:03 to 00:07.",
+        "B/second: P1's mouth begins moving at ~00:04 in sync with the line 'He won't help us. Not after what I did,' and the quiet female voice matches the on-screen speaker through 00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The video duration is approximately 7-8 seconds, in 9:16 aspect ratio, with an active audio track.",
+        "B/primary/order2: The video duration is approximately 7-8 seconds, vertical 9:16 format, with audio present.",
+        "B/second: The clip runs ~8 seconds in vertical 9:16 framing at 480p resolution with an audible ambient drone and speech track from 00:00 to 00:08.",
+        "tool/ffprobe: 496x864, 8.06 s, 24.0 fps, audio=yes"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B7.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: No subtitles, captions, or watermarks appear anywhere in the frame.",
+        "B/primary/order2: No subtitles, captions or watermarks are visible throughout the clip at 00:00-00:07.",
+        "B/second: No subtitles, captions, or watermarks appear anywhere in the frame during 00:00-00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C1.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: At 00:00-00:01 the woman blinks due to blinking/eyes closing rather than surprise, and the overall expression is worry/distress.",
+        "C/primary/order2: The woman's blink at 00:00 does not constitute a display of surprise.",
+        "C/second: From 00:00-00:08 her face shows sorrow and guilt (furrowed brows, wet eyes, tear track) with only slow, ordinary blinks, so no surprise is expressed."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: At 00:00-00:07 facial and vocal intensity remain subdued within [0, 1] range.",
+        "C/primary/order2: The woman shows strong worry and distress with a face intensity above 1.",
+        "C/second: Across 00:00-00:08 her expression is strongly distressed (tears, tense brow) and her voice is strained, well above the calm [0,1] range.",
+        "C/reinspect: The woman is crying and speaking with strong distress and fear at 00:00."
+      ],
+      "deviation": 0.83,
+      "reinspected": true
+    },
+    {
+      "item_id": "C4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: At 00:03-00:07 she speaks quietly and intensely.",
+        "C/primary/order2: The woman speaks in a quiet tone between 00:03 and 00:07.",
+        "C/second: At 00:04-00:08 she delivers 'He won't help us. Not after what I did.' in a low, hushed, restrained voice."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.023319
+}

@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nINT. OLD BUILDING STAIRWELL - DAY. HAITONG (17). The call ends. Haitong's portfolio slips. Pages scatter\u2014her resume, shredded by rain. HAITONG, crying, says: \"Grandma, they found me.\" Sound: Pages scatter\u2014her resume, shredded by rain.\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794113982-5pBpJesUthtJsBsgGOUH",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113982-5pBpJesUthtJsBsgGOUH",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794113982-5pBpJesUthtJsBsgGOUH",
+  "generation_id": "gen-vid-1794113982-5pBpJesUthtJsBsgGOUH",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113982-5pBpJesUthtJsBsgGOUH",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794113982-5pBpJesUthtJsBsgGOUH/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794113982-5pBpJesUthtJsBsgGOUH/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T050158Z&X-Goog-Expires=86396&X-Goog-SignedHeaders=host&X-Goog-Signature=636d6537823f7e630873039fe14d3bbdefa322333a1cdf7c42d01b04071c30e91dee8c6d82fd94a50460a71384b1dd4e4f2b975e1aa21de5623c4f620ee1ac0428c9359495a14a288626fcbdf70982adfcb470487c9078c718a86589caa92a01b02e68b6fa63c6c89132c0706c52ca3c5ec4589003e7112b38af9d9a33af7b53b9731dcc5218edbf53bd506fee0f80462a565a23d2f58fc5ec853c2fac4cf593a4f98f39d07729eb5c6ed7bacbeff729547ef36cc460c49278c7716a32c73ac9da170fee34e8a7a1c3b68eef7e8301b8609b86d171a37140d9f8f2ceee104e94e0a153874b415a28c3186e8e0be078387313312e64d3e5a50691e42bfd4ea329"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794200514
+ }
+}

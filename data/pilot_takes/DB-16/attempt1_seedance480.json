@@ -1,0 +1,14 @@
+{
+ "shot_id": "DB-16",
+ "model": "bytedance/seedance-1-5-pro",
+ "resolution": "480p",
+ "aspect_ratio": "9:16",
+ "duration": 8,
+ "job_id": "gen-vid-1794087921-nvGsRuC3tkuYogVT2SHD",
+ "cost_usd": 0.193848,
+ "gen_model": "bytedance/seedance-1-5-pro-20260320",
+ "sha256": "9bd545020961cdf25ec0801720eef4c2ccd31227fde76efcabc117d14e4022c8",
+ "video": "data/candidates/DB-16/attempt1_seedance480.mp4",
+ "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY. XU ZHIYI (28, exhausted but determined). She stares at the door. A flicker of memory crosses her face\u2014falling snow, a different door, a different betrayal. She blinks it away. XU ZHIYI says quietly: \"He won't help us. Not after what I did.\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+ "elapsed_s": 54
+}

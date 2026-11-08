@@ -1,0 +1,71 @@
+{
+  "drama": "his-toyboy",
+  "note": "角色参考图索引。所有唯一图集中于 _pool/，各集通过 image 字段引用；已按剧本语义重命名并按内容去重。episodes 集号依据剧本首次出场推断。",
+  "pool_dir": "_pool",
+  "unique_images": 8,
+  "total_references": 8,
+  "episodes": {
+    "ep01": [
+      {
+        "role": "朱利安",
+        "state": "julian_毕业典礼",
+        "image": "_pool/julian_毕业典礼.png",
+        "original_name": "Julian_毕业典礼",
+        "description": "朱利安，26岁，惊人漂亮但脸色苍白，毕业典礼上的毕业袍形象"
+      },
+      {
+        "role": "朱利安",
+        "state": "julian_顶层楼房",
+        "image": "_pool/julian_顶层楼房.jpg",
+        "original_name": "Julian_顶层楼房",
+        "description": "朱利安，豪华顶层公寓场景（闪回）的形象"
+      },
+      {
+        "role": "伊万",
+        "state": "evan_毕业典礼",
+        "image": "_pool/evan_毕业典礼.png",
+        "original_name": "Evan_毕业典礼",
+        "description": "伊万，26岁，朱利安的同学，毕业典礼形象"
+      },
+      {
+        "role": "维克多",
+        "state": "victor_毕业典礼",
+        "image": "_pool/victor_毕业典礼.png",
+        "original_name": "Victor_毕业典礼",
+        "description": "维克多·格雷，32岁，格雷资本董事长，毕业典礼（资助人）形象"
+      },
+      {
+        "role": "维克多",
+        "state": "victor_顶层卧室",
+        "image": "_pool/victor_顶层卧室.png",
+        "original_name": "Victor_顶层卧室",
+        "description": "维克多·格雷，32岁，顶层卧室场景（闪回）的形象，占有欲强"
+      },
+      {
+        "role": "院长",
+        "state": "院长",
+        "image": "_pool/院长.jpeg",
+        "original_name": "院长",
+        "description": "医科大学院长"
+      }
+    ],
+    "ep02": [
+      {
+        "role": "朱利安",
+        "state": "julian_四年后",
+        "image": "_pool/julian_四年后.png",
+        "original_name": "Julian_四年后",
+        "description": "朱利安，四年后（时间跳跃）的形象"
+      }
+    ],
+    "ep04": [
+      {
+        "role": "米洛",
+        "state": "milo_3岁",
+        "image": "_pool/milo_3岁.jpeg",
+        "original_name": "Milo",
+        "description": "米洛，3岁，维克多与朱利安的儿子，有着与维克多一样的眼睛"
+      }
+    ]
+  }
+}

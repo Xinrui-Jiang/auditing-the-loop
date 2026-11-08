@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16, 480p, 8-second live-action short-drama take with audio. Medium close-up, static camera, eye level, HAITONG centred throughout. One continuous shot in an old building stairwell during daytime. Only HAITONG is visible; Grandma is only heard through the phone and is never physically present. No subtitles, captions, watermarks, cuts, freezes, loops, or other people.\n\nINT. OLD BUILDING STAIRWELL - DAY\nHAITONG (17)\nThe call ends. Haitong's portfolio slips. Pages scatter\u2014her resume, shredded by rain.\nHAITONG\ncrying\nGrandma, they found me.\n\nAction timing: Haitong visibly ends the phone call first, before any remaining action. Immediately afterward, while still centred in the medium close-up, her clearly visible portfolio slips completely from her grasp and falls naturally. The portfolio and its pages must be plainly visible as they leave her hands. Pages visibly scatter across the frame, including a clearly identifiable resume that is visibly shredded by rain. Make the falling and scattering readable on screen, with natural gravity and contact. Include a distinct, audible sound of pages scattering, specifically her rain-shredded resume. Haitong then delivers the exact English line \"Grandma, they found me.\" on camera with matching lip movement, crying strongly but naturally. Only Haitong speaks; no additional dialogue or voice. Preserve her same face, voice, clothing, anatomy, and sad crying emotion for the entire continuous take. Do not introduce any unscripted event or change of location.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794114246-PP2qE1U03Ogmfy08xg97",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114246-PP2qE1U03Ogmfy08xg97",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794114246-PP2qE1U03Ogmfy08xg97",
+  "generation_id": "gen-vid-1794114246-PP2qE1U03Ogmfy08xg97",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114246-PP2qE1U03Ogmfy08xg97",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794114246-PP2qE1U03Ogmfy08xg97/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794114246-PP2qE1U03Ogmfy08xg97/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T050622Z&X-Goog-Expires=86391&X-Goog-SignedHeaders=host&X-Goog-Signature=160b9f2873cbcc70ac0d810c3f35eba95db494ce9aa046c15c384bdbcdf87b2193cc0909d422cef88678066e018a6d181e0ff19e5bfcfce82b3f73278304a46d96375a8e24de69366f9b2f20851054eae34463d3eada9bd0e450c8948e87d644f1da526774ddaecfe69b521094c028976057e2907eb1b67f182ed40a4a8af9c6eee9905fb94ddbea8a57347f3590c953312600b5ba7590129781e39c959f8f4a73febd9cd5f37c7f465b8ad5e8ffb773ea8893a0a9c4c3e2fbea38c8f1919ca5db4a9a6e2dd3b0ee4d756061e153fc72bdda8df9492874db56522cd7a4af2a9431d3da25c6e0cf1a1a0461799bbdfd96377de5a3f104fa56bcca593822ea1422"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794200773
+ }
+}

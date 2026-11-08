@@ -1,0 +1,623 @@
+{
+  "drama": "beyond-the-wall",
+  "note": "角色参考图索引。所有唯一图集中于 _pool/，各集通过 image 字段引用；已按剧本语义重命名并按内容去重。",
+  "pool_dir": "_pool",
+  "unique_images": 26,
+  "total_references": 82,
+  "episodes": {
+    "ep01": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙外_17岁",
+        "image": "_pool/lena_墙外_17岁.png",
+        "original_name": "lena",
+        "description": "17岁，墙外保护区，脸沾泥土的攀墙少女形象"
+      },
+      {
+        "role": "薇薇安",
+        "state": "vivian",
+        "image": "_pool/vivian.png",
+        "original_name": "vivian",
+        "description": "配角"
+      },
+      {
+        "role": "士兵A",
+        "state": "士兵a",
+        "image": "_pool/士兵a.png",
+        "original_name": "士兵a",
+        "description": "墙外巡逻士兵"
+      },
+      {
+        "role": "士兵B",
+        "state": "士兵b",
+        "image": "_pool/士兵b.png",
+        "original_name": "士兵b",
+        "description": "墙外巡逻士兵"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙外_坠落受伤",
+        "image": "_pool/ryan_墙外_坠落受伤.png",
+        "original_name": "脏兮兮的ryen",
+        "description": "从墙顶坠落触电后，脏兮兮的受伤状态"
+      }
+    ],
+    "ep02": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙外_17岁",
+        "image": "_pool/lena_墙外_17岁.png",
+        "original_name": "lena",
+        "description": "17岁，墙外保护区，脸沾泥土的攀墙少女形象"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_手臂芯片伤口",
+        "image": "_pool/ryan_手臂芯片伤口.png",
+        "original_name": "ryen伤口_芯片",
+        "description": "手臂划开、露出体内芯片的伤口特写状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_受伤挽袖",
+        "image": "_pool/ryan_受伤挽袖.png",
+        "original_name": "ryen受伤挽袖子版",
+        "description": "受伤后挽起袖子的状态"
+      }
+    ],
+    "ep03": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙外_17岁",
+        "image": "_pool/lena_墙外_17岁.png",
+        "original_name": "lena",
+        "description": "17岁，墙外保护区，脸沾泥土的攀墙少女形象"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_袖子扯掉",
+        "image": "_pool/ryan_袖子扯掉.png",
+        "original_name": "ryen袖子扯掉",
+        "description": "袖子被扯破、露出手腕接口疤痕的状态"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "保护区居民A",
+        "state": "保护区居民a",
+        "image": "_pool/保护区居民a.png",
+        "original_name": "保护区居民a",
+        "description": "保护区群众"
+      },
+      {
+        "role": "保护区居民B",
+        "state": "保护区居民b",
+        "image": "_pool/保护区居民b.png",
+        "original_name": "保护区居民b",
+        "description": "保护区群众"
+      }
+    ],
+    "ep04": [
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年",
+        "image": "_pool/elias_老年.png",
+        "original_name": "Elias",
+        "description": "60岁，掌控系统时期的常规形象"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙外_17岁",
+        "image": "_pool/lena_墙外_17岁.png",
+        "original_name": "lena",
+        "description": "17岁，墙外保护区，脸沾泥土的攀墙少女形象"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      }
+    ],
+    "ep05": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "执法者",
+        "state": "执法部队",
+        "image": "_pool/执法部队.png",
+        "original_name": "城内多功能部队",
+        "description": "城内多功能执法/清除部队群像"
+      }
+    ],
+    "ep06": [
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年",
+        "image": "_pool/elias_老年.png",
+        "original_name": "Elias",
+        "description": "60岁，掌控系统时期的常规形象"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep07": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "执法者",
+        "state": "执法部队",
+        "image": "_pool/执法部队.png",
+        "original_name": "城内多功能部队",
+        "description": "城内多功能执法/清除部队群像"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep08": [
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年",
+        "image": "_pool/elias_老年.png",
+        "original_name": "Elias",
+        "description": "60岁，掌控系统时期的常规形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_年轻",
+        "image": "_pool/elias_年轻.png",
+        "original_name": "elias年轻版",
+        "description": "年轻时期，实验室与索娅并肩工作（闪回）"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_年轻_怀孕",
+        "image": "_pool/soya_年轻_怀孕.png",
+        "original_name": "soya年轻怀孕版",
+        "description": "年轻怀孕时期，实验室场景（闪回）"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep09": [
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年",
+        "image": "_pool/elias_老年.png",
+        "original_name": "Elias",
+        "description": "60岁，掌控系统时期的常规形象"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "执法者",
+        "state": "执法部队",
+        "image": "_pool/执法部队.png",
+        "original_name": "城内多功能部队",
+        "description": "城内多功能执法/清除部队群像"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep10": [
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年",
+        "image": "_pool/elias_老年.png",
+        "original_name": "Elias",
+        "description": "60岁，掌控系统时期的常规形象"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "场景",
+        "state": "场景_会场外观",
+        "image": "_pool/场景_会场外观.png",
+        "original_name": "会场外观",
+        "description": "发布会会场外观"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      },
+      {
+        "role": "道具",
+        "state": "道具_车",
+        "image": "_pool/道具_车.png",
+        "original_name": "车",
+        "description": "伊莱亚斯的座车"
+      }
+    ],
+    "ep11": [
+      {
+        "role": "莉娜",
+        "state": "lena_3岁",
+        "image": "_pool/lena_3岁.png",
+        "original_name": "lena三岁",
+        "description": "3岁幼年（闪回/档案影像）"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_3岁",
+        "image": "_pool/ryan_3岁.png",
+        "original_name": "ryan三岁",
+        "description": "3岁幼年（闪回/档案影像）"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_3岁克隆",
+        "image": "_pool/ryan_3岁克隆.png",
+        "original_name": "三岁克隆瑞恩",
+        "description": "3岁克隆实验体形象（档案闪回）"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_中年",
+        "image": "_pool/elias_中年.png",
+        "original_name": "中年elias",
+        "description": "中年时期（档案闪回）"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_闪回",
+        "image": "_pool/soya_中年_闪回.png",
+        "original_name": "中年soya",
+        "description": "中年时期（档案闪回）"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep12": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep13": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "执法者",
+        "state": "执法部队",
+        "image": "_pool/执法部队.png",
+        "original_name": "城内多功能部队",
+        "description": "城内多功能执法/清除部队群像"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep14": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "执法者",
+        "state": "执法部队",
+        "image": "_pool/执法部队.png",
+        "original_name": "城内多功能部队",
+        "description": "城内多功能执法/清除部队群像"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep15": [
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_年轻",
+        "image": "_pool/elias_年轻.png",
+        "original_name": "elias年轻版",
+        "description": "年轻时期，实验室与索娅并肩工作（闪回）"
+      },
+      {
+        "role": "莉娜",
+        "state": "lena_3岁",
+        "image": "_pool/lena_3岁.png",
+        "original_name": "lena三岁",
+        "description": "3岁幼年（闪回/档案影像）"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_年轻",
+        "image": "_pool/soya_年轻.png",
+        "original_name": "soya年轻",
+        "description": "年轻时期（闪回）"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep16": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep17": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep18": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep19": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "伊莱亚斯",
+        "state": "elias_老年_受伤",
+        "image": "_pool/elias_老年_受伤.png",
+        "original_name": "受伤的Elias",
+        "description": "被制服/挨打后额头流血的受伤状态"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ],
+    "ep20": [
+      {
+        "role": "莉娜",
+        "state": "lena_墙内_17岁",
+        "image": "_pool/lena_墙内_17岁.png",
+        "original_name": "Lena墙内",
+        "description": "17岁，越墙进入优化之城后的形象"
+      },
+      {
+        "role": "索娅",
+        "state": "soya_中年_50岁",
+        "image": "_pool/soya_中年_50岁.png",
+        "original_name": "soya",
+        "description": "50岁，保护区时期的常规形象"
+      },
+      {
+        "role": "瑞安",
+        "state": "ryan_墙内_干净",
+        "image": "_pool/ryan_墙内_干净.png",
+        "original_name": "干净ryen",
+        "description": "伤愈后干净整洁的常规形象"
+      }
+    ]
+  }
+}

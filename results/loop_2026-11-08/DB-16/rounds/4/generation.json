@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Vertical 9:16, 480p, 8-second live-action short-drama take with audio. Medium close-up, static camera, eye level, XU ZHIYI centred. Keep one continuous shot at the exterior house entrance in daylight, with the real house door clearly visible beside her. XU ZHIYI keeps her eyes directed at and visibly staring at the door itself, never at the camera or past the doorway. Only XU ZHIYI appears on screen and only she speaks. Nobody enters, there is no cutaway or location change. Preserve the same face, voice, clothing, identity, and anatomy throughout. No subtitles, captions, watermarks, or text.\n\nEXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY\nXU ZHIYI (28, exhausted but determined)\nShe stares at the door. A flicker of memory crosses her face\u2014falling snow, a different door, a different betrayal. She blinks it away.\nXU ZHIYI\nquietly\nHe won't help us. Not after what I did.\n\nUse a clearly ordered facial-action sequence while the camera, background, visible door, and present-day entrance remain unchanged. From approximately 00:00 to 00:02, XU ZHIYI visibly stares directly at the present-day door. From approximately 00:02 to 00:03, do not blink: show a brief, readable memory impression only through her face while her gaze remains aimed at the door. First give her a small startled-surprise reaction with a slight eyebrow lift, eyes widening, and a fleeting upward glint suggesting falling snow; then let her eyes and expression briefly register recognition of a different door and the shock of a different betrayal. This must be an unmistakable internal memory reaction, not ordinary worry, sadness, resignation, or determination, but do not show snow, another door, another location, another person, or any overlay. Immediately after that facial memory impression, at approximately 00:03, close both eyes fully in one deliberate, unmistakable blink, hold the closure for a brief moment, then reopen them and visibly return to the same direct stare at the present door. The blink must clearly end the preceding memory, not occur at the beginning and not look like a routine blink. After reopening her eyes, speak the complete line exactly in English, softly and quietly, with accurate on-camera lip sync. Keep the surprise brief and restrained, with low facial and vocal intensity within 0 to 1 on the 0-4 scale. Keep all motion natural and physically plausible, with no unintended cuts, freezes, jumps, loops, morphing, extra voices, or garbled text. Audio must be present.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly",
+  "generation_id": "gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794113456-fB5BEfsp9gz7hdh8oOly/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T045355Z&X-Goog-Expires=86392&X-Goog-SignedHeaders=host&X-Goog-Signature=4aacc0f91ce9f9d0acc907152c84a2f210f0eb8353ca33b3edf5a8f9dbca6711df7b4feb93a2adabeab50a2c138abd1fb041010c4f6acd4d8be0c5b47270af9bc4af71f8fdd43ab750ed645ed75fc51f1dd743e3668e4efd2c239177cc7ffa5530283a3b5a8802451b8374355e816270afe37a91c19ebb93718b776be0919ef582280c8f57ff4d57800227c74c9dec4a57548416285882c257f2fe9e4fbb2534d2f7985095ee4e4f44006e138852a175e61fe7abd8c1df88d1bf9f019aaeb6f08c65b17357bf845b4501f2325ffc96430ca48ae72a4ed957e83f752fc2429f7cec64df2d8609aef087a053f07e575e325d4fe1caffaedde7cba9a870be79ad27"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794200027
+ }
+}

@@ -1,0 +1,401 @@
+{
+  "shot_id": "SB-01",
+  "round": 1,
+  "take_sha256": "bd7139d57913e430f3e3c486edc2341f7635102765437bd6bd148daa4893c021",
+  "verdicts": [
+    {
+      "item_id": "A1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": false,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Julian says 'What? What is this?' instead of 'What… what is this?' verbatim.",
+        "A/primary/order2: Julian speaks the line 'What? What is this?' at 00:05-00:07.",
+        "A/second: At 00:05-00:08 the man softly and breathily says in English, 'What... what is this?', matching the expected line verbatim.",
+        "A/entailment: P1 speaks: 'What... what is this?' Another description gives 'What? What is this?', neither matches the expected line verbatim with the specified ellipsis.",
+        "tool/asr: language=en, WER=0.00, heard: 'What? What is this?'"
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Julian enters the space and visibly widens his eyes in shock from 00:01 to 00:07.",
+        "A/primary/order2: Julian enters the space and widens his eyes in shock at 00:01-00:05.",
+        "A/second: At 00:01-00:04 Julian enters from the bottom right and his eyes are visibly wide with a dazed, shocked expression as he looks up.",
+        "A/entailment: P1 enters the frame and later has 'Eyes wide, mouth slightly parted,' but the descriptions do not identify P1 as Julian."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Julian walks through the living room which appears unchanged.",
+        "A/primary/order2: Julian is present in the living room space.",
+        "A/second: At 00:01-00:05 Julian walks into and through the living room, which appears immaculate and undisturbed, with no visible signs of alteration.",
+        "A/entailment: P1 'walks forward into the center of the room,' but there is no description establishing that the living room appears unchanged from four years ago."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The setting is a luxury penthouse living room.",
+        "A/primary/order2: The setting is a luxury penthouse interior.",
+        "A/second: From 00:00-00:08 the interior shows a luxury penthouse: floor-to-ceiling windows over a high-rise city view, grand piano, designer white sofas and crystal decor.",
+        "A/entailment: The setting is described as 'a sunlit, upscale living room,' but it is not identified as an interior luxury penthouse."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only Julian appears on screen.",
+        "A/primary/order2: Only Julian appears on screen.",
+        "A/second: Throughout 00:00-00:08 only one person, Julian, appears on screen; no other characters are present.",
+        "A/entailment: Only P1 is described on screen, but the descriptions do not establish that P1 is Julian."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only Julian speaks during the clip.",
+        "A/primary/order2: Only Julian speaks in the clip.",
+        "A/second: At 00:05-00:08 the only voice heard is Julian's line; no other speaker is audible.",
+        "A/entailment: The speech description lists only P1 speaking: 'P1 speaks in a soft, breathy, bewildered voice: 'What... what is this?''"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.3",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No unscripted events or cuts occur in the scene.",
+        "A/primary/order2: No unscripted events or cuts to another place occur throughout the clip.",
+        "A/second: The clip is one continuous static shot (00:00-00:08); nobody else enters and there is no cut to another location.",
+        "A/entailment: The descriptions show P1 entering and remaining in the same living room, with no other person entering and no cut to another place described."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The luxury penthouse interior remains visible and unchanged.",
+        "A/primary/order2: The living room background appears as a luxury penthouse setting.",
+        "A/second: At 00:00-00:01 the room is shown pristine and untouched—made beds of cushions, polished surfaces, no dust or decay—so the space appears unchanged.",
+        "A/entailment: The descriptions detail the living room, but do not state or show that it appears unchanged from four years ago."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "fail",
+      "severity": "warning",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The shot is a high angle medium shot with tracking movement rather than static medium close-up.",
+        "A/primary/order2: Julian is shown in a medium close-up, static camera with a slight high angle, vertical 9:16 framing, and centered at 00:01-00:07.",
+        "A/second: Although the camera is static, slightly high-angled, vertical 9:16, and Julian is centered (00:03-00:08), the framing is a wide shot showing the whole living room with Julian only from the thighs up, not a medium close-up.",
+        "A/entailment: The camera is described as a 'High-angle wide shot' with P1 'settling in the lower center of the frame,' not a medium close-up with Julian centred; vertical 9:16 is also not stated.",
+        "A/reinspect: Julian is centered in a medium close-up, static camera, slight high angle, and vertical 9:16 framing from 00:03 to 00:07."
+      ],
+      "deviation": null,
+      "reinspected": true
+    },
+    {
+      "item_id": "B1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Movement and objects in the room appear natural from 00:00 to 00:07.",
+        "B/primary/order2: Objects and the man's movement follow normal physical laws and momentum.",
+        "B/second: From 00:00-00:08 the furniture, decanter, and glasses remain stationary and the man's walk and stop obey normal gravity and momentum with no floating or sliding objects."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The man's hands, face, and suit remain anatomically consistent throughout 00:01-00:07.",
+        "B/primary/order2: Hands, face, and limbs remain anatomically normal with no morphing or distortions observed.",
+        "B/second: Across 00:02-00:08 the man's face, hair, and hands at his sides remain anatomically coherent with no morphing, extra digits, or garbled text."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The man's face, clothing, and voice maintain continuity without alteration from 00:01 to 00:07.",
+        "B/primary/order2: The same face, voice, and clothing of the man persist throughout the clip.",
+        "B/second: From entry at 00:01 to 00:08 the same young man keeps the same face, messy brown hair, dark suit jacket, open white shirt, and dark trousers, and the single voice matches him."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: There are no unintended cuts, freezes, or jumps in the video from 00:00 to 00:07.",
+        "B/primary/order2: There are no unintended cuts, freezes, jumps, or loops during the video clip.",
+        "B/second: The high-angle shot runs continuously 00:00-00:08 with smooth motion as the man enters, walks, and stops; no cuts, freezes, or loops occur.",
+        "tool/ffmpeg: scene cuts at []; frozen spans [] (0.0 s)"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The man's lip movements match his spoken line 'What? What is this?' between 00:05 and 00:07.",
+        "B/primary/order2: The man's lip movements match the spoken line 'What? What is this?' from 00:05 to 00:07.",
+        "B/second: At 00:05-00:08 the man's mouth opens and moves in sync with the soft spoken line 'What... what is this?', and the voice clearly belongs to him on screen."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The video is approximately 7 seconds long, 9:16 aspect ratio, standard definition, and contains an audio track.",
+        "B/primary/order2: The clip duration is around 7 seconds with 9:16 aspect ratio, 480p resolution and an audio track present.",
+        "B/second: The clip runs about 8 seconds in a vertical 9:16 frame at roughly 480p, with an audible ambient track and speech throughout 00:00-00:08.",
+        "tool/ffprobe: 496x864, 8.06 s, 24.0 fps, audio=yes"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B7.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: There are no subtitles, captions, or watermarks present in the clip.",
+        "B/primary/order2: No subtitles, captions or watermarks are present in the video clip.",
+        "B/second: No subtitles, captions, or watermarks appear anywhere in the frame from 00:00-00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The man looks up with an expression of shock and eyes widening at 00:03.",
+        "C/primary/order2: The man's expression and reaction display clear surprise and shock from 00:01 to 00:07.",
+        "C/second: From 00:02-00:08 the man stops, tilts his head up with wide eyes and a parted mouth, and asks 'What... what is this?', clearly showing surprise/bewilderment."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The man's surprise and voice intensity are clearly above 1, around level 2-3.",
+        "C/primary/order2: The man's surprise and confusion are expressed strongly with high intensity (around 3) in his face and voice.",
+        "C/second: Although the voice is soft (≈1), the face at 00:03-00:07 shows distinctly widened eyes, raised brows and an open mouth — a clear (2) surprise expression, exceeding the calm [0,1] range."
+      ],
+      "deviation": 1.33,
+      "reinspected": false
+    },
+    {
+      "item_id": "C4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: The man delivers his line 'What? What is this?' in a hushed, whispering tone at 00:05.",
+        "C/primary/order2: The man speaks in a normal, startled voice tone at 00:05-00:07 rather than whispering.",
+        "C/second: At 00:05-00:08 the line 'What... what is this?' is delivered in a hushed, breathy, near-whispered tone rather than normal speech."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.018304
+}

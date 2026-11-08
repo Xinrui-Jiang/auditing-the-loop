@@ -1,0 +1,89 @@
+# DB-60: hand-off at round 2
+
+Rounds: 3. Total cost: $1.77. Take: `runs/loop/DB-60/rounds/2/take.mp4`.
+
+## Final take: feedback sheet
+
+| item | status | severity | uncertainty | fixability | note |
+|---|---|---|---|---|---|
+| A1.1 | fail | error | confident | backend_limited | BLOCKING |
+| A2.1 | pass | info | confident | prompt_fixable |  |
+| A2.2 | pass | info | confident | retry_fixable |  |
+| A3.1 | pass | info | confident | prompt_fixable |  |
+| A3.2 | pass | info | confident | prompt_fixable |  |
+| A4.1 | pass | info | confident | prompt_fixable |  |
+| A4.2 | pass | info | confident | prompt_fixable |  |
+| A4.3 | pass | info | confident | prompt_fixable |  |
+| A5.1 | uncertain | info | not_observable | prompt_fixable |  |
+| A6.1 | uncertain | info | uncertain | retry_fixable |  |
+| B1.1 | pass | info | confident | retry_fixable |  |
+| B2.1 | pass | info | confident | retry_fixable |  |
+| B3.1 | pass | info | confident | retry_fixable |  |
+| B4.1 | pass | info | confident | retry_fixable |  |
+| B5.1 | pass | info | confident | backend_limited |  |
+| B6.1 | pass | info | confident | backend_limited |  |
+| B7.1 | pass | info | confident | retry_fixable |  |
+| C1.1 | pass | info | confident | retry_fixable |  |
+| C2.1 | pass | info | confident | prompt_fixable |  |
+| C4.1 | pass | info | uncertain | retry_fixable |  |
+
+Errors that did not block (backend-limited) and warnings are listed above; the checklist text per item:
+
+- A1.1: The line "Assistant Chen! My husband?" is spoken in English, complete and verbatim.
+
+## Rounds
+
+### Round 0
+Blocking after this round: A1.1, A2.2, C1.1. Cost $0.58.
+
+Prompt:
+
+```
+Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, eye level.
+INT. HOSPITAL CORRIDOR - DAY. RUAN NINGXIA (30s). RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits. RUAN NINGXIA, pretending to cry, says: "Assistant Chen! My husband?"
+Live-action short-drama look. Audio on; the line is spoken on camera.
+```
+
+### Round 1 (branched from round 0)
+Blocking after this round: A1.1. Cost $0.59.
+
+Analyser: Branch from round 0 because it is the only available take and already passes the setting, bag, framing, continuity, physical plausibility, single-speaker, and no-cut checks. The revised prompt explicitly requires the exact English line, keeps both named observers visibly in frame, and clarifies visible sadness with deliberate fake crying to address the blocking failures and uncertainties. It also protects the prior passes by retaining the corridor, wardrobe, bag, static medium close-up, continuous shot, single speaker, and consistent appearance, while explicitly banning subtitles.
+
+Targets: A1.1, A2.2, A4.1, B7.1, C1.1, C4.1
+
+Prompt:
+
+```
+Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use a medium close-up, static camera at eye level, with RUAN NINGXIA centred while keeping the two people she sees visibly present in the corridor background/over her shoulder. Keep one continuous shot with no cuts, freezes, jumps, loops, or location changes. INT. HOSPITAL CORRIDOR - DAY
+RUAN NINGXIA (30s)
+RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits.
+RUAN NINGXIA
+pretending to cry
+Assistant Chen! My husband?
+
+RUAN NINGXIA is the only person who speaks. She must say exactly and completely, in clearly audible English: "Assistant Chen! My husband?" Her lip movements must match the English words and her voice must come from her on-screen. Perform sadness with exaggerated intensity around 3-4, using visible fake tears and crying cues while making it clear she is pretending to cry rather than genuinely crying. FU LINCHENG'S ASSISTANT and JIANG YAO remain visibly in frame as she sees them; nobody else appears. Keep RUAN NINGXIA's fur, dress, designer bag, face, voice, and styling consistent throughout. The designer bag stays clearly visible in her tightly clutching hand. No subtitles, captions, watermarks, or any on-screen text. Keep all movement anatomically normal and physically plausible, and preserve the hospital-corridor daytime setting.
+```
+
+### Round 2 (branched from round 1)
+Blocking after this round: A1.1. Cost $0.59.
+
+Analyser: Continue from round 1 because it fixed the exact cast visibility, designer bag, corridor setting, sadness, single-speaker, and subtitle issues, and it is the strongest base for the remaining language problem. The new prompt makes the English line and its pronunciation impossible to reinterpret or translate, while explicitly preserving lip sync. It also repairs round 1's regression on A6.1 by requiring a locked-off medium close-up with no tracking, zoom, reframing, or cut. The three-person cast, wardrobe, bag, continuous corridor setting, physical plausibility, and deliberately performed crying are retained.
+
+Targets: A1.1, A6.1, A5.1
+
+Prompt:
+
+```
+Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use one completely continuous, locked-off static camera: medium close-up, eye level, RUAN NINGXIA centred for the entire take. Do not track, pan, zoom, reframe, or cut. Keep the hospital corridor and both people she sees visible in the background or over her shoulder throughout.
+
+INT. HOSPITAL CORRIDOR - DAY
+RUAN NINGXIA (30s)
+RUAN NINGXIA, now in luxurious fur and dress, designer bag clutched too tightly, runs anxiously through the corridor. She sees FU LINCHENG'S ASSISTANT with JIANG YAO, both in power suits.
+RUAN NINGXIA
+pretending to cry
+Assistant Chen! My husband?
+
+RUAN NINGXIA is the only person who speaks. She must speak the line exactly, completely, and verbatim in English, with unmistakable English pronunciation: "Assistant Chen! My husband?" Do not translate it, replace it, paraphrase it, or speak it in Chinese or any other language. The line must be clearly audible, and her lips must visibly match every English word; the voice must come from RUAN NINGXIA on screen. She performs exaggerated sadness at intensity 3-4 with visible deliberate fake crying cues, making it clear through her controlled, performative expression that she is pretending to cry rather than genuinely crying.
+
+FU LINCHENG'S ASSISTANT and JIANG YAO must both remain visibly present in power suits as RUAN NINGXIA sees them. Nobody else appears and nobody else speaks. Keep RUAN NINGXIA's fur, dress, designer bag, face, voice, and styling consistent throughout. The designer bag stays clearly visible in her tightly clutching hand. Her anxious running is a brief natural movement within the locked-off framing, with no camera movement. No subtitles, captions, watermarks, or any on-screen text. Keep all hands, faces, limbs, objects, and movement anatomically normal and physically plausible. No entrances, exits, unscripted events, freezes, jumps, loops, or location changes.
+```

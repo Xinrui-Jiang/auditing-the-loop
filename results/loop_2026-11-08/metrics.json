@@ -1,0 +1,95 @@
+{
+ "shots": [
+  {
+   "shot": "DB-16",
+   "status": "hand_off",
+   "rounds": 5,
+   "output_round": 4,
+   "backtracks": 2,
+   "cost_usd": 2.933,
+   "blocking_per_round": [
+    4,
+    4,
+    5,
+    4,
+    2
+   ]
+  },
+  {
+   "shot": "DB-35",
+   "status": "hand_off",
+   "rounds": 3,
+   "output_round": 2,
+   "backtracks": 0,
+   "cost_usd": 1.77,
+   "blocking_per_round": [
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "shot": "DB-38",
+   "status": "output",
+   "rounds": 2,
+   "output_round": 1,
+   "backtracks": 0,
+   "cost_usd": 1.175,
+   "blocking_per_round": [
+    4,
+    0
+   ]
+  },
+  {
+   "shot": "DB-60",
+   "status": "hand_off",
+   "rounds": 3,
+   "output_round": 2,
+   "backtracks": 0,
+   "cost_usd": 1.767,
+   "blocking_per_round": [
+    3,
+    1,
+    1
+   ]
+  },
+  {
+   "shot": "SB-01",
+   "status": "hand_off",
+   "rounds": 3,
+   "output_round": 2,
+   "backtracks": 1,
+   "cost_usd": 1.755,
+   "blocking_per_round": [
+    3,
+    1,
+    1
+   ]
+  }
+ ],
+ "summary": {
+  "shots": 5,
+  "finished": 5,
+  "output": 1,
+  "hand_off": 4,
+  "output_rate": 0.2,
+  "mean_rounds_to_output": 2.0,
+  "mean_cost_per_output_shot": 1.175,
+  "total_cost_usd": 9.4,
+  "blocking_checks_all_rounds": {
+   "A2": 16,
+   "C1": 7,
+   "C2": 6,
+   "A1": 6,
+   "A3": 2,
+   "A5": 1
+  },
+  "blocking_checks_round0": {
+   "A2": 8,
+   "C1": 2,
+   "C2": 2,
+   "A1": 2,
+   "A3": 2
+  }
+ }
+}

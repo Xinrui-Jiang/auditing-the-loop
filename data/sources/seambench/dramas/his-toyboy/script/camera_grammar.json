@@ -1,0 +1,76 @@
+{
+  "characters": {
+    "朱利安": {
+      "solo_angle": "平视或微俯拍",
+      "power_down": "高角度俯拍（被压制/困境时）",
+      "emotional": "特写平视（内心挣扎时）",
+      "signature_movement": "手持微晃（焦虑）/ 固定（隐忍）",
+      "pair_rules": {
+        "维克托": "俯拍朱利安 + 仰拍维克托 / OTS正反打",
+        "迈洛": "平视同高，温暖稳定镜头",
+        "瑟瑞娜": "平视对峙，Dutch Angle表心理压迫"
+      }
+    },
+    "维克托": {
+      "solo_angle": "低角度仰拍",
+      "power_up": "极低角度（登场/宣告权力时）",
+      "vulnerability": "平视或微俯（独处脆弱时）",
+      "signature_movement": "缓推至面部 / 升降配合起身",
+      "pair_rules": {
+        "朱利安": "仰拍维克托 + 俯拍朱利安 / OTS过肩俯压",
+        "迈洛": "俯拍（父亲视角）转平视（柔情时）",
+        "瑟瑞娜": "平视对等（信任时）/ 仰拍（施压时）"
+      }
+    },
+    "瑟瑞娜": {
+      "solo_angle": "平视（冷静时）/ 低角度仰拍（掌控时）",
+      "scheming": "特写侧面，单侧光",
+      "exposed": "高角度俯拍（被揭穿时）",
+      "signature_movement": "固定镜头（冷静克制感）",
+      "pair_rules": {
+        "朱利安": "仰拍瑟瑞娜（施压）/ Dutch Angle（心理操控）",
+        "维克托": "平视同框（伪平等）"
+      }
+    },
+    "迈洛": {
+      "solo_angle": "平视同高（儿童视角）",
+      "emotional": "特写大眼睛（求助/哭泣时）",
+      "signature_movement": "手持跟拍（奔跑时）/ 固定（静态时）",
+      "pair_rules": {
+        "朱利安": "双人中景平视，温暖构图",
+        "维克托": "仰拍（从迈洛视角看父亲）"
+      }
+    }
+  },
+  "scene_type_movement": {
+    "power_dynamic": {
+      "preferred": ["手持微晃", "缓推至面部", "升降", "OTS跟焦"],
+      "avoid_consecutive": 3,
+      "fixed_ratio_max": 0.45,
+      "notes": "权力场景需要运镜传达压迫感，避免过多固定镜头"
+    },
+    "intimacy": {
+      "preferred": ["极缓推/拉", "环绕", "呼吸感微晃", "焦点转移"],
+      "avoid_consecutive": 4,
+      "fixed_ratio_max": 0.40,
+      "notes": "亲密场景运镜需模拟角色呼吸节奏"
+    },
+    "action": {
+      "preferred": ["手持跟拍", "快推", "横移并行", "升降"],
+      "avoid_consecutive": 2,
+      "fixed_ratio_max": 0.30,
+      "notes": "动作场景需要高动态运镜"
+    },
+    "emotional_solo": {
+      "preferred": ["极缓推", "固定长镜头留白", "缓拉揭示环境"],
+      "avoid_consecutive": 5,
+      "fixed_ratio_max": 0.60,
+      "notes": "独处情绪戏可适当使用固定镜头，但需留白节奏"
+    },
+    "transition": {
+      "preferred": ["硬切", "手持抖动（闪回）"],
+      "avoid": ["叠化", "过曝缓冲"],
+      "notes": "转场用硬切制造冲击力"
+    }
+  }
+}

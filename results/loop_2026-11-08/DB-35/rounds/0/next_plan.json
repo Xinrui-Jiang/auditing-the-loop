@@ -1,0 +1,16 @@
+{
+  "branch_from": 0,
+  "revised_prompt": "Create an 8-second live-action short-drama take in vertical 9:16, 480p, with audio. Use one continuous unbroken shot: no cuts, freezes, jumps, loops, or camera shake. Static camera at eye level, medium close-up composition with HE XI centred; keep HUSBAND pushing the hospital bed and ZHAO WANRU visibly on the bed within the same frame or immediately beside HE XI throughout the action. Preserve consistent faces, voices, clothing, anatomy, and object motion.\n\nINT. VILLAGE HOSPITAL - NIGHT\nRain lashes a dark window. HE XI runs beside her HUSBAND as he pushes a hospital bed. On it, ZHAO WANRU, 25, writhes in advanced labor.\nHE XI\nshouting\nDoctor! My mistress—she's breech!\n\nHE XI is the only person who speaks or produces any voice. HUSBAND remains completely silent while pushing the bed. ZHAO WANRU remains silent and visibly writhes in advanced labor. HE XI clearly speaks the complete line exactly as written, including “breech!”, with accurate lip sync; do not paraphrase, omit, reorder, or assign any part of the line to another character. HE XI performs angry, forceful shouting with strong face and voice intensity, level 2–3. Show only HE XI, HUSBAND, and ZHAO WANRU; nobody else appears, enters, or is heard. Keep the setting visibly a village hospital at night, with rain audibly lashing a dark window. No subtitles, captions, watermarks, or text overlays.",
+  "rationale": "Branch from round 0 because it is the only prior take and the main failures are prompt-fixable. The revised prompt explicitly assigns the exact line to HE XI, makes HUSBAND silent, and requires HE XI to visibly run beside the husband while he pushes the bed. It preserves the passing hospital setting, rain, bed action, continuity, duration/audio, and no-overlay requirements, while also guarding against the observed cut, camera shake, anatomy uncertainty, and weakly verified anger.",
+  "targets": [
+    "A1.1",
+    "A2.1",
+    "A2.2",
+    "A4.2",
+    "A6.1",
+    "B2.1",
+    "B4.1",
+    "C1.1",
+    "C2.1"
+  ]
+}

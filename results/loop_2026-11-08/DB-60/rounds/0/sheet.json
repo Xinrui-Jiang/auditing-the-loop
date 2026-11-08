@@ -1,0 +1,421 @@
+{
+  "shot_id": "DB-60",
+  "round": 0,
+  "take_sha256": "34b1ca6fff01834a186cd5e1293620b728ab756aaf06aa844ff05968eaa87707",
+  "verdicts": [
+    {
+      "item_id": "A1.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The character speaks Chinese instead of the English line 'Assistant Chen! My husband?' at 00:04.",
+        "A/primary/order2: From 00:04 to 00:07, Ruan Ningxia speaks in Chinese rather than English.",
+        "A/second: At 00:05-00:08 she breathlessly calls 'Assistant Chen? Where is... my husband?', inserting 'Where is...' and using questioning intonation, so the line is not the verbatim 'Assistant Chen! My husband?'.",
+        "A/entailment: P1 calls out 'Assistant Chen?' and later asks 'Where is... my husband?'",
+        "tool/asr: language=tr, WER=1.00, heard: 'Abone olmayı unutmayın!'"
+      ],
+      "deviation": 1.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Ruan Ningxia is seen wearing fur and a dress while clutching a designer bag anxiously in the corridor from 00:00 to 00:08.",
+        "A/primary/order2: From 00:00 to 00:08, Ruan Ningxia runs anxiously wearing fur and a dress while clutching a designer bag.",
+        "A/second: From 00:00-00:08 she runs anxiously into the corridor in a brown/gray fur coat over a champagne sequined dress, clutching her GG-monogram handbag tightly with both hands.",
+        "A/entailment: P1 runs into frame wearing a \"brown/gray fur coat over a champagne sequined dress,\" carrying a handbag, then is described as \"clutching her handbag with both hands\" and \"looking around anxiously.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A2.2",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Fu Lincheng's assistant and Jiang Yao are never visible in the clip.",
+        "A/primary/order2: From 00:00 to 00:08, neither Fu Lincheng's assistant nor Jiang Yao are visible.",
+        "A/second: No assistant or Jiang Yao in power suits ever appears; the frame contains only the woman throughout 00:00-00:08.",
+        "A/entailment: The descriptions identify only P1 on screen: \"P1 runs into frame from the right toward the camera.\" No assistant or Jiang Yao is visible."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The setting is visibly a hospital corridor during the day from 00:00 to 00:08.",
+        "A/primary/order2: From 00:00 to 00:08, the setting is a hospital corridor during the day.",
+        "A/second: The setting shows a bright hospital corridor with white walls, blue handrails, ceiling light panels and room doors (00:00-00:08), matching INT. HOSPITAL CORRIDOR - DAY.",
+        "A/entailment: The setting is described as \"A blurred hospital corridor,\" but the descriptions do not establish that it is daytime."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A3.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: A designer bag is visible in Ruan Ningxia's grasp from 00:00 to 00:08.",
+        "A/primary/order2: From 00:00 to 00:08, Ruan Ningxia holds a Gucci designer handbag.",
+        "A/second: A Gucci GG-monogram designer bag with gold clasp is visibly held in her grasp from 00:00-00:08.",
+        "A/entailment: P1 is described as \"carrying a GG-monogram handbag with a gold clasp\" and \"clutching her handbag with both hands.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.1",
+      "status": "uncertain",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Other characters mentioned in the cast do not appear on screen.",
+        "A/primary/order2: From 00:00 to 00:08, only Ruan Ningxia is visible on screen.",
+        "A/second: Only RUAN NINGXIA is on screen for the whole clip (00:00-00:08); no non-cast members appear.",
+        "A/entailment: The descriptions show only P1 on screen: \"P1 runs into frame from the right toward the camera.\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.2",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: Only Ruan Ningxia speaks during the clip.",
+        "A/primary/order2: From 00:00 to 00:08, only Ruan Ningxia speaks.",
+        "A/second: The only voice heard is her own breathless call at 00:05-00:08; no other speaker is audible.",
+        "A/entailment: The speech entries list only P1 speaking: \"P1 calls out 'Assistant Chen?'\" and \"P1 asks 'Where is... my husband?'\""
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A4.3",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: No unscripted event changes the scene or cuts to another place.",
+        "A/primary/order2: From 00:00 to 00:08, no unscripted events or cuts occur in the hospital corridor.",
+        "A/second: The single continuous shot remains in the corridor with nobody entering and no cut to another location (00:00-00:08).",
+        "A/entailment: The descriptions show a continuous hospital-corridor action, with P1 running in, stopping, and looking around; no cut or change to another place is described."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A5.1",
+      "status": "uncertain",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "partially_seen"
+      },
+      "evidence": [
+        "A/primary/order1: It cannot be definitively determined from the visual alone whether she is pretending to cry or genuinely shocked.",
+        "A/primary/order2: From 00:00 to 00:08, Ruan Ningxia's expression is shocked and breathless without genuine crying.",
+        "A/second: She never cries or feigns tears at any point (00:00-00:08); her expression is open-mouthed shock and anxious panting, so the premise of pretending to cry is not depicted.",
+        "A/entailment: The descriptions state that P1 is \"shocked,\" \"anxious,\" and \"worried,\" but do not say whether she is pretending to cry or genuinely crying."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "A6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "A/primary/order1: The shot is a medium close-up, static camera, eye level, vertical 9:16 framing Ruan Ningxia centred from 00:01 to 00:08.",
+        "A/primary/order2: From 00:01 to 00:08, the camera shows a medium close-up, static shot at eye level with Ruan Ningxia centered.",
+        "A/second: The clip is a vertical 9:16 medium close-up at eye level with RUAN NINGXIA centred and the camera holding essentially static (00:00-00:08).",
+        "A/entailment: Although the camera is described as a \"Vertical medium shot,\" it \"holds roughly steady with slight backward drift,\" rather than being explicitly static; eye level and centered framing are also not established."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B1.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The woman runs and stops naturally in the hospital hallway from 00:00 to 00:08.",
+        "B/primary/order2: The woman runs naturally down the hospital hallway from 00:00 to 00:01.",
+        "B/second: The run-in, deceleration to a stop, and the way the handbag hangs from her grip all follow normal gravity and momentum from 00:00-00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Hands and face remain anatomically correct throughout the clip.",
+        "B/primary/order2: Hands, face, and clothing remain anatomically normal with no morphing throughout the clip.",
+        "B/second: Garbled, nonsensical Chinese subtitle text ('恩断停 CHN' at 00:05 and '我湖要通' at 00:07) appears on screen, violating the no-garbled-text requirement, though hands and face otherwise look anatomically normal."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B3.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The woman's appearance, clothing, and facial features remain consistent from 00:00 to 00:08.",
+        "B/primary/order2: The woman's face, voice, and clothing remain consistent across the entire take.",
+        "B/second: The same woman's face, updo, fur coat, sequined dress, handbag, and breathless voice remain consistent across the entire 00:00-00:08 take."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B4.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "retry_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The transition from running to stopping is a smooth camera movement without unintended cuts or freezes.",
+        "B/primary/order2: The video flows continuously from running to stopping without unintended cuts or freezes.",
+        "B/second: The clip plays as one continuous shot with no cuts, freezes, or loops between 00:00 and 00:08.",
+        "tool/ffmpeg: scene cuts at []; frozen spans [] (0.0 s)"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B5.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "partially_seen"
+      },
+      "evidence": [
+        "B/primary/order1: Lip movements correspond to the spoken Chinese dialogue between 00:04 and 00:07.",
+        "B/primary/order2: Lip movements match the Chinese dialogue spoken from 00:04 to 00:07.",
+        "B/second: Her mouth opens and moves in sync with the breathless English lines 'Assistant Chen?' (00:05-00:06) and 'Where is... my husband?' (00:07-00:08), and the voice matches the on-screen woman."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B6.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "confident",
+      "fixability": "backend_limited",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": true,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: The video duration is 8 seconds, 9:16 aspect ratio, 480p resolution, with audio present.",
+        "B/primary/order2: The video is 8 seconds long with 9:16 aspect ratio and audio track present.",
+        "B/second: The video is a vertical 9:16 clip of about 8 seconds at low resolution with a full audio track (footsteps, panting, speech).",
+        "tool/ffprobe: 496x864, 8.06 s, 24.0 fps, audio=yes"
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "B7.1",
+      "status": "fail",
+      "severity": "warning",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "B/primary/order1: Chinese subtitles are present on screen during speech from 00:05 to 00:07.",
+        "B/primary/order2: Chinese subtitles appear on screen from 00:05 to 00:07.",
+        "B/second: White subtitle captions ('恩断停 CHN' then '我湖要通') are burned in at the bottom center from 00:05 to 00:08."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C1.1",
+      "status": "fail",
+      "severity": "error",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: At 00:00-00:08, the woman runs in a panic and speaks frantically without crying.",
+        "C/primary/order2: At 00:04, the emotion is panic/shock rather than sadness.",
+        "C/second: From 00:01-00:08 the woman shows panic and anxious searching (wide eyes, furrowed brows, breathless calling), with no tears, sobbing, or mournful tone that would indicate sadness."
+      ],
+      "deviation": null,
+      "reinspected": false
+    },
+    {
+      "item_id": "C2.1",
+      "status": "pass",
+      "severity": "info",
+      "uncertainty_state": "uncertain",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": false,
+        "second_family_agree": false,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: At 00:00-00:08, her facial expression and frantic vocal delivery have high intensity (around 3).",
+        "C/primary/order2: At 00:04, the face and voice intensity do not correspond to sadness or crying.",
+        "C/second: Between 00:01-00:08 her face is exaggeratedly shocked (mouth agape, eyes wide, brows raised) and her voice is loud, breathless, urgent ('Assistant Chen?', 'Where is my husband?'), both at strong intensity."
+      ],
+      "deviation": 0.0,
+      "reinspected": false
+    },
+    {
+      "item_id": "C4.1",
+      "status": "fail",
+      "severity": "warning",
+      "uncertainty_state": "confident",
+      "fixability": "prompt_fixable",
+      "signals": {
+        "order_swap_agree": true,
+        "second_family_agree": true,
+        "tool_agree": null,
+        "visibility": "seen_clearly"
+      },
+      "evidence": [
+        "C/primary/order1: At 00:00-00:08, the woman is in a state of panic/shock rather than pretending to cry.",
+        "C/primary/order2: At 00:04, the character is frantic and panicked, asking about her husband rather than pretending to cry.",
+        "C/second: At 00:05-00:08 her delivery is a breathless, urgent question while scanning the corridor, with no tearful quaver, sobbing, or fake-cry vocal quality."
+      ],
+      "deviation": null,
+      "reinspected": false
+    }
+  ],
+  "cost_usd": 0.019222
+}

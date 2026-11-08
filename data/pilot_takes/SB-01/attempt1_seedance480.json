@@ -1,0 +1,14 @@
+{
+ "shot_id": "SB-01",
+ "model": "bytedance/seedance-1-5-pro",
+ "resolution": "480p",
+ "aspect_ratio": "9:16",
+ "duration": 8,
+ "job_id": "gen-vid-1794087928-624AKrXESpjw38uf2wwV",
+ "cost_usd": null,
+ "gen_model": null,
+ "sha256": "cbcee5f6f228b48a14c00f96c3da8bdcf38ea2775815a6ba9278cb41e260c425",
+ "video": "data/candidates/SB-01/attempt1_seedance480.mp4",
+ "prompt": "Vertical 9:16 framing, head and shoulders fill the frame, subject centred. medium close-up, static camera, slight high angle.\nINT. LUXURY PENTHOUSE - CONTINUOUS. Cold filtered sunlight bathes the space. Julian enters, eyes widening in shock. He walks through living room \u2014 everything unchanged from four years ago. A frozen museum, time capsule, shrine. JULIAN, whispering, says: \"What\u2026 what is this?\"\nLive-action short-drama look. Audio on; the line is spoken on camera.",
+ "elapsed_s": 72
+}

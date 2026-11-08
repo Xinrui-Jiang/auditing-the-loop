@@ -1,0 +1,32 @@
+{
+ "request": {
+  "model": "bytedance/seedance-2.0",
+  "prompt": "Create an 8-second live-action short-drama take in 9:16 vertical format at 480p with an audio track. Use one uninterrupted continuous shot: no cuts, freezes, jumps, loops, subtitles, captions, or watermarks. Keep the camera completely static in a slight high angle, medium close-up, with JULIAN centred once he enters; do not pan, track, zoom, or reframe. Keep enough of the luxury penthouse living room visible to show cold filtered sunlight and a space that appears exactly unchanged from four years ago: a frozen museum, time capsule, shrine.\n\nSCRIPT SPANS:\nINT. LUXURY PENTHOUSE - CONTINUOUS\nCold filtered sunlight bathes the space. Julian enters, eyes widening in shock. He walks through living room \u2014 everything unchanged from four years ago. A frozen museum, time capsule, shrine.\nJULIAN\nwhispering\nWhat\u2026 what is this?\n\nAt the start of the shot, JULIAN visibly enters from just off-screen into the penthouse, then takes clear, natural walking steps through the living room while remaining in the static medium close-up and returning to the centre of frame. Show his feet or body-floor contact only as naturally as the framing allows; do not replace the walk with standing still. As he enters, use a restrained, subtle surprise cue: his eyes widen slightly and naturally, with a calm face, no exaggerated expression, no gasp, and no raised vocal energy. Keep both facial and voice intensity within 0 to 1 on the 0-4 scale. JULIAN is the only person visible and the only voice heard. He speaks exactly and completely in English, verbatim: \"What\u2026 what is this?\" Use the ellipsis and repeated \"what\" exactly; do not substitute \"What?\", \"What exactly?\", or any other wording, and do not add or omit words. Deliver it as a very quiet, controlled whisper after or during the walk, with lip movement precisely matching the line and the voice clearly belonging to JULIAN. Preserve the same face, voice, clothing, and anatomy for the entire take. Keep all object and liquid motion physically plausible.",
+  "duration": 8,
+  "resolution": "480p",
+  "aspect_ratio": "9:16",
+  "generate_audio": true
+ },
+ "job": {
+  "id": "gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug",
+  "status": "pending"
+ },
+ "status": {
+  "id": "gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug",
+  "generation_id": "gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug",
+  "status": "completed",
+  "unsigned_urls": [
+   "https://openrouter.ai/api/v1/videos/gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug/content?index=0"
+  ],
+  "urls": [
+   "https://storage.googleapis.com/openrouter-generated-media-us/v1/org_31cNwYwR0fqLllTQjaVlcX8181f/gen-vid-1794114263-ui7K4YrX5fJwsR0OcRug/0?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=generated-media-writer%40openrouter-core.iam.gserviceaccount.com%2F20261108%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261108T050751Z&X-Goog-Expires=86396&X-Goog-SignedHeaders=host&X-Goog-Signature=8296ccf00b9ea6c879e1bba36e456c23271ed7c651cf69bab5409952a0a52d9b0a5c37fba63d8b0e6971e12e79c7d93d98fe76b748305da618cacff65aab7c958cadd42ecb83ee4f228f6a2cb6694b48d22b29c9506ce6ad4536c282bcdf512b2ddc6e3deba7244c8ed6cb95a18253d2b03af210b8d4f842a96f197c5387dea1e53ddfb547b634b3bdd39441b2ae48ba6678e4ce30ae4eac84d46a016480a2f358da9f9214fed4833c32368458ca403006ca8e208ec9b25a4a921a423d63f1a3a5e75cf264b507b3f42e62984332f847a354f79b1ae3cdb350c81353c49595f12629248e2f5266212c03e044114e119107cca2a74a2f7cf81ea2bde3bb382018"
+  ],
+  "usage": {
+   "cost": 0.56539,
+   "is_byok": false
+  },
+  "expires_at": 1794200867
+ }
+}

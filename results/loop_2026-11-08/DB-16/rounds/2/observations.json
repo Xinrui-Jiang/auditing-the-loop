@@ -1,0 +1,162 @@
+[
+ {
+  "source": "describe/google/gemini-3.5-flash-lite",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113113-J4SCduhB4GlFlS6N9AJd",
+  "cost_usd": 0.0014274,
+  "text": "```json\n{\n \"people\": [\n  {\n   \"id\": \"P1\",\n   \"description\": \"Asian woman with dark hair pulled back, wearing a gray robe over a white shirt, standing on a porch\",\n   \"on_screen\": \"00:00-00:07\"\n  }\n ],\n \"events\": [\n  {\n   \"start\": \"00:00\",\n   \"end\": \"00:01\",\n   \"channel\": \"visual\",\n   \"description\": \"Woman blinks and closes her eyes briefly\"\n  },\n  {\n   \"start\": \"00:01\",\n   \"end\": \"00:03\",\n   \"channel\": \"visual\",\n   \"description\": \"Woman opens her eyes and looks directly ahead with a concerned expression\"\n  },\n  {\n   \"start\": \"00:03\",\n   \"end\": \"00:07\",\n   \"channel\": \"visual\",\n   \"description\": \"Woman speaks while looking directly at the camera with a worried expression\"\n  }\n ],\n \"speech\": [\n  {\n   \"start\": \"00:03\",\n   \"end\": \"00:05\",\n   \"speaker\": \"P1\",\n   \"text\": \"He won't help us.\",\n   \"language\": \"en\"\n  },\n  {\n   \"start\": \"00:05\",\n   \"end\": \"00:07\",\n   \"speaker\": \"P1\",\n   \"text\": \"Not after what I did.\",\n   \"language\": \"en\"\n  }\n ],\n \"face_over_time\": [\n  {\n   \"start\": \"00:00\",\n   \"end\": \"00:07\",\n   \"expression\": \"Worried, tense, and distressed facial expression\"\n  }\n ],\n \"camera\": \"Medium closeup, static, framed from the chest up\",\n \"artifacts\": []\n}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/f24a105336c8b3cbf5d94877c29b439865bc3529a16eb046f6de165ebc99641b.json"
+ },
+ {
+  "source": "describe/qwen/qwen3.8-omni-flash",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794113113-RN7MJUn7bz0dQZxqrc4f",
+  "cost_usd": 0.00118352,
+  "text": "{\"people\": [{\"id\": \"P1\", \"description\": \"Woman with dark hair pulled back, wearing a light gray wrap-style cardigan/robe over a white top; standing on a covered porch/walkway with white railings, columns, and doors behind her\", \"on_screen\": \"00:00-00:08\"}], \"events\": [{\"start\": \"00:00\", \"end\": \"00:08\", \"channel\": \"audio\", \"description\": \"A low, sustained ambient drone/hum plays throughout the clip\"}, {\"start\": \"00:00\", \"end\": \"00:03\", \"channel\": \"visual\", \"description\": \"P1 stands still facing the camera with a distressed expression; her brows are furrowed, her eyes are wet, and a tear track is visible running down her cheek\"}, {\"start\": \"00:03\", \"end\": \"00:08\", \"channel\": \"visual\", \"description\": \"P1's mouth moves as she speaks, her expression remaining tense and sorrowful; she keeps looking straight ahead\"}, {\"start\": \"00:04\", \"end\": \"00:08\", \"channel\": \"audio\", \"description\": \"P1 speaks in a quiet, strained voice\"}], \"speech\": [{\"start\": \"00:04\", \"end\": \"00:08\", \"speaker\": \"P1\", \"text\": \"He won't help us. Not after what I did.\", \"language\": \"English\"}], \"face_over_time\": [{\"start\": \"00:00\", \"end\": \"00:03\", \"expression\": \"Furrowed brows, glistening eyes, lips closed then slightly parted; a tear is visible on her cheek\"}, {\"start\": \"00:03\", \"end\": \"00:08\", \"expression\": \"Mouth opens and moves while speaking; expression stays worried and pained, gaze fixed forward\"}], \"camera\": \"Static medium close-up, vertical framing, subject centered; background porch/corridor softly out of focus\", \"artifacts\": []}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/019915a06deae7381795c075f4ad1aca8762b9444d35b002a744473528429ce9.json"
+ },
+ {
+  "source": "A/primary/order1",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113140-VAXqN7daxCF3jV0pmwGg",
+  "cost_usd": 0.0023036,
+  "text": "```json\n{\"items\": {\"A1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The woman speaks the lines 'He won't help us. Not after what I did.' from 00:03 to 00:07.\", \"span\": [3, 7], \"face_intensity\": null, \"voice_intensity\": 3}, \"A2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The woman is looking directly at the camera/viewer, not staring at the door.\", \"span\": [0, 7], \"face_intensity\": 0, \"voice_intensity\": null}, \"A2.2\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"No brief memory of falling snow or betrayal is conveyed across her face.\", \"span\": [0, 7], \"face_intensity\": 0, \"voice_intensity\": null}, \"A2.3\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"She blinks at the very beginning (00:00-00:01), but it does not end a memory.\", \"span\": [0, 1], \"face_intensity\": 1, \"voice_intensity\": null}, \"A3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The setting is an exterior house porch/entrance during daytime.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A3.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"A white door at the house entrance is visible behind and beside the woman.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only the woman appears on screen throughout the clip.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only the woman speaks in the clip.\", \"span\": [3, 7], \"face_intensity\": null, \"voice_intensity\": 3}, \"A4.3\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"No unscripted events or cuts occur; the camera and scene remain completely static.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"A5.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"No memory visual impression appears on her face at all.\", \"span\": [0, 7], \"face_intensity\": 0, \"voice_intensity\": null}, \"A6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The shot is a medium close-up, static, eye level, vertical 9:16 with the character centered.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/e029b5695b9a4fa74a09539d26ca44ecc9ae30bf3af78bd4c295a9ef577d7a37.json"
+ },
+ {
+  "source": "A/primary/order2",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113140-WW7aLfL2qijmbXhbx7lf",
+  "cost_usd": 0.0031286,
+  "text": "```json\n{\n  \"items\": {\n    \"A6.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, XU ZHIYI is centered in a medium close-up, static camera, eye level, vertical format.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A5.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, the shot remains at the house entrance in the present.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A4.3\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, nobody enters and there are no cuts to another place.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A4.2\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:03 to 00:07, only XU ZHIYI speaks.\",\n      \"span\": [3, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A4.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, only XU ZHIYI appears on screen.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A3.2\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, a door at the house entrance is visible behind XU ZHIYI.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A3.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, the setting matches the house entrance during daytime.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A2.3\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:01, XU ZHIYI visibly blinks, ending the memory transition.\",\n      \"span\": [0, 1],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A2.2\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:01, a brief visual impression of falling snow is reflected or overlayed on her face and eyes.\",\n      \"span\": [0, 1],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A2.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00 to 00:07, XU ZHIYI is visibly staring towards the door area.\",\n      \"span\": [0, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"A1.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:03 to 00:07, XU ZHIYI says 'He won't help us. Not after what I did.' in English complete and verbatim.\",\n      \"span\": [3, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": 3\n    }\n  }\n}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/a258e81dcd8223fe74706cd3b3d4163544084ba88527a21d96ea9b22e4f8eb51.json"
+ },
+ {
+  "source": "A/second",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794113140-YjEQbb2ooeRdfDbUqKfu",
+  "cost_usd": 0.00193215,
+  "text": "{\"items\": {\"A1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:04-00:08 the woman says in English, 'He won't help us. Not after what I did.', matching the expected line verbatim.\", \"span\": [4, 8], \"face_intensity\": null, \"voice_intensity\": 2}, \"A2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"Throughout 00:00-00:08 she stares straight ahead into the camera, not at the door, which is behind her on the right of frame.\", \"span\": [0, 8], \"face_intensity\": 2, \"voice_intensity\": null}, \"A2.2\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"From 00:00-00:08 her face shows only present-tense distress with a tear track; no impression of falling snow, a different door, or a past betrayal ever crosses her expression.\", \"span\": [0, 8], \"face_intensity\": 0, \"voice_intensity\": null}, \"A2.3\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"No blink ending a memory occurs; her eyes stay open and fixed forward from 00:00-00:03 and she simply begins speaking at 00:04, with no memory ever established.\", \"span\": [0, 8], \"face_intensity\": 0, \"voice_intensity\": null}, \"A3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The 00:00-00:08 shot shows an exterior covered porch/walkway of a house in daylight, consistent with EXT. SHEN YUNAN'S HOUSE ENTRANCE - DAY.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A3.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"A white entrance door with black hardware is clearly visible at frame right from 00:00-00:08.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"Only the single woman (XU ZHIYI) appears on screen for the entire 00:00-00:08 clip; no other person is present.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A4.2\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The only voice heard at 00:04-00:08 is the on-screen woman's; no other speaker delivers a line.\", \"span\": [4, 8], \"face_intensity\": null, \"voice_intensity\": 2}, \"A4.3\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The shot remains a single continuous take at the porch from 00:00-00:08; nobody enters and there is no cut to another place.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"A5.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"While the shot stays at the house entrance (00:00-00:08), no memory impression of snow or a different door ever appears on her face, so the premise condition is unmet.\", \"span\": [0, 8], \"face_intensity\": 0, \"voice_intensity\": null}, \"A6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The 00:00-00:08 framing is a static, eye-level medium close-up in vertical 9:16 with the woman centered.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/d1327988837848f052836ae023256352a8fc73a8e900cf7581dae239d03dbd82.json"
+ },
+ {
+  "source": "B/primary/order1",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113140-WXfSS4zYW3XDaet3rnpl",
+  "cost_usd": 0.0020297,
+  "text": "```json\n{\n  \"items\": {\n    \"B1.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The woman's head and body movements appear natural and follow normal physical rules throughout 00:00-00:07.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 0,\n      \"voice_intensity\": 0\n    },\n    \"B2.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"Facial features and anatomy remain stable and anatomically correct throughout the video.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 0,\n      \"voice_intensity\": 0\n    },\n    \"B3.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The same Asian woman in a gray robe maintains consistent identity, clothing, and voice from 00:00 to 00:07.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 0,\n      \"voice_intensity\": 0\n    },\n    \"B4.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The shot is a continuous, uninterrupted medium closeup with no unintended cuts or freezes.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 0,\n      \"voice_intensity\": 0\n    },\n    \"B5.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"Lip movements accurately synchronize with the spoken lines 'He won't help us' and 'Not after what I did'.\",\n      \"span\": [3, 7],\n      \"face_intensity\": 2,\n      \"voice_intensity\": 2\n    },\n    \"B6.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The video duration is approximately 7-8 seconds, in 9:16 aspect ratio, with an active audio track.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 0,\n      \"voice_intensity\": 0\n    },\n    \"B7.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"No subtitles, captions, or watermarks appear anywhere in the frame.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 0,\n      \"voice_intensity\": 0\n    }\n  }\n}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/745816bd03b53df8bd339de5de34aa2733ac08eb68604acda1858c21c1ea41c2.json"
+ },
+ {
+  "source": "B/primary/order2",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113140-pcFqHCMxb5Vhouwe7rv8",
+  "cost_usd": 0.0021172,
+  "text": "```json\n{\n  \"items\": {\n    \"B7.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"No subtitles, captions or watermarks are visible throughout the clip at 00:00-00:07.\",\n      \"span\": [\n        0,\n        7\n      ],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"B6.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The video duration is approximately 7-8 seconds, vertical 9:16 format, with audio present.\",\n      \"span\": [\n        0,\n        7\n      ],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"B5.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"Lip movements accurately match the spoken lines 'He won't help us. Not after what I did' from 00:03 to 00:07.\",\n      \"span\": [\n        3,\n        7\n      ],\n      \"face_intensity\": 2,\n      \"voice_intensity\": 2\n    },\n    \"B4.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The clip is a continuous single take without any unintended cuts, freezes, jumps, or loops.\",\n      \"span\": [\n        0,\n        7\n      ],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"B3.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The woman's face, voice, and gray robe remain consistent throughout the entire clip.\",\n      \"span\": [\n        0,\n        7\n      ],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"B2.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"Facial features and proportions remain anatomically normal with no morphing or distortions across 00:00-00:07.\",\n      \"span\": [\n        0,\n        7\n      ],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    },\n    \"B1.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"The woman blinks and moves naturally in her environment without any physical plausibility issues.\",\n      \"span\": [\n        0,\n        7\n      ],\n      \"face_intensity\": null,\n      \"voice_intensity\": null\n    }\n  }\n}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/7e6e035eb9187df89dea08ce473d392e66465188b0f2bf4478a60a092362df48.json"
+ },
+ {
+  "source": "B/second",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794113140-d9BriSXZbf3wYA3oMaZ9",
+  "cost_usd": 0.000942184,
+  "text": "{\"items\": {\"B1.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The tear track on P1's cheek at 00:01-00:02 behaves like normal moisture (stays on the skin, no upward or impossible flow), and the background porch elements remain static with no object motion violations.\", \"span\": [0, 8], \"face_intensity\": 3, \"voice_intensity\": null}, \"B2.1\": {\"status\": \"pass\", \"visibility\": \"partially_seen\", \"evidence\": \"P1's face remains anatomically stable with natural blinking and mouth movement from 00:00-00:08; hands are out of frame in this medium close-up, so only the face/neck region could be verified, and no morphing or garbled text appears.\", \"span\": [0, 8], \"face_intensity\": 4, \"voice_intensity\": null}, \"B3.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The same woman with dark pulled-back hair, gray wrap cardigan, and white top, with a consistent voice, persists across the entire take from 00:00 to 00:08.\", \"span\": [0, 8], \"face_intensity\": 4, \"voice_intensity\": 3}, \"B4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The shot is one continuous static take with smooth micro-movements (blinks, tear, speech) and no cuts, freezes, jumps, or loops between 00:00 and 00:08.\", \"span\": [0, 8], \"face_intensity\": 3, \"voice_intensity\": null}, \"B5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"P1's mouth begins moving at ~00:04 in sync with the line 'He won't help us. Not after what I did,' and the quiet female voice matches the on-screen speaker through 00:08.\", \"span\": [4, 8], \"face_intensity\": 4, \"voice_intensity\": 3}, \"B6.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The clip runs ~8 seconds in vertical 9:16 framing at 480p resolution with an audible ambient drone and speech track from 00:00 to 00:08.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}, \"B7.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"No subtitles, captions, or watermarks appear anywhere in the frame during 00:00-00:08.\", \"span\": [0, 8], \"face_intensity\": null, \"voice_intensity\": null}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/9cb90cd18ebb79a4e07d37bd65ba6f5a71e47b7a78861db308cb520bc46a5515.json"
+ },
+ {
+  "source": "C/primary/order1",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113140-06ozBijP4V17mzB3kfNV",
+  "cost_usd": 0.0011628,
+  "text": "```json\n{\n  \"items\": {\n    \"C1.1\": {\n      \"status\": \"fail\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00-00:01 the woman blinks due to blinking/eyes closing rather than surprise, and the overall expression is worry/distress.\",\n      \"span\": [0, 1],\n      \"face_intensity\": 1,\n      \"voice_intensity\": null\n    },\n    \"C2.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:00-00:07 facial and vocal intensity remain subdued within [0, 1] range.\",\n      \"span\": [0, 7],\n      \"face_intensity\": 1,\n      \"voice_intensity\": 1\n    },\n    \"C4.1\": {\n      \"status\": \"pass\",\n      \"visibility\": \"seen_clearly\",\n      \"evidence\": \"At 00:03-00:07 she speaks quietly and intensely.\",\n      \"span\": [3, 7],\n      \"face_intensity\": null,\n      \"voice_intensity\": 1\n    }\n  }\n}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/7e58ae631514c29a5f2cb2148eac28b49529546517fd0034a35deec9d185b210.json"
+ },
+ {
+  "source": "C/primary/order2",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113140-hEmBYRhQfiJJStf2TOxN",
+  "cost_usd": 0.0009403,
+  "text": "```json\n{\"items\": {\"C4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"The woman speaks in a quiet tone between 00:03 and 00:07.\", \"span\": [3, 7], \"face_intensity\": null, \"voice_intensity\": null}, \"C2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The woman shows strong worry and distress with a face intensity above 1.\", \"span\": [0, 7], \"face_intensity\": 2, \"voice_intensity\": 2}, \"C1.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The woman's blink at 00:00 does not constitute a display of surprise.\", \"span\": [0, 1], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/07f661dfa12dd86f5c02f4cef9546244d4aeacddfeb4b9cfc7c496e9a781b646.json"
+ },
+ {
+  "source": "C/second",
+  "model_id": "qwen/qwen3.8-omni-flash",
+  "request_id": "gen-1794113140-PUC6i3pYGHEPLfqVkwx7",
+  "cost_usd": 0.002220254,
+  "text": "{\"items\": {\"C1.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"From 00:00-00:08 her face shows sorrow and guilt (furrowed brows, wet eyes, tear track) with only slow, ordinary blinks, so no surprise is expressed.\", \"span\": [0, 8], \"face_intensity\": 0, \"voice_intensity\": 0}, \"C2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"Across 00:00-00:08 her expression is strongly distressed (tears, tense brow) and her voice is strained, well above the calm [0,1] range.\", \"span\": [0, 8], \"face_intensity\": 3, \"voice_intensity\": 2}, \"C4.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:04-00:08 she delivers 'He won't help us. Not after what I did.' in a low, hushed, restrained voice.\", \"span\": [4, 8], \"face_intensity\": null, \"voice_intensity\": null}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/b4dde670ba291f5576cfa35e21a9f43ab7b13a61d2845bb0c18b5a60a49a768f.json"
+ },
+ {
+  "source": "A/entailment",
+  "model_id": "openai/gpt-5.6-luna",
+  "request_id": "gen-1794113198-Rweg4W0lO4gnuUCu3zkt",
+  "cost_usd": 0.0014524,
+  "text": "{\"items\":{\"A1.1\":{\"status\":\"pass\",\"evidence\":\"P1 speaks: \\\"He won't help us. Not after what I did.\\\"; language: \\\"English\\\"\"},\"A2.1\":{\"status\":\"fail\",\"evidence\":\"\\\"Woman speaks while looking directly at the camera\\\" and \\\"keeps looking straight ahead,\\\" not at the door.\"},\"A2.2\":{\"status\":\"uncertain\",\"evidence\":\"The descriptions do not mention falling snow, a different door, or a different betrayal being conveyed across her face.\"},\"A2.3\":{\"status\":\"uncertain\",\"evidence\":\"\\\"Woman blinks and closes her eyes briefly,\\\" but the descriptions do not establish that this ends a memory.\"},\"A3.1\":{\"status\":\"uncertain\",\"evidence\":\"She is described as \\\"standing on a porch\\\" and on a \\\"covered porch/walkway with white railings, columns, and doors behind her,\\\" but the time of day and exact house-entrance setting are not stated.\"},\"A3.2\":{\"status\":\"pass\",\"evidence\":\"She is standing on a \\\"covered porch/walkway with white railings, columns, and doors behind her.\\\"\"},\"A4.1\":{\"status\":\"pass\",\"evidence\":\"The descriptions identify only one person: \\\"P1 ... Woman with dark hair pulled back\\\"; no other people appear.\"},\"A4.2\":{\"status\":\"pass\",\"evidence\":\"The speech is attributed only to \\\"P1,\\\" who says the two lines.\"},\"A4.3\":{\"status\":\"pass\",\"evidence\":\"The camera is described as \\\"Static medium close-up,\\\" and no one enters or any cut to another place is described.\"},\"A5.1\":{\"status\":\"uncertain\",\"evidence\":\"The shot remains at the porch/entrance, but the descriptions do not mention a brief visual memory or impression on her face.\"},\"A6.1\":{\"status\":\"uncertain\",\"evidence\":\"The clip is described as a \\\"Static medium close-up\\\" with \\\"vertical framing\\\" and the \\\"subject centered,\\\" but eye level and 9:16 are not explicitly stated.\"}}}",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/740875316e2196bfb9ae2dd0161e6b5cd1efacc04ece20ad1dc1a78f821c4bfd.json"
+ },
+ {
+  "source": "tool/ffprobe",
+  "model_id": "ffprobe",
+  "request_id": null,
+  "cost_usd": 0.0,
+  "text": "496x864, 8.06 s, 24.0 fps, audio=yes",
+  "raw_path": null
+ },
+ {
+  "source": "tool/ffmpeg",
+  "model_id": "ffmpeg scene+freezedetect",
+  "request_id": null,
+  "cost_usd": 0.0,
+  "text": "scene cuts at []; frozen spans [] (0.0 s)",
+  "raw_path": null
+ },
+ {
+  "source": "tool/asr",
+  "model_id": "mlx-community/whisper-small-mlx",
+  "request_id": null,
+  "cost_usd": 0.0,
+  "text": "{\"text\":\"He won't help us, not after what I did.\",\"language\":\"en\",\"words\":[{\"word\":\"He\",\"start\":3.44,\"end\":3.96},{\"word\":\"won't\",\"start\":3.96,\"end\":4.18},{\"word\":\"help\",\"start\":4.18,\"end\":4.38},{\"word\":\"us,\",\"start\":4.38,\"end\":4.7},{\"word\":\"not\",\"start\":4.8,\"end\":6.28},{\"word\":\"after\",\"start\":6.28,\"end\":6.58},{\"word\":\"what\",\"start\":6.58,\"end\":6.76},{\"word\":\"I\",\"start\":6.76,\"end\":6.9},{\"word\":\"did.\",\"start\":6.9,\"end\":7.16}]}",
+  "raw_path": null
+ },
+ {
+  "source": "A/reinspect",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113208-vNdB3wwXbQqNTfOC84n7",
+  "cost_usd": 0.0005254,
+  "text": "```json\n{\"items\": {\"A2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"XU ZHIYI is looking directly forward towards the camera instead of staring at the door throughout the clip 00:00 to 00:07.\", \"span\": [0, 7], \"face_intensity\": null, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/0bacdbc1572b80f228ff45b862a67d7a3f4c040c9e15f8649591fd0dcaf9addc.json"
+ },
+ {
+  "source": "A/reinspect",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113208-FHAHoWPJlVl3BB5J7EbK",
+  "cost_usd": 0.0005749,
+  "text": "```json\n{\"items\": {\"A2.2\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"At 00:00 to 00:07, XU ZHIYI speaks on the porch, but her facial expression does not convey a memory of falling snow, a different door, or a different betrayal.\", \"span\": [0.0, 7.0], \"face_intensity\": 1, \"voice_intensity\": 1}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/d9dd5798daf2c49bd26d321ad716b87d59bf6f186d3f3c09ad079e0318dc916c.json"
+ },
+ {
+  "source": "A/reinspect",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113207-Oo1qvCC50uZnbRUZM3QI",
+  "cost_usd": 0.0003366,
+  "text": "```json\n{\"items\": {\"A2.3\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"XU ZHIYI visibly blinks and closes her eyes around 00:01.\", \"span\": [1.0, 2.0], \"face_intensity\": 2, \"voice_intensity\": null}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/439096cf0fd627fc89e5fc9963804436be6f78790b5cbf2f7c22198a21f23eac.json"
+ },
+ {
+  "source": "A/reinspect",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113208-uMzJ3PNgBAo1deL4Nu7C",
+  "cost_usd": 0.0005408,
+  "text": "```json\n{\"items\": {\"A5.1\": {\"status\": \"pass\", \"visibility\": \"seen_clearly\", \"evidence\": \"From 00:00 to 00:08, the shot stays at the house entrance while Xu Zhiyi displays sorrow and expresses her feelings verbally.\", \"span\": [0.0, 8.0], \"face_intensity\": 3, \"voice_intensity\": 2}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/3a46989c0ab7aba5467cb886c1e4ff02e5fb4259872bac5d78b99c4dfa128837.json"
+ },
+ {
+  "source": "C/reinspect",
+  "model_id": "google/gemini-3.5-flash-lite",
+  "request_id": "gen-1794113208-ox48zyE53KG8uW8DFmJl",
+  "cost_usd": 0.0005008,
+  "text": "```json\n{\"items\": {\"C2.1\": {\"status\": \"fail\", \"visibility\": \"seen_clearly\", \"evidence\": \"The woman is crying and speaking with strong distress and fear at 00:00.\", \"span\": [0, 8], \"face_intensity\": 3, \"voice_intensity\": 3}}}\n```",
+  "raw_path": "/Users/xinrui/Desktop/Stanford/fall2026/cs329z/pj/loopauditor/runs/_cache/71b3ad04579341bd15bd7d87a9c75332551c0b2ce9c2f99f96450e251adcf545.json"
+ }
+]

@@ -1,0 +1,49 @@
+﻿分镜号,场景,画面内容,景别,拍摄角度,运镜,角色,台词,中文台词
+1,数据库,数据层内，红色警告灯循环闪烁，警报声低沉。,全景,,,,,
+2,数据库,"控制台前瑞恩抓着莉娜的手臂，莉娜依旧盯着着屏幕。
+系统声音（画外）：“检测到未授权访问。”",中景（背影）,,,"Lena,Ryan",SYSTEM (O.S.): Unauthorized access detected.,系统（画外）：检测到未授权访问。
+3,数据库,"瑞恩眼神警觉，莉娜眼神从愤怒变成警惕，看向瑞恩。
+瑞恩压低声音：“我们暴露了。”
+他抓住莉娜的手腕，拉着她，二人转身离开终端。",近景,,,"Lena,Ryan",RYAN (low): We're exposed.,瑞恩（低声）：我们暴露了。
+4,数据库,两人冲入在数据阵列墙中快速奔跑，前景数据阵列墙迅速划过。,中景,,手持跟拍,"Lena,Ryan",,
+5,数据库,"控制台附近发出系统声音：“追踪路径正在形成——预测路线锁定中。目标：瑞恩·奥卡福。”
+特写红色扫描射线如刀刃般扫过墙壁，全景射线向两人方向收网。",特写→全景,,跟随光线运动,,SYSTEM：Tracking paths forming---Predictive routes locking in.TARGET: RYAN OKAFOR,系统：追踪路径正在形成——预测路线锁定中。目标：瑞恩·奥卡福。
+6,数据库,莉娜困惑，边跑边问：“为什么只锁定你？”,特写,,,Lena,LENA: Why is it locking you only?,莉娜：为什么只锁定你？
+7,数据库,瑞恩快速解释：“你在用我的复制卡。理论上，他们只能追踪到两个瑞恩，而不是莉娜。”,近景,,,Ryan,"RYAN: You're using my copied card. Theoretically, they can only track two Ryans, not Lena.",瑞恩：你在用我的复制卡。理论上，他们只能追踪到两个瑞恩，而不是莉娜。
+8,数据库,数据阵列墙出现数个城内部队，持枪形成追踪包围网，完美站位，封锁去路，红色扫描线条已经覆盖全屋。,特写→全景,,急速拉远，倾斜构图,"城内多功能部队,Lena,Ryan",,
+9,数据库,"莉娜瞳孔微动，突然说：“打破模式！” 
+瑞恩：“怎么打破？” 
+莉娜：“他们只能追踪你，这意味着我是未定义数据。每次他们与我们互动，系统都必须重新计算！”",特写,,跟随奔跑，对话正反打,"Lena,Ryan","LENA: Break the pattern!
+RYAN: How?
+LENA: They can track you only, which means I'm undefined data. Every time they interact with us, the system has to recalculate!","莉娜：打破模式！
+瑞恩：怎么打破？
+莉娜：他们只能追踪你，这意味着我是未定义数据。每次他们与我们互动，系统都必须重新计算！"
+10,数据库,莉娜不等待，直接左转跑开，朝后景的城内部队打了个响指吸引注意力，城内部队看向莉娜。,侧面中景,,,Lena,,
+11,数据库,瑞恩继续向前奔跑，学着莉娜对远处另一个城内部队打了个响指，然后左转。,侧面中景,,,Ryan,,
+12,数据库,控制台，追踪红光突然出现错误，红光闪烁，系统：“错误：路径无效。”,全景,,缓缓拉远,,SYSTEM：ERROR: PATH INVALID,系统：错误：路径无效
+13,数据库,部队停下，犹豫。一个士兵说：“请求重新校准路线。”,近景,,,城内多功能部队,TROOP: Request route recalibration.,士兵：请求重新校准路线。
+14,数据库,两人在一个岔口交汇，互相看了一眼，继续分开跑，路径不可预测。,中景,,,"Lena,Ryan",,
+15,数据库,几个部队士兵持枪停在原地，四处张望，彻底失去方向。,全景,俯视,,城内多功能部队,,
+16,中控室内景,埃利亚斯站在多个屏幕前，看着莉娜和瑞恩奔跑的分屏。他嘴角上扬，轻声：“不可预测。”,中景→近景,,,"Elias,Lena,Ryan",ELIAS (soft): Unpredictable.,埃利亚斯（轻声）：不可预测。
+17,中控室内景,埃利亚斯脸上的笑意加深：“完美的下一代人类受试者。”,特写,,,Elias,ELIAS: Perfect next generation human subjects.,埃利亚斯：完美的下一代人类受试者。
+18,中控室内景,"屏幕显示：演讲重新安排。
+埃利亚斯对系统下指令说：“提前演示。”",特写,,,Elias,ELIAS: Advance the presentation.,埃利亚斯：提前演示。
+19,中控室内景,埃利亚斯眼神疯狂，轻声：“是时候了。”,眼部特写,,,Elias,ELIAS: It's time.,埃利亚斯：是时候了。
+20,城市边缘-高处,夜晚，城市边缘，莉娜和瑞恩站在高处，远处灯火通明。,远景,,,"Lena,Ryan",,
+21,城市边缘-高处,莉娜转头看着瑞恩：“你小时候真的饿死过吗？”,侧脸特写,,,Lena,LENA: Did you really die of hunger when you were little?,莉娜：你小时候真的饿死过吗？
+22,城市边缘-高处,瑞恩眼神放空，看着前方，低声：“没有……但我记得妈妈和姐姐死于疾病。”,侧脸特写,,,Ryan,RYAN: No... but I remember my mom and sister died from disease.,瑞恩：没有……但我记得妈妈和姐姐死于疾病。
+23,城市边缘-高处,"莉娜皱眉：“我不明白……既然我们有不同的记忆，我们真的是兄妹吗？” 
+瑞恩摇头：“我不知道。自从实验之后，一切都变得模糊了。”",近景,,正反打,"Lena,Ryan","LENA: I don't understand... since we have different memories, are we really sister and brother?
+RYAN: I don't know. Ever since the experiment, everything became a blur.","莉娜：我不明白……既然我们有不同的记忆，我们真的是兄妹吗？
+瑞恩：我不知道。自从实验之后，一切都变得模糊了。"
+24,城市边缘-高处,莉娜看着瑞恩声音关切：“那么……他对你做了什么？”,特写,,,Lena,LENA: So... what was he doing to you?,莉娜：那么……他对你做了什么？
+25,城市边缘-高处,瑞恩看了一眼莉娜，又移开视线，声音低沉：“他从小就把我塑造成完美的受试者。我一直假装自己很好。然后，他想让我成为下一代人类。”,特写,,,Ryan,"RYAN: He shaped me as the perfect subject when I was a child. I pretended to be well all the time. Then, he wanted me to be the next generation human.",瑞恩：他从小就把我塑造成完美的受试者。我一直假装自己很好。然后，他想让我成为下一代人类。
+26,城市边缘-高处,瑞恩咬紧牙关一字一句：“不惜一切代价。”,特写（瑞恩嘴部）,,,Ryan,RYAN: At any cost.,瑞恩：不惜一切代价。
+27,城市边缘-高处,莉娜眼中燃起怒火，她转身直接面对瑞恩：“没有人应该经历那些。”,特写,,,Lena,LENA: No one else goes through that.,莉娜：没有人应该经历那些。
+28,城市边缘-高处,"瑞恩看着莉娜，语气充满温暖和信任：“我们可以阻止它。”
+莉娜摇头：“不只是阻止！我要摧毁它！”",近景,,,"Lena,Ryan","RYAN: We can stop it.
+LENA: Not just stop! I will destroy it!","瑞恩：我们可以阻止它。
+莉娜：不只是阻止！我要摧毁它！"
+29,城市边缘-高处,"瑞恩看向莉娜纠正：“我们要摧毁它。”
+两人微笑对视，眼神中透着坚定。",特写,,缓慢推进,"Lena,Ryan",RYAN: We will destroy it.,瑞恩：我们要摧毁它。
+30,城市边缘-高处,远处是灯火通明的优化城市，近处两人并肩站着看向城市，背影坚定。,远景,,,"Lena,Ryan",,
